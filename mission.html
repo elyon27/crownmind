@@ -39,30 +39,7 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html" aria-label="CrownMind Institute Home">
-      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
-      <span>CrownMind Institute</span>
-    </a>
-
-    <nav>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a class="active" href="mission.html">Mission</a>
-        <a href="store.html">Store</a>
-        <a href="books.html">Book Paths</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-
-        <span class="secure-mini" title="Secure Checkout — Gumroad" aria-label="Secure Checkout — Gumroad">
-          🛡️ Secure Checkout — Gumroad
-        </span>
-      </div>
-    </nav>
-  </div>
-</header>
+<div id="header-placeholder"></div>
 
 <main>
 
@@ -371,6 +348,17 @@
     })();
   </script>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("assets/components/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error("Header load failed:", error));
+});
+</script>
 
 </body>
 </html>

@@ -99,12 +99,14 @@
 </footer>
 
 <script>
-fetch("assets/components/header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-  })
-  .catch(error => console.error("Header load failed:", error));
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("assets/components/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error("Header load failed:", error));
+});
 </script>
 
 </body>
