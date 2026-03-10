@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TTU Module | Template</title>
+  <link rel="stylesheet" href="assets/css/ttu.css" />
+  <style>
+    /* Small, page-specific refinements (kept minimal) */
+    .module-meta{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .pill strong{ color: var(--gold2); font-weight: 800; }
+    .module-body h3{
+      font-family: var(--serif);
+      letter-spacing:.3px;
+      margin: 0 0 10px;
+      color: var(--gold2);
+    }
+    .module-body p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 13px;
+    }
+    .module-body ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 13px;
+    }
+    .complete-badge{
+      display:none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(217,181,107,.25);
+      background: rgba(217,181,107,.08);
+      color: var(--gold2);
+      font-size: 12px;
+    }
+    .complete-badge.show{ display:block; }
+    .nav-row{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 12px;
+    }
+    .nav-row .left, .nav-row .right{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+    }
+    .muted-note{
+      color: var(--soft);
+      font-size: 12px;
+      line-height: 1.65;
+      margin-top: 10px;
+    }
+    code.inline{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" title="Tenio Theological University">
+      <span class="brand-badge">
+        <img src="assets/img/ttu-seal.png" alt="TTU Seal" />
+      </span>
+      <span class="brand-title">
+        <div class="name">Tenio Theological University</div>
+        <div class="tag">Module Page — Phase I</div>
+      </span>
+    </a>
+
+    <nav class="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="resources.html">Resources</a>
+      <a href="registrar.html">Registrar</a>
+      <a href="chapel.html">Chapel</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-head">
+    <div class="badge">
+      <span id="verseRef">MAT 7:13–14</span>
+      <span class="verse">Enter by the narrow gate.</span>
+    </div>
+
+    <h1 class="page-title" id="moduleTitle">MODULE CODE: Module Title</h1>
+    <p class="page-sub" id="moduleIntro">
+      This module page is a template. Duplicate it per module and replace the content blocks.
+      Structure-first learning: lesson → reflection → practice → assessment → verified completion.
+    </p>
+
+    <div class="module-meta">
+      <span class="pill">School: <strong id="moduleSchool">[School Name]</strong></span>
+      <span class="pill">Level: <strong id="moduleLevel">Phase I</strong></span>
+      <span class="pill">Estimated Time: <strong id="moduleTime">45–90 min</strong></span>
+      <span class="pill">Tracking Key: <strong id="moduleKey">ttu-module-template</strong></span>
+    </div>
+  </section>
+
+  <section class="section two-col">
+    <div class="tile module-body">
+      <h2 class="h2">Lesson</h2>
+
+      <h3>1) Anchor Scripture</h3>
+      <p>
+        Insert your anchor text reference here (e.g., John 15:1–8). In Phase I, you can place short excerpts
+        or summaries and link students to read the full passage in their Bible.
+      </p>
+
+      <h3>2) Teaching Focus</h3>
+      <p>
+        Write 2–4 paragraphs of teaching. Keep it structured, direct, and measurable:
+        what the student must understand and what obedience looks like.
+      </p>
+
+      <h3>3) Key Points</h3>
+      <ul>
+        <li>Point 1 — clarity statement</li>
+        <li>Point 2 — spiritual implication</li>
+        <li>Point 3 — obedience action</li>
+      </ul>
+
+      <hr class="hr" />
+
+      <h3>4) Reflection Questions</h3>
+      <ul>
+        <li>What conviction surfaced while reading the passage?</li>
+        <li>Where do I resist obedience and why?</li>
+        <li>What is one aligned step I will complete within 24 hours?</li>
+      </ul>
+
+      <p class="muted-note">
+        Tip: Keep answers in a journal, then submit your worksheet if required by the registrar workflow.
+      </p>
+    </div>
+
+    <div class="tile module-body">
+      <h2 class="h2">Practice + Submission</h2>
+
+      <h3>1) Practice Assignment</h3>
+      <p>
+        Define a concrete action. Example: “Write a repentance plan with 3 steps and execute step 1 today.”
+      </p>
+
+      <h3>2) Worksheet / Downloads</h3>
+      <p>
+        Link a worksheet PDF here (Phase I uses local PDFs).
+      </p>
+
+      <div class="hero-actions" style="margin-top:12px;">
+        <!-- Replace the href with your real file path -->
+        <a class="btn gold" id="worksheetBtn" href="assets/pdf/worksheet-sample.pdf" download>
+          Download Worksheet (PDF)
+        </a>
+        <a class="btn" id="schoolBackBtn" href="academics.html">Back to Academics</a>
+      </div>
+
+      <hr class="hr" />
+
+      <h3>3) Quick Check (Mini-Assessment)</h3>
+      <ul>
+        <li>Define the main concept in 1 sentence.</li>
+        <li>Give 1 Scripture support reference.</li>
+        <li>Write 1 measurable obedience action.</li>
+      </ul>
+
+      <div class="hero-actions" style="margin-top:12px;">
+        <button class="btn gold" id="markBtn" type="button">Mark Complete</button>
+        <button class="btn" id="unmarkBtn" type="button">Unmark</button>
+      </div>
+
+      <div class="complete-badge" id="completeBadge">
+        ✅ Completion recorded locally on this device for Phase I tracking.
+      </div>
+
+      <p class="muted-note">
+        Phase I note: This completion marker is stored in <code class="inline">localStorage</code>.
+        In Phase II, this becomes a secure student portal + registrar verification.
+      </p>
+
+      <hr class="hr" />
+
+      <div class="nav-row">
+        <div class="left">
+          <a class="btn" id="prevBtn" href="academics.html">← Prev</a>
+        </div>
+        <div class="right">
+          <a class="btn" id="nextBtn" href="academics.html">Next →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="tile">
+      <h2 class="h2">Module Notes (Registrar)</h2>
+      <p class="p">
+        If this module requires submission, define the instruction below (Phase I uses email / form).
+      </p>
+      <ul class="list">
+        <li>Submission method: email / form / message</li>
+        <li>What to submit: worksheet + reflection + assessment answers</li>
+        <li>Completion evidence: timestamp + file name + brief summary</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div><strong>Tenio Theological University</strong></div>
+      <div class="small">Module System — Phase I (Digital Formation)</div>
+      <div class="small">“Enter by the narrow gate.” — Matthew 7:13–14</div>
+    </div>
+    <div class="small">
+      <div>© <span id="y"></span> TTU. All rights reserved.</div>
+      <div><a href="registrar.html">Registrar</a> · <a href="resources.html">Resources</a> · <a href="chapel.html">Chapel</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // ==========
+  // Module configuration (EDIT THESE PER MODULE)
+  // ==========
+  const MODULE = {
+    code: "TTU-MOD-001",
+    title: "Module Title (Replace This)",
+    school: "School Name (Replace)",
+    estimatedTime: "45–90 min",
+    trackingKey: "ttu:TTU-MOD-001",   // unique per module
+    backToSchoolHref: "academics.html", // or "school-biblical-formation.html"
+    worksheetHref: "assets/pdf/worksheet-sample.pdf",
+    prevHref: "academics.html",
+    nextHref: "academics.html"
+  };
+
+  // Apply config to UI
+  document.title = `${MODULE.code} | ${MODULE.title} | TTU`;
+  document.getElementById('moduleTitle').textContent = `${MODULE.code}: ${MODULE.title}`;
+  document.getElementById('moduleSchool').textContent = MODULE.school;
+  document.getElementById('moduleTime').textContent = MODULE.estimatedTime;
+  document.getElementById('moduleKey').textContent = MODULE.trackingKey;
+
+  const schoolBackBtn = document.getElementById('schoolBackBtn');
+  schoolBackBtn.href = MODULE.backToSchoolHref;
+
+  const worksheetBtn = document.getElementById('worksheetBtn');
+  worksheetBtn.href = MODULE.worksheetHref;
+
+  const prevBtn = document.getElementById('prevBtn');
+  prevBtn.href = MODULE.prevHref;
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.href = MODULE.nextHref;
+
+  // ==========
+  // Phase I local tracking
+  // ==========
+  const markBtn = document.getElementById('markBtn');
+  const unmarkBtn = document.getElementById('unmarkBtn');
+  const completeBadge = document.getElementById('completeBadge');
+
+  function refreshCompletion() {
+    const done = localStorage.getItem(MODULE.trackingKey) === "complete";
+    completeBadge.classList.toggle('show', done);
+  }
+
+  markBtn.addEventListener('click', () => {
+    localStorage.setItem(MODULE.trackingKey, "complete");
+    refreshCompletion();
+  });
+
+  unmarkBtn.addEventListener('click', () => {
+    localStorage.removeItem(MODULE.trackingKey);
+    refreshCompletion();
+  });
+
+  refreshCompletion();
+</script>
+
+</body>
+</html>
