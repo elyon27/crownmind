@@ -1,0 +1,111 @@
+/* CrownMind Contact Form Enhancements (Netlify-ready) */
+
+.contact-link{
+  color: var(--accent, #d6b35a);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.contact-link:hover{
+  text-decoration:underline;
+}
+
+.cm-form{
+  position:relative;
+  border:1px solid rgba(214,179,90,.22);
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(15,27,46,.96), rgba(12,22,39,.92));
+  box-shadow:0 18px 55px rgba(0,0,0,.35);
+  padding:18px;
+  overflow:hidden;
+}
+
+.cm-form::after{
+  content:"CROWNMIND • CONTACT";
+  position:absolute;
+  right:-48px;
+  bottom:-34px;
+  font-size:52px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:rgba(214,179,90,.10);
+  transform:rotate(-10deg);
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+
+.cm-form .cm-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(214,179,90,.25);
+  background:rgba(214,179,90,.10);
+  color:rgba(243,212,138,.95);
+  font-weight:800;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.cm-form label{
+  display:block;
+  margin:10px 0 6px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(233,238,252,.78);
+}
+
+.cm-form input,
+.cm-form textarea{
+  width:100%;
+  border-radius:12px;
+  border:1px solid rgba(214,179,90,.18);
+  background:rgba(4,10,20,.55);
+  color:rgba(233,238,252,.95);
+  padding:12px;
+  outline:none;
+  transition:border .2s ease, box-shadow .2s ease;
+}
+
+.cm-form input:focus,
+.cm-form textarea:focus{
+  border-color:rgba(243,212,138,.55);
+  box-shadow:0 0 0 4px rgba(214,179,90,.12);
+}
+
+.cm-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.cm-form .cm-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+@media (max-width:520px){
+  .cm-form .cm-row{
+    grid-template-columns:1fr;
+  }
+}
+
+.cm-actions{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.cm-actions .btn.primary{
+  box-shadow:0 14px 35px rgba(214,179,90,.18);
+}
+
+.cm-note{
+  margin-top:12px;
+  color:rgba(233,238,252,.70);
+}

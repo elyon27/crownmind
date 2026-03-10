@@ -1,0 +1,54 @@
+/* --- READ vs DOWNLOAD differentiation --- */
+
+.action-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:10px;
+}
+
+/* READ button style */
+
+.btn.read{
+  background: transparent !important;
+  border:1px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.92);
+}
+
+.btn.read:hover{
+  border-color: rgba(255,255,255,.38);
+  transform: translateY(-1px);
+}
+
+/* DOWNLOAD emphasis */
+
+.btn.primary.download{
+  box-shadow:0 10px 22px rgba(109,40,217,.18);
+}
+
+.microcopy{
+  font-size:.82rem;
+  opacity:.78;
+  margin:8px 0 0;
+  line-height:1.35;
+}
+
+.action-hint{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-size:.85rem;
+  opacity:.85;
+  margin-top:6px;
+}
+
+.action-hint span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+}

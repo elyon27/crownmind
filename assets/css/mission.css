@@ -1,0 +1,800 @@
+/* Mission badge styling */
+
+.narrow-badge,
+.ttu-badge,
+.christian-badge,
+.scrolls-badge,
+.freebooks-badge,
+.articles-badge,
+.transhouses-badge,
+.agartha-badge,
+.altars-badge,
+.stmichael-badge,
+.unicon-badge,
+.tenioholdings-badge,
+.zedarts-badge,
+.consciousness-badge,
+.insightresearch-badge,
+.nanotech-badge,
+.age-reversal-badge,
+.crystals-magnets-badge,
+.tenio-web-badge{
+
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.4px;
+
+  background: linear-gradient(
+    135deg,
+    #5a3d00 0%,
+    #a67c00 35%,
+    #ffd700 60%,
+    #a67c00 85%
+  );
+
+  color:#1a1a1a;
+  border:1px solid rgba(255,215,0,.6);
+
+  box-shadow:
+    0 0 8px rgba(255,215,0,.35),
+    inset 0 0 6px rgba(255,255,255,.25);
+
+  transition: all .3s ease;
+}
+
+.narrow-badge:hover,
+.ttu-badge:hover,
+.christian-badge:hover,
+.scrolls-badge:hover,
+.freebooks-badge:hover,
+.articles-badge:hover,
+.transhouses-badge:hover,
+.agartha-badge:hover,
+.altars-badge:hover,
+.stmichael-badge:hover,
+.unicon-badge:hover,
+.tenioholdings-badge:hover,
+.zedarts-badge:hover,
+.consciousness-badge:hover,
+.insightresearch-badge:hover,
+.nanotech-badge:hover,
+.age-reversal-badge:hover,
+.crystals-magnets-badge:hover,
+.tenio-web-badge:hover{
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 14px rgba(255,215,0,.6),
+    0 4px 15px rgba(0,0,0,.35);
+
+  background: linear-gradient(
+    135deg,
+    #7a5200 0%,
+    #ffd700 50%,
+    #7a5200 100%
+  );
+}
+
+
+      /* 1)Narrow Way Mandate badge (Mission header tab) */
+       .narrow-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .narrow-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 2)Tenio Theological University badge (Mission header tab) */
+      .ttu-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .ttu-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 3)Christian Books badge (Mission header tab) */
+      .christian-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .christian-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 4)Scrolls Of Revelation badge (Mission header tab) */
+      .scrolls-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .scrolls-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 5)Free Books badge (Mission header tab) */
+      .freebooks-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .freebooks-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 6)Articles badge (Mission header tab) */
+      .articles-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .articles-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 7)Transformation Houses badge (Mission header tab) */
+      .transhouses-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .transhouses-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 8)Agartha badge (Mission header tab) */
+      .agartha-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .agartha-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 9)Altars Of Sacrifice badge (Mission header tab) */
+      .altars-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .altars-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 10)St. Michael's Religious Store badge (Mission header tab) */
+      .stmichael-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .stmichael-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 10)Unified Consciousness badge (Mission header tab) */
+      .unicon-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .unicon-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 11)Tenio Holdings badge (Mission header tab) */
+      .tenioholdings-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .tenioholdings-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 12)ZedKhan Online Art Gallery badge (Mission header tab) */
+      .zedarts-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .zedarts-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 13)Books On Consciousness badge (Mission header tab) */
+      .consciousness-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .consciousness-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 14)Insightworks Research badge (Mission header tab) */
+      .insightresearch-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .insightresearch-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 15)Nanotechnology Research badge (Mission header tab) */
+      .nanotech-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .nanotech-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 16)Age Reversal Technology badge (Mission header tab) */
+      .age-reversal-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .age-reversal-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 17)Crystals And Magnets badge (Mission header tab) */
+      .crystals-magnets-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .crystals-magnets-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }
+
+      /* 18)Tenio Web Developer badge (Mission header tab) */
+      .tenio-web-badge {
+       text-decoration: none;
+       font-weight: 600;
+       letter-spacing: 0.4px;
+
+       background: linear-gradient(
+       135deg,
+       #5a3d00 0%,
+       #a67c00 35%,
+       #ffd700 60%,
+       #a67c00 85%
+       );
+
+       color: #1a1a1a;
+       border: 1px solid rgba(255, 215, 0, 0.6);
+
+       box-shadow:
+       0 0 8px rgba(255, 215, 0, 0.35),
+       inset 0 0 6px rgba(255, 255, 255, 0.25);
+
+       transition: all 0.3s ease;
+      }
+
+      .tenio-web-badge:hover {
+       transform: translateY(-2px);
+       box-shadow:
+       0 0 14px rgba(255, 215, 0, 0.6),
+       0 4px 15px rgba(0, 0, 0, 0.35);
+
+       background: linear-gradient(
+       135deg,
+       #7a5200 0%,
+       #ffd700 50%,
+       #7a5200 100%
+       );
+      }

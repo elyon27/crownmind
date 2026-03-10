@@ -1,0 +1,41 @@
+/* Universal badge behavior + active state (applies to ALL books) */
+
+.meta .badge.selectable{
+  cursor:pointer !important;
+  pointer-events:auto !important;
+  user-select:none;
+}
+
+.meta .badge.selectable:focus{
+  outline: 2px solid rgba(255,255,255,.55);
+  outline-offset: 2px;
+}
+
+.meta .badge.selectable.active-badge{
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.5) !important;
+}
+
+
+/* Clickable cover image */
+
+.cover-link{
+  display:block;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.cover-link img{
+  display:block;
+}
+
+.cover-link:focus{
+  outline: 2px solid rgba(255,255,255,.55);
+  outline-offset: 3px;
+  border-radius:10px;
+}
+
+.cover-link:hover{
+  transform: translateY(-2px);
+  transition: transform .18s ease;
+}

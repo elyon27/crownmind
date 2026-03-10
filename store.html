@@ -14,41 +14,9 @@
   <title>Store — CrownMind Institute</title>
 
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/store.css" />
+  <link rel="stylesheet" href="assets/css/secure.css" />
 
-  <style>
-    /* Universal badge behavior + active state (applies to ALL books) */
-    .meta .badge.selectable{
-      cursor:pointer !important;
-      pointer-events:auto !important;
-      user-select:none;
-    }
-    .meta .badge.selectable:focus{
-      outline: 2px solid rgba(255,255,255,.55);
-      outline-offset: 2px;
-    }
-    .meta .badge.selectable.active-badge{
-      background: rgba(255,255,255,.12) !important;
-      border-color: rgba(255,255,255,.5) !important;
-    }
-
-    /* Optional: small “Secure Checkout” chip */
-    .secure-mini{
-      display:inline-flex; align-items:center; gap:8px;
-      margin-left:10px; padding:6px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      font-size:.85rem; opacity:.9;
-      white-space:nowrap;
-    }
-    @media (max-width: 860px){ .secure-mini{ display:none; } }
-
-    /* Clickable cover image (Pursuing Personal Growth) */
-    .cover-link{ display:block; border-radius:8px; overflow:hidden; }
-    .cover-link img{ display:block; }
-    .cover-link:focus{ outline: 2px solid rgba(255,255,255,.55); outline-offset: 3px; border-radius:10px; }
-    .cover-link:hover{ transform: translateY(-2px); transition: transform .18s ease; }
-
-  </style>
 </head>
 
 <body>
