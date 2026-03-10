@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="ZG0006">ZG0006</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Mary in Christian Theology: A Comparative Biblical and Historical Examination of Marian Doctrine</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A TTU Seminary-Level Exegetical Commentary
+
+Introduction
+
+Mary, the mother of Jesus Christ, occupies a unique and honored place within Christian theology. All major branches of Christianity affirm that she was chosen by God to bear the incarnate Son and therefore holds a singular role in the history of redemption. However, Christian traditions differ significantly in how they interpret the extent of her honor, theological status, and devotional role.
+
+This study explores Marian theology through three major streams of Christian thought:
+
+- Roman Catholic Tradition
+- Eastern Orthodox Tradition
+- Protestant Tradition
+
+While these traditions diverge in certain doctrinal developments, they share a common foundation in the biblical testimony concerning Mary's faith, humility, and participation in the Incarnation.
+
+I. The Biblical Foundation of Marian Theology
+
+Before examining later theological developments, it is essential to establish the biblical portrait of Mary.
+
+Luke 1:28 - “Hail, thou that art highly favoured, the Lord is with thee.”
+
+Greek Analysis
+The phrase “highly favoured” translates: κεχαριτωμένη (kecharitōmenē) Derived from χαριτόω (charitoō) meaning:
+
+- to show grace
+- to bestow favor.
+
+The perfect passive participle indicates that Mary had received grace from God and remained in that state of divine favor.
+This verse affirms that Mary's role originates entirely in God's gracious election.
+
+II. Mary in Roman Catholic Theology
+Roman Catholic doctrine developed a highly structured theology concerning Mary. Key Marian Doctrines
+
+- Mother of God (Theotokos)
+- Perpetual Virginity
+- Immaculate Conception
+
+Assumption of Mary
+
+1. Mary as Theotokos
+The title Theotokos (“God-bearer”) was formally affirmed at the Council of Ephesus (AD 431). This title protects the doctrine of the Incarnation by affirming that the one Mary bore was truly God incarnate. Luke 1:43 “The mother of my Lord.”
+
+2. Immaculate Conception
+Defined in 1854, this doctrine teaches that Mary was preserved from original sin from the moment of her conception. Catholic theology interprets Luke 1:28 (kecharitōmenē) as evidence of a unique fullness of grace.
+
+3. The Assumption
+Proclaimed in 1950, the doctrine states that Mary was taken bodily into heaven. While Scripture does not explicitly describe this event, Catholic theology sees it as consistent with God's honoring of the mother of Christ.
+
+III. Mary in Eastern Orthodox Theology
+Eastern Orthodoxy also gives Mary a very high place in Christian devotion, though with different theological emphases.
+Orthodox Christians refer to Mary primarily as: Theotokos (God-bearer) However, Orthodox theology does not define the Immaculate Conception in the same manner as Roman Catholic theology.
+
+Orthodox Emphasis: Orthodox tradition highlights Mary's:
+
+- humility
+- obedience
+- participation in the mystery of salvation.
+
+She is honored as the most exalted of the saints, but always in relation to Christ. The Orthodox liturgy frequently proclaims:
+“More honorable than the cherubim, and beyond compare more glorious than the seraphim.” Yet Orthodox theology maintains that Christ alone is the source of salvation.
+
+IV. Mary in Protestant Theology
+The Protestant Reformation emphasized returning to Scripture as the primary authority (sola Scriptura). Reformers such as Martin Luther and John Calvin honored Mary as the mother of Christ but rejected later doctrinal developments lacking explicit biblical foundation.
+
+Protestant Emphasis: Protestant theology typically affirms:
+
+- The virgin birth of Christ
+- Mary's faith and obedience
+- Her role in the Incarnation.
+
+However, Protestants generally reject doctrines such as:
+
+- the Immaculate Conception
+- Marian intercession
+- the Assumption.
+
+Instead, they emphasize passages such as: Luke 11:27–28 “Blessed rather are those who hear the word of God and obey it.”
+Here Jesus redirects attention from biological relationship to spiritual obedience.
+
+V. Theological Synthesis
+Despite doctrinal differences, several truths unite the Christian traditions regarding Mary.
+
+1. Mary was chosen by God
+Her role arises from divine grace, not personal merit.
+
+2. Mary demonstrated exemplary faith
+Her response to the angel reflects profound trust in God.
+
+3. Mary participated uniquely in the Incarnation
+Through her, the eternal Word entered human history.
+
+4. Christ remains the center of salvation
+All authentic Marian theology ultimately directs attention toward Christ.
+
+VI. Christological Safeguard
+Historically, Marian doctrine developed primarily as a way of protecting the doctrine of Christ. The title Theotokos does not elevate Mary above Christ but protects the truth that the one she bore is fully divine. Thus the proper theological relationship is:
+
+- Mary points to Christ.
+- Christ reveals the Father.
+
+Conclusion
+
+Mary stands as one of the most remarkable figures in the biblical narrative. Her life exemplifies humility, faith, and obedience to the will of God. While Christian traditions vary in their doctrinal interpretations and devotional practices, all acknowledge her unique role in the mystery of the Incarnation. A balanced biblical perspective recognizes Mary as blessed among women, honored for her obedience and faith, yet always directing worship and ultimate devotion toward Jesus Christ, the Savior of the world.
+
+As Mary's own song declares:
+
+“My soul magnifies the Lord.” — Luke 1:46
+
+In this way, the biblical witness preserves the proper theological balance: honoring Mary while exalting Christ as the center of redemption.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>
