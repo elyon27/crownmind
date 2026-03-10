@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="ZG0003">ZG0003</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Fixing the Mind Upon God: Divine Restoration Through Contemplation of God's Lovingkindness </h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A Biblical-Theological Exposition
+
+Introduction
+
+The exhortation to focus the mind upon God reflects a central theme in biblical spirituality: the orientation of human thought toward the character and presence of God leads to spiritual stability, renewal, and deliverance. Scripture consistently teaches that the inner life of the mind and heart determines the trajectory of one's spiritual condition. When the mind is governed by anxiety, despair, or worldly preoccupation, the soul becomes vulnerable to spiritual collapse. Conversely, when the mind is deliberately directed toward God—His character, promises, and steadfast love—the believer experiences restoration, peace, and deliverance. This principle rests upon the broader biblical doctrine that the mind serves as the gateway of spiritual transformation.
+
+I. The Mind as the Center of Spiritual Orientation
+Romans 12:2
+
+“Be not conformed to this world: but be ye transformed by the renewing of your mind.”
+
+Greek Analysis
+
+The word “mind” is translated from: νοῦς (nous) Meaning:
+
+- intellect
+- perception
+- the faculty of spiritual understanding.
+
+Paul teaches that transformation occurs through the renewal of the mind, indicating that spiritual change begins internally before it manifests externally. The term “transformed” derives from: μεταμορφόω (metamorphoō) Meaning:
+
+- to change form
+- to undergo inward transformation.
+
+This transformation occurs as the believer's thoughts become aligned with the truth of God.
+
+II. Fixing the Mind Upon God
+Isaiah 26:3
+
+“Thou wilt keep him in perfect peace, whose mind is stayed on thee.”
+
+Hebrew Word Study
+
+The phrase “mind is stayed” comes from the Hebrew root: סָמַךְ (sāmak) Meaning:
+
+- to lean upon
+- to support oneself upon
+- to rest securely.
+
+Thus the verse describes a mind anchored upon God, leaning upon Him as its foundation. The promise attached to this posture is perfect peace, literally expressed in Hebrew as: שָׁלוֹם שָׁלוֹם (shalom shalom) A doubled expression signifying complete and enduring peace.
+
+III. Meditating on the Lovingkindness of God
+Psalm 48:9
+
+“We have thought of thy lovingkindness, O God, in the midst of thy temple.”
+
+Hebrew Analysis
+
+The word “lovingkindness” is: חֶסֶד (ḥesed) This term represents one of the richest theological concepts in the Hebrew Scriptures. It encompasses:
+
+- covenant faithfulness
+- steadfast love
+- mercy
+- loyal devotion.
+
+Meditating upon God's ḥesed reminds believers that their relationship with God rests upon His faithful character rather than their fluctuating emotions. The act of contemplation strengthens faith and stabilizes the soul.
+
+IV. The Descent into the Pit of Destruction
+Psalm 40:2
+
+“He brought me up also out of an horrible pit, out of the miry clay.”
+
+Hebrew Word Study
+
+The phrase “horrible pit” translates the expression: בּוֹר שָׁאוֹן (bor shaon) Meaning:
+
+- a pit of chaos
+- a place of ruin or destruction.
+
+In biblical imagery the pit represents states of despair, danger, and spiritual collapse. However, the psalm emphasizes that deliverance originates from God, not from human self-effort.
+
+V. The Lifting of the Spirit
+Psalm 3:3
+
+“But thou, O Lord, art a shield for me; my glory, and the lifter up of mine head.”
+
+This verse portrays God as the One who restores dignity and hope to the discouraged soul. The expression “lifter up of mine head” symbolizes the reversal of shame, despair, and defeat. In ancient Near Eastern culture, a bowed head represented humiliation, while the lifting of the head symbolized restoration and renewed confidence. Thus God not only rescues from destruction but restores the inner life of the believer.
+
+VI. The New Testament Perspective
+Colossians 3:2
+
+“Set your affection on things above, not on things on the earth.”
+
+Greek Word Study
+
+The verb “set your affection” comes from: φρονέω (phroneō) Meaning:
+
+- to direct one's mindset
+- to cultivate a particular way of thinking.
+
+The apostle Paul calls believers to develop a God-centered orientation of the mind, one that reflects the reality of their new life in Christ. This mental orientation shapes ethical behavior and spiritual resilience.
+
+VII. Christ as the Source of Deliverance
+Matthew 11:28
+
+“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”
+
+Jesus presents Himself as the ultimate refuge for those burdened by despair and spiritual exhaustion. The invitation implies more than physical rest; it points to the restoration of the soul. Through communion with Christ, the believer experiences liberation from the oppressive forces that drag the soul toward destruction.
+
+VIII. Theological Implications
+
+Living with a mind fixed upon God produces several doctrinal outcomes:
+
+1. Spiritual Stability - A God-centered mind resists the instability caused by worldly anxieties and fears.
+2. Renewed Joy - Meditating on God's lovingkindness nurtures gratitude and hope.
+3. Deliverance from Despair - The awareness of God's presence lifts the believer from emotional and spiritual darkness.
+4. Strengthened Faith - Continual reflection upon God's character deepens trust in His promises.
+
+Conclusion
+
+The biblical witness consistently teaches that the orientation of the mind toward God transforms the condition of the soul. When believers fill their thoughts with the remembrance of God's lovingkindness and faithfulness, they position themselves within the restorative influence of His presence. God responds to such devotion by lifting the discouraged spirit, restoring hope, and delivering His people from the destructive forces that threaten their lives. Thus the believer learns to live with a mind anchored in the character of God, confident that the One who lifts the soul from the pit of destruction will sustain and restore all who trust in Him. As the psalmist declares: “Why art thou cast down, O my soul? hope thou in God.” — Psalm 42:11
+Through the continual remembrance of God's lovingkindness, the believer finds renewal, peace, and deliverance.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

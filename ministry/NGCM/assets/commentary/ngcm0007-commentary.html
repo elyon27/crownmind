@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0007">NGCM0007</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Testing God and Trusting God: Christ’s Rejection of Presumptuous Faith</h1>
+        <p>A Theological Commentary on Matthew 4:7</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Jesus said to him, ‘Again it is written, You shall not put the Lord your God to the test.’”
+— Gospel of Matthew 4:7
+
+Key Doctrine
+
+The Sin of Presumption and the Proper Nature of Faith
+
+This verse occurs within the account of the temptation of Jesus Christ in the wilderness, where He confronts the deceptive challenges of Satan. The passage reveals a crucial theological principle: genuine faith trusts God without demanding proof through reckless or manipulative actions. Christ’s response affirms that God is not to be tested through acts of presumption. Instead, the believer is called to exercise humble trust in God’s character and promises. The doctrine presented in this passage therefore concerns the distinction between faithful trust and sinful testing of God.
+
+Exposition
+1. The Context of the Wilderness Temptation
+
+In the surrounding narrative of Gospel of Matthew 4, Christ undergoes a period of testing in the wilderness following His baptism. The adversary attempts to distort the mission of Christ by encouraging Him to misuse His divine authority for self-serving purposes. In this particular temptation, the devil urges Christ to throw Himself from the pinnacle of the temple, quoting Scripture in an attempt to justify the act. This moment reveals an important theological insight: Scripture can be misused when it is isolated from its proper context and purpose. Christ therefore responds by correcting the misuse of Scripture with another passage drawn from the law of God.
+
+2. The Authority of Scripture in Spiritual Warfare
+
+“Again it is written”
+
+Christ responds to temptation by appealing to the authority of Scripture. This phrase demonstrates the principle that the Word of God serves as the ultimate authority in discerning truth from deception. The temptations of Christ reveal that spiritual conflict is often a battle over the correct interpretation and application of Scripture. Christ does not rely on miraculous displays of power but instead defeats the temptation through faithful submission to the written Word of God.
+
+3. The Prohibition Against Testing God
+
+“You shall not put the Lord your God to the test”
+
+The statement quoted by Christ originates from the book of Book of Deuteronomy, where Israel is warned not to repeat the sin committed at Massah in the wilderness. At Massah the people of Israel demanded proof of God’s presence by questioning whether God was truly among them. This behavior represented not genuine faith but rebellious doubt disguised as inquiry. By citing this command, Christ affirms that faith does not attempt to force God into demonstrating His power according to human demands. True trust rests in the character and promises of God rather than in dramatic displays of proof.
+
+4. The Nature of Presumptuous Faith
+The temptation presented by the adversary encourages Christ to manipulate God’s promise for the purpose of self-validation. Such an act would represent presumption rather than faith. Presumption occurs when a person places themselves in unnecessary danger while expecting God to intervene miraculously. Faith, however, operates within the boundaries of obedience and reverence. Christ’s refusal demonstrates that divine promises must never be twisted into justification for reckless behavior.
+
+5. The Perfect Obedience of Christ
+This moment also reveals the perfect obedience of Christ as the true representative of humanity. Where Israel failed in the wilderness by testing God, Christ remains faithful and obedient. Thus the temptation narrative presents Christ as the true and faithful Son who fulfills the calling that Israel failed to accomplish. Through His obedience, Christ demonstrates the proper relationship between humanity and God: reverent trust rather than presumptuous testing.
+
+Greek Notes
+
+Several key Greek expressions highlight the theological meaning of the passage.
+
+“πάλιν γέγραπται” (palin gegraptai)
+Translated “again it is written,” this phrase emphasizes the authority of Scripture as the definitive standard in matters of faith and obedience.
+
+“ἐκπειράσεις” (ekpeiraseis)
+This term means “to test” or “to put to the proof.” In this context it refers to an attempt to force God to demonstrate His power. The term carries the connotation of challenging or provoking God through actions that demand divine validation.
+
+“Κύριον τὸν Θεόν σου” (Kyrion ton Theon sou)
+This phrase identifies God as the sovereign Lord to whom reverence and obedience are owed. Thus the command underscores the seriousness of attempting to manipulate or challenge the authority of God.
+
+Ministry Implications
+
+For those studying and serving within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several essential lessons.
+
+1. Scripture Must Be Interpreted Responsibly
+Even the adversary quotes Scripture in this narrative. Therefore ministers must ensure that biblical texts are interpreted within their proper theological context.
+
+2. Faith Must Avoid Presumption
+Believers are called to trust God faithfully, but they must avoid reckless actions that demand miraculous intervention.
+
+3. Spiritual Victory Comes Through the Word
+Christ’s response demonstrates that the Word of God serves as a powerful instrument in overcoming temptation and deception.
+
+4. Christ Is the Model of Perfect Obedience
+In resisting temptation, Christ reveals the pattern for faithful living: humble submission to God’s Word and unwavering trust in His authority.
+
+Concluding Reflection
+
+The encounter recorded in Gospel of Matthew 4 reveals the subtle nature of spiritual temptation. The adversary does not merely oppose God openly; he attempts to distort God’s promises and encourage presumptuous faith. Yet Jesus Christ answers with unwavering fidelity to Scripture. He refuses to manipulate God’s promises and instead demonstrates perfect trust in the Father. In doing so, Christ teaches believers that true faith does not demand proof from God but rests securely in the authority of His Word and the reliability of His character.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0037">NGCM0037</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Sword and the Kingdom: The Way of Christ Beyond Violence</h1>
+        <p>A Theological Commentary on Matthew 26:52</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Then Jesus said to him, ‘Put your sword back into its place. For all who take the sword will perish by the sword.’”
+— Gospel of Matthew 26:52
+
+Key Doctrine
+
+The Rejection of Violence in the Advancement of God’s Kingdom
+
+In this statement, Jesus Christ instructs His disciple to refrain from using violence to defend Him during His arrest. The command reveals a fundamental principle concerning the nature of the kingdom of God: the purposes of God are not accomplished through coercive force but through obedience, sacrifice, and trust in divine justice. The doctrine emphasized in this passage is that the mission of the kingdom of God advances through faithfulness to God’s will rather than through the use of violence or human force. Thus the verse highlights the contrast between the methods of earthly power and the redemptive strategy embodied in the life and mission of Christ.
+
+Exposition
+1. The Context of the Arrest of Christ
+
+The statement recorded in Gospel of Matthew 26 occurs during the arrest of Jesus in the garden of Gethsemane. As authorities arrive to take Christ into custody, one of His disciples draws a sword and strikes a servant of the high priest. The disciple likely intends to defend Christ or prevent His arrest. Yet Christ immediately rebukes this action and commands the disciple to put the weapon away. This moment reveals that the events leading to the crucifixion unfold according to the divine plan rather than through human resistance.
+
+2. The Command to Put Away the Sword
+
+“Put your sword back into its place”
+
+The instruction reflects Christ’s rejection of violence as a means of advancing His mission. Although the disciples might interpret their actions as loyalty or defense, Christ clarifies that His kingdom does not rely upon physical force. The command also demonstrates Christ’s willingness to submit to the unfolding purposes of God, even when those purposes involve suffering and death. Thus obedience to God’s will takes precedence over the instinct for self-preservation.
+
+3. The Principle of Reciprocal Violence
+
+“all who take the sword will perish by the sword”
+
+Christ articulates a broader principle concerning the destructive cycle of violence. Those who rely upon violence as a means of achieving their objectives often become victims of the same forces they unleash. History repeatedly illustrates this pattern, as conflicts fueled by aggression often result in escalating cycles of retaliation. Christ’s teaching exposes the futility of attempting to secure lasting justice through violence.
+
+4. The Contrast Between Earthly and Divine Power
+
+The statement also highlights the difference between earthly forms of power and the authority exercised by Christ. Earthly kingdoms frequently rely upon military strength, coercion, and domination. In contrast, the kingdom proclaimed by Christ advances through humility, truth, sacrifice, and love. This distinction reveals that the victory of God’s kingdom does not depend upon the defeat of enemies through violence but upon the transformation of hearts through redemption.
+
+5. The Redemptive Purpose of the Cross
+
+The refusal of Christ to defend Himself with violence points directly toward the redemptive significance of the cross. Christ willingly submits to arrest and crucifixion because these events form part of God’s plan for the salvation of humanity. Rather than resisting His enemies through force, Christ overcomes evil through sacrificial obedience. Thus the apparent weakness of the cross becomes the means through which divine victory is accomplished.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“ἀπόστρεψον” (apostrepson)
+Translated “put back” or “return,” this imperative emphasizes the immediate cessation of violent action.
+
+“μάχαιραν” (machairan)
+The term “sword” refers to a weapon used in combat, symbolizing the use of violence to achieve objectives.
+
+“ἀπολοῦνται” (apolountai)
+Meaning “will perish,” this verb indicates destruction or loss resulting from participation in violence.
+
+Together these expressions reinforce the warning that reliance on violence leads ultimately to destruction.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. The Kingdom Advances Through Faithfulness Rather Than Force
+Christian ministry must rely upon truth, compassion, and spiritual transformation rather than coercion.
+
+2. Violence Contradicts the Spirit of the Gospel
+Followers of Christ are called to embody peace and reconciliation in their interactions with others.
+
+3. Obedience to God May Involve Personal Sacrifice
+Christ’s submission to arrest demonstrates that faithfulness to God’s will may require enduring hardship rather than resisting it.
+
+4. The Cross Reveals the Power of Redemptive Love
+The victory of God’s kingdom is achieved not through domination but through sacrificial obedience and love.
+
+Concluding Reflection
+
+In the dramatic moment recorded in the Gospel of Matthew, Jesus Christ confronts the instinct to defend righteousness through violence. By commanding His disciple to put away the sword, Christ reveals that the kingdom of God operates according to principles radically different from those of earthly power. The path of the kingdom leads not through violent resistance but through faithful obedience to God’s redemptive purposes. Through the surrender of the cross, Christ demonstrates that the ultimate victory over evil comes not through the sword but through sacrificial love that transforms the world.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

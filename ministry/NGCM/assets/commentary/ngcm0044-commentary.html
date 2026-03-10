@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0044">NGCM0044</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Wisdom from Above: The Character and Fruit of Divine Wisdom</h1>
+        <p>A Theological Commentary on James 3:17-18</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere. And a harvest of righteousness is sown in peace by those who make peace.”
+— Epistle of James 3:17–18
+
+Key Doctrine
+
+The Ethical Character and Fruitful Outcome of Divine Wisdom
+
+In this passage, James contrasts earthly wisdom with the wisdom that originates from God. While human wisdom often manifests in ambition, rivalry, and disorder, divine wisdom reflects the moral character of God and produces righteousness within the community of believers. The doctrine emphasized in this passage is that true wisdom originates from God and manifests itself through moral purity, humility, compassion, and the cultivation of peace within human relationships. Thus divine wisdom is recognized not merely by intellectual insight but by the ethical transformation it produces.
+
+Exposition
+1. The Contrast Between Earthly and Heavenly Wisdom
+
+The teaching recorded in Epistle of James 3 occurs within a broader discussion concerning the nature of wisdom and the use of speech. Earlier in the chapter, James describes forms of wisdom characterized by envy and selfish ambition. Such wisdom produces conflict, disorder, and destructive behavior within communities. In contrast, the wisdom that comes from above reflects the character of God and leads to harmony and righteousness. Thus the passage presents two fundamentally different sources of guidance: human ambition and divine wisdom.
+
+2. The Purity of Divine Wisdom
+
+“first pure”
+
+The description of heavenly wisdom begins with purity. Purity refers to moral integrity and freedom from corrupt motives. This quality reflects the holiness of God, who is the source of true wisdom. Because divine wisdom originates from God, it cannot coexist with selfish ambition, deception, or moral compromise. Thus purity forms the foundation upon which all other characteristics of divine wisdom are built.
+
+3. The Peaceable Nature of Wisdom
+
+“then peaceable”
+
+Divine wisdom promotes harmony rather than conflict. Individuals guided by heavenly wisdom seek reconciliation and unity rather than domination or rivalry. Peaceable wisdom recognizes the value of relationships and strives to preserve the well-being of the community. Thus wisdom from above fosters environments in which cooperation and mutual respect flourish.
+
+4. Gentleness and Openness
+
+“gentle, open to reason”
+
+The wisdom that comes from God expresses itself through humility and teachability. Gentleness reflects a disposition that avoids harshness or arrogance in dealing with others. Being open to reason indicates a willingness to listen, consider alternative perspectives, and seek understanding. These qualities contrast sharply with the stubbornness and pride often associated with human wisdom.
+
+5. Mercy and Good Fruit
+
+“full of mercy and good fruits”
+
+Divine wisdom manifests itself in compassionate action. Mercy involves extending kindness and forgiveness toward those who are weak or in need. The phrase “good fruits” refers to the tangible outcomes of a life guided by wisdom. Such fruits include acts of generosity, service, and moral integrity. Thus wisdom from above produces visible expressions of goodness in the life of the believer.
+
+6. Impartiality and Sincerity
+
+“impartial and sincere”
+
+The final qualities described by James highlight fairness and authenticity. Impartiality indicates the absence of favoritism or discrimination. Sincerity refers to genuineness and freedom from hypocrisy. Together these qualities ensure that divine wisdom remains consistent with the character of God, whose judgments are righteous and whose intentions are pure.
+
+7. The Harvest of Righteousness
+
+“a harvest of righteousness is sown in peace by those who make peace”
+
+The passage concludes by describing the long-term outcome of divine wisdom. Just as a farmer sows seeds that eventually produce a harvest, those who cultivate peace create conditions that allow righteousness to flourish. The metaphor emphasizes that the practice of peace contributes to the moral and spiritual health of the community. Thus peacemakers participate in the work of establishing the righteousness of God within the world.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“σοφία ἄνωθεν” (sophia anōthen)
+Translated “wisdom from above,” this phrase emphasizes the divine origin of true wisdom.
+
+“ἁγνή” (hagnē)
+Meaning “pure,” this term refers to moral cleanliness and integrity.
+
+“εἰρηνική” (eirēnikē)
+Translated “peaceable,” this word describes a disposition that promotes harmony.
+
+“καρπῶν ἀγαθῶν” (karpōn agathōn)
+Meaning “good fruits,” this phrase refers to the visible results of a righteous life.
+
+“καρπὸς δικαιοσύνης” (karpos dikaiosynēs)
+Translated “harvest of righteousness,” this expression describes the ultimate outcome of living according to divine wisdom.
+
+Together these expressions portray wisdom as a divine gift that produces tangible transformation within individuals and communities.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several significant insights.
+
+1. True Wisdom Must Reflect God’s Character
+Christian leadership and teaching must embody the qualities described by James.
+
+2. Wisdom Is Demonstrated Through Conduct
+Spiritual maturity becomes visible through humility, compassion, and integrity.
+
+3. Peacemaking Strengthens the Community of Faith
+Believers contribute to the health of the church by cultivating reconciliation and harmony.
+
+4. Righteousness Emerges Through the Practice of Peace
+Communities guided by divine wisdom create environments where righteousness can flourish.
+
+Concluding Reflection
+
+In the teaching recorded in the Epistle of James, the apostle James reveals that true wisdom cannot be separated from moral character. The wisdom that comes from above reflects the purity, mercy, and peace that characterize the nature of God. Where such wisdom is embraced, relationships are restored, communities flourish, and righteousness grows like a harvest in fertile soil. Thus the pursuit of divine wisdom leads believers not only to greater understanding but also to lives that embody the peace and goodness of the kingdom of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

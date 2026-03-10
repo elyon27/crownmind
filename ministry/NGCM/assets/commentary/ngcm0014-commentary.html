@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0014">NGCM0014</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Blessed Are Those Who Mourn: The Comfort of God in the Kingdom</h1>
+        <p>A Theological Commentary on Matthew 5:4</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are those who mourn, for they shall be comforted.”
+— Gospel of Matthew 5:4
+
+Key Doctrine
+
+God’s Comfort for Those Who Grieve Over Sin and Brokenness
+
+This verse forms the second Beatitude spoken by Jesus Christ in the Sermon on the Mount. Following the declaration that the poor in spirit inherit the kingdom, Christ pronounces blessing upon those who mourn. The mourning described here extends beyond ordinary human sorrow. It refers primarily to the deep spiritual grief experienced by those who recognize the reality of sin, both in their own lives and in the fallen condition of the world. The doctrine emphasized in this passage is that those who respond to sin and brokenness with sincere repentance and godly sorrow will receive the restoring comfort of God.
+
+Exposition
+1. The Meaning of Blessedness in the Beatitudes
+
+“Blessed are…”
+
+As with the other Beatitudes in the Gospel of Matthew, the term “blessed” refers to a condition of divine favor rather than merely emotional happiness. The blessing described by Christ reflects the state of those who live under the gracious approval of God. It represents the flourishing that arises when a life is aligned with the values of the kingdom. Thus the Beatitudes reveal the paradoxical nature of the kingdom of heaven: those who appear weak or sorrowful in worldly terms are often those who experience the deepest blessing from God.
+
+2. The Nature of Mourning
+
+“those who mourn”
+
+The mourning described in this verse should be understood primarily in a spiritual sense. It refers to the sorrow experienced by individuals who recognize the depth of sin and its consequences. This includes grief over personal wrongdoing as well as sorrow over the presence of injustice and suffering in the world. Such mourning is closely connected to repentance. When individuals become aware of their spiritual poverty before God, they naturally experience grief over the reality of sin. This mourning therefore represents a proper response to the fallen condition of humanity.
+
+3. The Relationship Between Repentance and Mourning
+
+The progression from the first Beatitude to the second reveals a logical spiritual sequence. Those who are poor in spirit recognize their spiritual need before God. This recognition leads naturally to mourning over sin and brokenness. Thus mourning represents the emotional and spiritual response that flows from humility before God. This grief is not destructive despair but godly sorrow that leads to repentance and restoration.
+
+4. The Promise of Divine Comfort
+
+“for they shall be comforted”
+
+The promise attached to the Beatitude assures that those who mourn will receive comfort from God. This comfort includes the assurance of forgiveness, the restoration of relationship with God, and the hope of future redemption. The comfort of God also anticipates the ultimate restoration of creation when sin, suffering, and death will be fully overcome. Thus the promise of comfort operates on two levels:
+
+- present consolation through the grace of God
+- future fulfillment in the complete restoration of God’s kingdom
+
+5. The Messianic Source of Comfort
+
+The comfort promised in this Beatitude ultimately flows from the redemptive work of Jesus Christ. Through His life, death, and resurrection, Christ provides the means by which sin is forgiven and broken relationships are restored. The mourning of repentance therefore gives way to the joy of redemption. Those who grieve over sin find comfort in the grace made available through the Messiah.
+
+Greek Notes
+
+Several key Greek terms illuminate the theological depth of this verse.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this word describes a state of divine favor and spiritual flourishing.
+
+“πενθοῦντες” (penthountes)
+The term translated “those who mourn” refers to deep sorrow or lamentation. In biblical usage it often describes grief associated with repentance or recognition of sin.
+
+“παρακληθήσονται” (paraklēthēsontai)
+Translated “they shall be comforted,” this future passive verb indicates that the comfort originates from God.
+
+The term is related to the concept of encouragement, consolation, and restoration. Together these terms emphasize that those who respond to sin with sincere sorrow will experience the restorative comfort of God.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. Genuine Repentance Includes Godly Sorrow
+True repentance involves more than intellectual acknowledgment of wrongdoing. It includes sincere grief over sin and its consequences.
+
+2. The Gospel Brings Comfort to the Broken
+The message of the kingdom offers hope and restoration to those who experience sorrow over the brokenness of the world.
+
+3. Ministry Must Address Both Sin and Healing
+Faithful ministry confronts the reality of sin while also proclaiming the comfort and restoration available through God’s grace.
+
+4. Future Hope Sustains Present Sorrow
+Believers who mourn over the present condition of the world find encouragement in the promise that God will ultimately restore creation.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ declares that those who mourn are truly blessed. This declaration overturns worldly expectations, which often seek to avoid sorrow at all costs. Yet Christ reveals that those who grieve over sin and brokenness are precisely those who stand closest to the heart of God. For in their mourning they discover the comfort that comes through divine forgiveness, restoration, and the hope of a future in which God’s kingdom fully triumphs over all sorrow.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

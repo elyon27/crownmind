@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0038">NGCM0038</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Drawn by the Father: Divine Initiative in Salvation</h1>
+        <p>A Theological Commentary on John 6:44</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“No one can come to Me unless the Father who sent Me draws him. And I will raise him up on the last day.”
+— Gospel of John 6:44
+
+Key Doctrine
+
+The Sovereign Initiative of God in Human Salvation
+
+In this declaration, Jesus Christ reveals the foundational role of divine initiative in the process of salvation. Human beings do not approach Christ solely through their own intellectual or moral capacity; rather, the movement toward Christ begins with the drawing work of the Father. The doctrine emphasized in this passage is that salvation originates in the gracious initiative of God, who draws individuals toward Christ through the work of divine revelation and spiritual transformation. Thus the coming of a person to Christ reflects not merely human decision but the prior activity of God’s grace.
+
+Exposition
+1. The Context of the Bread of Life Discourse
+
+The statement recorded in Gospel of John 6 appears within the broader teaching often referred to as the Bread of Life discourse. Following the miraculous feeding of the multitude, Jesus explains that the true bread from heaven is not merely physical nourishment but the life that comes through faith in Him. Many listeners struggle to understand or accept His claims.
+In response, Christ explains that the ability to recognize and come to Him depends upon the work of the Father. Thus the passage addresses the deeper spiritual dynamics underlying faith.
+
+2. The Limitation of Human Ability
+
+“No one can come to Me”
+
+Christ begins with a statement emphasizing the limitations of human ability. The phrase indicates that entry into relationship with Christ cannot be achieved solely through human effort, reasoning, or religious observance. Humanity, affected by sin and spiritual blindness, lacks the capacity to approach God independently. Thus Christ reveals the necessity of divine intervention in awakening the human heart to spiritual truth.
+
+3. The Drawing of the Father
+
+“unless the Father who sent Me draws him”
+
+The movement toward Christ originates with the Father. The term translated “draws” suggests a powerful attraction or influence exerted by God upon the human heart. This drawing does not negate human response but enables it by awakening spiritual awareness and desire for truth. Through this divine initiative, individuals become receptive to the message of Christ and capable of responding in faith. Thus the work of salvation reflects the cooperation between divine grace and human response.
+
+4. The Relationship Between the Father and the Son
+
+The verse also highlights the unity between the Father and the Son in the work of redemption. The Father draws individuals toward Christ, and Christ receives those who come to Him. This relationship reveals the coordinated mission within the divine purpose of salvation. The Father initiates the movement toward redemption, while the Son fulfills the promise of eternal life for those who respond.
+
+5. The Assurance of Resurrection
+
+“And I will raise him up on the last day”
+
+The verse concludes with a promise concerning the ultimate destiny of those drawn to Christ. The phrase “raise him up” refers to the resurrection that will occur at the culmination of history. Thus the work of salvation extends beyond the present life, guaranteeing participation in the future restoration of creation. The promise emphasizes that those who come to Christ through the drawing of the Father possess a secure hope grounded in the authority of Christ over life and death.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“οὐδεὶς δύναται” (oudeis dynatai)
+Translated “no one can,” this phrase emphasizes human inability apart from divine assistance.
+
+“ἑλκύσῃ” (helkysē)
+Meaning “draws,” this verb conveys the idea of pulling or attracting with compelling force.
+
+“πέμψας με Πατήρ” (pempsas me Patēr)
+Translated “the Father who sent Me,” this phrase highlights the divine mission of Christ.
+
+“ἀναστήσω αὐτὸν” (anastēsō auton)
+Meaning “I will raise him up,” this expression refers to the resurrection promised to believers.
+
+Together these terms emphasize the sovereign initiative of God and the assurance of eternal life through Christ.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several essential insights.
+
+1. Salvation Begins with the Grace of God
+Faith arises in response to the divine initiative that draws individuals toward Christ.
+
+2. Evangelism Depends on the Work of God
+While believers proclaim the gospel, the transformation of the heart ultimately occurs through the work of God.
+
+3. Humility Is Essential in Spiritual Life
+Recognizing the role of divine grace cultivates humility and gratitude among believers.
+
+4. The Promise of Resurrection Provides Hope
+The assurance that Christ will raise believers on the last day strengthens faith in the midst of present challenges.
+
+Concluding Reflection
+
+In the teaching recorded in the Gospel of John, Jesus Christ reveals that the journey of faith begins with the gracious initiative of God. The Father draws individuals toward the Son, awakening their hearts to recognize the truth of the gospel.
+Those who respond to this divine invitation discover not only reconciliation with God but also the promise of eternal life.
+Thus salvation emerges as a work of divine grace from beginning to end, demonstrating the profound mercy of God who calls humanity into fellowship with Himself.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

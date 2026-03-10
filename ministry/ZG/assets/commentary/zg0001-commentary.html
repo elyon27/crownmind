@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="ZG0001">ZG0001</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Obedience as the Channel of Divine Power</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A Biblical-Theological Exposition
+
+Introduction
+
+The statement “Obedience Unlocks the Power of God” encapsulates a recurring theological pattern throughout the biblical narrative: God’s power is most visibly manifested through lives that are aligned with His will. Scripture consistently presents obedience not as a mechanism that produces divine power, but as the relational alignment through which God's power is released into human experience.
+
+From the covenantal framework of the Old Testament to the teachings of Christ and the apostolic witness of the New Testament, obedience functions as the spiritual posture that positions believers within the operational sphere of divine authority, provision, and intervention.
+
+Thus, obedience does not manipulate God’s power; rather, it places the believer in harmony with the divine will, allowing God's power to operate without resistance.
+
+I. Obedience as Covenant Alignment
+Deuteronomy 28:1–2
+
+“And it shall come to pass, if thou shalt hearken diligently unto the voice of the Lord thy God… that the Lord thy God will set thee on high above all nations of the earth.”
+
+Hebrew Analysis
+
+The phrase “hearken diligently” is the Hebrew construction: שָׁמוֹעַ תִּשְׁמַע (shamoa tishma)
+
+This is an infinitive absolute followed by an imperfect verb, a grammatical structure used to intensify meaning. It literally conveys:
+
+“Listening you shall listen.”
+
+The Hebrew concept of שמע (shama) does not merely refer to auditory hearing but to hearing that results in responsive action. In biblical theology, to hear God truly is to obey Him.
+
+Covenant Theology
+
+Within the Mosaic covenant, obedience positioned Israel within the sphere of divine blessing and protection. When Israel aligned with God’s law, the covenantal power of God manifested in:
+
+- national protection
+- agricultural prosperity
+- military victory
+- social stability
+
+Thus obedience served as the alignment mechanism of covenantal blessing.
+
+II. Obedience as the Evidence of Love for Christ
+John 14:23
+
+“If a man love me, he will keep my words.”
+
+Greek Word Study
+
+The word “keep” is: τηρέω (tēreō)
+
+Meaning:
+
+- to guard
+- to observe carefully
+- to preserve faithfully
+
+Christ teaches that obedience is the visible evidence of genuine love for Him. In Johannine theology, love and obedience are inseparable realities. The promise attached to this obedience is profound: “We will come unto him, and make our abode with him.”
+
+Theological Implication
+
+The presence of God is the source of divine power. Therefore, obedience leads to deeper communion with God, and where God's presence dwells, His power naturally operates.
+
+III. Obedience Precedes Miraculous Manifestation
+Luke 5:5–6
+
+“Nevertheless at thy word I will let down the net.”
+
+Peter’s response reveals the tension between human reasoning and divine command. From a professional standpoint, Peter's experience contradicted Jesus’ instruction. Yet he submitted to Christ’s authority. The miracle occurred after obedience, not before it.
+
+Biblical Pattern
+
+This pattern appears repeatedly in Scripture:
+
+Servant	   Command		                Manifestation of Power
+Moses	   Stretch out the rod	        Red Sea parted
+Joshua	   March around Jericho	Walls collapsed
+Elijah	   Repair the altar	         Fire fell from heaven
+Naaman   Wash in the Jordan	         Healing occurred
+
+In each case, obedience functioned as the point of release for divine intervention.
+
+IV. The Holy Spirit and Obedience
+Acts 5:32
+
+“The Holy Ghost, whom God hath given to them that obey him.”
+
+Greek Analysis
+
+The word “obey” is: πειθαρχέω (peitharcheō) Derived from two roots: πείθω (peithō) – to be persuaded  ἀρχή (archē) – authority
+
+Thus the term means:
+
+“to submit to authority because one is persuaded of its legitimacy.”
+
+The Holy Spirit is the active agent of God's power in the world. Scripture teaches that persistent rebellion grieves the Spirit (Ephesians 4:30) and quenches the Spirit (1 Thessalonians 5:19).
+
+Obedience therefore removes resistance to the Spirit's work.
+
+V. The Theology of Divine Alignment
+
+The biblical narrative demonstrates that God’s power flows most freely where human will aligns with divine will.
+The prophet Samuel summarized this principle succinctly: 1 Samuel 15:22 “To obey is better than sacrifice.”
+Obedience is superior to religious ritual because it reflects true submission of the heart to God's authority.
+
+Where obedience exists:
+
+- God's purposes advance
+- His presence increases
+- His power is revealed
+
+VI. Christ as the Ultimate Model of Obedience
+
+The greatest demonstration of obedience unlocking divine power is found in the life of Christ Himself.
+
+Philippians 2:8–9
+
+“He humbled himself, and became obedient unto death… Wherefore God also hath highly exalted him.”
+
+Christ's obedience to the Father resulted in:
+
+- the redemption of humanity
+- the defeat of sin
+- the resurrection
+- the exaltation of Christ
+
+The power of salvation itself flowed through the obedience of the Son.
+
+VII. The Spiritual Principle
+
+The phrase “Obedience Unlocks the Power of God” may be summarized theologically as follows:
+Divine power operates most effectively through lives that are fully surrendered to the authority and will of God.
+Obedience does not generate God's power; rather it removes the barriers that prevent that power from flowing through the believer.
+
+Conclusion
+
+Throughout Scripture, obedience is consistently portrayed as the gateway to experiencing the active work of God. It aligns the believer with divine purposes, invites the presence of God, and allows the Holy Spirit to operate without resistance.
+
+Thus the biblical witness affirms:
+When the will of man submits to the will of God, the power of God is revealed.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

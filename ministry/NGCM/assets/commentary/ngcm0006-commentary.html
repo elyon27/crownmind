@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0006">NGCM0006</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Running for the Imperishable Crown: Discipline and Reward in the Christian Life</h1>
+        <p>A Theological Commentary on Corinthians 9:24–25</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Do you not know that in a race all the runners run, but only one receives the prize? Run in such a way that you may obtain it. Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable.”
+— First Epistle to the Corinthians 9:24–25
+
+Key Doctrine
+
+Spiritual Discipline and the Pursuit of the Imperishable Reward
+
+In this passage the apostle Paul the Apostle employs the imagery of athletic competition to illustrate the disciplinedpursuit required in the Christian life. The metaphor draws from the athletic contests familiar in the Greco-Roman world, particularly the games held near Corinth, where athletes trained rigorously to obtain a temporary crown. Paul contrasts this earthly prize with the imperishable reward promised to believers, thereby emphasizing the necessity of spiritual discipline, perseverance, and purposeful living in the pursuit of eternal glory. The passage teaches that while salvation is received by grace, the Christian life requires intentional effort, endurance, and self-control as believers press toward the reward prepared by God.
+
+Exposition
+1. The Image of the Race
+
+“Do you not know that in a race all the runners run, but only one receives the prize?”
+
+Paul begins with a rhetorical question that assumes familiarity with athletic competition. The imagery of the race was widely understood in the ancient world, where athletic contests demanded intense preparation and unwavering focus. By drawing upon this image, Paul highlights the seriousness with which believers should approach their spiritual calling. Just as athletes compete with determination and focus, the Christian life must be pursued with intentional dedication and perseverance. The apostle is not suggesting that only one believer receives salvation. Rather, he emphasizes the intensity and seriousness required in the pursuit of the Christian life.
+
+2. The Call to Purposeful Effort
+
+“Run in such a way that you may obtain it”
+
+The exhortation emphasizes intentional pursuit. The believer is not to drift through the Christian life without discipline or direction. Instead, Paul calls for a manner of life characterized by spiritual focus, perseverance, and determination. This imagery reflects the biblical principle that spiritual growth involves cooperation with divine grace. The believer’s effort does not earn salvation but demonstrates the seriousness of the calling received in Christ. Thus the Christian life is portrayed as a race requiring endurance and purpose.
+
+3. The Discipline of the Athlete
+
+“Every athlete exercises self-control in all things”
+
+Athletic training in the ancient world required strict discipline in diet, exercise, and lifestyle. Competitors willingly submitted themselves to demanding regimens in order to improve their chances of victory. Paul applies this principle to the Christian life by emphasizing the importance of self-control and spiritual discipline. Believers are called to cultivate habits that strengthen faith and resist the impulses of the flesh. This discipline includes practices such as prayer, study of Scripture, moral vigilance, and perseverance in obedience.
+
+4. The Contrast Between Temporal and Eternal Rewards
+
+“They do it to receive a perishable wreath, but we an imperishable”
+
+In ancient athletic competitions the victor received a crown made of leaves or branches, which quickly withered and faded.
+Paul contrasts this temporary reward with the eternal reward awaiting those who faithfully pursue the Christian life. The imperishable crown represents the eternal inheritance and glory promised to those who remain faithful to Christ. Thus Paul invites believers to consider the disproportion between earthly pursuits and eternal realities. If athletes willingly endure hardship for a temporary prize, how much more should believers pursue the eternal reward prepared by God.
+
+Greek Notes
+
+Several key Greek terms enrich the theological meaning of this passage.
+
+“τρέχω” (trechō)
+The verb translated “run” conveys the image of a runner striving toward a goal with effort and urgency.
+In Paul’s usage, it symbolizes the believer’s active pursuit of faithfulness and spiritual maturity.
+
+“βραβεῖον” (brabeion)
+This word refers to the prize awarded to the victor in an athletic contest. It represents the reward granted to those who complete the race faithfully.
+
+“ἐγκρατεύεται” (enkrateuetai)
+Translated “exercises self-control,” this term describes disciplined restraint and mastery over one’s desires. It was commonly used to describe the training regimen of athletes.
+
+“στέφανος” (stephanos)
+The “crown” mentioned in the passage refers to the victor’s wreath awarded to winning athletes. Paul contrasts the perishable crown of earthly competition with the imperishable reward promised in the life to come.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage carries several important implications.
+
+1. The Christian Life Requires Discipline
+Faith is not passive. Believers must cultivate habits that strengthen their spiritual life and sustain their endurance in the race of faith.
+
+2. Eternal Perspective Shapes Present Living
+When believers understand the eternal reward promised by God, they are empowered to endure hardship and remain faithful despite the challenges of life.
+
+3. Ministry Demands Self-Control
+Those who serve in leadership must demonstrate discipline and moral integrity. Spiritual authority flows from lives shaped by self-control and devotion to Christ.
+
+4. Perseverance is Essential
+The race imagery reminds believers that the Christian life is not a brief sprint but a lifelong journey requiring endurance and steadfast commitment.
+
+Concluding Reflection
+
+In this passage from the First Epistle to the Corinthians, the apostle Paul the Apostle calls believers to view their spiritual lives through the lens of athletic discipline. Athletes train with intensity to receive a crown that fades. Believers pursue a crown that never perishes. The race of faith therefore demands dedication, perseverance, and disciplined devotion to Christ.
+Yet the reward awaiting the faithful far surpasses any earthly achievement, for it is the eternal glory prepared by God for those who run the race with endurance.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

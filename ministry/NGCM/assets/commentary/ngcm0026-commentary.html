@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0026">NGCM0026</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The True Family of God: Obedience and Spiritual Kinship</h1>
+        <p>A Theological Commentary on Mark 3:35</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“For whoever does the will of God is My brother and My sister and mother.”
+— Gospel of Mark 3:35
+
+Key Doctrine
+
+Spiritual Kinship Defined by Obedience to the Will of God
+
+In this statement, Jesus Christ redefines the nature of true family by placing obedience to God above biological relationships. While earthly family ties remain significant, Christ reveals that the deeper and more enduring bond among believers is formed through shared commitment to the will of God. The doctrine emphasized in this passage is that those who align their lives with the will of God become members of the spiritual family established through the mission of Christ. Thus the community of faith transcends social, ethnic, and biological boundaries, forming a new covenant family centered upon obedience to God.
+
+Exposition
+1. The Narrative Context
+
+This declaration occurs within a moment of tension recorded in Gospel of Mark 3. As Christ teaches and ministers to a gathered crowd, His biological family arrives seeking to speak with Him. When informed that His mother and brothers are outside waiting for Him, Christ responds by directing attention to those gathered around Him and stating that those who do the will of God are His true family. This response does not diminish the importance of natural family relationships. Rather, it reveals that the mission of God establishes a deeper form of spiritual kinship that transcends biological ties.
+
+2. The Centrality of the Will of God
+
+“whoever does the will of God”
+
+The defining characteristic of membership in the spiritual family of Christ is obedience to the will of God. In biblical theology, the will of God refers to the divine purpose and moral direction revealed through God’s commands and redemptive plan.
+Obedience to this will demonstrates genuine allegiance to God and alignment with His kingdom. Thus Christ emphasizes that belonging to the family of God is not determined by lineage or heritage but by faithful submission to the purposes of God.
+
+3. The Formation of a New Community
+
+By identifying His followers as brother, sister, and mother, Christ introduces the concept of a new covenant community. This community is characterized by shared devotion to God rather than by traditional social structures. The early Christian community embraced this understanding by referring to fellow believers as brothers and sisters in Christ. Such language reflects the deep relational bond created through shared faith and obedience. Thus the kingdom of God establishes a family defined by spiritual commitment rather than by bloodline.
+
+4. The Equality Within the Spiritual Family
+
+Christ’s statement includes male and female members of the community, identifying them equally as participants in the family of God. This inclusion underscores the universal nature of the kingdom. In the spiritual family established by Christ, distinctions of ethnicity, social status, and gender do not determine one’s standing before God. All who obey the will of God share equally in the privileges and responsibilities of belonging to His family.
+
+5. The Christological Dimension
+
+The spiritual family described in this passage is formed through relationship with Jesus Christ. Christ serves as the center and unifying figure of this community. Through His teaching, ministry, death, and resurrection, Christ gathers individuals into a new covenant family united by faith and obedience. Thus the community of believers becomes a living testimony to the transformative power of the kingdom of God.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this verse.
+
+“ποιήσῃ” (poiēsē)
+Translated “does,” this verb refers to active obedience and faithful practice rather than mere intellectual agreement.
+
+“θέλημα τοῦ Θεοῦ” (thelēma tou Theou)
+Meaning “the will of God,” this phrase refers to the divine purpose and moral instruction revealed through God’s commands and redemptive plan.
+
+“ἀδελφός … ἀδελφή … μήτηρ” (adelphos … adelphē … mētēr)
+Translated “brother, sister, and mother,” these relational terms emphasize the familial nature of the community formed around Christ.
+
+Together these expressions emphasize that spiritual kinship is defined by active obedience to the will of God within the community gathered around Christ.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. The Church Is a Spiritual Family
+Christian communities should cultivate relationships that reflect the deep spiritual kinship described by Christ.
+
+2. Obedience Defines Authentic Discipleship
+Belonging to the family of God is demonstrated through faithful obedience to His will.
+
+3. Ministry Must Welcome All Who Seek to Follow God
+The spiritual family of God transcends social and cultural barriers, welcoming all who commit themselves to His will.
+
+4. Community Strengthens Faithful Living
+The fellowship of believers provides encouragement, accountability, and support in pursuing the will of God.
+
+Concluding Reflection
+
+In the teaching recorded in the Gospel of Mark, Jesus Christ reveals that the deepest bonds of human relationship are formed not merely through biological connection but through shared obedience to God. Those who align their lives with the will of God become members of a new and enduring family centered upon Christ. Within this spiritual family, believers find fellowship, encouragement, and shared participation in the mission of God. Thus the community of faith stands as a living testimony that the kingdom of God creates relationships that transcend earthly boundaries and unite believers in the common pursuit of the will of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

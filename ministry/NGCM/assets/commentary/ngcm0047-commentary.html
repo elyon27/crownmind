@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0047">NGCM0047</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Knowing the Only True God: Eternal Life as Relationship Through Christ</h1>
+        <p>A Theological Commentary on John 17:3</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“And this is eternal life, that they know You, the only true God, and Jesus Christ whom You have sent.”
+— Gospel of John 17:3
+
+Key Doctrine
+
+Eternal Life as Relational Knowledge of God Through Christ
+
+In this statement, Jesus Christ defines the essence of eternal life not merely as unending existence but as a relational knowledge of God made possible through Himself. Within His prayer to the Father, Christ reveals that the ultimate goal of salvation is restored communion between God and humanity. The doctrine emphasized in this passage is that eternal life consists fundamentally in a living relationship with the only true God, mediated through the person and mission of Jesus Christ. Thus salvation is not limited to deliverance from judgment but includes the restoration of fellowship between God and humanity.
+
+Exposition
+1. The Context of the High Priestly Prayer
+
+The statement recorded in Gospel of John 17 occurs within the prayer often referred to as the High Priestly Prayer of Jesus.
+This prayer takes place shortly before the crucifixion and represents Christ’s final intercession for His disciples. In this moment, Christ speaks directly to the Father about the purpose of His mission and the destiny of those who believe in Him. Verse 3 stands at the center of this prayer, providing a concise definition of eternal life and revealing the ultimate aim of God’s redemptive work.
+
+2. The Nature of Eternal Life
+
+“this is eternal life”
+
+The phrase introduces a definition rather than merely a description of eternal life. In biblical theology, eternal life does not refer solely to existence that continues indefinitely. Instead, it describes a quality of life characterized by fellowship with God. This life begins in the present through faith and continues into the fullness of the age to come. Thus eternal life involves participation in the life of God rather than merely survival beyond death.
+
+3. The Meaning of Knowing God
+
+“that they know You”
+
+The concept of knowing God carries profound relational significance. In the biblical tradition, knowledge often refers to intimate personal relationship rather than mere intellectual awareness. To know God means to encounter Him, trust Him, and live in communion with Him. This relational knowledge emerges through revelation, obedience, and spiritual transformation. Thus eternal life consists in an ongoing relationship with God rather than in the accumulation of religious knowledge.
+
+4. The Identity of the Only True God
+
+“the only true God”
+
+By describing the Father as the only true God, Christ affirms the uniqueness and exclusivity of God’s identity. In a world filled with competing religious claims and false conceptions of the divine, Jesus emphasizes that authentic knowledge of God corresponds to the reality revealed by the Father. This statement reinforces the biblical affirmation that God alone is the source of life, truth, and salvation. Thus eternal life is rooted in the recognition and worship of the one true God.
+
+5. The Role of Jesus Christ
+
+“and Jesus Christ whom You have sent”
+
+The knowledge of God described in this verse is inseparable from the person and mission of Christ. Christ identifies Himself as the one sent by the Father to reveal the truth about God and to accomplish redemption. Through His life, teaching, death, and resurrection, Christ makes it possible for humanity to enter into relationship with God. Thus the path to knowing the Father is mediated through the Son. The relationship between the Father and the Son forms the foundation of the believer’s experience of eternal life.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“ἡ αἰώνιος ζωή” (hē aiōnios zōē)
+Translated “eternal life,” this phrase refers not only to endless duration but also to participation in the life of the age to come.
+
+“γινώσκωσιν” (ginōskōsin)
+Meaning “that they may know,” this verb indicates relational knowledge derived from personal encounter and experience.
+
+“μόνον ἀληθινὸν Θεόν” (monon alēthinon Theon)
+Translated “the only true God,” this phrase emphasizes the uniqueness and authenticity of the Father.
+
+“ὃν ἀπέστειλας” (hon apesteilas)
+Meaning “whom You have sent,” this expression highlights the divine mission of Christ.
+
+Together these expressions emphasize the relational and revelatory nature of eternal life.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several essential insights.
+
+1. Christianity Centers on Relationship with God
+Faith is defined not merely by doctrine or ritual but by a living relationship with God through Christ.
+
+2. Eternal Life Begins in the Present
+Believers begin experiencing eternal life through their relationship with God even before the final resurrection.
+
+3. Christ Is the Mediator of Divine Knowledge
+Understanding God requires receiving the revelation given through Jesus Christ.
+
+4. Ministry Must Lead People to Know God Personally
+The goal of teaching and discipleship is to guide individuals into genuine communion with God rather than mere religious observance.
+
+Concluding Reflection
+
+In the prayer recorded in the Gospel of John, Jesus Christ reveals the heart of the gospel by defining eternal life as the knowledge of God through Himself. This knowledge transcends intellectual understanding and invites believers into a living relationship with the Father. Through the mission of Christ, the barrier between God and humanity is removed, allowing individuals to enter into communion with the Creator. Thus eternal life begins wherever people come to know the only true God and the One whom He has sent, discovering in that relationship the fullness of life that God intends for His people.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0032">NGCM0032</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Value of the Soul: The Eternal Cost of Worldly Gain</h1>
+        <p>A Theological Commentary on Matthew 16:26</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“For what will it profit a man if he gains the whole world and forfeits his soul? Or what shall a man give in return for his soul?”
+— Gospel of Matthew 16:26
+
+Key Doctrine
+
+The Infinite Value of the Human Soul in Light of Eternity
+
+In this statement, Jesus Christ presents a profound contrast between temporary worldly gain and the eternal value of the human soul. The verse highlights the ultimate futility of pursuing worldly success at the expense of one’s relationship with God. The doctrine emphasized in this passage is that the human soul possesses eternal worth that surpasses all material possessions, achievements, and power within the world. Thus the pursuit of worldly gain at the cost of one’s spiritual life represents a tragic miscalculation, exchanging eternal inheritance for temporary advantage.
+
+Exposition
+1. The Context of Discipleship
+
+The teaching recorded in Gospel of Matthew 16 occurs immediately after Christ instructs His disciples about the cost of following Him. Christ declares that anyone who desires to follow Him must deny themselves, take up their cross, and embrace the path of sacrificial obedience. Within this context, the rhetorical question of verse 26 serves as a warning against prioritizing earthly gain over spiritual faithfulness. The disciple must recognize that the values of the kingdom of God often stand in direct contrast to the ambitions of the world.
+
+2. The Illusion of Worldly Gain
+
+“if he gains the whole world”
+
+The phrase “the whole world” represents the totality of worldly success—wealth, influence, prestige, and power. From a human perspective, acquiring such things may appear to represent the highest form of achievement. Yet Christ exposes the illusion underlying such pursuits. Even if a person were to obtain everything the world could offer, the value of those possessions remains temporary and limited. Worldly achievements cannot extend beyond the boundaries of mortal life. Thus the apparent profit of worldly success ultimately proves incapable of satisfying the deeper needs of the human soul.
+
+3. The Loss of the Soul
+
+“and forfeits his soul”
+
+The contrast introduced by Christ centers upon the concept of the soul. In biblical theology, the soul represents the enduring essence of a person—the seat of identity, consciousness, and spiritual relationship with God. To lose the soul means to forfeit eternal fellowship with God. This loss represents not merely the absence of blessing but the profound tragedy of separation from the source of life. Thus Christ emphasizes that the pursuit of worldly success at the expense of spiritual fidelity results in an irreversible loss of infinite value.
+
+4. The Impossibility of Redemption Through Wealth
+
+“what shall a man give in return for his soul?”
+
+Christ concludes with a second rhetorical question that underscores the irreplaceable value of the soul. No material possession, social achievement, or earthly resource can compensate for the loss of the soul. Once forfeited, the soul cannot be redeemed by human effort or wealth. This statement reinforces the urgency of prioritizing one’s relationship with God above all other pursuits. The only true redemption for the soul comes through the grace of God revealed in the mission of Christ.
+
+5. The Christological Dimension
+
+The warning of this verse gains its fullest meaning in light of the redemptive mission of Jesus Christ. Christ Himself offers the means by which the soul may be preserved and restored. Through His sacrificial death and resurrection, Christ provides redemption for those who would otherwise face the loss of their souls. Thus the verse not only warns against misplaced priorities but also points toward the salvation made possible through Christ.
+
+Greek Notes
+
+Several Greek expressions illuminate the meaning of this passage.
+
+“ὠφεληθήσεται” (ōphelēthēsetai)
+Translated “profit,” this term refers to gaining advantage or benefit.
+
+“ζημιωθῇ” (zēmiōthē)
+Meaning “to lose” or “to forfeit,” this verb conveys the idea of suffering loss or damage.
+
+“ψυχήν” (psychēn)
+Translated “soul,” this term refers to the life or inner self that defines a person’s spiritual existence.
+
+“ἀντάλλαγμα” (antallagma)
+Meaning “exchange” or “ransom,” this word emphasizes the impossibility of replacing or compensating for the soul once it is lost.
+
+Together these terms highlight the contrast between temporary gain and eternal loss.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several critical insights.
+
+1. Eternal Values Must Guide Life’s Priorities
+Believers must evaluate success not according to worldly standards but according to eternal realities.
+
+2. The Gospel Addresses the Deepest Need of Humanity
+The mission of the church centers upon the salvation of the soul through Christ.
+
+3. Material Prosperity Cannot Replace Spiritual Life
+While material resources may serve practical purposes, they cannot fulfill the deeper needs of the human spirit.
+
+4. Discipleship Requires Sacrificial Commitment
+Following Christ may involve relinquishing worldly advantages in order to secure eternal life.
+
+Concluding Reflection
+
+In the teaching recorded in the Gospel of Matthew, Jesus Christ confronts humanity with one of the most profound questions of existence. What value does worldly success hold if it results in the loss of the soul? Through this question, Christ exposes the fleeting nature of earthly gain and directs attention to the eternal significance of the soul. The wisdom of the kingdom therefore calls individuals to reorder their priorities, seeking first the life that comes from God. For in the presence of God, the soul finds the treasure that surpasses all the riches of the world.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

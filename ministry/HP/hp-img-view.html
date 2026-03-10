@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HP — Image View</title>
+  <style>
+    :root{
+      --bg:#061b3a;
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.72);
+      --line:rgba(255,255,255,.18);
+      --chip:rgba(255,255,255,.12);
+    }
+
+    *{ box-sizing:border-box; }
+
+    html, body{
+      width:100%;
+      height:100%;
+      margin:0;
+    }
+
+    body{
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(88,167,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(0,255,200,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow:hidden; /* cinematic, no page scroll */
+    }
+
+    /* Cinematic stage fills the screen */
+    .stage{
+      overflow:hidden;
+
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+    }
+
+    img{
+      /* Always fit inside the viewport */
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
+      cursor:pointer;
+      display:block;
+    }
+
+    /* Minimal overlay controls */
+    .overlay{
+      position:fixed;
+      inset:0;
+      pointer-events:none; /* enable clicks to pass through except controls */
+    }
+
+    .topLeft{
+      position:absolute;
+      top:12px;
+      left:12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      pointer-events:auto;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+      color:var(--text);
+      text-decoration:none;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .back:hover{ background:rgba(0,0,0,.36); }
+
+    .fname{
+      max-width:62vw;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      color:var(--muted);
+      font-size:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      padding:10px 12px;
+      border-radius:999px;
+    }
+
+    .hint{
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      pointer-events:none;
+      color:var(--muted);
+      font-size:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .error{
+      max-width:980px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,90,90,.35);
+      background:rgba(255,90,90,.10);
+      color:var(--text);
+      line-height:1.45;
+      box-shadow:0 18px 55px rgba(0,0,0,.35);
+    }
+
+    code{
+      background:rgba(0,0,0,.22);
+      padding:2px 6px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:8px;
+    }
+  
+    /* Side navigation controls */
+    .navBtn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;
+      height:72px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.26);
+      backdrop-filter: blur(10px);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      pointer-events:auto;
+      user-select:none;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .navBtn:hover{ background:rgba(0,0,0,.38); }
+    .navBtn:active{ transform:translateY(-50%) scale(.98); }
+
+    .navPrev{ left:12px; }
+    .navNext{ right:12px; }
+
+    .counter{
+      position:absolute;
+      top:12px;
+      right:12px;
+      pointer-events:none;
+      color:var(--muted);
+      font-size:12px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      max-width:42vw;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    /* Loader overlay */
+    .loader{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .spinner{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      border:3px solid rgba(234,242,255,.18);
+      border-top-color: rgba(234,242,255,.85);
+      animation: spin 1s linear infinite;
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+    @keyframes spin{
+      to{ transform: rotate(360deg); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+    <img id="mainImg" alt="HP Image" decoding="async" loading="eager" />
+  </div>
+
+  <div class="overlay">
+    <div class="topLeft">
+      <a class="back" href="hp-master.html">← Back</a>
+      <div class="fname" id="fname">Loading…</div>
+    </div>
+
+    <button class="navBtn navPrev" id="prevBtn" aria-label="Previous image" title="Previous (←)">
+      ◀
+    </button>
+    <button class="navBtn navNext" id="nextBtn" aria-label="Next image" title="Next (→)">
+      ▶
+    </button>
+    <div class="counter" id="counter">0 / 0</div>
+    <div class="hint">Click the image to return</div>
+  </div>
+<script>
+
+  // ✅ Local list in this viewer (must match hp-master.html)
+// ✅ Base path candidates (relative path depends on where this HTML lives)
+// Netlify/Linux is case-sensitive, so we also try a couple safe variants.
+const BASE_CANDIDATES = [
+  "ministry/HP/img/",
+  "./ministry/HP/img/",
+  "/ministry/HP/img/",
+  "img/",
+  "./img/"
+];
+  const IMG_FILES = [
+"HP0001.jpg","HP0002.jpg","HP0003.jpg","HP0004.jpg","HP0005.jpg","HP0006.jpg","HP0007.jpg","HP0008.jpg","HP0009.jpg","HP0010.jpg","HP0011.jpg","HP0012.jpg","HP0013.jpg","HP0014.jpg","HP0015.jpg","HP0016.jpg","HP0017.jpg","HP0018.jpg","HP0019.jpg","HP0020.jpg","HP0021.jpg","HP0022.jpg","HP0023.jpg","HP0024.jpg","HP0025.jpg","HP0026.jpg","HP0027.jpg",
+];
+
+  const params = new URLSearchParams(location.search);
+  const iParam = params.get("i");
+  const imgParam = params.get("img");
+
+  const mainImg = document.getElementById("mainImg");
+  const fnameEl = document.getElementById("fname");
+  const counterEl = document.getElementById("counter");
+  const loaderEl = document.getElementById("loader");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function clampIndex(i){
+    const n = IMG_FILES.length;
+    if(!n) return 0;
+    return ((i % n) + n) % n;
+  }
+  function findIndexByName(name){
+    if(!name) return -1;
+    return IMG_FILES.findIndex(f => f.toLowerCase() === name.toLowerCase());
+  }
+
+  let currentIndex = 0;
+
+  // Determine start index (supports ?i= or ?img=)
+  if(iParam !== null && iParam !== "" && !Number.isNaN(parseInt(iParam, 10))){
+    currentIndex = clampIndex(parseInt(iParam, 10));
+  } else if(imgParam){
+    const idx = findIndexByName(imgParam);
+    currentIndex = idx >= 0 ? idx : 0;
+  }
+
+  function setLoading(isLoading){
+    loaderEl.style.display = isLoading ? "flex" : "none";
+  }
+
+  function updateOverlay(){
+    const n = IMG_FILES.length || 1;
+    const name = IMG_FILES[currentIndex] || "—";
+    fnameEl.textContent = name;
+    counterEl.textContent = `${currentIndex + 1} / ${n}`;
+
+    // keep URL in sync for refresh/share
+    const u = new URL(location.href);
+    u.searchParams.set("i", String(currentIndex));
+    u.searchParams.set("img", name);
+    history.replaceState(null, "", u.toString());
+  }
+
+  // Prefetch next/prev WITHOUT blocking initial render
+  function prefetchSrc(src){
+    const p = new Image();
+    p.decoding = "async";
+    // let browser decide priority; we only do neighbors
+    p.src = src;
+  }
+  function prefetchNeighbors(){
+    if(IMG_FILES.length < 2) return;
+    const nextIdx = clampIndex(currentIndex + 1);
+    const prevIdx = clampIndex(currentIndex - 1);
+    const nextSrc = (BASE_CANDIDATES[0] || "") + encodeURIComponent(IMG_FILES[nextIdx]);
+    const prevSrc = (BASE_CANDIDATES[0] || "") + encodeURIComponent(IMG_FILES[prevIdx]);
+
+    const doPrefetch = () => {
+      prefetchSrc(nextSrc);
+      prefetchSrc(prevSrc);
+    };
+
+    // Use idle time if available (prevents "hang" on weak devices)
+    if("requestIdleCallback" in window){
+      requestIdleCallback(doPrefetch, { timeout: 800 });
+    } else {
+      setTimeout(doPrefetch, 120);
+    }
+  }
+
+function uniq(arr){
+  return [...new Set(arr)];
+}
+
+function filenameVariants(name){
+  const out = [name];
+  const m = name.match(/^(.*)\.(jpg|jpeg|png|webp)$/i);
+  if(m){
+    const stem = m[1];
+    const ext = m[2];
+    // try common extension case variants
+    out.push(`${stem}.${ext.toLowerCase()}`);
+    out.push(`${stem}.${ext.toUpperCase()}`);
+    // also try JPG specifically (many cameras export .JPG)
+    if(ext.toLowerCase() === "jpg"){
+      out.push(`${stem}.JPG`);
+      out.push(`${stem}.jpg`);
+    }
+  }
+  return uniq(out);
+}
+
+function buildSrcCandidates(name){
+  const files = filenameVariants(name).map(encodeURIComponent);
+  const srcs = [];
+  for(const base of BASE_CANDIDATES){
+    for(const f of files){
+      srcs.push(base + f);
+    }
+  }
+  return uniq(srcs);
+}
+
+function attemptLoad(srcCandidates, k){
+  if(k >= srcCandidates.length){
+    setLoading(false);
+    fnameEl.textContent = "Load error";
+    counterEl.textContent = "";
+    return;
+  }
+  const src = srcCandidates[k];
+
+  mainImg.onerror = () => attemptLoad(srcCandidates, k + 1);
+
+  mainImg.onload = () => {
+    setLoading(false);
+    mainImg.style.opacity = "1";
+    // decode in background (do not await)
+    try { mainImg.decode?.(); } catch(_) {}
+    prefetchNeighbors();
+  };
+
+  mainImg.src = src;
+}
+
+  function showImage(i){
+    if(!IMG_FILES.length) return;
+
+    currentIndex = clampIndex(i);
+    updateOverlay();
+
+    const name = IMG_FILES[currentIndex];
+    const srcCandidates = buildSrcCandidates(name);
+
+    setLoading(true);
+
+// swap quickly and fade in after successful load
+mainImg.style.opacity = "0";
+mainImg.alt = name;
+
+attemptLoad(srcCandidates, 0);
+  }
+
+  function next(){ showImage(currentIndex + 1); }
+  function prev(){ showImage(currentIndex - 1); }
+
+  prevBtn.addEventListener("click", prev);
+  nextBtn.addEventListener("click", next);
+
+  window.addEventListener("keydown", (e) => {
+    if(e.key === "ArrowRight") next();
+    if(e.key === "ArrowLeft") prev();
+    if(e.key === "Escape") location.href = "hp-master.html";
+  });
+
+  // Click image returns to master (keeps your original UX)
+  mainImg.addEventListener("click", () => location.href = "hp-master.html");
+
+  // Init
+  showImage(currentIndex);
+
+</script>
+</body>
+</html>
+

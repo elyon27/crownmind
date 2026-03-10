@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | John 10:11 Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0003">NGCM0003</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Shepherd’s Voice and the Eternal Security of His Sheep</h1>
+        <p>A Theological Commentary on John 10:27-28</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand.”
+— Gospel of John 10:27–28
+
+Key Doctrine
+
+The Perseverance and Security of the Believer in Christ
+
+This passage affirms that those who truly belong to Jesus Christ are preserved by His power and granted eternal life. The believer’s security rests not in human effort but in the sovereign protection of the Good Shepherd. Those who hear His voice and follow Him demonstrate the evidence of belonging to His flock, and Christ Himself guarantees that they will never be lost.
+
+The text therefore reveals three central truths:
+
+- The identity of Christ’s sheep
+- The relationship between the Shepherd and His flock
+- The absolute security granted to those who belong to Him
+
+Exposition
+
+1. The Identity of Christ’s Sheep
+
+“My sheep hear My voice”
+
+In the immediate context of Gospel of John 10, Christ contrasts true sheep with those who refuse to believe. Earlier in the    chapter, Jesus explains that unbelief arises because some people are not of His sheep (John 10:26). The defining characteristic of Christ’s sheep is their ability to recognize the voice of the Shepherd. This recognition is    not merely auditory but spiritual. It refers to the inward responsiveness of the heart to the truth of God. Thus the sheep are identified not merely by profession but by receptivity to Christ’s word.
+
+2. The Shepherd’s Knowledge of His Flock
+   
+“I know them”
+
+The knowledge spoken of here is relational rather than merely intellectual. In biblical language, for God to “know” someone signifies personal covenant relationship. Christ knows His sheep individually, not as an anonymous crowd but as those personally entrusted to Him by the Father. This relationship echoes the Old Testament imagery of the shepherd who carefully watches over each member of the flock. Thus salvation is not merely legal standing but relational belonging to the Shepherd.
+
+3. The Response of the Sheep
+   
+“They follow Me”
+
+The evidence that one belongs to Christ is seen in the life of obedient discipleship.
+
+Following the Shepherd implies:
+
+- trust in His guidance
+- submission to His authority
+- perseverance in the path He leads
+
+This does not imply sinless perfection but directional loyalty toward Christ. The sheep follow because they trust the Shepherd’s voice above all competing voices.
+
+4. The Gift of Eternal Life
+   
+“I give them eternal life”
+
+Eternal life is described as a gift granted by Christ Himself. The verb “give” indicates that eternal life cannot be earned or achieved through human merit. It is granted solely by divine grace.
+
+In the theology of Gospel of John, eternal life is both:
+
+- present reality (John 5:24)
+- future inheritance
+
+Thus believers already possess the life of the age to come through their union with Christ.
+
+5. The Absolute Security of the Believer
+   
+“They shall never perish”
+
+The statement is expressed with emphatic certainty. Christ declares that those who belong to Him will never ultimately be destroyed or lost. The promise does not rest upon the believer’s strength but upon the Shepherd’s preservation.
+
+6. The Shepherd’s Protective Power
+   
+“Neither shall anyone snatch them out of My hand”
+
+The image here is one of protective authority. The hand symbolizes power, possession, and protection. Christ therefore assures His followers that no external force can remove them from His care. The security of the believer ultimately rests in the strength of the Shepherd who holds the flock.
+
+Greek Notes
+
+The Greek wording of the passage emphasizes the certainty of Christ’s promise.
+
+“My sheep hear My voice”
+The verb akouō implies attentive listening and recognition. It indicates not merely hearing sounds but responding to the 
+Shepherd’s call.
+
+“I know them”
+The verb ginōskō denotes personal knowledge and relational intimacy.
+
+“I give them eternal life”
+The verb didōmi is in the present tense, emphasizing that Christ continually grants and sustains life for His people.
+
+“They shall never perish”
+The phrase contains a strong double negative construction, meaning “they will certainly never perish.” This grammatical form expresses the absolute certainty of Christ’s promise.
+
+Ministry Implications
+
+For those engaged in ministry and theological formation within Tenio Theological University and the work of the Narrow Gate    Christian Ministry, this passage carries several vital implications.
+
+1. Assurance for Believers
+Christ’s promise provides profound comfort to those who fear spiritual failure. The believer’s hope rests not in personal       perfection but in the Shepherd who holds His sheep securely.
+
+2. The Centrality of Christ’s Voice
+Spiritual formation requires attentiveness to the voice of Christ through Scripture. True discipleship develops the ability     to discern and follow the Shepherd’s guidance.
+
+3. Perseverance in Discipleship
+Those who belong to Christ demonstrate their identity by continuing to follow Him. Ministry must therefore encourage believers toward lifelong faithfulness and obedience.
+
+4. Confidence in Evangelism
+The shepherd imagery reminds the church that Christ Himself gathers His sheep. Evangelism is therefore not the creation of believers through human persuasion but the calling of Christ’s sheep to recognize His voice.
+
+Concluding Reflection
+In these verses from the Gospel of John, Christ presents Himself as the Good Shepherd who knows, calls, and preserves His    flock. His sheep hear His voice. They follow Him in faith. And because they belong to Him, their eternal destiny is secure.
+The security of the believer ultimately rests not in the strength of the sheep, but in the unwavering grip of the Shepherd.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

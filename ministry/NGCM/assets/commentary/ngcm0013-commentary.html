@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0013">NGCM0013</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Blessed Are the Poor in Spirit: The Foundation of Life in the Kingdom</h1>
+        <p>A Theological Commentary on Matthew 5:3</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are the poor in spirit, for theirs is the kingdom of heaven.”
+— Gospel of Matthew 5:3
+
+Key Doctrine
+
+Spiritual Humility as the Entrance into the Kingdom of Heaven
+
+This verse introduces the first of the Beatitudes spoken by Jesus Christ at the beginning of the Sermon on the Mount. The statement reveals a foundational principle of the kingdom of God: entrance into the kingdom begins with the recognition of one’s spiritual poverty before God. Rather than praising worldly strength or self-sufficiency, Christ pronounces blessing upon those who acknowledge their dependence upon God. The “poor in spirit” are those who recognize their spiritual need and rely entirely upon divine grace. The doctrine emphasized in this passage is that humble dependence upon God forms the essential foundation of life in the kingdom of heaven.
+
+Exposition
+1. The Meaning of Blessing in the Beatitudes
+
+“Blessed are…”
+
+The Beatitudes describe the characteristics of those who belong to the kingdom of God. The term translated “blessed” refers not merely to emotional happiness but to a state of divine favor. It signifies the condition of those who live under the gracious approval of God. Thus the Beatitudes do not merely offer moral instruction; they reveal the nature of the life that flourishes under the reign of God.
+
+2. The Meaning of “Poor in Spirit”
+
+“the poor in spirit”
+
+The phrase does not refer to material poverty but to spiritual condition. To be poor in spirit means to recognize one’s complete spiritual dependence upon God. It describes a posture of humility that acknowledges human inability to attain righteousness apart from divine grace. This attitude stands in contrast to spiritual pride and self-reliance. The poor in spirit understand that they possess no spiritual merit by which they can claim favor before God. Instead, they approach God with humility, repentance, and trust in His mercy.
+
+3. The Old Testament Background
+
+The concept of spiritual poverty appears frequently in the Old Testament, where the “poor” often represent those who rely upon God rather than worldly power. Prophetic writings describe the humble and contrite as those whom God favors and restores. This background reveals that the poor in spirit are not merely economically disadvantaged individuals but those who place their trust in God rather than in their own strength. Thus Christ affirms a long-standing biblical theme: God’s favor rests upon the humble rather than the self-sufficient.
+
+4. The Promise of the Kingdom
+
+“for theirs is the kingdom of heaven”
+
+The promise attached to the Beatitude reveals that the kingdom of heaven belongs to those who acknowledge their spiritual need.
+The kingdom represents the reign of God inaugurated through the ministry of Christ. Those who recognize their poverty before God become receptive to the grace offered through the Messiah. This promise also indicates that the kingdom is both a present reality and a future inheritance. Believers participate in the reign of God now while anticipating its full manifestation in the future.
+
+5. The Foundational Nature of Spiritual Poverty
+
+The placement of this Beatitude at the beginning of the Sermon on the Mount is significant. Spiritual poverty forms the foundation for all the other qualities described in the Beatitudes. Only those who recognize their spiritual need can truly experience repentance, humility, mercy, and righteousness. Thus the statement establishes the starting point of life in the kingdom: the recognition that humanity stands in need of God’s grace.
+
+Greek Notes
+
+Several key Greek expressions illuminate the theological meaning of this verse.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this term refers to a state of flourishing or divine favor. It describes those who live under the gracious approval of God.
+
+“πτωχοὶ τῷ πνεύματι” (ptōchoi tō pneumati)
+The phrase “poor in spirit” refers to those who recognize their spiritual poverty before God. The word for “poor” describes someone who possesses nothing and must rely entirely upon another for support.
+
+“ἡ βασιλεία τῶν οὐρανῶν” (hē basileia tōn ouranōn)
+Translated “the kingdom of heaven,” this phrase refers to the sovereign reign of God revealed through the ministry of Christ.
+
+Together these expressions emphasize that the blessed life arises from humble dependence upon God and participation in His kingdom.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several crucial lessons.
+
+1. Humility Is the Beginning of Spiritual Life
+True spiritual growth begins with the recognition of one’s need for God. Ministry must therefore encourage humility rather than self-reliance.
+
+2. The Gospel Addresses Human Spiritual Need
+The message of the kingdom speaks directly to those who acknowledge their spiritual poverty and seek God’s grace.
+
+3. Pride Remains a Barrier to the Kingdom
+Spiritual pride prevents individuals from recognizing their need for redemption. The Beatitudes challenge believers to cultivate humility before God.
+
+4. The Kingdom Belongs to the Humble
+God’s kingdom advances not through human strength or status but through those who trust in His mercy.
+
+Concluding Reflection
+
+At the beginning of the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ declares a truth that overturns conventional expectations. The kingdom of heaven does not belong to the powerful, the self-sufficient, or the proud. Instead, it belongs to those who recognize their spiritual poverty and turn to God in humble dependence. In acknowledging their need, the poor in spirit discover the richness of divine grace and the privilege of belonging to the kingdom of heaven.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

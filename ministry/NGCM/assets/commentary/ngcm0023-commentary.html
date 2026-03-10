@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0023">NGCM0023</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Radical Non-Retaliation: The Ethic of the Kingdom</h1>
+        <p>A Theological Commentary on Matthew 5:39</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“But I say to you, do not resist the one who is evil. But if anyone slaps you on the right cheek, turn to him the other also.”
+— Gospel of Matthew 5:39
+
+Key Doctrine
+
+Non-Retaliation as an Expression of Kingdom Righteousness
+
+In this statement from the Sermon on the Mount, Jesus Christ reinterprets the principle of justice found in the traditional legal formula known as “an eye for an eye.” While the earlier law served to limit excessive retaliation and maintain social order, Christ introduces a deeper ethic that reflects the character of God’s kingdom. The doctrine emphasized in this passage is that disciples of Christ are called to transcend cycles of retaliation by responding to personal offense with humility, restraint, and redemptive love. This teaching reveals a radical ethic in which believers refuse to perpetuate violence or hostility, choosing instead to embody the transformative power of mercy and reconciliation.
+
+Exposition
+1. The Context of the Antitheses
+
+Matthew 5:39 appears within a series of teachings in the Sermon on the Mount where Christ contrasts traditional interpretations of the law with the deeper righteousness required in the kingdom of God. In this section of the Gospel of Matthew, Christ repeatedly introduces His teaching with the phrase “But I say to you,” emphasizing His authority to reveal the true intent of the law. The immediate background is the legal principle of proportional justice, which limited retaliation in ancient Israelite law. Christ does not abolish the principle of justice but directs His followers toward a higher standard of personal conduct characterized by grace and restraint.
+
+2. The Meaning of Non-Resistance
+
+“do not resist the one who is evil”
+
+This statement has often been misunderstood as a call to passive acceptance of injustice. However, the command addresses the temptation to respond to personal offense with retaliatory violence. Christ instructs His followers not to mirror the aggression of those who harm them. Rather than escalating conflict, the disciple chooses a response that interrupts the cycle of hostility. Thus non-resistance in this context refers specifically to the refusal to retaliate in kind when personally wronged.
+
+3. The Symbolism of the Slap
+
+“if anyone slaps you on the right cheek”
+
+In the cultural context of the ancient world, a slap on the cheek often symbolized insult or humiliation rather than physical assault intended to cause injury. By referring to a slap on the right cheek, Christ likely describes a backhanded strike, which carried connotations of disrespect and social dishonor. Christ’s instruction therefore addresses situations in which personal dignity has been attacked. Instead of responding with retaliation or revenge, the disciple demonstrates a radical form of restraint that exposes the moral bankruptcy of the aggressor.
+
+4. The Meaning of Turning the Other Cheek
+
+“turn to him the other also”
+
+This instruction represents a deliberate refusal to participate in the logic of revenge. Turning the other cheek does not imply weakness or submission to injustice but rather a courageous act of moral resistance. By refusing to retaliate, the disciple disrupts the expected pattern of hostility and reveals a different way of responding to conflict. This response reflects the character of God, who demonstrates patience and mercy even toward those who oppose Him.
+
+5. The Christological Model
+
+The ultimate example of this principle is found in the life and death of Jesus Christ. During His trial and crucifixion, Christ endured humiliation and violence without retaliation. Through His sacrificial response, Christ reveals the transformative power of redemptive suffering. The disciple who follows this teaching participates in the pattern established by Christ, embodying a form of strength that overcomes evil not through force but through faithful endurance.
+
+Greek Notes
+
+Several Greek expressions illuminate the meaning of this passage.
+
+“ἀντιστῆναι” (antistēnai)
+Translated “to resist,” this term refers to opposing or retaliating against an aggressor. In this context it emphasizes refraining from retaliatory resistance.
+
+“πονηρῷ” (ponērō)
+The term translated “evil” can refer either to an evil person or to wrongdoing in general.
+
+“ῥαπίζει” (rhaphizei)
+This verb refers to striking with the hand, particularly in a way that conveys insult or humiliation.
+
+Together these expressions emphasize the radical nature of Christ’s instruction: the disciple refuses to retaliate when personally insulted or mistreated.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important lessons.
+
+1. Christian Ethics Transcend Retaliation
+Believers are called to respond to hostility with patience and grace rather than perpetuating cycles of conflict.
+
+2. Spiritual Strength Is Expressed Through Restraint
+The refusal to retaliate requires deep inner strength and trust in God’s justice.
+
+3. Ministry Must Model Redemptive Responses to Conflict
+Leaders must demonstrate how reconciliation and forgiveness can transform relationships that have been damaged by hostility.
+
+4. The Gospel Reveals a New Way of Responding to Evil
+Through the example of Christ, believers learn that evil is ultimately overcome not through retaliation but through sacrificial love.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ calls His followers to a radically different ethic from that of the surrounding world. Where the world often responds to insult with revenge, the disciple chooses restraint and grace. By turning the other cheek, the believer refuses to perpetuate cycles of hostility and instead reflects the character of the God who responds to human rebellion with patience and mercy. Thus this teaching invites believers to embody the redemptive power of the kingdom of God, revealing that true victory over evil comes not through retaliation but through the transformative force of righteous love.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

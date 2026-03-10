@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NGCM — Image View</title>
+  <style>
+    :root{
+      --bg:#061b3a;
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.72);
+      --line:rgba(255,255,255,.18);
+      --chip:rgba(255,255,255,.12);
+    }
+
+    *{ box-sizing:border-box; }
+
+    html, body{
+      width:100%;
+      height:100%;
+      margin:0;
+    }
+
+    body{
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(88,167,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(0,255,200,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow:hidden; /* cinematic, no page scroll */
+    }
+
+    /* Cinematic stage fills the screen */
+    .stage{
+      overflow:hidden;
+
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+    }
+
+    img{
+      /* Always fit inside the viewport */
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
+      cursor:pointer;
+      display:block;
+    }
+
+    /* Minimal overlay controls */
+    .overlay{
+      position:fixed;
+      inset:0;
+      pointer-events:none; /* enable clicks to pass through except controls */
+    }
+
+    .topLeft{
+      position:absolute;
+      top:12px;
+      left:12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      pointer-events:auto;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+      color:var(--text);
+      text-decoration:none;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .back:hover{ background:rgba(0,0,0,.36); }
+
+    .fname{
+      max-width:62vw;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      color:var(--muted);
+      font-size:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      padding:10px 12px;
+      border-radius:999px;
+    }
+
+    .hint{
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      pointer-events:none;
+      color:var(--muted);
+      font-size:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .error{
+      max-width:980px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,90,90,.35);
+      background:rgba(255,90,90,.10);
+      color:var(--text);
+      line-height:1.45;
+      box-shadow:0 18px 55px rgba(0,0,0,.35);
+    }
+
+    code{
+      background:rgba(0,0,0,.22);
+      padding:2px 6px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:8px;
+    }
+  
+    /* Side navigation controls */
+    .navBtn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;
+      height:72px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.26);
+      backdrop-filter: blur(10px);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      pointer-events:auto;
+      user-select:none;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .navBtn:hover{ background:rgba(0,0,0,.38); }
+    .navBtn:active{ transform:translateY(-50%) scale(.98); }
+
+    .navPrev{ left:12px; }
+    .navNext{ right:12px; }
+
+    .counter{
+      position:absolute;
+      top:12px;
+      right:12px;
+      pointer-events:none;
+      color:var(--muted);
+      font-size:12px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      max-width:42vw;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    /* Loader overlay */
+    .loader{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .spinner{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      border:3px solid rgba(234,242,255,.18);
+      border-top-color: rgba(234,242,255,.85);
+      animation: spin 1s linear infinite;
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+    @keyframes spin{
+      to{ transform: rotate(360deg); }
+    }
+
+    .commentaryBtn{
+     display:inline-flex;
+     align-items:center;
+     gap:8px;
+     padding:10px 14px;
+     border-radius:999px;
+     border:1px solid var(--line);
+     background:rgba(0,0,0,.28);
+     backdrop-filter: blur(10px);
+     color:var(--text);
+     text-decoration:none;
+     font-size:13px;
+     white-space:nowrap;
+     cursor:pointer;
+   }
+
+   .commentaryBtn:hover{
+    background:rgba(0,0,0,.38);
+   }
+
+
+   .commentaryStatus{
+     font-weight:700;
+     color:#ff4d4d;
+     font-size:12px;
+     padding-left:6px;
+     line-height:1.1;
+     
+   }
+   .commentaryBtn[aria-disabled="true"]{
+     opacity:.55;
+     cursor:not-allowed;
+   }
+
+
+  
+    /* Commentary modal */
+    .commModal{
+      position:fixed;
+      inset:0;
+      display:none;
+      z-index:50;
+      pointer-events:auto;
+    }
+    .commModal.open{ display:block; }
+    .commBackdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      backdrop-filter: blur(4px);
+    }
+    .commPanel{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:min(980px, calc(100vw - 28px));
+      height:min(78vh, 720px);
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+      box-shadow:0 30px 90px rgba(0,0,0,.55);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+    .commHeader{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.28);
+    }
+    .commTitle{
+      font-size:13px;
+      color:rgba(234,242,255,.85);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:80%;
+    }
+    .commClose{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.26);
+      color:var(--text);
+      border-radius:12px;
+      width:40px;
+      height:34px;
+      cursor:pointer;
+    }
+    .commClose:hover{ background:rgba(0,0,0,.38); }
+    .commBody{
+      flex:1 1 auto;
+      position:relative;
+      padding:0;
+    }
+    .commFrame{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      background:white;
+    }
+    .commMsg{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      text-align:center;
+      color:var(--text);
+      background:rgba(0,0,0,.55);
+      z-index:2;
+      font-weight:700;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+    <img id="mainImg" alt="NGCM Image" decoding="async" loading="eager" />
+  </div>
+
+  <div class="overlay">
+    <div class="topLeft">
+      <a class="back" href="ngcm-master.html">← Back</a>
+
+      <div style="display:flex; flex-direction:column; gap:6px;">
+      <div class="fname" id="fname">Loading…</div>
+
+        <a id="commentaryBtn" class="commentaryBtn" href="#">
+           Commentary
+        </a>
+        <div id="commentaryStatus" class="commentaryStatus" aria-live="polite"></div>
+    </div>
+  </div>
+
+    <button class="navBtn navPrev" id="prevBtn" aria-label="Previous image" title="Previous (←)">
+      ◀
+    </button>
+    <button class="navBtn navNext" id="nextBtn" aria-label="Next image" title="Next (→)">
+      ▶
+    </button>
+    <div class="counter" id="counter">0 / 0</div>
+    <div class="hint">Click the image to return</div>
+  </div>
+
+  <!-- Commentary Modal -->
+  <div class="commModal" id="commModal" aria-hidden="true">
+    <div class="commBackdrop" id="commBackdrop"></div>
+    <div class="commPanel" role="dialog" aria-modal="true" aria-label="Commentary">
+      <div class="commHeader">
+        <div class="commTitle" id="commTitle">Commentary</div>
+        <button class="commClose" id="commClose" type="button" aria-label="Close commentary">✕</button>
+      </div>
+      <div class="commBody">
+        <div class="commMsg" id="commMsg" style="display:none;"></div>
+        <iframe class="commFrame" id="commFrame" title="Commentary"></iframe>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  // ✅ Local list in this viewer (must match ngcm-master.html)
+// ✅ Base path candidates (relative path depends on where this HTML lives)
+// Netlify/Linux is case-sensitive, so we also try a couple safe variants.
+const BASE_CANDIDATES = [
+  "ministry/NGCM/img/",
+  "./ministry/NGCM/img/",
+  "/ministry/NGCM/img/",
+  "img/",
+  "./img/"
+];
+  const IMG_FILES = [
+"NGCM0001.jpg","NGCM0002.jpg","NGCM0003.jpg","NGCM0004.jpg","NGCM0005.jpg","NGCM0006.jpg","NGCM0007.jpg","NGCM0008.jpg","NGCM0009.jpg","NGCM0010.jpg","NGCM0011.jpg","NGCM0012.jpg","NGCM0013.jpg","NGCM0014.jpg","NGCM0015.jpg","NGCM0016.jpg","NGCM0017.jpg","NGCM0018.jpg","NGCM0019.jpg","NGCM0020.jpg","NGCM0021.jpg","NGCM0022.jpg","NGCM0023.jpg","NGCM0024.jpg","NGCM0025.jpg","NGCM0026.jpg","NGCM0027.jpg","NGCM0028.jpg","NGCM0029.jpg","NGCM0030.jpg","NGCM0031.jpg","NGCM0032.jpg","NGCM0033.jpg","NGCM0034.jpg","NGCM0035.jpg","NGCM0036.jpg","NGCM0037.jpg","NGCM0038.jpg","NGCM0039.jpg","NGCM0040.jpg","NGCM0041.jpg","NGCM0042.jpg","NGCM0043.jpg","NGCM0044.jpg","NGCM0045.jpg","NGCM0046.jpg","NGCM0047.jpg","NGCM0048.jpg","NGCM0049.jpg"
+  ];
+
+  const params = new URLSearchParams(location.search);
+  const iParam = params.get("i");
+  const imgParam = params.get("img");
+
+  const mainImg = document.getElementById("mainImg");
+  const fnameEl = document.getElementById("fname");
+  const counterEl = document.getElementById("counter");
+  const loaderEl = document.getElementById("loader");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const commentaryBtn = document.getElementById("commentaryBtn");
+  const commentaryStatusEl = document.getElementById("commentaryStatus");
+
+  // Commentary modal elements
+  const commModal = document.getElementById("commModal");
+  const commBackdrop = document.getElementById("commBackdrop");
+  const commClose = document.getElementById("commClose");
+  const commFrame = document.getElementById("commFrame");
+  const commMsg = document.getElementById("commMsg");
+  const commTitle = document.getElementById("commTitle");
+
+  function openCommModal(titleText){
+    commTitle.textContent = titleText || "Commentary";
+    commMsg.style.display = "none";
+    commMsg.textContent = "";
+    commModal.classList.add("open");
+    commModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeCommModal(){
+    commModal.classList.remove("open");
+    commModal.setAttribute("aria-hidden", "true");
+    // stop loading / release file handle
+    commFrame.src = "about:blank";
+  }
+
+  commBackdrop.addEventListener("click", closeCommModal);
+  commClose.addEventListener("click", closeCommModal);
+  window.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && commModal.classList.contains("open")){
+      closeCommModal();
+    }
+  });
+
+  function loadIframeOnce(url, timeoutMs=1800){
+    return new Promise((resolve) => {
+      let done = false;
+      const finish = (ok) => {
+        if(done) return;
+        done = true;
+        cleanup();
+        resolve(ok);
+      };
+      const t = setTimeout(() => finish(false), timeoutMs);
+
+      function cleanup(){
+        clearTimeout(t);
+        commFrame.onload = null;
+        commFrame.onerror = null;
+      }
+
+      commFrame.onload = () => finish(true);
+      commFrame.onerror = () => finish(false);
+      commFrame.src = url;
+    });
+  }
+
+  async function openCommentaryForCurrentImage(){
+    const imgName = IMG_FILES[currentIndex];
+    const candidates = buildCommentaryCandidates(imgName);
+
+    // UI: show modal right away with loading frame
+    openCommModal(`${imageStem(imgName).toUpperCase()} — Commentary`);
+
+    // Try each candidate until one loads
+    for(const url of candidates){
+      const ok = await loadIframeOnce(url);
+      if(ok){
+        // success: keep modal open; hide any message
+        commMsg.style.display = "none";
+        commMsg.textContent = "";
+        return;
+      }
+    }
+
+    // None loaded: show message, hide button for this image
+    commMsg.style.display = "flex";
+    commMsg.textContent = "No Commentary";
+    commentaryBtn.style.display = "none";
+    commentaryBtn.setAttribute("aria-disabled", "true");
+    commentaryBtn.setAttribute("href", "#");
+    setCommentaryStatus("No Commentary", "error");
+  }
+
+function setCommentaryStatus(text, kind){
+  // kind: "error" | "note" | ""
+  const t = (text || "").trim();
+  commentaryStatusEl.textContent = t;
+  // Hide the status line completely when empty (no wasted space)
+  commentaryStatusEl.style.display = t ? "block" : "none";
+
+  if(!t) return;
+
+  if(kind === "note"){
+    commentaryStatusEl.style.color = "rgba(234,242,255,.75)";
+    commentaryStatusEl.style.fontWeight = "600";
+  } else {
+    commentaryStatusEl.style.color = "#ff4d4d";
+    commentaryStatusEl.style.fontWeight = "700";
+  }
+}
+
+
+  const COMMENTARY_BASE_CANDIDATES = [
+    "assets/commentary/",
+    "./assets/commentary/",
+    "../assets/commentary/",
+    "/assets/commentary/",
+    "ministry/NGCM/assets/commentary/",
+    "./ministry/NGCM/assets/commentary/",
+    "/ministry/NGCM/assets/commentary/",
+    "commentary/",
+    "./commentary/"
+  ];
+
+  function clampIndex(i){
+    const n = IMG_FILES.length;
+    if(!n) return 0;
+    return ((i % n) + n) % n;
+  }
+  function findIndexByName(name){
+    if(!name) return -1;
+    return IMG_FILES.findIndex(f => f.toLowerCase() === name.toLowerCase());
+  }
+
+  let currentIndex = 0;
+
+  // Determine start index (supports ?i= or ?img=)
+  if(iParam !== null && iParam !== "" && !Number.isNaN(parseInt(iParam, 10))){
+    currentIndex = clampIndex(parseInt(iParam, 10));
+  } else if(imgParam){
+    const idx = findIndexByName(imgParam);
+    currentIndex = idx >= 0 ? idx : 0;
+  }
+
+  function setLoading(isLoading){
+    loaderEl.style.display = isLoading ? "flex" : "none";
+  }
+
+  function updateOverlay(){
+    const n = IMG_FILES.length || 1;
+    const name = IMG_FILES[currentIndex] || "—";
+    fnameEl.textContent = name;
+    counterEl.textContent = `${currentIndex + 1} / ${n}`;
+
+    // keep URL in sync for refresh/share
+    const u = new URL(location.href);
+    u.searchParams.set("i", String(currentIndex));
+    u.searchParams.set("img", name);
+    history.replaceState(null, "", u.toString());
+  }
+
+  // Prefetch next/prev WITHOUT blocking initial render
+  function prefetchSrc(src){
+    const p = new Image();
+    p.decoding = "async";
+    // let browser decide priority; we only do neighbors
+    p.src = src;
+  }
+  function prefetchNeighbors(){
+    if(IMG_FILES.length < 2) return;
+    const nextIdx = clampIndex(currentIndex + 1);
+    const prevIdx = clampIndex(currentIndex - 1);
+    const nextSrc = (BASE_CANDIDATES[0] || "") + encodeURIComponent(IMG_FILES[nextIdx]);
+    const prevSrc = (BASE_CANDIDATES[0] || "") + encodeURIComponent(IMG_FILES[prevIdx]);
+
+    const doPrefetch = () => {
+      prefetchSrc(nextSrc);
+      prefetchSrc(prevSrc);
+    };
+
+    // Use idle time if available (prevents "hang" on weak devices)
+    if("requestIdleCallback" in window){
+      requestIdleCallback(doPrefetch, { timeout: 800 });
+    } else {
+      setTimeout(doPrefetch, 120);
+    }
+  }
+
+function uniq(arr){
+  return [...new Set(arr)];
+}
+
+function filenameVariants(name){
+  const out = [name];
+  const m = name.match(/^(.*)\.(jpg|jpeg|png|webp)$/i);
+  if(m){
+    const stem = m[1];
+    const ext = m[2];
+    // try common extension case variants
+    out.push(`${stem}.${ext.toLowerCase()}`);
+    out.push(`${stem}.${ext.toUpperCase()}`);
+    // also try JPG specifically (many cameras export .JPG)
+    if(ext.toLowerCase() === "jpg"){
+      out.push(`${stem}.JPG`);
+      out.push(`${stem}.jpg`);
+    }
+  }
+  return uniq(out);
+}
+
+function buildSrcCandidates(name){
+  const files = filenameVariants(name).map(encodeURIComponent);
+  const srcs = [];
+  for(const base of BASE_CANDIDATES){
+    for(const f of files){
+      srcs.push(base + f);
+    }
+  }
+  return uniq(srcs);
+}
+
+// ---------------- Commentary support ----------------
+function imageStem(name){
+  // "NGCM0001.jpg" -> "ngcm0001"
+  if(!name) return "";
+  const dot = name.lastIndexOf(".");
+  return (dot >= 0 ? name.slice(0, dot) : name).toLowerCase();
+}
+
+function buildCommentaryCandidates(imgName){
+  const stem = imageStem(imgName);
+  if(!stem) return [];
+  // Commentary filenames are expected like: ngcm0001-commentary.html
+  const fname = `${stem}-commentary.html`;
+
+  // Try case variants too (in case files were uploaded with different casing)
+  const variants = uniq([fname, fname.toLowerCase(), fname.toUpperCase()]).map(encodeURIComponent);
+
+  const out = [];
+  for(const base of COMMENTARY_BASE_CANDIDATES){
+    for(const v of variants){
+      out.push(base + v);
+    }
+  }
+  return uniq(out);
+}
+
+let commentaryProbeToken = 0;
+
+function isFileProtocol(){
+  return location.protocol === 'file:';
+}
+
+
+async function probeExists(url){
+  try{
+    // When served over http(s), we can reliably probe.
+    // Some static hosts block HEAD, so we attempt HEAD then GET.
+    let r = await fetch(url, { method: "HEAD", cache: "no-store" });
+    if(r && r.ok) return true;
+
+    r = await fetch(url, { method: "GET", cache: "no-store" });
+    return !!(r && r.ok);
+  }catch(_){
+    // If the page is opened via file://, browsers commonly block fetch() probing.
+    return false;
+  }
+}
+
+async function refreshCommentaryLink(){
+  const token = ++commentaryProbeToken;
+
+  // Reset UI immediately (prevents stale status from previous image)
+  commentaryBtn.setAttribute("aria-disabled", "true");
+  commentaryBtn.setAttribute("href", "#");
+  commentaryBtn.title = "";
+  // Hide by default while we check; avoids showing the button for missing files.
+  commentaryBtn.style.display = "none";
+  setCommentaryStatus("", "");
+
+  const imgName = IMG_FILES[currentIndex];
+  const candidates = buildCommentaryCandidates(imgName);
+
+// If opened as a local file (file://), browsers block reliable probing.
+// We do NOT hide the button here; instead, we allow click-to-open and handle missing files gracefully.
+if(isFileProtocol()){
+  const first = candidates[0] || "#";
+  commentaryBtn.style.display = "inline-flex";
+  commentaryBtn.setAttribute("aria-disabled", "false");
+  commentaryBtn.setAttribute("href", first);
+  commentaryBtn.title = "";
+  // No status text by default (no wasted space)
+  setCommentaryStatus("", "");
+  return;
+}
+
+
+  for(const url of candidates){
+    const ok = await probeExists(url);
+    if(token !== commentaryProbeToken) return; // navigation changed while probing
+    if(ok){
+      commentaryBtn.style.display = "inline-flex";
+      commentaryBtn.setAttribute("aria-disabled", "false");
+      commentaryBtn.setAttribute("href", url);
+      commentaryBtn.title = "";
+      setCommentaryStatus("", "");
+      return;
+    }
+  }
+
+  // Not found: hide the button and show a clear status
+  commentaryBtn.style.display = "none";
+  commentaryBtn.setAttribute("aria-disabled", "true");
+  commentaryBtn.setAttribute("href", "#");
+  commentaryBtn.title = "";
+  setCommentaryStatus("No Commentary", "error");
+}
+
+
+function attemptLoad(srcCandidates, k){
+  if(k >= srcCandidates.length){
+    setLoading(false);
+    fnameEl.textContent = "Load error";
+    counterEl.textContent = "";
+    return;
+  }
+  const src = srcCandidates[k];
+
+  mainImg.onerror = () => attemptLoad(srcCandidates, k + 1);
+
+  mainImg.onload = () => {
+    setLoading(false);
+    mainImg.style.opacity = "1";
+    // decode in background (do not await)
+    try { mainImg.decode?.(); } catch(_) {}
+    prefetchNeighbors();
+  };
+
+  mainImg.src = src;
+}
+
+  function showImage(i){
+    if(!IMG_FILES.length) return;
+
+    currentIndex = clampIndex(i);
+    updateOverlay();
+    refreshCommentaryLink();
+
+    const name = IMG_FILES[currentIndex];
+    const srcCandidates = buildSrcCandidates(name);
+
+    setLoading(true);
+
+// swap quickly and fade in after successful load
+mainImg.style.opacity = "0";
+mainImg.alt = name;
+
+attemptLoad(srcCandidates, 0);
+  }
+
+  function next(){ showImage(currentIndex + 1); }
+  function prev(){ showImage(currentIndex - 1); }
+
+  prevBtn.addEventListener("click", prev);
+  nextBtn.addEventListener("click", next);
+
+  window.addEventListener("keydown", (e) => {
+    if(e.key === "ArrowRight") next();
+    if(e.key === "ArrowLeft") prev();
+    if(e.key === "Escape") location.href = "ngcm-master.html";
+  });
+
+  // Click image returns to master (keeps your original UX)
+  mainImg.addEventListener("click", () => location.href = "ngcm-master.html");
+
+  // Commentary button
+  commentaryBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const disabled = commentaryBtn.getAttribute("aria-disabled") === "true";
+    if(disabled){
+      return;
+    }
+    await openCommentaryForCurrentImage();
+  });
+
+  // Init
+  showImage(currentIndex);
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0048">NGCM0048</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Living by Every Word: The Primacy of God’s Word in the Life of Faith</h1>
+        <p>A Theological Commentary on Matthew 4:4</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“But He answered, ‘It is written, Man shall not live by bread alone, but by every word that comes from the mouth of God.’”
+— Gospel of Matthew 4:4
+
+Key Doctrine
+
+The Absolute Sufficiency of the Word of God for Spiritual Life
+
+In this declaration, Jesus Christ affirms that true life is sustained not merely by physical nourishment but by the sustaining word of God. Responding to temptation in the wilderness, Christ demonstrates that obedience to God’s revealed word takes precedence over immediate physical needs. The doctrine emphasized in this passage is that the Word of God is the ultimate source of spiritual life, guidance, and sustenance for humanity. Thus the believer’s life must be grounded in continual dependence upon the revelation of God.
+
+Exposition
+1. The Context of the Temptation in the Wilderness
+
+The statement recorded in Gospel of Matthew 4 occurs during the temptation of Jesus in the wilderness. After fasting for forty days, Jesus experiences intense hunger. At this moment, the tempter challenges Him to transform stones into bread. Although Christ possesses the power to perform such a miracle, He refuses to act independently of the will of the Father. Instead, He responds by quoting Scripture, demonstrating that obedience to God’s word governs His actions. Thus the temptation narrative reveals the centrality of Scripture in guiding the life of Christ.
+
+2. The Authority of Scripture
+
+“It is written”
+
+Christ begins His response with the declaration that Scripture carries decisive authority. By quoting from the sacred text, Christ establishes that God’s revealed word provides the ultimate standard for determining right action. This appeal to Scripture reflects the conviction that divine revelation offers reliable guidance in moments of moral testing. Thus the authority of Scripture stands above human impulse and immediate desire.
+
+3. The Limitation of Physical Sustenance
+
+“Man shall not live by bread alone”
+
+Bread represents the basic necessities required for physical survival. Christ acknowledges the importance of physical nourishment but insists that human existence cannot be sustained solely by material provisions. Human beings possess spiritual dimensions that require a deeper source of sustenance. Thus physical survival alone does not constitute the fullness of life intended by God.
+
+4. Dependence on the Word of God
+
+“but by every word that comes from the mouth of God”
+
+The statement emphasizes that the true source of life lies in the word spoken by God. Just as food sustains the body, the word of God sustains the spiritual life of the believer. Through divine revelation, individuals receive guidance, correction, and encouragement. The word of God therefore becomes the foundation upon which faithful living is built. Thus the believer’s vitality depends upon continual engagement with the truth revealed by God.
+
+5. The Example of Christ’s Obedience
+
+Christ’s response to temptation demonstrates a model for resisting spiritual challenges. Rather than relying upon personal power or ingenuity, Christ grounds His response in Scripture. This reliance upon the word of God reveals the path of faithful obedience. By submitting to the authority of God’s word, Christ affirms that true life emerges through alignment with the will of God.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“γέγραπται” (gegraptai)
+Translated “it is written,” this phrase indicates the authoritative and enduring nature of Scripture.
+
+“ἄρτῳ μόνῳ” (artō monō)
+Meaning “bread alone,” this expression refers to physical sustenance.
+
+“παντὶ ῥήματι” (panti rhēmati)
+Translated “every word,” this phrase emphasizes the comprehensive scope of God’s revelation.
+
+“ἐκπορευομένῳ διὰ στόματος Θεοῦ” (ekporeuomenō dia stomatos Theou)
+Meaning “that proceeds from the mouth of God,” this expression highlights the divine origin of the word.
+
+Together these terms emphasize the authority and life-giving power of God’s revelation.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several essential insights.
+
+1. Scripture Must Guide the Life of the Believer
+The Word of God provides the primary source of spiritual nourishment and direction.
+
+2. Spiritual Life Requires Continual Engagement with God’s Word
+Regular meditation upon Scripture sustains faith and strengthens obedience.
+
+3. Scripture Provides Defense Against Temptation
+Believers resist spiritual challenges by grounding their responses in the truth revealed by God.
+
+4. Faithfulness Requires Submission to God’s Will
+Christ’s example demonstrates that obedience to God’s word must take precedence over personal desires or immediate needs.
+
+Concluding Reflection
+
+In the response recorded in the Gospel of Matthew, Jesus Christ reveals the essential role of God’s word in sustaining human life. While physical nourishment remains necessary, the deeper life of the human soul depends upon the truth that proceeds from God. Through faithful obedience to this word, believers discover the path that leads to genuine life and spiritual vitality. Thus the life of faith unfolds through continual reliance upon the Word of God, which guides, sustains, and transforms those who receive it with humility and trust.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

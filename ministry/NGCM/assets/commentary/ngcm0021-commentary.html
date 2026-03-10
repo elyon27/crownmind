@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0021">NGCM0021</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Blessed Through Persecution: Faithfulness to Righteousness in the Kingdom</h1>
+        <p>A Theological Commentary on Matthew 5:10</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are those who are persecuted for righteousness’ sake, for theirs is the kingdom of heaven.”
+— Gospel of Matthew 5:10
+
+Key Doctrine
+
+Faithful Endurance Under Persecution as Evidence of Kingdom Allegiance
+
+This Beatitude, spoken by Jesus Christ in the Sermon on the Mount, reveals that suffering for the sake of righteousness is not a contradiction of divine blessing but rather an indication of belonging to the kingdom of heaven. The doctrine expressed in this passage is that those who remain faithful to God’s righteousness even in the face of opposition demonstrate their participation in the kingdom of God and will ultimately share in its blessings. Persecution therefore becomes a paradoxical sign of spiritual authenticity, reflecting the conflict between the values of God’s kingdom and the fallen systems of the world.
+
+Exposition
+1. The Culmination of the Beatitudes
+
+Within the structure of the Beatitudes in the Gospel of Matthew, this statement serves as the climax of the series. The earlier Beatitudes describe the inner transformation of those who belong to the kingdom:
+
+- humility of spirit
+- sorrow over sin
+- meekness before God
+- hunger for righteousness
+- mercy toward others
+- purity of heart
+- peacemaking
+
+These qualities inevitably bring believers into tension with a world shaped by pride, injustice, and self-interest. Thus persecution arises as the natural consequence of living according to the values of the kingdom.
+
+2. The Meaning of Persecution
+
+“those who are persecuted”
+
+Persecution refers to hostility, opposition, or suffering experienced because of faithfulness to God. Throughout biblical history, those who faithfully proclaimed the truth of God often encountered resistance from political authorities, religious institutions, or broader cultural systems. Persecution can take many forms, including:
+
+- social rejection
+- verbal hostility
+- legal oppression
+- physical suffering
+
+Christ acknowledges that those who follow Him may encounter such opposition because their lives expose the moral contradictions of the surrounding world.
+
+3. The Cause of Persecution
+
+“for righteousness’ sake”
+
+The Beatitude does not declare blessing upon all suffering but specifically upon suffering that arises from commitment to righteousness. Righteousness refers to alignment with the will and character of God. Thus persecution becomes meaningful when it results from faithfulness to God’s commands and the pursuit of justice, truth, and holiness. Suffering that arises from wrongdoing or personal conflict does not carry the same spiritual significance. The Beatitude therefore emphasizes that the blessed are those who endure hardship because they remain faithful to the righteousness of God.
+
+4. Participation in the Kingdom
+
+“for theirs is the kingdom of heaven”
+
+The promise attached to this Beatitude mirrors the promise given in the first Beatitude. This repetition creates an important literary structure: the Beatitudes begin and end with the declaration that the kingdom of heaven belongs to those who embody its values. The inclusion of persecution within this promise reveals that suffering does not separate believers from the kingdom but rather confirms their participation in it. Those who endure persecution demonstrate their allegiance to the reign of God above all earthly authority.
+
+5. The Example of Christ
+
+The ultimate example of suffering for righteousness is found in the life of Jesus Christ Himself. Christ’s ministry consistently challenged systems of injustice and hypocrisy, ultimately leading to His crucifixion. Through His suffering, Christ reveals that the path of righteousness often leads through opposition before it leads to victory. Believers who endure persecution therefore participate in the pattern of faithfulness demonstrated by Christ.
+
+Greek Notes
+
+Several key Greek expressions illuminate the meaning of this Beatitude.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this term refers to the state of divine favor experienced by those who live under the reign of God.
+
+“δεδιωγμένοι” (dediōgmenoi)
+The word translated “persecuted” refers to those who are pursued, harassed, or oppressed because of their faithfulness.
+
+“ἕνεκεν δικαιοσύνης” (heneken dikaiosynēs)
+This phrase means “for the sake of righteousness,” indicating that the persecution arises from commitment to God’s will.
+
+“ἡ βασιλεία τῶν οὐρανῶν” (hē basileia tōn ouranōn)
+The “kingdom of heaven” refers to the reign of God that is both present in the ministry of Christ and fully realized in the future.
+
+Together these terms emphasize that those who endure opposition because of their commitment to righteousness participate in the blessings of God’s kingdom.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several critical insights.
+
+1. Faithfulness to God May Bring Opposition
+Ministers and believers must recognize that commitment to righteousness may provoke resistance from those who reject the values of God’s kingdom.
+
+2. Persecution Does Not Indicate Divine Abandonment
+Suffering for righteousness should not be interpreted as a sign of failure but as a confirmation of allegiance to Christ.
+
+3. Courage Is Required for Kingdom Living
+Believers must cultivate spiritual courage in order to remain faithful when confronted with opposition.
+
+4. Eternal Hope Sustains Present Suffering
+The promise of the kingdom provides encouragement for those who endure hardship for the sake of righteousness.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ concludes the Beatitudes by addressing the reality of persecution. Those who live according to the values of the kingdom may face opposition from a world that resists the authority of God. Yet Christ declares that such individuals are truly blessed. For in their faithfulness they reveal their allegiance to the kingdom of heaven and participate in the redemptive pattern that culminates in the victory of God’s righteousness.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

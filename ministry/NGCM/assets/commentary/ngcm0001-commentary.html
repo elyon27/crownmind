@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0001">NGCM0001</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Good Shepherd and the Sacrificial Shepherd-King</h1>
+        <p>A Theological Commentary on John 10:11</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A Theological Commentary on John 10:11
+
+“I am the Good Shepherd. The Good Shepherd lays down His life for the sheep.”
+John 10:11
+
+I. Literary and Canonical Context
+John 10:11 occurs within the larger Shepherd Discourse of John 10:1–21, which follows immediately after the healing of the man born blind in John 9. This connection is not incidental. In John 9, Jesus exposes the spiritual blindness of the Pharisees, who function as the religious leaders of Israel. The Shepherd Discourse therefore serves as both a revelation of Christ’s identity and a condemnation of corrupt spiritual leadership. The structure of John 10 draws heavily from Ezekiel 34, where God rebukes the shepherds of Israel for feeding themselves rather than the flock: “Woe to the shepherds of Israel who only take care of themselves! Should not shepherds take care of the flock?” (Ezekiel 34:2) In that prophetic passage, God declares that because Israel’s leaders failed, He Himself would come and shepherd His people (Ezekiel 34:11–16). John 10 must therefore be read against this prophetic backdrop. When Jesus declares “I am the Good Shepherd,” He is implicitly claiming to be the fulfillment of God’s promise to personally shepherd His people. Thus, the Shepherd Discourse is not merely pastoral imagery; it is a messianic and divine claim embedded within Israel’s prophetic expectations.
+
+II. The Significance of the “I Am” Declaration
+The phrase “I am” (Greek: ego eimi) is a recurring theological marker throughout the Gospel of John. John intentionally records several “I Am” declarations that reveal different aspects of Christ’s identity:
+
+    I am the Bread of Life (John 6:35)
+    I am the Light of the World (John 8:12)
+    I am the Door of the Sheep (John 10:9)
+    I am the Good Shepherd (John 10:11)
+    I am the Resurrection and the Life (John 11:25)
+
+The phrase echoes the divine self-identification of God in Exodus 3:14. While not every use of ego eimi in John explicitly functions as a divine name claim, the cumulative pattern strongly suggests that John intends readers to recognize the divine identity of Jesus. Thus, when Jesus says “I am the Good Shepherd,” He is not merely presenting Himself as a spiritual leader. He is revealing Himself as the incarnate shepherd of Yahweh’s people.
+
+III. The Meaning of “Good” (καλός – kalos)
+The adjective translated “good” is the Greek word kalos, which carries a meaning richer than moral goodness. It includes the sense of noble, ideal, authentic, and beautiful in character. This distinction is theologically important. Jesus is not merely a good shepherd among many; He is the model shepherd, the one who embodies the ideal shepherding role anticipated in Israel’s scriptures. In contrast to Israel’s failed shepherds (Ezekiel 34) and the hirelings described later in John 10, Jesus represents the perfect shepherd-king, combining the pastoral role of a shepherd with the royal authority of the Messiah. This imagery also connects with the Davidic covenant, since David himself was a shepherd before becoming king (1 Samuel 16). The Messiah was therefore often anticipated as a shepherd-king in the line of David. Christ fulfills both roles simultaneously.
+
+IV. The Sacrificial Nature of the Shepherd’s Mission
+The defining characteristic of the Good Shepherd is expressed in the statement: “The Good Shepherd lays down His life for the sheep.” The Greek phrase τίθησιν τὴν ψυχὴν αὐτοῦ (tithēsin tēn psychēn autou) literally means “places down His life.” The verb tithēmi implies intentional action rather than passive suffering. This is confirmed later in John 10:18: “No one takes it from me, but I lay it down of my own accord.” Thus, the death of Christ is not portrayed as accidental or tragic; it is voluntary and redemptive. From a doctrinal perspective, this passage contributes to the theology of substitutionary atonement. The shepherd dies “for the sheep” (Greek: hyper tōn probatōn), indicating that His death is on behalf of the flock. This aligns with the broader New Testament witness: Isaiah 53:5 — the suffering servant bears the sins of the people Mark 10:45 — the Son of Man gives His life as a ransom for many 1 Peter 2:24 — He bore our sins in His body on the tree. The Good Shepherd therefore secures the salvation of His sheep through self-sacrificial love.
+
+V. The Personal Knowledge Between Shepherd and Sheep
+Later in the discourse Jesus declares: “I know my sheep and my sheep know me” (John 10:14). The Greek word for “know” (ginōskō) indicates relational knowledge rather than intellectual awareness. This mirrors the intimate knowledge between the Father and the Son: “Just as the Father knows me and I know the Father” (John 10:15). This comparison is remarkable. It suggests that the relationship between Christ and His followers reflects, in some sense, the relational depth within the Trinity itself. Salvation in Johannine theology is therefore not merely legal or institutional. It is participation in a living relationship    with the Son of God.
+
+VI. The Contrast with the Hireling
+Jesus contrasts Himself with the hireling (misthōtos), the hired worker who abandons the sheep when danger arises. The hireling serves for payment, not for the welfare of the flock. When wolves approach, he flees because the sheep do not belong to him. Theologically, this contrast critiques false or self-serving leadership, particularly among Israel’s religious authorities. While they held positions of authority, they lacked the sacrificial devotion required of true shepherds. Christ, by contrast, demonstrates that true spiritual authority is grounded in sacrificial love rather than institutional power.
+
+VII. The Ecclesiological Implications
+The Shepherd imagery in John 10 also informs the church’s understanding of leadership. Later New Testament writers apply this model to church leaders: Acts 20:28 — elders are commanded to shepherd the church of God. 1 Peter 5:2–4 — pastors must shepherd willingly and not for selfish gain. Yet these leaders remain under-shepherds. Christ alone remains the Chief Shepherd. This ensures that the ultimate loyalty of the church belongs not to human leaders but to Christ Himself.
+
+VIII. The Eschatological Shepherd-King
+The Good Shepherd who lays down His life is also the Shepherd who gathers the flock of God from all nations. Later in John 10:16 Jesus says: “I have other sheep that are not of this sheepfold. I must bring them also.”. This statement anticipates the global mission of the church and the inclusion of the Gentiles within the people of God. Ultimately, the shepherd imagery reaches its climax in Revelation 7:17: “For the Lamb at the center of the throne will be their shepherd.” The paradox is striking: the Lamb who was slain becomes the Shepherd of the redeemed.
+
+Conclusion
+
+John 10:11 stands as one of the most profound Christological statements in the Gospel of John. In a single declaration, Jesus reveals:
+
+- His divine identity as the Shepherd of God’s people
+- His messianic role as the Davidic Shepherd-King
+- His redemptive mission through sacrificial death
+- His intimate relationship with His followers
+- His authority as the true leader of the flock
+
+The Good Shepherd is therefore not merely a comforting metaphor. It is a theological revelation of the character and mission of Christ. He shepherds His people not through coercion, but through self-giving love, culminating in the cross where the Shepherd lays down His life so that the sheep may live.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

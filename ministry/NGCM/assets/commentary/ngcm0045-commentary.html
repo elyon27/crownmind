@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0045">NGCM0045</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>A Chosen People: Covenant Identity and Divine Election</h1>
+        <p>A Theological Commentary on Deuteronomy 7:6</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“For you are a people holy to the LORD your God. The LORD your God has chosen you to be a people for His treasured possession, out of all the peoples who are on the face of the earth.”
+— Book of Deuteronomy 7:6
+
+Key Doctrine
+
+Divine Election and Covenant Identity
+
+In this declaration, Moses reminds the people of Israel of their unique identity as a nation chosen by God. The statement emphasizes that Israel’s relationship with God is grounded not in human merit or national greatness but in the sovereign decision of God to establish a covenant with them. The doctrine emphasized in this passage is that God sovereignly chooses a people to belong to Him, setting them apart for a covenant relationship that reflects His holiness and purposes within the world. Thus Israel’s identity is defined by divine election and covenant responsibility.
+
+Exposition
+1. The Covenant Context
+
+The statement recorded in Book of Deuteronomy 7 occurs within Moses’ instruction to Israel as they prepare to enter the Promised Land. In this section of the covenant address, Moses warns the people against adopting the religious practices of surrounding nations. The reminder of Israel’s chosen status serves as motivation for faithful obedience. Because Israel belongs to God in a unique covenant relationship, they are called to live in a manner that reflects His holiness. Thus the doctrine of election carries ethical implications for the life of the community.
+
+2. The Meaning of Holiness
+
+“a people holy to the LORD your God”
+
+The concept of holiness refers to being set apart for a sacred purpose. In this context, Israel’s holiness does not imply moral perfection but rather a distinct identity within the nations of the world. God has separated Israel from other peoples in order to establish a covenant relationship through which His purposes will be revealed. This calling requires Israel to reflect the character of God through obedience to His commandments. Thus holiness functions both as a gift of divine election and as a calling to faithful living.
+
+3. The Sovereign Choice of God
+
+“The LORD your God has chosen you”
+
+The language of choosing highlights the initiative of God in forming the covenant relationship. Israel did not earn its status through political power, cultural achievement, or moral superiority. Rather, God’s choice reflects His sovereign will and gracious intention. This election demonstrates that the relationship between God and His people originates in divine grace rather than human accomplishment.
+
+4. The Treasured Possession
+
+“a people for His treasured possession”
+
+The phrase translated “treasured possession” conveys the image of a valued and carefully guarded property. In ancient royal contexts, the term referred to a king’s personal treasure. By applying this language to Israel, the text emphasizes the special value God places upon His covenant people. The relationship between God and Israel is therefore marked by intimacy, protection, and purpose.
+
+5. The Purpose of Election
+
+“out of all the peoples who are on the face of the earth”
+
+The statement underscores the universal scope of God’s sovereignty. Although Israel is chosen from among the nations, this election serves a broader purpose. Through Israel, the knowledge of God and the promise of redemption are intended to extend to the entire world. Thus the chosen status of Israel functions as a means through which God’s redemptive plan unfolds within human history.
+
+Greek Notes
+
+While the original text of Book of Deuteronomy is written in Hebrew, several key Hebrew terms clarify the theological meaning of the passage.
+
+“קָדוֹשׁ” (qadosh)
+Translated “holy,” this word refers to being set apart for sacred purposes.
+
+“בָּחַר” (bachar)
+Meaning “to choose,” this verb emphasizes the sovereign selection made by God.
+
+“סְגֻלָּה” (segullah)
+Translated “treasured possession,” this term refers to a valued property belonging to a king.
+
+Together these terms emphasize the themes of divine election, covenant identity, and sacred belonging.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. Identity in God Shapes the Life of the Community
+Believers must understand their identity as people belonging to God.
+
+2. Election Leads to Responsibility
+Being chosen by God carries the responsibility of living in obedience and reflecting His character.
+
+3. Holiness Distinguishes God’s People
+The community of faith should embody values that set it apart from the patterns of the surrounding culture.
+
+4. God’s Purpose Extends to the Nations
+The calling of God’s people ultimately serves the broader mission of revealing His truth to the world.
+
+Concluding Reflection
+
+In the covenant declaration recorded in Book of Deuteronomy, Moses reminds Israel that their identity arises from the gracious choice of God. Set apart as a holy people and treasured possession, Israel occupies a unique place within the unfolding narrative of redemption. This calling invites them to live in faithful obedience and to reflect the character of the God who chose them. Through this covenant relationship, the purposes of God begin to unfold, preparing the way for the broader redemption that will ultimately extend to all nations.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

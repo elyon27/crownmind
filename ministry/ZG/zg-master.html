@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.return-home{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.return-home a{
+  text-decoration:none;
+  padding:10px 18px;
+  background:#0b1220;
+  color:#fff;
+  border-radius:8px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,.15);
+  transition:all .3s ease;
+}
+
+.return-home a:hover{
+  background:#1d2b4f;
+}
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZG — Image Master Index</title>
+  <style>
+    :root{
+      --bg:#061b3a;
+      --panel:rgba(255,255,255,.06);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.7);
+      --line:rgba(255,255,255,.12);
+      --chip:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(900px 500px at 20% 10%, rgba(88,167,255,.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(0,255,200,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      min-height:100vh;
+    }
+    header{
+      padding:26px 18px 10px;
+      text-align:center;
+    }
+    header h1{
+      margin:0 0 6px;
+      font-size:22px;
+      letter-spacing:.5px;
+    }
+    header p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:14px 14px 30px;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 12px 40px rgba(0,0,0,.25);
+    }
+    .toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+    }
+    .search{
+      flex:1;
+      min-width:240px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    input[type="search"]{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      color:var(--text);
+      outline:none;
+    }
+    input[type="search"]::placeholder{color:rgba(234,242,255,.55)}
+    .meta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .pill{
+      padding:6px 10px;
+      background:var(--chip);
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--text);
+      font-size:12px;
+    }
+    ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    li{
+      border-top:1px solid var(--line);
+    }
+    li:first-child{border-top:none;}
+    a.filelink{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:12px 14px;
+      text-decoration:none;
+      color:var(--text);
+      transition:background .15s ease;
+    }
+    a.filelink:hover{
+      background:rgba(255,255,255,.06);
+    }
+    .fname{
+      font-weight:600;
+      font-size:14px;
+      word-break:break-all;
+    }
+    .ftype{
+      color:var(--muted);
+      font-size:12px;
+      border:1px solid var(--line);
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(0,0,0,.16);
+    }
+    .note{
+      padding:12px 14px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      line-height:1.45;
+    }
+    code{
+      background:rgba(0,0,0,.20);
+      padding:2px 6px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="return-home">
+  <a href="../../index.html">← Return Home</a>
+  </div>
+  <header>
+    <h1>ZG — Image Master Index</h1>
+    <p>Click a filename to open its full-screen viewer.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="toolbar">
+        <div class="search">
+          <input id="q" type="search" placeholder="Search image filename..." />
+        </div>
+        <div class="meta">
+          <span class="pill" id="countPill">0 files</span>
+        </div>
+      </div>
+
+      <ul id="list"></ul>
+
+      <div class="note">
+        <div><strong>Setup:</strong> put your images in <code>ministry/ZG/img/</code></div>
+        <div style="margin-top:6px;">
+          Then edit the <code>IMG_FILES</code> array below to match your filenames
+          (example: <code>"logo.png"</code>, <code>"banner.jpg"</code>).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * IMPORTANT:
+     * Browsers cannot automatically "read a folder" of images from plain HTML.
+     * So you must list the filenames here once.
+     */
+    const IMG_BASE = "ZG/img/";
+    const IMG_FILES = [
+      // Example:
+      // "sample1.jpg",
+      // "sample2.png"
+   "ZG0001.jpg","ZG0002.jpg","ZG0003.jpg","ZG0004.jpg","ZG0005.jpg","ZG0006.jpg","ZG0007.jpg","ZG0008.jpg",
+   "ZG0009.jpg","ZG0010.jpg","ZG0011.jpg","ZG0012.jpg","ZG0013.jpg","ZG0014.jpg","ZG0015.jpg","ZG0016.jpg",
+   "ZG0017.jpg","ZG0018.jpg","ZG0019.jpg","ZG0020.jpg","ZG0021.jpg","ZG0022.jpg","ZG0023.jpg","ZG0024.jpg",
+   "ZG0025.jpg","ZG0026.jpg","ZG0027.jpg","ZG0028.jpg","ZG0029.jpg","ZG0030.jpg","ZG0031.jpg","ZG0032.jpg",
+   "ZG0033.jpg","ZG0034.jpg","ZG0035.jpg","ZG0036.jpg","ZG0037.jpg","ZG0038.jpg","ZG0039.jpg","ZG0040.jpg",
+   "ZG0041.jpg","ZG0042.jpg","ZG0043.jpg","ZG0044.jpg","ZG0045.jpg","ZG0046.jpg","ZG0047.jpg","ZG0048.jpg",
+   "ZG0049.jpg","ZG0050.jpg","ZG0051.jpg","ZG0052.jpg","ZG0053.jpg","ZG0054.jpg","ZG0055.jpg","ZG0056.jpg",
+   "ZG0057.jpg","ZG0058.jpg","ZG0059.jpg","ZG0060.jpg","ZG0061.jpg","ZG0062.jpg","ZG0063.jpg","ZG0064.jpg",
+   "ZG0065.jpg"
+    ];
+
+    const listEl = document.getElementById("list");
+    const qEl = document.getElementById("q");
+    const countPill = document.getElementById("countPill");
+
+    function extOf(name){
+      const m = name.toLowerCase().match(/\.([a-z0-9]+)$/);
+      return m ? m[1] : "";
+    }
+
+    function render(){
+      const q = (qEl.value || "").trim().toLowerCase();
+      listEl.innerHTML = "";
+
+      const filtered = IMG_FILES.filter(f => f.toLowerCase().includes(q));
+
+      countPill.textContent = `${filtered.length} file${filtered.length === 1 ? "" : "s"}`;
+
+      if(filtered.length === 0){
+        const empty = document.createElement("li");
+        empty.innerHTML = `
+          <div style="padding:14px; color: rgba(234,242,255,.72);">
+            No matches. (Update <code>IMG_FILES</code> in the script.)
+          </div>`;
+        listEl.appendChild(empty);
+        return;
+      }
+
+      filtered.forEach(filename => {
+        const li = document.createElement("li");
+        const type = extOf(filename) || "img";
+        li.innerHTML = `
+          <a class="filelink" href="zg-img-view.html?img=${encodeURIComponent(filename)}">
+            <span class="fname">${filename}</span>
+            <span class="ftype">${type}</span>
+          </a>
+        `;
+        listEl.appendChild(li);
+      });
+    }
+
+    qEl.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0027">NGCM0027</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Rest of the Messiah: The Gentle Invitation of Christ</h1>
+        <p>A Theological Commentary on Matthew 11:28-30</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Come to Me, all who labor and are heavy laden, and I will give you rest.
+Take My yoke upon you and learn from Me, for I am gentle and lowly in heart, and you will find rest for your souls.
+For My yoke is easy, and My burden is light.”
+— Gospel of Matthew 11:28–30
+
+Key Doctrine
+
+The Rest Found in the Person and Authority of Christ
+
+In this passage, Jesus Christ extends one of the most compassionate invitations in the New Testament. Addressing those burdened by spiritual weariness and religious obligation, Christ offers rest through relationship with Himself. The doctrine emphasized in this passage is that true spiritual rest is found not through human effort or religious performance but through submission to the gracious authority of Christ. The invitation reveals the heart of the gospel: the weary are welcomed, the burdened are relieved, and the soul finds rest through union with the Messiah.
+
+Exposition
+1. The Universal Invitation of Christ
+
+“Come to Me”
+
+The invitation begins with a direct summons from Christ Himself. Rather than directing individuals to a system of laws or rituals, Christ invites them into a personal relationship with Him. This call reflects the centrality of Christ in the economy of salvation. The solution to human spiritual exhaustion is not found in increased effort but in approaching the One who possesses authority over life and salvation. The invitation also demonstrates the openness of Christ’s ministry, extending beyond specific social or religious groups to all who recognize their need.
+
+2. The Condition of Human Weariness
+
+“all who labor and are heavy laden”
+
+The description refers to individuals burdened by the weight of life’s struggles as well as by the oppressive expectations of religious legalism. In the historical context of the Gospel of Matthew, many people experienced spiritual fatigue due to the extensive interpretations of the law imposed by religious authorities. Beyond this historical context, the phrase also captures the universal human condition. Humanity struggles under the burdens of sin, guilt, anxiety, and the relentless attempt to secure righteousness through personal effort. Christ addresses those who recognize this exhaustion and seek relief.
+
+3. The Promise of Rest
+
+“and I will give you rest”
+
+The rest promised by Christ represents more than physical relief; it refers to the restoration of the soul. This rest includes:
+
+- forgiveness from the burden of sin
+- freedom from the anxiety of self-justification
+- peace through reconciliation with God
+
+The promise echoes the broader biblical theme of rest associated with the presence of God and the fulfillment of His promises. Thus Christ presents Himself as the source of the rest that humanity has long sought.
+
+4. The Meaning of the Yoke
+
+“Take My yoke upon you”
+
+A yoke was a wooden instrument placed upon animals to guide and direct their work. In Jewish teaching, the yoke often symbolized submission to instruction or authority. Christ therefore invites His followers to enter into a new form of discipleship under His guidance. Unlike burdensome legalism, the yoke of Christ represents a relationship in which obedience flows from love and trust. This yoke does not eliminate responsibility but transforms it through the grace and companionship of Christ.
+
+5. Learning from the Character of Christ
+
+“for I am gentle and lowly in heart”
+
+Christ reveals the nature of His leadership through the description of His character. Gentleness and humility stand in contrast to the harsh authority often associated with religious leadership in the ancient world. The Messiah exercises authority not through domination but through compassionate care. Thus discipleship under Christ involves learning from His example of humility, patience, and mercy.
+
+6. The Rest for the Soul
+
+“you will find rest for your souls”
+
+This statement echoes themes found in the prophetic writings where God promises rest for those who walk in His ways. The rest described here involves the restoration of the inner life. The soul finds peace when it is reconciled with God and aligned with His purposes. Through Christ, the restless striving of humanity finds its resolution in communion with God.
+
+7. The Nature of Christ’s Burden
+
+“For My yoke is easy, and My burden is light”
+
+The teaching concludes with the assurance that life under the authority of Christ is not oppressive. This statement does not imply that discipleship is effortless or devoid of challenge. Rather, it emphasizes that the burdens associated with following Christ are fundamentally different from the oppressive burdens of sin and legalism. Under the guidance of Christ, believers find that obedience becomes a source of freedom rather than exhaustion.
+
+Greek Notes
+
+Several Greek expressions illuminate the meaning of this passage.
+
+“δεῦτε πρός με” (deute pros me)
+Translated “come to Me,” this phrase represents a personal invitation into relationship with Christ.
+
+“ἀναπαύσω” (anapausō)
+Meaning “I will give rest,” this verb conveys the idea of refreshment, relief, and restoration.
+
+“ζυγόν” (zygon)
+The term “yoke” symbolizes submission to instruction or authority.
+
+“πραΰς καὶ ταπεινὸς τῇ καρδίᾳ” (praus kai tapeinos tē kardia)
+Translated “gentle and lowly in heart,” this phrase reveals the compassionate character of Christ.
+
+Together these expressions emphasize that the rest offered by Christ arises from His gracious authority and compassionate leadership.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several significant insights.
+
+1. The Gospel Offers Rest to the Weary
+Ministry must present Christ as the source of spiritual restoration for those burdened by sin, guilt, and religious legalism.
+
+2. Discipleship Involves Learning from Christ
+Followers of Christ grow spiritually by observing and imitating His character.
+
+3. Leadership Must Reflect the Gentleness of Christ
+Those who serve in ministry should exercise authority with humility and compassion.
+
+4. True Freedom Is Found in Submission to Christ
+The paradox of Christian discipleship is that surrendering to Christ’s authority leads to genuine freedom and peace.
+
+Concluding Reflection
+
+In the invitation recorded in the Gospel of Matthew, Jesus Christ extends a compassionate call to those burdened by the weight of life and the demands of religion. Rather than offering a new system of laws, Christ offers Himself. Those who come to Him discover rest for their souls, guidance for their lives, and the gentle leadership of a Savior whose authority is marked by humility and grace. Thus the weary heart finds its true home in the presence of Christ, where the burdens of the world are replaced by the liberating rest of the kingdom of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="ZG0002">ZG0002</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Living Life in the Light of Eternity</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+
+A Biblical-Theological Exposition
+
+Introduction
+
+The exhortation “Live life in the light of eternity” expresses a foundational biblical worldview: human life must be understood not merely within the limits of temporal existence but within the broader horizon of eternal reality. Scripture consistently teaches that earthly life is brief and transient, while eternity represents the enduring sphere of God's kingdom, judgment, and ultimate redemption.
+
+The biblical narrative calls believers to evaluate their priorities, decisions, and conduct with the awareness that every moment of earthly life carries eternal significance. Living in the light of eternity therefore means ordering one's life according to values that transcend temporal concerns and align with the purposes of God.
+
+I. The Transience of Earthly Life
+Psalm 90:12
+
+“So teach us to number our days, that we may apply our hearts unto wisdom.”
+
+Hebrew Analysis
+
+The phrase “number our days” comes from the Hebrew verb: מָנָה (mānāh) — to count, reckon, or assign value to.
+
+The request in this psalm is not merely for the ability to count time chronologically but to recognize the brevity and preciousness of human life. The awareness of life's limited duration leads to wisdom, because it forces individuals to prioritize what is eternally meaningful.
+
+Psalm 90, attributed to Moses, contrasts the eternity of God with the frailty of human existence:
+
+“From everlasting to everlasting, thou art God.” (Psalm 90:2)
+
+Thus, biblical wisdom begins with recognizing that human life unfolds before the eternal God.
+
+II. The Eternal Perspective of the Believer
+2 Corinthians 4:18
+
+“While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.”
+
+Greek Analysis
+
+The word translated “look” is: σκοπέω (skopeō)
+
+Meaning:
+
+- to fix one's attention upon
+- to consider carefully
+- to direct one's focus toward something.
+
+Paul teaches that believers must intentionally focus their attention not merely on visible circumstances but on unseen eternal realities.
+
+The term “temporal” comes from the Greek word: πρόσκαιρος (proskairos)
+
+Meaning:
+
+- temporary
+- lasting only for a season.
+
+In contrast, “eternal” translates: αἰώνιος (aiōnios)
+
+Meaning:
+
+- everlasting
+- belonging to the age without end.
+
+Thus the apostle contrasts the temporary nature of earthly life with the enduring reality of eternity, encouraging believers to orient their lives accordingly.
+
+III. Christ's Teaching on Eternal Priorities
+Matthew 6:19–21
+
+“Lay not up for yourselves treasures upon earth… but lay up for yourselves treasures in heaven.”
+
+Theological Interpretation
+
+Jesus introduces the concept of eternal investment. Earthly treasures are vulnerable to decay, theft, and loss, whereas heavenly treasures possess permanent value.
+
+The principle that follows is crucial: “For where your treasure is, there will your heart be also.”
+
+The heart in biblical anthropology represents the center of human desire, will, and affection. Christ teaches that what a person values most reveals the orientation of their life—either toward temporal gain or eternal reward.
+
+IV. The Doctrine of Eternal Accountability
+Romans 14:12
+
+“So then every one of us shall give account of himself to God.”
+
+Scripture affirms that human actions are not confined to temporal consequences alone; they carry eternal accountability. The doctrine of judgment emphasizes that every life will ultimately be evaluated in light of God's righteousness.
+
+This teaching appears throughout the New Testament:
+
+2 Corinthians 5:10 — the judgment seat of Christ
+Hebrews 9:27 — “it is appointed unto men once to die, but after this the judgment”
+Revelation 20:12 — the books of judgment opened
+
+Living in the light of eternity therefore involves recognizing that earthly conduct participates in a larger divine narrative culminating in final judgment and eternal destiny.
+
+V. The Hope of Eternal Glory
+Colossians 3:1–2
+
+“Set your affection on things above, not on things on the earth.”
+
+Greek Word Study
+
+The phrase “set your affection” comes from: φρονέω (phroneō)
+
+Meaning:
+
+- to direct one's mindset
+- to adopt a governing attitude or perspective.
+
+Paul calls believers to cultivate a mindset shaped by heavenly realities rather than earthly anxieties. This perspective does not lead to escapism but rather transforms how believers engage with the world, enabling them to live with hope, perseverance, and spiritual clarity.
+
+VI. Christ as the Anchor of Eternal Perspective
+
+The ultimate foundation for living in the light of eternity is found in the person and work of Christ.
+
+John 17:3
+
+“And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent.”
+
+Eternal life in the biblical sense is not merely endless existence but a restored relationship with God through Christ. Through His death and resurrection:
+
+- sin is defeated
+- death is overcome
+- eternal life is secured for believers.
+
+Thus the Christian life becomes a pilgrimage toward the fullness of eternal communion with God.
+
+VII. The Ethical Implications of Eternal Awareness
+
+When believers live in the light of eternity, several ethical transformations occur:
+
+1. Priorities are reordered - Material pursuits lose their absolute dominance.
+2. Suffering is reframed - Present trials are understood in relation to future glory (Romans 8:18).
+3. Holiness becomes urgent - Believers pursue righteousness knowing that their lives have eternal significance.
+4. Mission becomes central - Evangelism and discipleship gain urgency because eternal destinies are at stake.
+
+Conclusion
+
+The biblical call to live life in the light of eternity invites believers to interpret every aspect of earthly existence within the framework of God's eternal purposes. Human life is brief, yet it carries eternal consequences. The Scriptures therefore encourage believers to cultivate a perspective shaped by eternity—one that values the unseen realities of God's kingdom above the temporary pursuits of this present world. In this way the believer walks through time with the awareness that every decision, every act of faith, and every moment of obedience participates in a story that extends beyond time into eternity.As the apostle Paul reminds the church: “For our conversation is in heaven.” — Philippians 3:20. Thus the faithful life is lived not merely for the present age but in anticipation of the eternal kingdom of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

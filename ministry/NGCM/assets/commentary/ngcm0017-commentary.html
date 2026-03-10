@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0017">NGCM0017</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Mercy of the Kingdom: Receiving and Extending God’s Compassion</h1>
+        <p>A Theological Commentary on Matthew 5:7</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are the merciful, for they shall receive mercy.”
+— Gospel of Matthew 5:7
+
+Key Doctrine
+
+Mercy as the Evidence of a Heart Transformed by Grace
+
+This Beatitude, spoken by Jesus Christ in the Sermon on the Mount, reveals that mercy stands as a defining characteristic of those who belong to the kingdom of heaven. Those who have received the mercy of God become agents of mercy toward others. The doctrine expressed in this verse is that the experience of divine mercy produces a transformed life that reflects compassion, forgiveness, and restorative grace toward others. Mercy therefore functions not as a means of earning God’s favor but as the outward expression of a heart already shaped by the mercy of God.
+
+Exposition
+1. The Beatitudes as a Portrait of Kingdom Character
+
+Within the Sermon on the Mount recorded in the Gospel of Matthew, the Beatitudes collectively describe the character of those who live under the reign of God. The progression of the Beatitudes reveals a spiritual transformation:
+
+- the poor in spirit recognize their need for God
+- those who mourn grieve over sin
+- the meek submit themselves to God’s authority
+- those who hunger for righteousness desire God’s will
+
+Having experienced this transformation, believers begin to reflect the character of God through acts of mercy. Thus mercy becomes the natural fruit of a heart shaped by the grace of God.
+
+2. The Meaning of Mercy
+
+“the merciful”
+
+Mercy refers to compassionate action toward those who are in need, suffering, or guilty. Unlike simple sympathy, mercy involves practical intervention to relieve suffering and restore broken relationships. Biblically, mercy encompasses several dimensions:
+
+- forgiveness toward those who have wronged us
+- compassion toward those who suffer
+- generosity toward those in need
+- patience toward those who struggle
+
+Mercy therefore reflects the character of God Himself, who continually demonstrates compassion toward humanity despite human sinfulness.
+
+3. The Reflection of God’s Character
+
+Throughout Scripture, God is portrayed as merciful and compassionate. His mercy is demonstrated in His willingness to forgive sin, restore broken lives, and provide grace to those who turn to Him. When believers practice mercy, they reflect the very character of God. Thus the merciful become living witnesses to the grace they themselves have received.
+
+4. The Promise of Receiving Mercy
+
+“for they shall receive mercy”
+
+The promise attached to this Beatitude does not suggest that mercy toward others earns divine mercy. Rather, it indicates that those who truly understand and receive God’s mercy naturally demonstrate that mercy toward others. Those who refuse to extend mercy reveal that they have not fully grasped the depth of God’s grace. Conversely, those who practice mercy demonstrate their participation in the gracious economy of God’s kingdom. Thus the promise assures that those who embody mercy will continue to experience the sustaining mercy of God.
+
+5. The Christological Fulfillment of Mercy
+
+The ultimate expression of divine mercy is revealed through the redemptive work of Jesus Christ. Through His ministry, Christ consistently demonstrates compassion toward the sick, the marginalized, and the sinful. Through His sacrificial death and resurrection, Christ provides the ultimate act of mercy by offering forgiveness and reconciliation to humanity. Believers who follow Christ are therefore called to extend the same mercy that they have received through Him.
+
+Greek Notes
+
+Several key Greek terms illuminate the meaning of this Beatitude.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this word describes a state of flourishing under the favor and approval of God.
+
+“ἐλεήμονες” (eleēmones)
+The term translated “merciful” refers to those who show compassion and kindness toward others, particularly toward those who are suffering or guilty.
+
+“ἐλεηθήσονται” (eleēthēsontai)
+Translated “they shall receive mercy,” this future passive verb indicates that mercy ultimately originates from God.
+
+Together these terms emphasize that those who practice mercy participate in the compassionate character of God and will continue to experience His gracious favor.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several essential insights.
+
+1. Mercy Must Characterize Christian Community
+Churches and ministries must cultivate environments where forgiveness, compassion, and restoration are practiced consistently.
+
+2. The Gospel Calls Believers to Forgive Others
+Those who have received forgiveness through Christ are called to extend forgiveness to others.
+
+3. Compassion for the Suffering Reflects God’s Heart
+Ministry should include active care for the poor, the suffering, and the marginalized.
+
+4. Mercy Demonstrates the Reality of God’s Grace
+Acts of mercy provide visible evidence of the transformative power of the gospel.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ declares that the merciful are truly blessed. This declaration reveals that life in the kingdom of God is marked not by harsh judgment but by compassionate grace. Those who have received the mercy of God cannot remain indifferent to the suffering and failures of others. Instead, they become instruments through which God’s compassion flows into the world. And in the unfolding purposes of God, those who extend mercy will continually experience the sustaining mercy of the Lord who first showed mercy to them.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

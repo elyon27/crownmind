@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0009">NGCM0009</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Repentance and the Nearness of the Kingdom of Heaven</h1>
+        <p>A Theological Commentary on Matthew 3:2</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Repent, for the kingdom of heaven is at hand.”
+— Gospel of Matthew 3:2
+
+Key Doctrine
+
+Repentance as the Necessary Response to the Arrival of God’s Kingdom
+
+This verse records the central proclamation of John the Baptist as he prepares the way for the ministry of Jesus Christ. The message consists of two inseparable elements: the call to repentance and the announcement that the kingdom of heaven has drawn near. Theologically, this proclamation reveals that entrance into the reign of God requires a transformation of heart and mind. Repentance is not merely regret over past wrongdoing but a decisive turning toward God in response to His approaching kingdom. Thus the doctrine emphasized in this passage is that repentance is the necessary preparation for participation in the kingdom of God.
+
+Exposition
+1. The Prophetic Voice in the Wilderness
+
+The proclamation recorded in Gospel of Matthew 3 emerges within the ministry of John the Baptist, who appears in the wilderness of Judea calling Israel to repentance. John’s ministry echoes the prophetic tradition of the Old Testament. His message recalls the warnings of the prophets who repeatedly called Israel to return to covenant faithfulness. The wilderness setting itself carries symbolic significance. It recalls the formative period of Israel’s history when the nation first encountered God during their journey after the exodus. Thus John’s ministry represents a renewed prophetic call for spiritual renewal and covenant restoration.
+
+2. The Meaning of Repentance
+
+“Repent”
+
+The command to repent stands at the center of John’s proclamation. Repentance involves more than emotional remorse. In biblical theology it signifies a radical reorientation of life toward God.
+
+This transformation includes:
+
+- recognition of sin
+- abandonment of disobedience
+- renewed commitment to God’s will
+
+Repentance therefore represents both an inward change of heart and an outward change in behavior. The call to repentance prepares individuals to receive the salvation that God is about to reveal through the Messiah.
+
+3. The Announcement of the Kingdom
+
+“for the kingdom of heaven is at hand”
+
+The phrase “kingdom of heaven” is a distinctive expression used in the Gospel of Matthew to refer to the reign or rule of God. Rather than describing a geographical territory, the kingdom refers to the dynamic reality of God’s sovereign authority being manifested in the world. The announcement that the kingdom “is at hand” indicates that the decisive moment in God’s redemptive plan has arrived. With the appearance of John the Baptist and the impending ministry of Christ, the long-awaited reign of God is beginning to break into human history.
+
+4. The Relationship Between Repentance and the Kingdom
+
+The command to repent is directly connected to the nearness of the kingdom. The arrival of God’s reign demands a response. Humanity cannot remain spiritually indifferent when confronted with the reality of God’s authority. Repentance therefore functions as the appropriate response to the presence of the kingdom. It represents the turning away from allegiance to sin and the turning toward submission to the rule of God.
+
+5. The Continuity of the Message in Christ’s Ministry
+
+The proclamation of repentance does not end with John the Baptist. When Christ begins His public ministry, He proclaims the same message. This continuity demonstrates that repentance is not merely preparatory but remains central to the message of the kingdom throughout the New Testament. Thus the message announced by John becomes the foundation for the gospel proclamation that follows.
+
+Greek Notes
+Several key Greek expressions illuminate the theological depth of this verse.
+
+“μετανοεῖτε” (metanoeite)
+This verb, translated “repent,” literally means “to change one’s mind.” In biblical usage it refers to a profound transformation of perspective and direction. The present imperative form indicates an ongoing call to continual repentance.
+
+“ἡ βασιλεία τῶν οὐρανῶν” (hē basileia tōn ouranōn)
+Translated “the kingdom of heaven,” this phrase refers to the sovereign rule of God. The expression reflects a reverential way of referring to God’s kingdom.
+
+“ἤγγικεν” (ēngiken)
+This verb means “has drawn near.” It conveys the idea that the kingdom is not merely future but has approached and is now present in a new and decisive way.
+
+Together these terms emphasize the urgent and transformative nature of the message proclaimed by John the Baptist.
+
+Ministry Implications
+For students and ministers formed within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several vital lessons.
+
+1. The Gospel Begins with Repentance
+Authentic proclamation of the gospel must include the call to repentance. Without repentance, the message of salvation loses its transformative power.
+
+2. Spiritual Renewal Prepares the Way for God’s Work
+John’s ministry demonstrates that God often prepares the way for renewal through prophetic voices calling people back to faithfulness.
+
+3. The Kingdom of God Demands a Response
+The nearness of God’s reign requires individuals to reconsider their lives and align themselves with God’s authority.
+
+4. Ministry Must Proclaim Both Warning and Hope
+The call to repentance confronts sin while simultaneously pointing toward the hope of restoration through God’s kingdom.
+
+Concluding Reflection
+The proclamation recorded in Gospel of Matthew 3:2 stands as one of the most significant announcements in the New Testament. Through the voice of John the Baptist, God calls His people to turn from sin and prepare their hearts for the arrival of the kingdom. Repentance becomes the doorway through which individuals enter the transforming reign of God. And as the ministry of Jesus Christ soon reveals, the kingdom that has drawn near is ultimately embodied in the person of the Messiah Himself.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

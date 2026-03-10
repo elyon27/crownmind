@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0025">NGCM0025</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Sanctified by the Truth: The Transforming Power of the Word of God</h1>
+        <p>A Theological Commentary on John17:17</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Sanctify them by the truth; Your word is truth.”
+— Gospel of John 17:17
+
+Key Doctrine
+
+Sanctification Through the Revealed Truth of God
+
+This verse appears within the High Priestly Prayer of Jesus Christ, where He intercedes for His disciples before His crucifixion. In this prayer Christ petitions the Father to sanctify His followers through the truth revealed in the Word of God. The doctrine emphasized in this passage is that the transformation and consecration of believers occur through the truth of God’s revealed Word. Sanctification is therefore not merely a moral improvement but a divine process in which believers are progressively set apart for God through their encounter with the truth.
+
+Exposition
+1. The Context of the High Priestly Prayer
+
+The statement recorded in Gospel of John 17 occurs during the final discourse of Christ with His disciples before His arrest. In this prayer, Christ intercedes for His followers, asking the Father to preserve them as they remain in the world while belonging to God. The disciples face a difficult mission: they are called to proclaim the truth of God in a world characterized by spiritual darkness and opposition. Christ therefore prays that they may be sanctified—set apart and strengthened—through the truth that God has revealed.
+
+2. The Meaning of Sanctification
+
+“Sanctify them”
+
+Sanctification refers to the act of setting something apart for a sacred purpose. In biblical theology, sanctification carries both positional and progressive dimensions. First, believers are set apart for God through their relationship with Christ.
+Second, they undergo an ongoing transformation in which their lives increasingly reflect the holiness and character of God.
+Christ’s prayer therefore asks that the disciples be continually shaped and purified so that they may faithfully fulfill their mission in the world.
+
+3. The Means of Sanctification
+
+“by the truth”
+
+The instrument of sanctification is identified as truth. Truth in this context refers to the revelation of God’s will and character as communicated through divine instruction. Encountering the truth confronts false beliefs, exposes sin, and reorients the heart toward righteousness. Thus sanctification occurs as believers internalize and live according to the truth revealed by God.
+
+4. The Nature of the Word of God
+
+“Your word is truth”
+
+Christ identifies the Word of God as the ultimate standard of truth. In contrast to the shifting opinions and philosophies of the world, the Word of God represents a reliable and authoritative revelation of reality as defined by God. The Word reveals the character of God, the condition of humanity, and the path of redemption. Therefore the Word functions as the foundation for spiritual formation and moral transformation.
+
+5. The Relationship Between Truth and Mission
+
+The prayer of Christ highlights the connection between sanctification and mission. The disciples are sanctified not merely for personal spiritual growth but for participation in the mission of God. Immediately following this verse, Christ declares that just as He was sent into the world, so He sends His followers. Thus the sanctifying truth of God equips believers to proclaim the message of salvation and embody the character of the kingdom.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this verse.
+
+“ἁγίασον” (hagíason)
+Translated “sanctify,” this verb refers to the act of consecrating or setting apart for sacred purposes.
+
+“ἐν τῇ ἀληθείᾳ” (en tē alētheia)
+Meaning “in the truth,” this phrase identifies truth as the sphere or means through which sanctification occurs.
+
+“ὁ λόγος ὁ σὸς ἀλήθειά ἐστιν” (ho logos ho sos alētheia estin)
+Translated “Your word is truth,” this statement emphasizes the reliability and authority of God’s revelation.
+
+Together these expressions affirm that the transformation of believers is accomplished through their engagement with the truth revealed in God’s Word.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several critical insights.
+
+1. Spiritual Transformation Requires Engagement with Scripture
+Believers grow in holiness through continual exposure to and obedience to the Word of God.
+
+2. Truth Must Remain Central to Ministry
+Teaching, preaching, and discipleship must be grounded in the truth of Scripture rather than in cultural trends or personal opinions.
+
+3. Sanctification Prepares Believers for Mission
+The transformation of the believer’s life equips them to serve as witnesses to the truth of the gospel.
+
+4. The Word of God Provides Stability in a Changing World
+In a world marked by competing claims to truth, the Word of God stands as the ultimate authority for faith and life.
+
+Concluding Reflection
+
+In the High Priestly Prayer recorded in the Gospel of John, Jesus Christ petitions the Father to sanctify His followers through the truth. This request reveals that the transformation of believers is inseparable from their encounter with the Word of God.
+As disciples engage with divine truth, their hearts and minds are reshaped, their lives are purified, and their mission becomes clearer. Thus the Word of God functions not only as a source of knowledge but as the instrument through which God forms a people set apart for His purposes, illuminating their path and preparing them to bear witness to His truth in the world.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

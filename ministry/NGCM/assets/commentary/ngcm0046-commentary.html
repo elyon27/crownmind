@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0046">NGCM0046</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Witness of the Spirit: Assurance of Our Adoption as Children of God</h1>
+        <p>A Theological Commentary on Romans 8:16</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“The Spirit Himself bears witness with our spirit that we are children of God.”
+— Epistle to the Romans 8:16
+
+Key Doctrine
+
+The Assurance of Divine Adoption Through the Witness of the Holy Spirit
+
+In this statement, Paul the Apostle explains how believers receive assurance of their identity as members of God’s family. The presence and testimony of the Holy Spirit confirm the believer’s relationship with God as His adopted child. The doctrine emphasized in this passage is that the Holy Spirit provides inward assurance to believers that they belong to God, confirming their adoption into His family through faith in Christ. Thus the believer’s confidence in salvation arises not merely from external observance but from the internal witness of the Spirit.
+
+Exposition
+1. The Context of Life in the Spirit
+
+The statement recorded in Epistle to the Romans 8 appears within Paul’s extensive teaching on life in the Spirit. In this chapter, Paul contrasts two modes of existence: life according to the flesh and life according to the Spirit. Those who live according to the Spirit experience freedom from condemnation and participate in the new life made possible through Christ. Verse 16 builds upon Paul’s earlier statement that believers have received the Spirit of adoption, through whom they cry out to God as Father. The verse therefore addresses the inner assurance that accompanies this new relationship.
+
+2. The Identity of the Spirit
+
+“The Spirit Himself”
+
+Paul emphasizes the personal agency of the Holy Spirit. The Spirit is not merely an impersonal force but the active presence of God within the life of the believer. By using the expression “Himself,” Paul highlights the direct involvement of the Spirit in communicating the reality of the believer’s relationship with God. Thus the assurance of adoption arises from the personal ministry of the Spirit.
+
+3. The Witness of the Spirit
+
+“bears witness with our spirit”
+
+The phrase describes a cooperative testimony between the Spirit of God and the human spirit. The Spirit communicates the reality of salvation internally, confirming that the believer belongs to God. This testimony occurs through various means, including the transformation of the heart, the awakening of love for God, and the desire to live in obedience. Thus the witness of the Spirit becomes an experiential confirmation of the believer’s identity in Christ.
+
+4. The Doctrine of Adoption
+
+“that we are children of God”
+
+The concept of adoption holds significant importance in Paul’s theology. Through Christ, believers are not merely forgiven but welcomed into the family of God. Adoption grants believers a new status, granting them the rights and privileges associated with belonging to God’s household. This identity transforms the believer’s relationship with God from that of distant subject to beloved child. Thus the believer’s life becomes rooted in the security and intimacy of divine sonship.
+
+5. The Assurance of Salvation
+
+The witness of the Spirit provides believers with confidence in their relationship with God. While faith rests upon the promises of God revealed in Scripture, the internal testimony of the Spirit strengthens the believer’s assurance. This assurance does not lead to complacency but encourages a deeper devotion to God. Believers who recognize their identity as children of God are motivated to live in gratitude and obedience.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“τὸ Πνεῦμα αὐτὸ” (to Pneuma auto)
+Translated “the Spirit Himself,” this phrase emphasizes the personal agency of the Holy Spirit.
+
+“συμμαρτυρεῖ” (symmartyrei)
+Meaning “bears witness together with,” this verb indicates a joint testimony between the Spirit and the human spirit.
+
+“τέκνα Θεοῦ” (tekna Theou)
+Translated “children of God,” this phrase refers to those who belong to God through adoption.
+
+Together these expressions emphasize the relational dimension of salvation and the role of the Spirit in confirming that relationship.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several significant insights.
+
+1. The Holy Spirit Provides Assurance of Salvation
+Believers gain confidence in their relationship with God through the internal witness of the Spirit.
+
+2. Christian Identity Is Rooted in Adoption
+The gospel invites believers into a familial relationship with God characterized by intimacy and trust.
+
+3. Spiritual Transformation Confirms the Work of the Spirit
+The presence of the Spirit becomes visible through the renewed desires and character of the believer.
+
+4. Ministry Must Emphasize the Role of the Spirit
+Teaching and discipleship should encourage believers to cultivate sensitivity to the guidance and assurance provided by the Spirit.
+
+Concluding Reflection
+
+In the teaching recorded in Epistle to the Romans, Paul the Apostle reveals the profound privilege granted to those who belong to Christ. Through the work of the Holy Spirit, believers receive confirmation that they are members of God’s family. This witness transforms the believer’s understanding of their relationship with God, replacing fear and uncertainty with assurance and intimacy. Thus the life of the Christian unfolds within the secure knowledge that they are children of God, sustained by the presence of the Spirit and welcomed into the household of divine grace.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

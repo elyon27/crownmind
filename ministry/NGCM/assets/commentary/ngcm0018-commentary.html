@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0018">NGCM0018</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Purity of Heart and the Vision of God</h1>
+        <p>A Theological Commentary on Matthew 5:8</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are the pure in heart, for they shall see God.”
+— Gospel of Matthew 5:8
+
+Key Doctrine
+
+Inner Purity as the Condition for Fellowship with God
+
+This Beatitude, spoken by Jesus Christ in the Sermon on the Mount, reveals that the vision of God belongs to those whose hearts are purified. Unlike external religious observance, which can exist apart from genuine devotion, the purity described here concerns the inner orientation of the human heart toward God. The doctrine expressed in this verse is that true fellowship with God requires inward purity—an undivided heart transformed by the grace of God and devoted wholly to His will. This purity does not arise merely through human effort but through the renewing work of God that cleanses the heart and aligns it with His righteousness.
+
+Exposition
+1. The Progression of the Beatitudes
+
+Within the structure of the Beatitudes in the Gospel of Matthew, the description of the pure in heart follows the Beatitude concerning mercy. The progression reveals the deepening transformation that occurs in the life of a disciple:
+
+- the poor in spirit recognize their need for God
+- those who mourn grieve over sin
+- the meek submit to God’s authority
+- those who hunger for righteousness desire God’s will
+- the merciful extend compassion to others
+
+From this transformed life emerges purity of heart, reflecting a deeper interior alignment with God. Thus purity of heart represents the internal integrity that arises from a life shaped by divine grace.
+
+2. The Meaning of the Heart in Biblical Thought
+
+“the heart”
+
+In biblical theology, the heart represents the center of human existence. It includes the mind, will, emotions, and moral intentions. The heart is the source from which actions, desires, and decisions arise. Thus purity of heart concerns not merely outward behavior but the inner disposition that governs the entire life. Christ’s emphasis on the heart challenges superficial religiosity and calls for authentic spiritual transformation.
+
+3. The Meaning of Purity
+
+“the pure in heart”
+
+Purity in this context refers to sincerity, moral integrity, and undivided devotion to God. A pure heart is free from duplicity and hypocrisy. It seeks God with single-minded devotion rather than attempting to serve competing loyalties. This purity involves both moral cleansing from sin and the alignment of one’s desires with the will of God. Thus purity of heart reflects the transformation that occurs when the inner life is shaped by the grace of God.
+
+4. The Promise of Seeing God
+
+“for they shall see God”
+
+The promise attached to this Beatitude expresses one of the most profound hopes of biblical faith: the vision of God. In Scripture, the presence of God is often described as overwhelming and inaccessible due to human sinfulness. Yet Christ promises that those whose hearts are purified will experience fellowship with God. This promise operates on multiple levels:
+
+- believers experience communion with God in the present through faith
+- they grow in spiritual awareness of God’s presence in their lives
+- they anticipate the ultimate vision of God in the fullness of the kingdom
+
+Thus the promise points toward the future consummation when the redeemed will behold God in perfect fellowship.
+
+5. The Role of Christ in Purifying the Heart
+
+The purity required to see God cannot be achieved through human effort alone. The cleansing of the heart ultimately comes through the redemptive work of Jesus Christ. Through His sacrifice, Christ provides forgiveness and purification from sin.
+Through the transforming work of the Spirit, believers experience the gradual renewal of their inner life. Thus the promise of seeing God is grounded in the redemptive work of Christ, who both cleanses and restores the human heart.
+
+Greek Notes
+
+Several key Greek expressions illuminate the theological meaning of this Beatitude.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this word describes a condition of flourishing under the gracious favor of God.
+
+“καθαροὶ τῇ καρδίᾳ” (katharoi tē kardia)
+The phrase “pure in heart” refers to inner purity and moral sincerity. The term for purity suggests cleansing from impurity as well as singleness of devotion.
+
+“ὄψονται τὸν Θεόν” (opsontai ton Theon)
+Translated “they shall see God,” this phrase expresses the promise of experiencing God’s presence and fellowship.
+
+Together these expressions emphasize that those whose inner lives are purified by God will ultimately experience the privilege of communion with Him.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. Authentic Spirituality Begins in the Heart
+Ministry must address the inner transformation of individuals rather than focusing solely on external behavior.
+
+2. Integrity Is Essential for Spiritual Leadership
+Those who serve in ministry must cultivate sincerity and moral integrity in their inner lives.
+
+3. Purity of Heart Requires Ongoing Spiritual Formation
+Believers grow in purity through repentance, prayer, and continual reliance upon God’s grace.
+
+4. The Hope of Seeing God Sustains Faith
+The promise of ultimate fellowship with God provides encouragement for believers striving to live faithfully in the present age.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ declares that the pure in heart are blessed. This declaration reveals that the deepest longing of humanity—to encounter God—belongs to those whose hearts are cleansed and devoted to Him. While sin obscures the human vision of God, the transforming grace of Christ purifies the heart and restores the possibility of true fellowship with the Creator. Thus those who pursue purity of heart move steadily toward the ultimate fulfillment of this promise: the day when they will behold God in the fullness of His glory.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

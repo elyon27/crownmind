@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0016">NGCM0016</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Hungering for Righteousness: The Deep Longing of the Kingdom Heart</h1>
+        <p>A Theological Commentary on Matthew 5:6</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Blessed are those who hunger and thirst for righteousness, for they shall be filled.”
+— Gospel of Matthew 5:6
+
+Key Doctrine
+
+The Transforming Desire for Righteousness in the Life of the Believer
+
+This Beatitude, spoken by Jesus Christ in the Sermon on the Mount, reveals the inner longing that characterizes those who belong to the kingdom of heaven. Unlike ordinary human desires that seek personal comfort or worldly success, the disciples of Christ are marked by a profound craving for righteousness. The doctrine expressed in this verse is that those who earnestly long for the righteousness of God—both in their own lives and in the world—will ultimately experience the satisfaction of that desire through the redemptive work of God. This Beatitude therefore describes a spiritual appetite produced by the transforming grace of God.
+
+Exposition
+1. The Progression of the Beatitudes
+
+Within the structure of the Beatitudes in the Gospel of Matthew, this statement follows a deliberate spiritual progression. The poor in spirit recognize their spiritual need. Those who mourn grieve over sin and brokenness. The meek submit themselves humbly to God. Having passed through these stages of humility and repentance, the believer develops a deep longing for righteousness. Thus this Beatitude describes the active desire that emerges from a transformed heart.
+
+2. The Metaphor of Hunger and Thirst
+
+“those who hunger and thirst”
+
+The imagery of hunger and thirst evokes the most fundamental human needs. In the ancient world, hunger and thirst represented urgent and unavoidable desires necessary for survival. By employing this metaphor, Christ communicates the intensity of the believer’s longing for righteousness. This is not a casual interest in moral improvement but a deep spiritual craving that shapes the entire orientation of life. Those who belong to the kingdom desire righteousness with the same urgency that a starving person desires food.
+
+3. The Meaning of Righteousness
+
+“for righteousness”
+
+In the context of the Sermon on the Mount, righteousness refers to conformity to the will and character of God. This includes both personal holiness and the establishment of justice within the world. The righteousness described here encompasses several dimensions:
+
+- the restoration of right relationship with God
+- the transformation of moral character
+- the establishment of justice and integrity in human relationships
+
+Thus the believer’s longing for righteousness reflects a desire for the full manifestation of God’s will in both personal and communal life.
+
+4. The Promise of Fulfillment
+
+“for they shall be filled”
+
+The promise attached to this Beatitude assures that those who long for righteousness will ultimately experience satisfaction. This fulfillment occurs in multiple ways. First, believers are justified through faith and receive the righteousness that comes from God. Second, they experience progressive transformation as the Spirit of God shapes their character. Finally, the promise anticipates the future restoration of creation when God’s righteousness will be fully established. Thus the satisfaction promised in this Beatitude includes both present spiritual transformation and future consummation in the kingdom of God.
+
+5. The Christological Fulfillment
+
+The fulfillment of this promise ultimately rests in the work of Jesus Christ. Through His life, death, and resurrection, Christ provides the righteousness that humanity cannot achieve on its own. Believers who hunger and thirst for righteousness find their deepest satisfaction in the redemptive work of Christ, who both grants righteousness and transforms the lives of those who follow Him. Thus Christ stands as both the source and the fulfillment of the righteousness that believers seek.
+
+Greek Notes
+
+Several key Greek terms illuminate the meaning of this Beatitude.
+
+“μακάριοι” (makarioi)
+Translated “blessed,” this word describes a state of divine favor and flourishing under God’s gracious approval.
+
+“πεινῶντες” (peinōntes)
+This term refers to those who are hungry, emphasizing an intense and ongoing need.
+
+“διψῶντες” (dipsōntes)
+Translated “thirsting,” this word reinforces the imagery of urgent longing.
+
+“δικαιοσύνην” (dikaiosynēn)
+The term for righteousness encompasses both moral integrity and right relationship with God.
+
+“χορτασθήσονται” (chortasthēsontai)
+Translated “they shall be filled,” this verb indicates complete satisfaction or nourishment.
+
+Together these terms portray believers as those whose deepest desire is the righteousness that God provides.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several important insights.
+
+1. Spiritual Desire Reveals Spiritual Life
+A genuine hunger for righteousness serves as evidence of a heart transformed by God.
+
+2. Ministry Must Cultivate a Desire for Holiness
+Teaching and discipleship should encourage believers to pursue righteousness rather than merely seeking external religious observance.
+
+3. Social Justice and Personal Holiness Belong Together
+The biblical concept of righteousness includes both personal moral integrity and concern for justice within society.
+
+4. The Gospel Alone Satisfies the Deepest Longings of Humanity
+Human desires ultimately find their fulfillment only in the righteousness provided through Christ.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ reveals that the citizens of the kingdom are characterized by a profound longing for righteousness. Just as the body craves food and water for survival, the transformed heart longs for the righteousness that reflects the character of God. And Christ assures His followers that this longing will not remain unfulfilled. For those who hunger and thirst for righteousness will ultimately be satisfied in the redeeming grace of God and in the final restoration of His kingdom.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

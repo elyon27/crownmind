@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0039">NGCM0039</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Taught by God: Divine Illumination and the Path to Christ</h1>
+        <p>A Theological Commentary on John 6:45</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“It is written in the Prophets: ‘And they will all be taught by God.’ Everyone who has heard and learned from the Father comes to Me.”
+— Gospel of John 6:45
+
+Key Doctrine
+
+Divine Instruction as the Means of Drawing Humanity to Christ
+
+In this statement, Jesus Christ explains the manner in which the Father draws individuals to the Son. Quoting from the prophetic writings, Christ emphasizes that genuine understanding of spiritual truth arises through the instruction and illumination given by God Himself. The doctrine emphasized in this passage is that faith in Christ emerges through divine illumination, as God teaches and prepares the human heart to recognize the truth of the gospel. Thus the coming of a person to Christ represents the culmination of God’s teaching activity within the heart and mind.
+
+Exposition
+1. The Continuation of the Bread of Life Discourse
+
+The teaching recorded in Gospel of John 6:45 follows directly after Christ’s explanation that no one can come to Him unless the Father draws them. In this verse, Christ clarifies the nature of this drawing by connecting it with the prophetic promise that God Himself would instruct His people. By appealing to the prophetic tradition, Christ demonstrates that the movement toward faith in Him fulfills long-standing promises concerning divine instruction and spiritual renewal.
+
+Thus the verse integrates the mission of Christ with the broader narrative of God’s redemptive plan.
+
+2. The Prophetic Promise
+
+“It is written in the Prophets”
+
+Christ introduces His explanation by referring to the prophetic writings of the Old Testament. The phrase points to promises found in passages such as those in the prophetic tradition where God declares that His people will receive direct instruction from Him. These prophecies anticipate a future era in which divine knowledge will no longer be mediated solely through external institutions but will be written upon the hearts of individuals. Thus Christ identifies the fulfillment of these promises in the work of God drawing people to Himself through spiritual illumination.
+
+3. The Meaning of Being Taught by God
+
+“they will all be taught by God”
+
+This statement highlights the transformative nature of divine instruction. Being taught by God involves more than intellectual education; it refers to the inner awakening of the heart and mind to the truth of God. Through this instruction, individuals gain the capacity to recognize the identity and mission of Christ. Divine teaching therefore operates at the level of spiritual perception, enabling individuals to understand realities that remain hidden to those who rely solely on human reasoning.
+
+4. Hearing and Learning from the Father
+
+“Everyone who has heard and learned from the Father”
+
+Christ describes the process by which individuals respond to the teaching of God. Hearing represents the reception of divine instruction, while learning indicates the internalization and acceptance of that truth. Together these actions describe a dynamic relationship between God and the human heart. Those who respond to God’s instruction with openness and humility become prepared to recognize the revelation of Christ.
+
+5. Coming to Christ as the Fulfillment of Divine Teaching
+
+“comes to Me”
+
+The final phrase reveals the ultimate outcome of divine instruction. Those who truly learn from the Father inevitably recognize the identity of Christ and are drawn toward Him. This relationship demonstrates the unity between the Father and the Son in the work of redemption. The Father teaches and prepares the heart, while the Son provides the means through which salvation is realized. Thus the journey of faith culminates in a personal encounter with Christ.
+
+Greek Notes
+
+Several Greek expressions illuminate the theological meaning of this passage.
+
+“γεγραμμένον ἐστιν” (gegrammenon estin)
+Translated “it is written,” this phrase emphasizes the authority of the prophetic Scriptures.
+
+“διδακτοὶ Θεοῦ” (didaktoi Theou)
+Meaning “taught by God,” this expression indicates divine instruction rather than merely human teaching.
+
+“ἀκούσας” (akousas)
+Translated “having heard,” this term refers to the reception of instruction.
+
+“μαθὼν” (mathōn)
+Meaning “having learned,” this word indicates understanding and internalization of truth.
+
+Together these expressions highlight the process through which divine instruction prepares individuals to recognize Christ.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several significant insights.
+
+1. Spiritual Understanding Comes from God
+True knowledge of Christ arises through divine illumination rather than purely human reasoning.
+
+2. Teaching Must Align with God’s Revelation
+Ministry should faithfully communicate the truths revealed in Scripture so that individuals may encounter the instruction of God.
+
+3. Faith Emerges Through the Interaction of Teaching and Response
+The human response of hearing and learning operates within the broader context of God’s initiative.
+
+4. The Goal of Divine Instruction Is Union with Christ
+All authentic spiritual teaching ultimately leads individuals toward a deeper relationship with Christ.
+
+Concluding Reflection
+
+In the teaching recorded in the Gospel of John, Jesus Christ reveals that faith arises from the instruction of God within the human heart. The Father teaches, illuminates, and prepares individuals to recognize the truth of the gospel. Those who respond to this divine instruction find themselves drawn toward the Son, in whom the promises of salvation are fulfilled. Thus the journey of faith reflects the gracious work of God who guides humanity from ignorance to understanding, from darkness to light, and ultimately into fellowship with Christ.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

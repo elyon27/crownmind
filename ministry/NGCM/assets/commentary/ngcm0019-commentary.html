@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0019">NGCM0019</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Supremacy of Christ and the Humility of the Servant</h1>
+        <p>A Theological Commentary on John3:30</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“He must increase, but I must decrease.”
+— Gospel of John 3:30
+
+Key Doctrine
+
+The Supremacy of Christ in the Economy of Redemption
+
+This verse expresses the profound humility and theological insight of John the Baptist regarding the ministry of Jesus Christ. In acknowledging that Christ must increase while he himself must decrease, John articulates a central principle of Christian faith: the glory and authority of Christ must surpass all human prominence. The doctrine emphasized in this passage is that the redemptive mission of God centers entirely on the supremacy of Christ, while human servants function only as instruments pointing toward Him. Thus the faithful servant does not seek personal recognition but willingly steps aside so that Christ may be exalted.
+
+Exposition
+1. The Context of the Statement
+
+The declaration recorded in Gospel of John 3:30 occurs during a moment when the disciples of John the Baptist express concern that the ministry of Jesus is attracting greater attention. They observe that increasing numbers of people are turning to Jesus for baptism rather than remaining with John. Rather than expressing jealousy or defensiveness, John responds with remarkable humility. He reminds his disciples that his role was never to compete with Christ but to prepare the way for Him. Thus the increasing prominence of Jesus represents not a threat but the fulfillment of John’s mission.
+
+2. The Necessity of Christ’s Increase
+
+“He must increase”
+
+The statement affirms the divine necessity of Christ’s exaltation. The word “must” indicates that the increasing recognition of Christ’s authority is part of the unfolding plan of God. As the Messiah, Christ is the central figure in the redemptive purposes of God. His ministry, teaching, sacrifice, and resurrection reveal the fullness of God’s salvation. Therefore the increase of Christ refers not merely to the growth of His popularity but to the recognition of His true identity and authority.
+The mission of God ultimately directs all attention toward Christ as the source of life, truth, and redemption.
+
+3. The Humility of the Servant
+
+“but I must decrease”
+
+John’s response reveals a profound understanding of the nature of ministry. Rather than seeking to maintain influence or authority, John willingly embraces the diminishing of his own public role. This attitude reflects genuine humility grounded in the recognition that the purpose of ministry is to direct others toward Christ rather than toward oneself. John’s willingness to decrease demonstrates the posture of a faithful servant who understands that his significance lies not in personal prominence but in faithful obedience to God’s calling.
+
+4. The Theology of Witness
+
+The ministry of John the Baptist functions as a witness to Christ. Throughout the Gospel of John, the role of a witness is to testify to the truth about Christ so that others may believe. Once the object of the testimony appears, the role of the witness naturally recedes into the background. Thus John’s decreasing prominence reflects the proper transition from preparation to fulfillment. The witness points to Christ, and once Christ is revealed, the focus must remain entirely upon Him.
+
+5. The Principle of Christ-Centered Ministry
+
+This verse expresses a fundamental principle for all Christian ministry: the servant must never eclipse the Savior. Human leaders, teachers, and ministers serve as instruments through whom others encounter Christ. When ministry becomes centered on personalities rather than on Christ, the true purpose of the gospel is distorted. John’s statement therefore establishes the pattern for faithful ministry: the continual exaltation of Christ above all human recognition.
+
+Greek Notes
+
+Several Greek expressions deepen the theological significance of this verse.
+
+“ἐκεῖνον δεῖ αὐξάνειν” (ekeinon dei auxanein)
+Translated “He must increase,” the phrase indicates divine necessity. The verb auxanein refers to growth or increase in prominence.
+
+“ἐμὲ δὲ ἐλαττοῦσθαι” (eme de elattousthai)
+Translated “I must decrease,” this phrase describes the diminishing or reduction of John’s role.
+
+The structure of the sentence emphasizes the contrast between the increasing prominence of Christ and the voluntary humility of the servant. Together these expressions highlight the theological priority of Christ’s supremacy over human recognition.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. Christ Must Remain the Center of Ministry
+All teaching, preaching, and leadership must direct attention toward Christ rather than toward the personality of the minister.
+
+2. Humility Is Essential for Faithful Service
+Those who serve God must be willing to relinquish personal recognition in order to exalt Christ.
+
+3. Spiritual Maturity Involves Decreasing Self-Importance
+As believers grow in faith, they increasingly recognize that their lives exist to reflect the glory of Christ.
+
+4. The Purpose of Leadership Is to Point Others to Christ
+The role of spiritual leaders resembles that of John the Baptist: to prepare hearts to encounter Christ and then step aside so that He receives the glory.
+
+Concluding Reflection
+
+The declaration recorded in the Gospel of John captures the heart of authentic discipleship. John the Baptist recognizes that the arrival of Jesus Christ marks the fulfillment of his mission. Therefore he embraces the diminishing of his own prominence so that the glory of Christ may become fully visible. In this brief yet profound statement, John expresses the essence of the Christian life: the continual surrender of self so that Christ may be increasingly exalted. Thus the faithful servant rejoices not in personal recognition but in the growing revelation of the supremacy of Christ in all things.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

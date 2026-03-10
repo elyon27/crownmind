@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0008">NGCM0008</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Living by the Word of God: The Supremacy of Spiritual Sustenance</h1>
+        <p>A Theological Commentary on Matthew 4:4</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“But He answered and said, ‘It is written, Man shall not live by bread alone, but by every word that proceeds from the mouth of God.’”
+— Gospel of Matthew 4:4
+
+Key Doctrine
+
+The Sufficiency of God’s Word for Spiritual Life
+
+This verse presents a foundational principle concerning the relationship between humanity and divine revelation. In responding to the temptation presented by Satan, Jesus Christ affirms that true life is sustained not merely by physical provision but by the sustaining word of God.
+
+The passage teaches that the Word of God functions as the ultimate source of guidance, sustenance, and spiritual vitality for humanity. Physical needs are real and necessary, yet they must never eclipse the deeper dependence upon divine revelation.
+
+Thus the doctrine emphasized in this passage concerns the supreme authority and sustaining power of God’s Word in the life of the believer.
+
+Exposition
+1. The Context of the Wilderness Temptation
+
+The statement occurs during the wilderness testing of Christ recorded in Gospel of Matthew 4. Following His baptism, Christ enters the wilderness where He fasts for forty days and nights.
+
+During this period of physical weakness, the adversary approaches Him with the suggestion that He transform stones into bread.
+
+The temptation is not merely about hunger. Rather, it attempts to persuade Christ to use His divine authority for self-serving purposes rather than obedient submission to the will of God.
+
+Christ’s response therefore reveals a deeper theological principle concerning the priority of obedience to God over immediate physical satisfaction.
+
+2. The Authority of Scripture in Christ’s Response
+
+“It is written”
+
+Christ begins His reply by appealing to the authority of Scripture.
+
+The phrase indicates that divine revelation stands as the ultimate authority in matters of life and obedience. Rather than relying upon His miraculous power to silence the temptation, Christ submits Himself to the authority of the written Word.
+
+The quotation originates from the book of Book of Deuteronomy, where Moses reminds Israel that their survival in the wilderness depended not merely upon physical provision but upon their relationship with the word of God.
+
+Thus Christ identifies Himself with the faithful obedience that Israel failed to demonstrate during their wilderness journey.
+
+3. The Limitation of Physical Provision
+
+“Man shall not live by bread alone”
+
+Bread symbolizes the basic necessities of life. Christ acknowledges that physical sustenance is necessary for human survival. Yet the statement asserts that human life cannot be reduced to mere physical existence. Human beings are created not only with physical needs but also with spiritual dependence upon God. When physical needs are elevated above obedience to God, they become instruments of temptation. Thus Christ affirms that life cannot be sustained by material provision alone.
+
+4. The Necessity of Divine Revelation
+
+“but by every word that proceeds from the mouth of God”
+
+The contrast between bread and the word of God highlights the centrality of divine revelation. Just as physical food sustains the body, the Word of God sustains the soul. The phrase “every word” emphasizes the comprehensive authority of God’s revelation. Human life is shaped, directed, and sustained by obedience to the commands and promises of God. This statement reveals that spiritual life depends upon continual reliance on God’s spoken will.
+
+5. Christ as the Faithful Son
+
+The wilderness temptation narrative also presents Christ as the faithful Son who succeeds where Israel failed. Israel repeatedly complained about hunger and doubted God’s provision during their wilderness journey. Christ, however, demonstrates perfect trust and obedience. By refusing to turn stones into bread, He reveals that true sonship is expressed through faithful dependence upon the Father. Thus Christ embodies the obedience that fulfills the calling originally given to Israel.
+
+Greek Notes
+
+Several key Greek expressions illuminate the theological depth of the passage.
+
+“γέγραπται” (gegraptai)
+Translated “it is written,” this phrase indicates the enduring authority of Scripture. The perfect tense suggests that what has been written continues to stand as authoritative.
+
+“ἄρτῳ” (artō)
+This word refers to bread or food in general, symbolizing physical sustenance and material provision.
+
+“ῥήματι” (rhēmati)
+This term refers to a spoken word or utterance. In this context it emphasizes the living and active communication of God’s will.
+
+“ἐκπορευομένῳ” (ekporeuomenō)
+Meaning “proceeding” or “coming forth,” the term suggests that the Word of God continually flows from the authority of God Himself.
+
+Together these expressions emphasize that the believer’s life is sustained by the living and authoritative word that proceeds from God.
+
+Ministry Implications
+
+For students and ministers formed within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important applications.
+
+1. Spiritual Formation Requires Dependence on Scripture
+
+Believers must cultivate a life shaped by the Word of God. Just as the body requires daily nourishment, the soul requires continual engagement with Scripture.
+
+2. Obedience Must Take Priority Over Immediate Needs
+
+Temptation often appeals to legitimate needs but invites believers to satisfy those needs in ways that compromise obedience to God. Faithfulness requires trusting God even when immediate needs remain unmet.
+
+3. Scripture Is a Primary Weapon in Spiritual Conflict
+
+Christ’s example demonstrates that victory over temptation comes through faithful reliance upon the Word of God.
+
+4. Christ Provides the Model for Faithful Dependence
+
+In resisting temptation, Christ shows how believers should respond to spiritual testing: with humility, obedience, and unwavering trust in God’s provision.
+
+Concluding Reflection
+
+In the wilderness temptation recorded in the Gospel of Matthew, Jesus Christ reveals the true foundation of human life. Bread sustains the body, but the Word of God sustains the soul. By refusing to prioritize physical provision over obedience to the Father, Christ demonstrates that true life flows from dependence upon God. Thus the believer is reminded that the deepest nourishment of life does not come from earthly provision but from the living Word that proceeds from the mouth of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

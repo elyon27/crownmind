@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0024">NGCM0024</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Healthy Eye: Spiritual Vision and the Illumination of the Heart</h1>
+        <p>A Theological Commentary on Matthew 6:22</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“The eye is the lamp of the body. If therefore your eye is healthy, your whole body will be full of light.”
+— Gospel of Matthew 6:22
+
+Key Doctrine
+
+Spiritual Perception as the Gateway to Moral and Spiritual Life
+
+In this teaching from the Sermon on the Mount, Jesus Christ uses the metaphor of the eye to describe the role of spiritual perception in shaping the entire life of a person. The “eye” represents the inner orientation of the heart and mind—what one values, desires, and focuses upon. The doctrine emphasized in this passage is that the condition of one’s spiritual perception determines the moral and spiritual condition of the entire life. When the inner vision of the heart is directed toward God and His kingdom, the life becomes filled with spiritual light. When that vision is distorted by selfish desire or misplaced priorities, spiritual darkness spreads throughout the person.
+
+Exposition
+1. The Context of the Sermon on the Mount
+
+This statement appears within a section of the Sermon on the Mount recorded in the Gospel of Matthew that addresses the relationship between material wealth, spiritual devotion, and the orientation of the heart. Immediately preceding this verse, Christ instructs His disciples to store up treasures in heaven rather than on earth. The teaching about the eye therefore functions as an illustration explaining how the inner focus of the heart determines one’s relationship to both spiritual and material realities. Thus the metaphor of the eye connects the themes of spiritual focus, moral integrity, and devotion to God.
+
+2. The Eye as the Lamp of the Body
+
+“The eye is the lamp of the body”
+
+In ancient thought, the eye functioned not only as an organ of sight but also as the channel through which light entered the body. By describing the eye as the lamp of the body, Christ suggests that the eye determines how light is received and distributed within the person. Spiritually speaking, the eye represents the faculty by which individuals perceive truth, evaluate priorities, and orient their lives. When the eye functions properly, it allows light to enter, illuminating the entire body. In the same way, when a person’s spiritual perception is rightly directed, the life becomes filled with clarity and righteousness.
+
+3. The Meaning of the Healthy Eye
+
+“If therefore your eye is healthy”
+
+The term translated “healthy” conveys the idea of singleness, clarity, or integrity. A healthy eye symbolizes a heart that is undivided in its devotion to God. Such a person perceives reality through the lens of God’s truth and aligns priorities accordingly. This spiritual clarity enables the believer to recognize what is truly valuable and to pursue the things that lead to life. Thus a healthy eye represents a life oriented toward the kingdom of God rather than toward the competing desires of the world.
+
+4. The Resulting Illumination
+
+“your whole body will be full of light”
+
+When spiritual perception is clear and directed toward God, the entire life becomes illuminated by truth. Light in biblical symbolism represents purity, understanding, and divine presence. A life filled with light reflects moral integrity, spiritual wisdom, and faithful obedience. Thus Christ teaches that the inner orientation of the heart determines the outward quality of one’s life.
+
+5. The Broader Spiritual Principle
+
+Although verse 22 emphasizes the positive condition of a healthy eye, the surrounding context warns of the danger of spiritual blindness. If the eye becomes corrupted by greed, pride, or misplaced desires, the life becomes filled with darkness. Thus the teaching underscores the importance of guarding the inner life. Spiritual clarity must be cultivated through devotion to God, disciplined attention to His Word, and the continual reorientation of the heart toward the kingdom.
+
+Greek Notes
+
+Several Greek expressions illuminate the meaning of this verse.
+
+“ὁ λύχνος τοῦ σώματος” (ho lychnos tou sōmatos)
+Translated “the lamp of the body,” this phrase identifies the eye as the means through which light enters and guides the life.
+
+“ὀφθαλμός” (ophthalmos)
+The word for “eye” refers not only to physical sight but also metaphorically to perception and intention.
+
+“ἁπλοῦς” (haplous)
+The term translated “healthy” or “single” conveys the idea of undivided focus or sincere devotion.
+
+“φωτεινόν” (phōteinon)
+Meaning “full of light,” this word describes a state of illumination characterized by clarity and purity.
+
+Together these terms emphasize that spiritual vision determines whether a life is guided by light or overshadowed by darkness.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage offers several important insights.
+
+1. Spiritual Vision Shapes Spiritual Life
+The priorities and values that occupy the heart determine the direction of one’s life.
+
+2. Ministry Must Cultivate Clear Spiritual Perception
+Teaching and discipleship should help believers develop discernment so that they can recognize truth and avoid deception.
+
+3. The Inner Life Requires Careful Guarding
+Believers must remain attentive to the influences that shape their desires and perceptions.
+
+4. Undivided Devotion Leads to Spiritual Clarity
+When the heart is focused upon God and His kingdom, the life becomes illuminated by His truth.
+
+Concluding Reflection
+
+In the Sermon on the Mount recorded in the Gospel of Matthew, Jesus Christ reveals that the inner vision of the heart determines the spiritual condition of the entire life. When the eye is healthy—focused upon the truth and purposes of God—the whole person becomes filled with light. But when the inner vision is clouded by misplaced desires, spiritual darkness begins to spread. Thus Christ calls His followers to cultivate a clear and undivided spiritual vision, directing their hearts toward the kingdom of God so that their lives may reflect the light of divine truth.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

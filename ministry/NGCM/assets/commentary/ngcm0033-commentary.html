@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../ngcm-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" href="#" title="NGCM0033">NGCM0033</a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Receiving the Kingdom Like a Child: The Humility of True Faith</h1>
+        <p>A Theological Commentary on Mark 10:15</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+TTU Exegetical Commentary
+
+“Truly I say to you, whoever does not receive the kingdom of God like a child shall not enter it.”
+— Gospel of Mark 10:15
+
+Key Doctrine
+
+Childlike Humility as the Necessary Disposition for Entering the Kingdom of God
+
+In this declaration, Jesus Christ reveals the spiritual posture required for participation in the kingdom of God. By pointing to the example of a child, Christ emphasizes the qualities of humility, trust, and dependence that characterize genuine faith.
+The doctrine emphasized in this passage is that entrance into the kingdom of God is not achieved through status, achievement, or intellectual attainment but through humble and trusting receptivity toward God. Thus the kingdom is received as a gift rather than obtained through human effort.
+
+Exposition
+1. The Narrative Context
+
+The teaching recorded in Gospel of Mark 10 occurs when individuals bring children to Christ so that He might bless them. The disciples, perceiving the children as unimportant, attempt to prevent them from approaching. Christ responds by rebuking the disciples and welcoming the children, declaring that the kingdom of God belongs to such as these. In this context, Christ uses the example of children to illustrate the attitude required for receiving the kingdom. Thus the episode challenges conventional assumptions about status and importance within society.
+
+2. The Meaning of Receiving the Kingdom
+
+“whoever does not receive the kingdom of God”
+
+The language of receiving emphasizes that the kingdom of God is not something that individuals achieve through merit or effort.
+Instead, it is a gift extended by God to those who respond with openness and trust. Receiving the kingdom therefore involves acknowledging one’s dependence upon God and accepting His grace with humility. This posture contrasts sharply with attitudes of self-sufficiency or spiritual pride.
+
+3. The Example of the Child
+
+“like a child”
+
+In the cultural context of the ancient world, children possessed little social status or authority. They depended entirely upon others for provision and protection. By using children as an example, Christ highlights qualities that reflect the proper response to God. These qualities include:
+
+- humility rather than self-importance
+- trust rather than skepticism
+- dependence rather than self-reliance
+
+Thus the child becomes a symbol of the spiritual posture required to receive the kingdom of God.
+
+4. The Nature of True Faith
+
+The analogy of the child illustrates the nature of genuine faith. Faith involves a trusting response to the invitation of God rather than a reliance upon personal achievement. Just as a child trusts the care and guidance of a parent, the believer entrusts their life to God. This trust creates the relational foundation upon which participation in the kingdom is built.
+
+5. The Seriousness of the Warning
+
+“shall not enter it”
+
+Christ concludes with a solemn warning that entrance into the kingdom is impossible without the appropriate disposition of heart. The statement underscores the exclusivity of the condition: humility and trust are not optional virtues but essential requirements. Those who approach God with pride or self-reliance fail to recognize their need for divine grace. Thus the verse functions both as an invitation to humility and as a caution against spiritual arrogance.
+
+Greek Notes
+
+Several Greek expressions illuminate the meaning of this passage.
+
+“ἀμὴν λέγω ὑμῖν” (amēn legō hymin)
+Translated “truly I say to you,” this phrase introduces a statement of particular importance and authority.
+
+“δέξηται” (dexētai)
+Meaning “receive,” this verb emphasizes the act of accepting something offered as a gift.
+
+“παιδίον” (paidion)
+Translated “child,” this term refers to a young child characterized by dependence and simplicity.
+
+“οὐ μὴ εἰσέλθῃ” (ou mē eiselthē)
+This strong negation emphasizes the impossibility of entering the kingdom without the required disposition.
+
+Together these expressions highlight the necessity of humble receptivity in approaching the kingdom of God.
+
+Ministry Implications
+
+For students and ministers trained within Tenio Theological University and the mission of Narrow Gate Christian Ministry, this passage provides several important insights.
+
+1. Humility Is Essential for Spiritual Life
+Believers must approach God with a posture of humility rather than self-reliance.
+
+2. The Kingdom of God Is Received as a Gift
+Salvation and participation in the kingdom are expressions of divine grace rather than human accomplishment.
+
+3. Ministry Must Welcome the Humble
+The community of faith should reflect the openness of Christ by welcoming those whom society may overlook.
+
+4. Faith Involves Trusting Dependence on God
+Believers grow spiritually by cultivating trust in God’s provision and guidance.
+
+Concluding Reflection
+
+In the teaching recorded in the Gospel of Mark, Jesus Christ overturns conventional expectations about greatness and worthiness. The kingdom of God is not reserved for the powerful or the accomplished but is given to those who approach God with childlike humility and trust. By pointing to the example of a child, Christ reveals that the path to the kingdom lies not in asserting one’s strength but in acknowledging one’s dependence upon the grace of God. Thus the heart that receives the kingdom like a child discovers the true riches of life under the reign of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>
