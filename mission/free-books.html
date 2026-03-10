@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Books</title>
+  <meta name="description" content="Free Books library" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    /* Page-only styling (safe even if you already have a site stylesheet) */
+    :root{
+      --bg:#070b12;
+      --card:#0e1422;
+      --text:#e9eefc;
+      --muted:#b8c2dd;
+      --line:rgba(255,255,255,.10);
+      --gold: #d8b46a;
+    }
+     body{
+       margin:0;
+       padding-left:96px;
+       padding-right:96px;
+       background: radial-gradient(1200px 700px at 20% 10%, rgba(216,180,106,.10), transparent 60%),
+       radial-gradient(900px 600px at 90% 0%, rgba(90,160,255,.10), transparent 55%),
+       var(--bg);
+       color:var(--text);
+       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 16px 64px;
+    }
+
+    .page-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin: 6px 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-head h1{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: .2px;
+    }
+    .page-head p{
+      margin:6px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.5;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .search{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 12px;
+      min-width: 260px;
+    }
+    .search input{
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 640px){
+      .page-head{ flex-direction:column; align-items:flex-start; }
+      .search{ width:100%; min-width:0; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+    }
+
+    .thumb{
+      position:relative;
+      aspect-ratio: 16 / 10;
+      background: rgba(0,0,0,.25);
+      border-bottom: 1px solid var(--line);
+      display:grid;
+      place-items:center;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .thumb .fallback{
+      width: 92%;
+      height: 82%;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,.22);
+      display:grid;
+      place-items:center;
+      color: var(--muted);
+      text-align:center;
+      padding: 10px;
+    }
+    .badge{
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--gold);
+      backdrop-filter: blur(6px);
+    }
+
+    .content{
+      padding: 14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex:1;
+    }
+    .title{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing:.2px;
+    }
+    .desc{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 4px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius: 999px;
+      padding: 10px 12px;
+      text-decoration:none;
+      font-weight:600;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(216,180,106,.55);
+    }
+    .btn .icon{
+      display:inline-grid;
+      place-items:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(216,180,106,.14);
+      border: 1px solid rgba(216,180,106,.28);
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .small{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .empty{
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      display:none;
+    }
+    
+    /* Back To Mission badge – normal style */
+     .back-badge {
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.08);
+      color: #e9eefc;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      transition: all 0.25s ease;
+    }
+
+     .back-badge:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="CrownMind Institute Home">
+      <img src="../assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="../mission.html" class="back-badge">
+           Back To Mission
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>📖 Free Books</h1>
+    <p>Knowledge given freely. Truth shared openly.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-section">
+
+  <div class="book-list">
+
+    <div class="book-item">
+      <h3>Echoes of the Watchmen</h3>
+      <p>
+        Introduction
+      </p>
+      <p>
+        Throughout the ages, there have always been those appointed to stand upon the walls. They were not chosen for honor or         recognition, but for vigilance. Their task was simple yet heavy—to see what others would not see, to hear what others         ignored, and to cry out when danger approached. These were the Watchmen.
+      </p>
+      <p>
+        From the prophets of ancient Israel to the voices that have risen throughout the history of the Church, the Watchman’s         call has never truly faded. Though generations pass and the world changes, the same burden remains: to guard truth, to         warn the people, and to prepare hearts for what lies ahead. 
+      </p>
+      <p>
+        Echoes of the Watchmen traces this sacred calling across time. It begins with the ancient Watchmen who stood upon the         walls of Jerusalem, moves through the voices that echoed during the Church age, and arrives finally at the present         hour—an age filled with noise, distraction, and subtle deception. In every era, the Watchman’s voice has served as both         warning and mercy: a warning to those drifting toward ruin, and a mercy to those willing to awaken.
+      </p>
+      <p>
+        This book is not merely a reflection on history. It is a reminder that the Watchman’s mantle has not disappeared. The         echoes of the past are meant to awaken the present generation, calling those who hear the faint cry to take their place         upon the wall.
+      </p>
+      <p>
+        For the night may grow darker, but the dawn approaches—and the Watchmen must be ready.
+      </p>
+        <a href="../assets/freebooks/Echoes of the Watchmen.pdf" class="download-btn" download>
+        📘 Download Ebook
+        </a>
+    </div>
+
+    <div class="book-item">
+      <h3>The Harbor of Truth</h3>
+      <p>
+        Introduction
+      </p>
+      <p>
+        In every age, humanity has sailed upon uncertain waters. Ideas rise like waves, voices collide like tides, and the         search for truth becomes a journey through storms of confusion and competing claims. Many drift without direction,         guided by shifting philosophies, cultural currents, and the promise of safe harbors that ultimately fail to shelter the         soul. 
+      </p>
+      <p>
+        The Harbor of Truth speaks into this restless sea. Using the imagery of ships, storms, and hidden shores, this book         explores the spiritual condition of our time—an age marked by noise, deception, and the illusion of many truths. It         reveals how countless seekers wander through the waters of Babylon, drawn toward lights that promise refuge yet conceal         danger beneath their surface.
+      </p>
+      <p>
+        But beyond the turmoil lies another reality. There exists a harbor not built by human hands, a refuge where clarity         replaces confusion and where the soul may finally anchor in what is eternal. This harbor is not easily found by those         drifting with the multitude. It is reached through discernment, courage, and the willingness to leave the crowded         routes of the world behind.
+      </p>
+      <p>
+        This book is both a warning and an invitation. It warns of the storms rising across the sea of this age and the         deceptive harbors that mislead the weary. At the same time, it invites the reader to listen for the Shepherd’s call—a         signal that leads through a narrow channel toward a place of truth, rest, and spiritual clarity.
+      </p>
+      <p>
+        For those who hear the call, the Harbor is not merely a refuge from the storm. It is the beginning of a deeper journey        —one that prepares the soul to see clearly, stand firmly, and look toward the horizon of the Kingdom that lies beyond         the sea.
+      </p>
+        <a href="../assets/freebooks/The Harbor of Truth.pdf" class="download-btn" download>
+        📘 Download Ebook
+        </a>
+
+    </div>
+
+    <!-- Add more free titles here as needed -->
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CrownMind Institute</p>
+</footer>
+
+</body>
+</html>

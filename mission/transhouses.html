@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transformation Houses</title>
+  <meta name="description" content="Transformation Houses - CrownMind Institute" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    :root{
+      --bg:#070b12;
+      --text:#e9eefc;
+      --muted:#b8c2dd;
+      --line:rgba(255,255,255,.10);
+      --gold:#d8b46a;
+    }
+
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(216,180,106,.10), transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, rgba(90,160,255,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeInSlow {
+     from {
+     opacity: 0; 
+     transform: scale(1.02);
+    }
+     to {
+       opacity: 1;
+       transform: scale(1);
+     }
+    }
+
+    /* Hero Image */
+    .hero-image{
+      width:100%;
+      max-height:600px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-image img {
+     width:100%;
+     height:auto;
+     display:block;
+     object-fit:cover;
+
+     opacity: 0;
+     animation: fadeInSlow 2.5s ease-out forwards;
+    
+    main{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 100px;
+      text-align: center;
+    }
+
+    h1{
+      font-size: 34px;
+      margin-bottom: 28px;
+      letter-spacing:.5px;
+    }
+
+    p{
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+      max-width:70ch;
+      margin:0 auto 22px;
+    }
+
+    .highlight{
+      color:var(--gold);
+      font-weight:600;
+    }
+
+    /* Back To Mission badge */
+    .back-badge {
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: #e9eefc;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: all 0.25s ease;
+    }
+
+    .back-badge:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="CrownMind Institute Home">
+      <img src="../assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="../mission.html" class="back-badge">
+           Back To Mission
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Image Section -->
+<div class="hero-image">
+  <img src="../assets/img/transhouses.png" alt="Transformation Houses">
+</div>
+
+<main>
+
+  <h1>Transformation Houses</h1>
+
+  <p>
+    <span class="highlight">On this SITE will rise</span> sacred spaces of disciplined formation —
+    Transformation Houses established for the spiritual training, intellectual refinement,
+    emotional mastery, and covenant alignment of the elect.
+  </p>
+
+  <p>
+    These houses shall not merely be buildings, but structured environments of awakening —
+    where identity is restored, purpose clarified, character forged, and calling activated
+    through guided study, structured obedience, community accountability, and practical mission deployment.
+  </p>
+
+  <p>
+    Within these centers, individuals will undergo layered transformation:
+    mind renewed through truth, body strengthened through discipline,
+    spirit aligned through prayer and reflection, and leadership cultivated
+    through service and responsibility.
+  </p>
+
+  <p>
+    The Transformation Houses shall stand as training grounds for those who choose the narrow way —
+    not for spectacle, but for formation; not for recognition, but for impact;
+    not for comfort, but for consecration.
+  </p>
+
+  <p>
+    Here the elect are refined, prepared, and sent.
+  </p>
+
+</main>
+
+</body>
+</html>

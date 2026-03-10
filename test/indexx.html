@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CrownMind Institute — Scripture • Clarity • Obedience</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Social Share -->
+  <meta property="og:site_name" content="CrownMind Institute">
+  <meta property="og:title" content="CrownMind Institute — Scripture • Clarity • Obedience">
+  <meta property="og:description" content="Scripture-grounded clarity, disciplined obedience, and faithful stewardship—delivered through books and practice.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/social-share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .secure-mini{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-left:10px; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04);
+      font-size:.85rem; opacity:.9;
+    }
+    @media (max-width: 860px){
+      .secure-mini{ display:none; }
+    }
+  </style>
+</head>
+
+<!-- Holy Spirit Signature Mark -->
+<a href="../index.html" class="hs-signature">
+    <img src="assets/hs.jpg" alt="HS">
+</a>
+
+<!-- Holy Spirit Signature Mark (Password Protected) -->
+<a href="#" class="hs-signature" onclick="return checkAccess(event)">
+    <img src="assets/hs.jpg" alt="HS">
+</a>
+
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="CrownMind Institute Home">
+      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="mission.html">Mission</a>
+        <a href="store.html">Store</a>
+        <a href="books.html">Book Paths</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+
+        <span class="secure-mini" title="Secure Checkout — Gumroad" aria-label="Secure Checkout — Gumroad">
+          🛡️ Secure Checkout — Gumroad
+        </span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-wrap">
+
+    <!-- Larger Hero Logo -->
+    <div class="hero-logo-wrap">
+      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="hero-logo">
+      <div>
+        <div class="kicker">CrownMind Institute</div>
+        <div class="small">Scripture • Clarity • Obedience</div>
+      </div>
+    </div>
+
+    <span class="badge">✝️ Narrow Way Mandate</span>
+    <h1>Truth that forms a faithful life.</h1>
+    <p>Building steady obedience through Scripture, structure, and disciplined practice.</p>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="brand">
+      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Logo" class="footer-logo">
+      <span>CrownMind Institute</span>
+    </div>
+    <hr class="sep" />
+    <div class="small">© <span id="y"></span> CrownMind Institute</div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+
+<script>
+function checkAccess(event) {
+    event.preventDefault();
+
+    const correctPassword = "Sealed@Zion_2025!";
+    const userInput = prompt("Enter the access key:");
+
+    if (userInput === correctPassword) {
+        window.location.href = "../index.html";
+    } else if (userInput !== null) {
+        alert("Access denied.");
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>

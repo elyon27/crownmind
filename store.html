@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFE16SYFGC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XFE16SYFGC');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Store — CrownMind Institute</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* Universal badge behavior + active state (applies to ALL books) */
+    .meta .badge.selectable{
+      cursor:pointer !important;
+      pointer-events:auto !important;
+      user-select:none;
+    }
+    .meta .badge.selectable:focus{
+      outline: 2px solid rgba(255,255,255,.55);
+      outline-offset: 2px;
+    }
+    .meta .badge.selectable.active-badge{
+      background: rgba(255,255,255,.12) !important;
+      border-color: rgba(255,255,255,.5) !important;
+    }
+
+    /* Optional: small “Secure Checkout” chip */
+    .secure-mini{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-left:10px; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      font-size:.85rem; opacity:.9;
+      white-space:nowrap;
+    }
+    @media (max-width: 860px){ .secure-mini{ display:none; } }
+
+    /* Clickable cover image (Pursuing Personal Growth) */
+    .cover-link{ display:block; border-radius:8px; overflow:hidden; }
+    .cover-link img{ display:block; }
+    .cover-link:focus{ outline: 2px solid rgba(255,255,255,.55); outline-offset: 3px; border-radius:10px; }
+    .cover-link:hover{ transform: translateY(-2px); transition: transform .18s ease; }
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="CrownMind Institute Home">
+      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="mission.html">Mission</a>
+        <a class="active" href="store.html">Store</a>
+        <a href="books.html">Book Paths</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <span class="secure-mini" aria-label="Secure Checkout — Gumroad" title="Secure Checkout — Gumroad">🛡️ Secure Checkout —             Gumroad</span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="card" style="padding:22px;">
+      <p class="kicker">Store</p>
+      <h1 style="margin:10px 0 8px;">Direct-to-reader books. Unified teaching.</h1>
+      <p class="muted" style="margin:0 0 16px;">
+        Choose a format (Ebook / Audiobook / Bundle). Your selection updates the price and the Gumroad link.
+      </p>
+
+      <div class="grid grid-3" style="margin-top:10px;">
+
+        <!-- BOOK CARD TEMPLATE RULES:
+             1) .card.book must have data-title + data-default-price
+             2) badges must be .badge.selectable with data-price + data-link
+             3) buy button must be .buy-btn
+        -->
+
+        <!-- 1) Pursuing Personal Growth -->
+        <div class="card book" data-title="Pursuing Personal Growth" data-default-price="9.99">
+            <div class="cover">
+               <a class="cover-link" 
+                  href="book-video/personal-growth-video.html" 
+                  aria-label="Watch Pursuing Personal Growth video">
+                  <img src="assets/img/personal_growth.jpg" 
+                  alt="Pursuing Personal Growth Cover"
+                  style="width:100%; height:auto; border-radius:8px;">
+               </a>
+            </div>
+         <div>
+            <h3>Pursuing Personal Growth</h3>
+            <p>Build the self you envision—one aligned step at a time.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/personalgrowth"                   
+                    role="button" tabindex="0">Ebook</span>
+              
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/personalgrowth-audio"                   
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/personalgrowth-bundle"                   
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/personalgrowth" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-personalgrowth.html">Preview First Pages</a>
+              <a class="btn" href="audio-preview/audio-preview-personalgrowth.html">🎧 Listen 1-Minute Audio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) The Power Of Self Awareness -->
+        <div class="card book" data-title="The Power Of Self Awareness" data-default-price="9.99">
+          <div class="cover">
+            <a class="cover-link" 
+               href="./book-video/self-awareness-video.html"
+               aria-label="Watch The Power Of Personal Awareness video">
+               <img src="assets/img/self_awareness.jpg" alt="The Power Of Self Awareness Cover"
+               style="width:100%; height:auto; border-radius:8px;">
+            </a>
+          </div>
+          <div>
+            <h3>The Power Of Self Awareness</h3>
+            <p>See patterns clearly. Name the real issue. Start the repair.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable"
+                    data-price="9.99"
+                    data-link="https://bctenio27.gumroad.com/l/powerofselfawareness"
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable"
+                    data-price="14.99"
+                    data-link="https://bctenio27.gumroad.com/l/powerofselfawareness-audio"
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable"
+                    data-price="19.99"
+                    data-link="https://bctenio27.gumroad.com/l/powerofselfawareness-bundle"
+                    role="button" tabindex="0">Bundle</span>
+           </div>
+           <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/powerofselfawareness" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-selfawareness.html">Preview First Pages</a>
+              <a class="btn" href="audio-preview/audio-preview-selfawareness.html">🎧 Listen 1-Minute Audio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) Emotional Mastery -->
+        <div class="card book" data-title="Emotional Mastery" data-default-price="9.99">
+          <div class="cover">
+            <img src="assets/img/emotional_mastery.jpg" alt="Emotional Mastery Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>Emotional Mastery</h3>
+            <p>Train responses. Build resilience. Lead with calm authority.</p>
+
+            <!-- Replace these links with your real Gumroad variant links -->
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/emotionalmastery" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/emotionalmastery-audio" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/emotionalmastery-bundle" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/emotionalmastery" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-emotionalmastery.html">Preview First Pages</a>
+              <a class="btn" href="audio-preview/audio-preview-emotionalmastery.html">🎧 Listen 1-Minute Audio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) Emotional Intelligence -->
+        <div class="card book" data-title="Emotional Intelligence" data-default-price="9.99">
+          <div class="cover">
+            <img src="assets/img/emotional_intelligence.jpg" alt="Emotional Intelligence Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>Emotional Intelligence</h3>
+            <p>Understand emotion. Navigate people. Lead with discernment.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/emotionalintelligencelived" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/emotionalintelligence-audio" 
+                    role="button" tabindex="0">AudioBook</span>
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/emotionalintelligence-bundle" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/emotionalintelligencelived" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-emotionalintelligence.html">Preview First Pages</a>
+              <a class="btn" href="audio-preview/audio-preview-emotionalintelligence.html">🎧 Listen 1-Minute Audio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) Empath: Held Without Breaking -->
+        <div class="card book" data-title="Empath: Held Without Breaking" data-default-price="9.99" 
+         data-lock-variants="true">
+          <div class="cover">
+            <img src="assets/img/held_without_breaking.jpg" alt="Held Without Breaking Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>Empath: Held Without Breaking</h3>
+            <p>Strength with tenderness—boundaries, clarity, endurance.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/heldwithoutbreaking" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/heldwithoutbreaking" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/heldwithoutbreaking" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/heldwithoutbreaking" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-heldwithoutbreaking.html">Preview First Pages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6) The Art Of Resilience -->
+        <div class="card book" data-title="The Art Of Resilience" data-default-price="9.99" 
+         data-lock-variants="true">
+          <div class="cover">
+            <img src="assets/img/art_of_resilience.jpg" alt="The Art Of Resilience Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>The Art Of Resilience</h3>
+            <p>Calm under pressure. Strong through storms.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/theartofresilience" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/theartofresilience" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/theartofresilience" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/theartofresilience" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-resilience.html">Preview First Pages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7) Mind-Body Connection -->
+        <div class="card book" data-title="Mind-Body Connection" data-default-price="9.99" 
+         data-lock-variants="true">
+          <div class="cover">
+            <img src="assets/img/mind_body_connection.jpg" alt="Mind Body Connection Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>Mind-Body Connection</h3>
+            <p>Build alignment through habits, health, and clarity.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/themindbodyconnection" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/themindbodyconnection" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/themindbodyconnection" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/themindbodyconnection" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-mindbodyconnection.html">Preview First Pages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8) The Power Of Authenticity -->
+        <div class="card book" data-title="The Power Of Authenticity" data-default-price="9.99" 
+         data-lock-variants="true">
+          <div class="cover">
+            <img src="assets/img/power_of_authenticity.jpg" alt="The Power Of Authenticity Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>The Power Of Authenticity</h3>
+            <p>Alignment begins where pretending ends.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/thepowerofauthenticity" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://bctenio27.gumroad.com/l/thepowerofauthenticity" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://bctenio27.gumroad.com/l/thepowerofauthenticity" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" 
+                 href="https://bctenio27.gumroad.com/l/thepowerofauthenticity" 
+                 target="_blank" rel="noopener">
+                 Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-powerofauthenticity.html">Preview First Pages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9) The Art Of Effective Communication -->
+        <div class="card book" data-title="The Art Of Effective Communication" data-default-price="9.99" 
+         data-lock-variants="true">
+          <div class="cover">
+            <img src="assets/img/communicate.jpg" alt="The Art Of Effective Communication Cover"
+                 style="width:100%; height:auto; border-radius:8px;">
+          </div>
+          <div>
+            <h3>The Art Of Effective Communication</h3>
+            <p>Speak with clarity, listen well, build trust.</p>
+
+            <div class="meta badges">
+              <span class="badge selectable" 
+                    data-price="9.99"  
+                    data-link="https://bctenio27.gumroad.com/l/effectivecommunication" 
+                    role="button" tabindex="0">Ebook</span>
+
+              <span class="badge selectable" 
+                    data-price="14.99" 
+                    data-link="https://gumroad.com/l/aec?wanted=true" 
+                    role="button" tabindex="0">AudioBook</span>
+
+              <span class="badge selectable" 
+                    data-price="19.99" 
+                    data-link="https://gumroad.com/l/aec?wanted=true" 
+                    role="button" tabindex="0">Bundle</span>
+            </div>
+
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary buy-btn" href="https://gumroad.com/l/aec?wanted=true" target="_blank" rel="noopener">
+                Buy @ Gumroad — $9.99
+              </a>
+              <a class="btn" href="book-preview/book-preview-effectivecommunication.html" aria-disabled="true">Preview First Pages</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /grid -->
+    </div><!-- /card -->
+  </div><!-- /container -->
+</main>
+
+<footer>
+  <div class="container">
+    <div class="brand" style="margin-bottom:10px;">
+      <img src="assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="footer-logo">
+      <span>CrownMind Institute</span>
+    </div>
+    <hr class="sep" />
+    <div class="small">© <span id="y"></span> CrownMind Institute.</div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+
+<script>
+(function(){
+  function ready(fn){
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+  }
+
+function setActive(bookEl, badgeEl){
+  const title = bookEl.getAttribute("data-title") || "this book";
+  const buyBtn = bookEl.querySelector(".buy-btn");
+  const badgesWrap = bookEl.querySelector(".badges");
+  if(!buyBtn || !badgesWrap) return;
+
+  const price = badgeEl.getAttribute("data-price");
+  const link  = badgeEl.getAttribute("data-link");
+  const label = badgeEl.textContent.trim();
+
+  const lockVariants = bookEl.getAttribute("data-lock-variants") === "true";
+
+  // If locked book AND AudioBook or Bundle selected
+  if(lockVariants && (label === "AudioBook" || label === "Bundle")){
+      buyBtn.textContent = "Not Yet Available";
+      buyBtn.removeAttribute("href");
+      buyBtn.style.opacity = ".6";
+      buyBtn.style.cursor = "not-allowed";
+  } else {
+      buyBtn.textContent = `Buy @ Gumroad — $${price}`;
+      if(link) buyBtn.setAttribute("href", link);
+      buyBtn.style.opacity = "1";
+      buyBtn.style.cursor = "pointer";
+  }
+
+  buyBtn.setAttribute("aria-label", `${label} for ${title}`);
+
+  badgesWrap.querySelectorAll(".badge.selectable")
+    .forEach(b => b.classList.remove("active-badge"));
+  badgeEl.classList.add("active-badge");
+}
+
+  function initBook(bookEl){
+    const badgesWrap = bookEl.querySelector(".badges");
+    const buyBtn = bookEl.querySelector(".buy-btn");
+    if(!badgesWrap || !buyBtn) return;
+
+    // Event delegation for click
+    badgesWrap.addEventListener("click", function(e){
+      const badge = e.target.closest(".badge.selectable");
+      if(!badge) return;
+      setActive(bookEl, badge);
+    });
+
+    // Fast touch response (NOT nested)
+    badgesWrap.addEventListener("touchstart", function(e){
+      const badge = e.target.closest(".badge.selectable");
+      if(!badge) return;
+      setActive(bookEl, badge);
+    }, {passive:true});
+
+    // Keyboard: Enter/Space
+    badgesWrap.addEventListener("keydown", function(e){
+      const badge = e.target.closest(".badge.selectable");
+      if(!badge) return;
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        setActive(bookEl, badge);
+      }
+    });
+
+    // Default selection
+    const defPrice = bookEl.getAttribute("data-default-price") || "9.99";
+    const defaultBadge = badgesWrap.querySelector(`.badge.selectable[data-price="${defPrice}"]`)
+                      || badgesWrap.querySelector(".badge.selectable");
+    if(defaultBadge) setActive(bookEl, defaultBadge);
+  }
+
+  ready(function(){
+    document.querySelectorAll(".card.book").forEach(initBook);
+  });
+})();
+</script>
+
+</body>
+</html>

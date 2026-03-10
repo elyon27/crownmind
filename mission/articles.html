@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Articles</title>
+  <meta name="description" content="Articles library" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    /* Page-only styling (safe even if you already have a site stylesheet) */
+    :root{
+      --bg:#070b12;
+      --card:#0e1422;
+      --text:#e9eefc;
+      --muted:#b8c2dd;
+      --line:rgba(255,255,255,.10);
+      --gold: #d8b46a;
+    }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(216,180,106,.10), transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, rgba(90,160,255,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 16px 64px;
+    }
+
+    .page-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin: 6px 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-head h1{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: .2px;
+    }
+    .page-head p{
+      margin:6px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.5;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .search{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 12px;
+      min-width: 260px;
+    }
+    .search input{
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 640px){
+      .page-head{ flex-direction:column; align-items:flex-start; }
+      .search{ width:100%; min-width:0; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+    }
+
+    .thumb{
+      position:relative;
+      aspect-ratio: 16 / 10;
+      background: rgba(0,0,0,.25);
+      border-bottom: 1px solid var(--line);
+      display:grid;
+      place-items:center;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .thumb .fallback{
+      width: 92%;
+      height: 82%;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,.22);
+      display:grid;
+      place-items:center;
+      color: var(--muted);
+      text-align:center;
+      padding: 10px;
+    }
+    .badge{
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--gold);
+      backdrop-filter: blur(6px);
+    }
+
+    .content{
+      padding: 14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex:1;
+    }
+    .title{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing:.2px;
+    }
+    .desc{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 4px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius: 999px;
+      padding: 10px 12px;
+      text-decoration:none;
+      font-weight:600;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(216,180,106,.55);
+    }
+    .btn .icon{
+      display:inline-grid;
+      place-items:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(216,180,106,.14);
+      border: 1px solid rgba(216,180,106,.28);
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .small{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .empty{
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      display:none;
+    }
+    
+    /* Back To Mission badge – normal style */
+     .back-badge {
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.08);
+      color: #e9eefc;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      transition: all 0.25s ease;
+    }
+
+     .back-badge:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="CrownMind Institute Home">
+      <img src="../assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="../mission.html" class="back-badge">
+           Back To Mission
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <div class="page-head">
+
+      <div class="toolbar">
+        <div class="search" aria-label="Search articles">
+          <span style="opacity:.8;">🔎</span>
+          <input id="q" type="search" placeholder="Search title…" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+
+  </main>
+
+  <script>
+    // Location of your PDFs and optional cover images
+    const PDF_DIR   = "../assets/articles/";
+    const COVERS_DIR = "../assets/articles/covers/";
+    const MANIFEST  = PDF_DIR + "articles.json";
+
+    const grid = document.getElementById("grid");
+    const empty = document.getElementById("empty");
+    const q = document.getElementById("q");
+
+    let all = [];
+
+    function escapeHtml(s=""){
+      return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function baseName(filename){
+      const i = filename.lastIndexOf(".");
+      return i >= 0 ? filename.slice(0, i) : filename;
+    }
+
+    function buildCard(item){
+      // item: { title, file, description?, tag? }
+      const title = item.title || baseName(item.file || "Untitled");
+      const file = item.file;
+      const desc = item.description || "PDF article";
+      const tag  = item.tag || "PDF";
+
+      const pdfHref = PDF_DIR + file;
+
+      const name = baseName(file);
+      const coverCandidates = [
+        COVERS_DIR + name + ".jpg",
+        COVERS_DIR + name + ".png",
+        COVERS_DIR + name + ".webp"
+      ];
+
+      const card = document.createElement("article");
+      card.className = "card";
+
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+
+      const badge = document.createElement("div");
+      badge.className = "badge";
+      badge.textContent = tag;
+
+      const img = document.createElement("img");
+      img.alt = title + " cover";
+      img.loading = "lazy";
+
+      // Fallback UI when no cover is found
+      const fallback = document.createElement("div");
+      fallback.className = "fallback";
+      fallback.innerHTML = `
+        <div>
+          <div style="font-size:34px; line-height:1;">📄</div>
+          <div style="margin-top:8px;">No cover image</div>
+          <div style="margin-top:4px; font-size:12px; opacity:.9;">
+            Add: <b>assets/articles/covers/${escapeHtml(name)}.jpg</b>
+          </div>
+        </div>
+      `;
+
+      // Try candidate cover images in order, else show fallback
+      let tried = 0;
+      function tryNextCover(){
+        if (tried >= coverCandidates.length){
+          thumb.appendChild(fallback);
+          return;
+        }
+        img.src = coverCandidates[tried++];
+      }
+      img.onerror = tryNextCover;
+      img.onload = () => {
+        // If loaded successfully, keep the image
+      };
+
+      // Start loading first candidate
+      tryNextCover();
+
+      // If image loads, it will be present; if not, fallback will appear after tries
+      thumb.appendChild(badge);
+      thumb.appendChild(img);
+
+      const content = document.createElement("div");
+      content.className = "content";
+      content.innerHTML = `
+        <h3 class="title">${escapeHtml(title)}</h3>
+        <p class="desc">${escapeHtml(desc)}</p>
+      `;
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      const readBtn = document.createElement("a");
+      readBtn.className = "btn";
+      readBtn.href = pdfHref;
+      readBtn.target = "_blank";
+      readBtn.rel = "noopener";
+      readBtn.innerHTML = `<span class="icon">📖</span> Read Article`;
+
+      const meta = document.createElement("span");
+      meta.className = "small";
+      meta.textContent = file;
+
+      actions.appendChild(readBtn);
+      actions.appendChild(meta);
+
+      content.appendChild(actions);
+
+      card.appendChild(thumb);
+      card.appendChild(content);
+
+      return card;
+    }
+
+    function render(list){
+      grid.innerHTML = "";
+      list.forEach(item => grid.appendChild(buildCard(item)));
+      empty.style.display = list.length ? "none" : "block";
+    }
+
+    function applyFilter(){
+      const term = (q.value || "").trim().toLowerCase();
+      if (!term) return render(all);
+      const filtered = all.filter(a => {
+        const t = (a.title || "").toLowerCase();
+        const d = (a.description || "").toLowerCase();
+        const f = (a.file || "").toLowerCase();
+        return t.includes(term) || d.includes(term) || f.includes(term);
+      });
+      render(filtered);
+    }
+
+    async function loadManifest(){
+      try{
+        const res = await fetch(MANIFEST, { cache: "no-store" });
+        if (!res.ok) throw new Error("Manifest not found: " + MANIFEST);
+        const data = await res.json();
+
+        // Accept either:
+        // 1) [ {title,file,...}, ... ]
+        // 2) { articles: [ ... ] }
+        const list = Array.isArray(data) ? data : (data.articles || []);
+        all = list.filter(x => x && x.file);
+
+        render(all);
+      }catch(err){
+        console.error(err);
+
+        // Fallback sample list (edit if you want a hardcoded option)
+        all = [
+          { title: "Cry Of The Watchers", file: "Cry Of The Watchers.pdf", description: "A prophetic call to spiritual             remembrance, this article declares the awakening of the Watchers and the convergence of the elect in the final hour             of divine unveiling" },
+
+          { title: "The Refining Fire", file: "The Refining Fire.pdf", description: "A prophetic reflection on divine              purification, this article portrays the Refining Fire as God’s transforming process through which the Elect are                 cleansed, tested, and made vessels of eternal light" },
+
+         { title: "God Gives His Hardest Battles To His Strongest Soldiers", file: "God's Hardest Battles.pdf", description:       "This article affirms that life’s hardest trials are divine assignments meant to    refine, strengthen, and prepare God’s       chosen soldiers for higher purpose and eternal victory" },
+
+         { title: "Children Of The Lamb", file: "Children of the Lamb.pdf", description: "Children of the Lamb is a profound    Christian reflection on the believer’s identity in Christ, emphasizing faith, purity, sacrificial love, and the eternal hope    found in Jesus, the Lamb of God." },
+
+         { title: "Thorn In The Flesh", file: "Thorn in the Flesh.pdf", description: "Thorn in the Flesh - is a profound    Christian and mystical reflection on how suffering, weakness, and inner struggle become instruments of humility, spiritual    transformation, and deeper reliance on God’s sufficient grace." },
+
+         { title: "When You Are Misunderstood And Falsely Accused", file: "When You Are Misunderstood.pdf", description: "When     You Are Misunderstood and Falsely Accused - is a reflective spiritual meditation on enduring injustice with inner strength,    integrity, and trust in God, revealing how false accusations refine character rather than define identity." },
+
+         { title: "Manifesting Wealth And Riches Through Inner Alignment", file: "Manifesting Wealth And Riches.pdf",    description: "Manifesting Wealth and Riches - teaches that lasting abundance flows not from chasing money, but from aligning    one’s inner life—values, integrity, purpose, and stillness—so that wealth becomes a natural byproduct of coherence and       stewardship." },
+
+         { title: "Faithful Without Fandom - Faith Without Compromise in Leadership", file: "Faithful Without Fandom.pdf",         description: "Faithful Without Fandom - is a principled reflection on maintaining moral discernment, clean conscience, and      spiritual integrity under flawed political leadership without idolizing power or compromising faith." },
+
+         { title: "Change Your Input Change Your World", file: "Change Your Input Change Your World.pdf", description: "Change    Your Input, Change Your World - explores how the thoughts, information, and narratives we repeatedly consume shape our    perception of reality, teaching that deliberate mental alignment transforms both inner life and outer experience." },
+
+         { title: "When Silence Is Strength: Choosing Dignity Over Reaction", file: "When Silence Is Strength.pdf", description: "This article teaches that choosing silence over reaction is a disciplined act of dignity and inner strength that preserves peace and protects the integrity of the soul." }
+
+
+        ];
+        render(all);
+        empty.style.display = "block";
+        empty.innerHTML = `
+          Could not load <b>${MANIFEST}</b>.<br/>
+          Create it to auto-render your PDFs, or hardcode your list in this page.<br/>
+          (Open DevTools Console to see the error.)
+        `;
+      }
+    }
+
+    q.addEventListener("input", applyFilter);
+    loadManifest();
+  </script>
+
+</body>
+</html>

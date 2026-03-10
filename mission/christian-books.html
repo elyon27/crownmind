@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Christian Books | Mission Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --bg1:#0b1626;
+      --bg2:#122a44;
+      --ink:#f5f5f5;
+      --muted:rgba(245,245,245,.82);
+      --gold:#d4af37;
+      --gold2:#f1c40f;
+      --line:rgba(212,175,55,.38);
+      --card:rgba(255,255,255,.055);
+      --shadow:0 0 18px rgba(212,175,55,.35);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(to bottom, var(--bg1), var(--bg2));
+      color:var(--ink);
+    }
+
+    /* Top / Hero */
+    header{
+      text-align:center;
+      padding:64px 18px 18px;
+    }
+    header h1{
+      margin:0 0 10px;
+      font-size:42px;
+      letter-spacing:.3px;
+      color:var(--gold);
+      text-shadow: 0 0 18px rgba(212,175,55,.22);
+    }
+    header p{
+      max-width:980px;
+      margin:0 auto 18px;
+      font-size:18px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .top-links{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px auto 0;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      transition:.25s ease;
+    }
+    .pill:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      background: rgba(212,175,55,.08);
+    }
+
+    .divider{
+      width:86px;
+      height:3px;
+      background:var(--gold);
+      margin:22px auto 10px;
+      border-radius:3px;
+    }
+
+    /* Doctrinal Statement */
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:22px 18px 12px;
+    }
+
+    .doctrine{
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(212,175,55,.09), rgba(255,255,255,.03));
+      border-radius:14px;
+      padding:22px 22px 18px;
+      box-shadow: 0 0 22px rgba(0,0,0,.25);
+    }
+
+    .doctrine h2{
+      margin:0 0 10px;
+      color:var(--gold);
+      font-size:22px;
+      letter-spacing:.2px;
+    }
+    .doctrine p{
+      margin:0 0 10px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:16px;
+    }
+    .doctrine ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:15px;
+    }
+    .doctrine li{ margin:6px 0; }
+    .scripture{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 12px;
+      border-left:3px solid var(--gold);
+      background: rgba(0,0,0,.18);
+      border-radius:10px;
+      color:rgba(245,245,245,.9);
+      font-size:14px;
+    }
+
+    /* TTU Integration */
+    .ttu{
+      margin-top:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+    .ttu-head{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .ttu h3{
+      margin:0;
+      color:var(--gold);
+      font-size:18px;
+    }
+    .ttu p{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+    .ttu-tags{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.28);
+      background: rgba(212,175,55,.08);
+      color:var(--gold);
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+
+    /* Category blocks */
+    .category{
+      margin-top:26px;
+    }
+    .category-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .category h2{
+      margin:0;
+      color:var(--gold);
+      font-size:22px;
+    }
+    .category small{
+      color:rgba(245,245,245,.68);
+      font-size:13px;
+      line-height:1.5;
+      max-width:620px;
+    }
+
+    .books-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+
+    @media (max-width: 1000px){
+    .books-grid{
+     grid-template-columns: repeat(2, 1fr);
+     }
+    }
+
+    @media (max-width: 640px){
+    .books-grid{
+     grid-template-columns: 1fr;
+     }
+    }
+
+    /* Book cards */
+    .book{
+      position:relative;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px 18px 16px;
+      transition:.25s ease;
+      overflow:hidden;
+    }
+    .book:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(212,175,55,.62);
+    }
+
+    .book h3{
+      margin:18px 0 12px;     /* adds space above and below */
+      color:var(--gold);
+      font-size:18px;
+      text-align:center;      /* centers the title */
+    }
+
+    .book p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14.7px;
+    }
+
+    .meta{
+      margin-top:12px;
+      margin-bottom:10px;   /* adds separation from title */
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    /* Badges */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.15px;
+      border:1px solid rgba(212,175,55,.32);
+      background: rgba(255,255,255,.03);
+      color:var(--gold);
+      text-transform:none;
+      white-space:nowrap;
+    }
+
+    .badge-ttu{
+      border-color: rgba(241,196,15,.45);
+      background: linear-gradient(135deg, rgba(241,196,15,.24), rgba(212,175,55,.08));
+      color: #ffeaa7;
+      box-shadow: 0 0 18px rgba(241,196,15,.18);
+    }
+
+    .badge-course{
+      border-color: rgba(212,175,55,.28);
+      background: rgba(212,175,55,.08);
+      color: var(--gold);
+    }
+
+    /* Buttons */
+    .actions{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:900;
+      transition:.22s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .btn-store{
+      background: var(--gold);
+      color:#0b1626;
+    }
+    .btn-store:hover{ background: var(--gold2); transform: translateY(-2px); }
+    .btn-gumroad{
+      background: transparent;
+      border:1px solid var(--gold);
+      color: var(--gold);
+    }
+    .btn-gumroad:hover{ background: rgba(212,175,55,.16); transform: translateY(-2px); }
+
+    /* Footer */
+    footer{
+      text-align:center;
+      padding:44px 18px;
+      color:rgba(245,245,245,.72);
+      font-size:13px;
+    }
+    footer a{
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:800;
+    }
+    footer a:hover{ text-decoration:underline; }
+
+
+    /* Book cover image */
+    .book img.book-cover{
+      width:100% !important;
+      max-width:100% !important;
+      height:auto !important;
+      display:block !important;
+      margin:14px 0 16px !important;
+      border-radius:10px;
+      box-shadow: 0 0 18px rgba(212,175,55,.25);
+      object-fit:contain;
+    }
+
+
+    /* Safety: never allow images to overflow a book card */
+    .book img{
+      max-width:100% !important;
+      height:auto !important;
+      display:block;
+    }
+
+    /* Anchor offset */
+    .anchor{ scroll-margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Christian Books</h1>
+  <p>
+    These works are written not merely for reading — but for formation.
+    They serve the Narrow Way Mandate: to cultivate obedience, clarity, repentance,
+    and spiritual endurance in a distracted age.
+  </p>
+
+  <div class="top-links" aria-label="Quick navigation">
+    <a class="pill" href="#formation">📘 Formation</a>
+    <a class="pill" href="#devotional">🕯️ Devotional</a>
+    <a class="pill" href="#warfare">🛡️ Warfare</a>
+    <a class="pill" href="../mission.html">↩ Return to Mission</a>
+  </div>
+
+  <div class="divider"></div>
+</header>
+
+<main class="wrap">
+
+  <!-- Doctrinal Statement -->
+  <section class="doctrine" aria-label="Doctrinal statement">
+    <h2>Doctrinal Statement</h2>
+    <p>
+      CrownMind Mission Literature is written to honor Christ, uphold Scripture, and form faithful lives.
+      Our instruction is anchored in the historic Christian confession and submits to the authority of the Word of God.
+    </p>
+    <ul>
+      <li><strong>Scripture</strong> is inspired, authoritative, and sufficient for faith and obedience.</li>
+      <li><strong>Christ</strong> is Lord and Savior — the center of redemption, discipleship, and truth.</li>
+      <li><strong>Grace</strong> calls us to repentance, holiness, and persevering obedience.</li>
+      <li><strong>The Church</strong> is the training ground for formation, service, and mission.</li>
+      <li><strong>Formation</strong> is lived theology: truth practiced through disciplined habits.</li>
+    </ul>
+    <div class="scripture">
+      Key Scriptures: Matthew 7:13–14 • Romans 12:1–2 • 2 Timothy 3:16–17 • John 14:6
+    </div>
+  </section>
+
+  <!-- TTU Integration -->
+  <section class="ttu" aria-label="TTU curriculum integration">
+    <div class="ttu-head">
+      <div>
+        <h3>Tenio Theological University Integration</h3>
+        <p>
+          Selected titles below are mapped as recommended readings for TTU Phase I modules.
+          Where marked, a book may function as a <em>Foundational Text</em> for formation tracks
+          (Core Theology, Discipleship Systems, Spiritual Discipline &amp; Ministry Practice).
+        </p>
+      </div>
+      <div class="ttu-tags">
+        <span class="tag">🎓 TTU Phase I</span>
+        <span class="tag">📚 Module Reading</span>
+        <span class="tag">🧭 Formation Tracks</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formation Category -->
+  <section id="formation" class="category anchor" aria-label="Formation books">
+
+    <div class="category-head">
+      <div class="section-title">
+      <h2>📘 Formation</h2>
+        <a href="#top" class="back-top">↑ Top</a>
+      </div>
+       <small>Structured discipleship, disciplined growth systems, and curriculum-aligned training texts.</small>
+    </div>
+
+    <div class="books-grid">
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Core Doctrinal Formation</span>
+          <span class="badge">Theocentric Identity Alignment</span>
+        </div>
+        <h3>I Am Who I Am</h3>
+        <img src="../assets/img/christian books/I Am Who I Am - pic.png" alt="I Am Who I Am Book Cover" class="book-cover"                loading="lazy">
+        <p>
+          I Am Who I Am: Exploring Christian Theological Implications is a theological exploration of God’s self-revelation in            Exodus 3:14, examining its profound implications for the nature of God, the identity of humanity, the person of                 Christ, the work of the Holy Spirit, and Christian faith, ethics, and mission.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/i-am-who-i-am" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/i-am-who-i-am/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+           </a>
+        </div>      
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Spiritual Formation</span>
+          <span class="badge">Worldview Alignment</span>
+        </div>
+        <h3>The How's And Why's Of Life</h3>
+          <img src="../assets/img/christian books/The How - pic.png" alt="The How's And Why's Of Life Book Cover" class="book-cover" loading="lazy">
+        <p>
+          The How’s and Why’s of Life: Exploring the Christian Perspective is a reflective and faith-centered exploration of              life’s deepest questions, presenting a Christian framework for understanding meaning, purpose, sin, redemption,                 eternity, and living with hope in relationship with God.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/howsandwhysoflife" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/howsandwhysoflife/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Pastoral Formation</span>
+          <span class="badge">Servanthood Discipline</span>
+        </div>
+        <h3>To Be A Servant</h3>
+        <img src="../assets/img/christian books/To Be A Servant - pic.png" alt="To Be A Servant Book Cover" class="book-cover"                loading="lazy">
+        <p>
+          To Be A Servant is a Christ-centered call to embrace humility, self-denial, and sacrificial love, guiding believers             to follow Jesus’ example by living a life of faithful service to God and others.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/tobaservant" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/tobaservant/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Pastoral Care</span>
+          <span class="badge">Covenantal Faithfulness</span>
+        </div>
+        <h3>The Sanctity Of Marriage</h3>
+        <img src="../assets/img/christian books/Sanctity Of Marriage - pic.png" alt="Sanctity Of Marriage Book Cover"          class="book-cover" loading="lazy">
+        <p>
+          The Sanctity of Marriage is a biblically grounded exploration of God’s design for marriage, affirming its sacred                covenantal nature, moral responsibilities, and enduring spiritual significance in the life of believers and the                 stability of society.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/sanctityofmarriage" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/sanctityofmarriage/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Spiritual Formation</span>
+          <span class="badge">Sanctification Through Self-Examination</span>
+        </div>
+        <h3>The Carnal Flesh</h3>
+        <img src="../assets/img/christian books/Carnal Flesh - pic.png" alt="The Carnal Flesh Book Cover"                   class="book-cover" loading="lazy">
+        <p>
+          The Carnal Flesh is a biblical examination of humanity’s sinful nature, exposing the inner battle between flesh and           spirit while calling believers to spiritual discipline, repentance, and transformation through the power of the Holy           Spirit.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/thecarnalflesh" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/thecarnalflesh/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Devotional Category -->
+  <section id="devotional" class="category anchor" aria-label="Devotional books">
+
+    <div class="category-head">
+      <div class="section-title">
+        <h2>🕯️ Devotional</h2>
+        <a href="#top" class="back-top">↑ Top</a>
+      </div>
+      <small>Prayer-centered readings designed for daily obedience, repentance, and quiet perseverance.</small>
+    </div>
+
+    <div class="books-grid">
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Devotional Practice</span>
+          <span class="badge">Prayerful Surrender in Suffering</span>
+        </div>
+        <h3>Why Me Lord</h3>
+        <img src="../assets/img/christian books/Why Me Lord - pic.png" alt="Why Me Lord Book Cover"                                     class="book-cover" loading="lazy">
+        <p>
+          Why Me Lord? is a faith-deepening reflection on suffering and trials, guiding readers to find purpose, endurance, and           renewed trust in God amid life’s pain and unanswered questions.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/whymelord" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/whymelord/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Spiritual Disciplines</span>
+          <span class="badge">Stewardship Meditation</span>
+        </div>
+        <h3>The Lord's Vineyard</h3>
+        <img src="../assets/img/christian books/The Lord's Vineyard - pic.png" alt="The Lord's Vineyard Book Cover"                      class="book-cover" loading="lazy">
+
+        <p>
+          The Lord’s Vineyard is a spiritually instructive call for believers to recognize their role as laborers in God’s           kingdom, urging faithful stewardship, diligence, and commitment in advancing His divine work on earth.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/thelordsvineyard" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/thelordsvineyard/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Warfare Category -->
+  <section id="warfare" class="category anchor" aria-label="Warfare books">
+
+    <div class="category-head">
+      <div class="section-title">
+        <h2>🛡️ Warfare</h2>
+        <a href="#top" class="back-top">↑ Top</a>
+      </div>
+      <small>Discernment, resistance to deception, spiritual vigilance, and disciplined resilience in conflict.</small>
+    </div>
+
+    <div class="books-grid">
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Spiritual Warfare</span>
+          <span class="badge">Sanctification Through Spiritual Combat</span>
+        </div>
+        <h3>How to Fight Homosexuality and Reject Carnality</h3>
+        <img src="../assets/img/christian books/Rejecting Carnality - pic.png" alt="Rejecting Carnality Book Cover"                      class="book-cover" loading="lazy">
+        <p>
+          How to Fight Homosexuality and Reject Carnality is a biblically grounded guide that calls believers to resist same-             sex desires and other fleshly temptations through spiritual discipline, inner healing, and a life of holiness                   empowered by Christ. 
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/rejectingcarnality" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/rejectingcarnality/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="meta">
+          <span class="badge badge-course">TTU • Ministry Practice</span>
+          <span class="badge">Cultural Discernment</span>
+
+        </div>
+        <h3>The Anatomy Of Sexual Deviation</h3>
+        <img src="../assets/img/christian books/Sexual Deviation - pic.png" alt="Sexual Deviation Book Cover"                            class="book-cover" loading="lazy">
+        <p>
+          The Anatomy of Sexual Deviation: Exploring Humanity’s Distorted Paths is a comprehensive and nuanced examination of           the biological, psychological, historical, and sociocultural factors shaping non-normative sexual behaviors, calling           for deeper understanding, empathy, and inclusivity in approaching human sexuality.
+        </p>
+        <div class="actions">
+          <a href="https://bctenio27.gumroad.com/l/sexualdeviation" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get the Book
+          </a>
+          <a href="https://bctenio27.gumroad.com/l/sexualdeviation/YHWH777" 
+            class="btn btn-store" 
+            target="_blank" 
+            rel="noopener">
+            Get for Free
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 CrownMind Institute • Narrow Way Mandate<br/><br/>
+  <a href="../mission.html">Return to Mission</a>
+</footer>
+
+</body>
+</html>

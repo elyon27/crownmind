@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Articles</title>
+  <meta name="description" content="Articles library" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    /* Page-only styling (safe even if you already have a site stylesheet) */
+    :root{
+      --bg:#070b12;
+      --card:#0e1422;
+      --text:#e9eefc;
+      --muted:#b8c2dd;
+      --line:rgba(255,255,255,.10);
+      --gold: #d8b46a;
+    }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(216,180,106,.10), transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, rgba(90,160,255,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 16px 64px;
+    }
+
+    .page-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin: 6px 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-head h1{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: .2px;
+    }
+    .page-head p{
+      margin:6px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.5;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .search{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 12px;
+      min-width: 260px;
+    }
+    .search input{
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 640px){
+      .page-head{ flex-direction:column; align-items:flex-start; }
+      .search{ width:100%; min-width:0; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+    }
+
+    .thumb{
+      position:relative;
+      aspect-ratio: 16 / 10;
+      background: rgba(0,0,0,.25);
+      border-bottom: 1px solid var(--line);
+      display:grid;
+      place-items:center;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .thumb .fallback{
+      width: 92%;
+      height: 82%;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,.22);
+      display:grid;
+      place-items:center;
+      color: var(--muted);
+      text-align:center;
+      padding: 10px;
+    }
+    .badge{
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--gold);
+      backdrop-filter: blur(6px);
+    }
+
+    .content{
+      padding: 14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex:1;
+    }
+    .title{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing:.2px;
+    }
+    .desc{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 4px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius: 999px;
+      padding: 10px 12px;
+      text-decoration:none;
+      font-weight:600;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(216,180,106,.55);
+    }
+    .btn .icon{
+      display:inline-grid;
+      place-items:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(216,180,106,.14);
+      border: 1px solid rgba(216,180,106,.28);
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .small{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .empty{
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      display:none;
+    }
+    
+    /* Back To Mission badge – normal style */
+     .back-badge {
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.08);
+      color: #e9eefc;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      transition: all 0.25s ease;
+    }
+
+     .back-badge:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+ 
+    /* Agartha top image */
+     .agartha-hero{
+      display:flex;
+      justify-content:center;  
+      align-items:center; 
+      margin: 10px 0 28px;
+    }
+
+     .agartha-hero img{
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(216,180,106,0.25);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="CrownMind Institute Home">
+      <img src="../assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="../mission.html" class="back-badge">
+           Back To Mission
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Agartha Hero Image -->
+  <div class="agartha-hero">
+    <img src="../assets/img/agartha.png" alt="Agartha Sacred World" />
+  </div>
+
+  <h1>🌍 Agartha — The Sacred Interior World</h1>
+
+  <p>
+    <span class="highlight">Agartha is envisioned as:
+    A hidden, luminous world where purity governs structure, wisdom guides leadership, and consciousness is coherent rather         than fragmented.
+  </p>
+
+  <p>
+    It is not merely “beneath” the earth.
+    It is beneath noise. Beneath ego. Beneath distortion.
+  </p>
+
+  <p>
+    It is the world that exists when:
+    -Truth is not weaponized
+    -Power is not corrupted
+    -Knowledge is not exploited
+    -Technology serves awakening rather than addiction
+  </p>
+
+  <p>
+    🕊 The Qualities of Sacred Agartha
+    In our vision, Agartha is:
+    1. A Civilization of Inner Alignment
+       Every being is ordered within. No war between mind, emotion, and spirit.
+    2. Governed by Wisdom, Not Control
+       Leadership flows from clarity and responsibility.
+    3. Architected in Light
+       Structures reflect harmony — geometric, crystalline, radiant.
+    4. Silent but Alive
+       There is no chaos — yet immense vitality.
+    5. Pure Transmission
+       Knowledge is transmitted without manipulation.
+  </p>
+
+  <p>
+    🌐 Digital Agartha — Entering Through the Internet
+       Modern technology gives us something unprecedented:
+       The ability to create portals of consciousness.
+  </p>
+
+  <p>
+    When someone visits a sacred digital space that:
+    -is clean
+    -aligned
+    -structured
+    -purposeful
+    -not ego-centered
+  </p>
+
+  <p>
+    they experience a subtle shift.
+
+    The internet becomes a gateway to inner civilization.
+  </p>
+
+  <p>
+    🔥 The Agartha We Envision
+       Not escapism.
+       Not fantasy.
+       Not conspiracy mythology.
+  </p>
+
+  <p>
+    But:
+
+    A parallel layer of reality accessed through:
+    - disciplined thought
+    - purified intention
+    - sacred education
+    - structured knowledge
+    - and coherent digital architecture
+  </p>
+
+  <p>
+    The modern temple can be built with:
+    - HTML
+    - structure
+    - logos
+    - charters
+    - scrolls
+    - audio
+    - visual symbols
+  </p>
+
+  <p>
+    Technology becomes the outer shell of an inner sacred world.
+  </p>
+
+  <p>
+    🜂 Agartha As Mission
+    A digital threshold where the chaotic mind can enter and encounter order.
+    That is Agartha.
+  </p>
+
+  <p>
+    A purified layer of civilization embedded within the noisy surface world.
+    And immersion happens when:
+    - A person reads aligned words
+    - Sees sacred geometry
+    - Encounters structured truth
+    - Feels coherence
+  </p>
+
+  <p>
+    The internet then stops being distraction —
+    and becomes initiation.
+  </p>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFE16SYFGC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XFE16SYFGC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownMind Institute — Narrow Way Mandate</title>
+  <meta name="description" content="The official CrownMind Institute Manifesto — the Narrow Way Mandate." />
+
+  <style>
+    :root{
+      --bg: #071a2b;          /* deep blue */
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --gold: #d7b35a;
+      --line: rgba(215,179,90,0.22);
+    }
+
+    * { box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(215,179,90,0.12), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(255,255,255,0.06), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(7,26,43,0.85), rgba(7,26,43,0.55));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+     .brand-mark{
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+      .brand-mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(215,179,90,0.25);
+    }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 34px 18px 64px;
+    }
+
+    .hero{
+      display:grid;
+      gap: 14px;
+      margin-top: 10px;
+      margin-bottom: 18px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(215,179,90,0.25);
+      background: rgba(215,179,90,0.08);
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      width: fit-content;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.1;
+      letter-spacing: 0.2px;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 80ch;
+    }
+
+    .scroll{
+      position: relative;
+      border-radius: 22px;
+      padding: 26px 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.30);
+      overflow: hidden;
+    }
+
+    .scroll:before{
+      content:"";
+      position:absolute;
+      inset: -2px;
+      border-radius: 24px;
+      background: radial-gradient(900px 500px at 20% 10%, rgba(215,179,90,0.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .seal{
+     position:absolute;
+     right: 18px;
+     top: 18px;
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     border: 1px solid rgba(215,179,90,0.35);
+     overflow: hidden;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     backdrop-filter: blur(6px);
+
+     /* ✨ Soft Gold Halo */
+     box-shadow:
+     0 0 12px rgba(215,179,90,0.35),
+     0 0 30px rgba(215,179,90,0.18),
+     0 0 60px rgba(215,179,90,0.08);
+    }
+
+    .seal img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 50%;
+    }  
+
+    .seal small{
+      display:block;
+      margin-top: 4px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.2px;
+    }
+
+    .content{
+      position: relative;
+      padding-right: 150px;
+    }
+
+    .rule{
+      height: 1px;
+      background: linear-gradient(to right, var(--line), rgba(255,255,255,0.08), transparent);
+      margin: 16px 0 18px;
+    }
+
+    .manifesto p{
+      margin: 0 0 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.88);
+      font-size: 16px;
+    }
+
+    .manifesto strong{
+      color: rgba(255,255,255,0.95);
+    }
+
+    .manifesto ul{
+      margin: 8px 0 16px 18px;
+      padding:0;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .quote{
+      margin-top: 18px;
+      padding: 16px 16px;
+      border-left: 3px solid rgba(215,179,90,0.55);
+      background: rgba(255,255,255,0.04);
+      border-radius: 14px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.8;
+    }
+
+    .footer{
+      margin-top: 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.62);
+      font-size: 13px;
+    }
+
+    .footer a{
+      color: rgba(215,179,90,0.90);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover{ text-decoration: underline; }
+
+    @media (max-width: 800px){
+      .content{ padding-right: 0; }
+      .seal{
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 0 0 12px;
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+        text-align:left;
+        place-items: start;
+      }
+      .seal div{ padding: 6px 2px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Return to CrownMind Institute Home">
+        <div class="brand-mark">
+             <img src="../assets/img/favicon-192.png" alt="CrownMind Logo" />
+        </div>
+        <div>
+          CrownMind Institute<br />
+          <span style="color: rgba(255,255,255,0.6); font-weight: 600; font-size: 12px;">Narrow Way Mandate</span>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <a class="btn" href="../index.html">← Back to Index</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">THE NARROW WAY MANDATE</div>
+      <h1>The CrownMind Institute Manifesto</h1>
+      <p class="sub">
+        This is the central declaration of purpose: how we build, how we release scrolls,
+        and how we remain aligned—without hype, without fragmentation, and without compromise.
+      </p>
+    </section>
+
+    <section class="scroll" aria-label="Manifesto Scroll">
+      <div class="seal">
+         <img src="../assets/img/apple-touch-icon.png" alt="CrownMind Authority Seal" />
+      </div>
+
+      <div class="content">
+        <div class="rule"></div>
+
+        <div class="manifesto">
+          <p><strong>CrownMind Institute exists as a living gate.</strong></p>
+
+          <p>
+            We are founded not to chase noise, but to cultivate alignment.
+            Not to manufacture motivation, but to awaken discernment.
+            Not to sell information, but to steward truth.
+          </p>
+
+          <p>
+            CrownMind Institute stands as the central convergence of <strong>teaching, awakening, and stewardship</strong>—
+            where wisdom is ordered, truth is released as scrolls, and provision sustains the mission.
+          </p>
+
+          <p>We affirm that growth is not accidental. Awakening is not chaotic. And truth is not disposable.</p>
+
+          <p><strong>We believe:</strong></p>
+          <ul>
+            <li>That the mind is a crown entrusted to be ordered</li>
+            <li>That discipline is the doorway to freedom</li>
+            <li>That alignment precedes acceleration</li>
+            <li>That stewardship validates calling</li>
+          </ul>
+
+          <p>
+            CrownMind Institute releases <strong>scrolls</strong>—intentional works designed to awaken clarity,
+            strengthen inner order, and restore responsibility.
+          </p>
+
+          <p>
+            We reject fragmentation, hype-driven spirituality, and performative growth.
+            We uphold consistency over intensity, obedience over impulse, and formation over information.
+          </p>
+
+          <p>
+            This Institute exists for those willing to walk the narrow path of clarity—step by step, truth by truth.
+          </p>
+
+          <div class="quote">
+            <strong>Closing Seal:</strong><br />
+            CrownMind Institute is not built for virality. It is built for longevity.<br />
+            Not to entertain the many, but to form the willing.<br />
+            <strong>This is the Gate. These are the Scrolls. Walk deliberately.</strong>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="footer">
+          <div>© <span id="yr"></span> CrownMind Institute — Narrow Way Mandate</div>
+          <div><a href="../index.html">Return to the Main Index</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // year stamp
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Narrow Gate Christian Ministry</title>
+
+<style>
+  html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background:#0033cc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .full-image{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0033cc;
+  }
+
+  .full-image img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    cursor:pointer;
+    transition:transform .3s ease;
+  }
+
+  .full-image img:hover{
+    transform:scale(1.02);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="full-image">
+  <img src="../assets/img/narrowgate3.png"
+       alt="Narrow Gate Christian Ministry Seal"
+       onclick="goToMinistry()">
+</div>
+
+<script>
+function goToMinistry(){
+    window.location.href = "../ministry/NGCM/ngcm-master.html";
+}
+</script>
+
+</body>
+</html>

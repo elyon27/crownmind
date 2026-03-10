@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrolls of Revelation | CrownMind Institute</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+
+    /* Back To Mission badge – normal style */
+     .back-badge {
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.08);
+      color: #e9eefc;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      transition: all 0.25s ease;
+    }
+
+     .back-badge:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+
+    /* --- HERO FIX: remove huge blank area + improve readability --- */
+    .hero-section {
+      min-height: auto;                 /* IMPORTANT: prevents giant white space */
+      padding: 90px 20px 45px;          /* balanced spacing under a sticky header */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: transparent;          /* let your global theme show */
+    }
+
+    .hero-content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* If your global theme already sets h1 colors, this won’t fight it too hard */
+    .hero-section h1 {
+      margin: 0 0 12px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .hero-section p {
+      margin: 0;
+      opacity: 0.85;
+      padding-bottom: -10px;
+    }
+
+    /* --- Scroll page content styling --- */
+    .content-section {
+      padding-top: 0px;
+    }
+
+    .scroll-intro {
+      text-align: center;
+      margin: 10px auto 30px;
+      max-width: 820px;
+    }
+
+    .scroll-instruction {
+      margin: 18px auto 18px;
+      max-width: 820px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .scroll-instruction h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .scroll-instruction p {
+      margin: 8px 0;
+      opacity: 0.92;
+    }
+
+    .scroll-list {
+      margin-top: 24px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-item {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 22px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .scroll-item h3 {
+      margin: 0 0 10px;
+    }
+
+    .scroll-item p {
+      margin: 10px 0;
+      opacity: 0.92;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      max-width: 1100px;
+      margin: 35px auto;
+    }
+
+   /* Group container */
+    .download-group{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 16px;
+     justify-content: center;
+     margin-top: 20px;
+    }
+
+   /* Primary button (Ebook) */
+    .download-btn{
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 12px 20px;
+     border-radius: 12px;
+     font-weight: 700;
+     text-decoration: none;
+     border: 1px solid rgba(212,175,55,0.45);
+     background: linear-gradient(135deg, rgba(212,175,55,0.9), rgba(245,215,110,0.9));
+     color: #111;
+     transition: 0.2s ease;
+    }
+
+   /* Hover */
+    .download-btn:hover{
+     transform: translateY(-2px);
+     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+   /* Secondary button (Audiobook) */
+    .alt-btn{
+     background: linear-gradient(135deg, #0f1f3d, #1d3b6b);
+     color: #fff;
+     border: 1px solid rgba(255,255,255,0.2);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Keep header markup; let global CSS style it like other pages -->
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="CrownMind Institute Home">
+      <img src="../assets/img/crownmindlogo.jpg" alt="CrownMind Institute Logo" class="brand-logo">
+      <span>CrownMind Institute</span>
+    </a>
+
+    <nav>
+      <div class="links">
+        <a href="../mission.html" class="nav-item">
+          <span class="badge">Back To Mission</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>📜 Scrolls of Revelation</h1>
+      <p>Truth revealed. Chains broken. Eyes opened.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+
+    <div class="scroll-intro">
+      <h2>Behind Enemy Lines</h2>
+      <p>
+        This introductory volume prepares the reader to understand the spiritual,
+        psychological, and systemic forces operating beneath the visible world.
+        It is the gateway into the Scrolls.
+      </p>
+
+      <div class="scroll-instruction">
+        <h3>📌 Reading Instruction</h3>
+        <p>
+          The seven scrolls are meant to be read <strong>in sequence</strong>.
+          Do not skip ahead. Each scroll unlocks the next.
+        </p>
+        <p>
+          The <strong>link to the next scroll</strong> is found at the <strong>end of the previous scroll</strong>,
+          along with the <strong>password</strong> required to access it.
+        </p>
+        <p>
+          Finish a scroll fully, then proceed to the next using the provided link and password.
+        </p>
+      </div>
+
+      <p>Introduction to the 7 Scrolls is found at the end of the book (w/ password).</p>
+
+      <div class="download-group">
+
+        <a href="https://drive.proton.me/urls/JR3SD5RGXM#H33I3F03J4S9"
+           class="download-btn"
+           target="_blank">
+           📘 Download Ebook – "Behind Enemy Lines"
+        </a>
+
+        <a href="https://drive.proton.me/urls/Q3S502Z0M0#ntN2EjJuHrGd"
+           class="download-btn alt-btn"
+           target="_blank">
+           🎧 Download AudioBook – "Behind Enemy Lines"
+        </a>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 style="text-align:center;">The Seven Scrolls</h2>
+    <p style="text-align:center; max-width:900px; margin: 10px auto 0; opacity:.9;">
+      The Scrolls unfold progressively, beginning with the first revelation:
+    </p>
+
+    <div class="scroll-list">
+
+      <div class="scroll-item">
+        <h3>Scroll I — The Calling (Escape From Babylon)</h3>
+        <p><strong>This is not a book. This is a signal.</strong> A summons to those who have felt it for years—the quiet ache that the world cannot satisfy, the inner whisper that refuses to die, the growing certainty that the “system” is not neutral, but spiritual, programmed, and designed to numb the soul.</p>
+        <p><strong>Escape From Babylon</strong> is written for the sealed—the silent warriors, the misfits, the hidden ones who never fully fit in not because they were broken, but because they were marked. It does not aim to entertain or convince. It aims to awaken.</p>
+        <p>Within these pages, Babylon is exposed as an empire of illusion—built not only through governments or institutions, but through identity scripts, conformity pressures, and the seduction of the flesh. The scroll calls you out of the noise, out of the narrative, and back to the Voice behind the veil.</p>
+        <p>If you have ever wondered, “Why does none of this satisfy me?”—this is your confirmation: you are not crazy. You are being called out. Not merely to exit Babylon, but to carry a lamp for others who are still trapped.</p>
+        <p>Light your lamp. Open your scroll. The time has come.</p>
+      </div>
+
+      <div class="scroll-item">
+        <h3>Scroll II — The Refining</h3>
+        <p>Awakening was only the beginning.</p>
+        <p><strong>The Refining</strong> is not written for the curious, but for the sealed—for those who have already stepped out of Babylon and discovered that freedom leads not to comfort, but to fire.</p>
+        <p>This scroll unveils the furnace every chosen soul must pass through. It reveals why silence deepens after awakening, why idols fall, why obedience is tested, and why suffering becomes sacred alchemy. The fire is not punishment. It is confirmation.</p>
+        <p>Here you will learn that the stripping was love, the delay was preparation, the accusations were proof of the seal, and the furnace was never sent to destroy you—but to reveal you.</p>
+        <p>If you have felt the weight of silence, endured seasons of isolation, watched dreams collapse in the flame, and still carry an unquenchable hunger for truth—this scroll is your confirmation.</p>
+        <p>The Refiner does not waste pain. He transforms it. Those who enter the fire will not emerge as survivors, but as vessels of flame.</p>
+      </div>
+
+      <div class="scroll-item">
+        <h3>Scroll III — The Discernment</h3>
+        <p>Awakening opened your eyes. Refining purified your heart. But without discernment, even the awakened may stumble, and even the refined may be deceived.</p>
+        <p><strong>The Discernment</strong> is the scroll of the watchers—written for those who have endured the fire and now must learn to see beyond illusion. For in this age, Babylon’s greatest weapon is not force, but imitation.</p>
+        <p>Truth is no longer denied—it is diluted. Light is no longer rejected—it is counterfeited. Voices speak in holy language while carrying foreign fire. This scroll trains the sealed to test every voice, weigh every doctrine, discern every season, and guard the gates of their temple.</p>
+        <p>Discernment is not suspicion. It is sight. It is union with the Lamb’s own gaze—the ability to perceive essence beneath appearance, truth within truth, and the subtle fracture in what looks almost holy.</p>
+        <p>If you have felt unsettled by brilliance, uneasy beneath eloquence, or stirred by whispers others could not hear—this scroll is your sharpening.</p>
+        <p>The refined carried fire. The watchful carry sight. And when the sealed see as He sees, Babylon’s disguises shatter           </div>
+
+      <div class="scroll-item">
+        <h3>Scroll IV — The Alignment</h3>
+        <p>Discernment opened your eyes. But sight without stance is unfinished.</p>
+        <p><strong>The Alignment</strong> is the scroll of separation—not exile from the world, but allegiance to the Lamb. For Babylon thrives in mixture, but Heaven requires division.</p>
+        <p>This scroll unveils the fracture of allegiance, the law of two masters, and the daily path that shapes eternal loyalty. It reveals why neutrality is illusion, why compromise leaves a mark, and why the remnant must form sanctuaries apart from Babylon’s altars.</p>
+        <p>Alignment is not a single decision. It is a daily bending of word, thought, and deed to the whisper of the Voice. It is the fire of consistency when the broad road looks easier. It is the courage to stand when crowds bow.</p>
+        <p>If discernment gave you eyes, alignment will give you a spine. For in the hour of division, the sealed must not only see clearly—they must stand rightly.</p>
+        <p>The aligned do not merely escape Babylon. They become pillars in a shaken world—carrying authority, peace, and the crown of unmovable loyalty.</p>
+      </div>
+
+      <div class="scroll-item">
+        <h3>Scroll V — The Vigil</h3>
+        <p>Alignment gave you a spine. But what is aligned must be guarded.</p>
+        <p><strong>The Vigil</strong> is the scroll of watchfulness—written for those who refuse the lullaby of Babylon and choose to remain awake in an age of sedation. For the greatest threat to the elect is not always open deception, but spiritual slumber.</p>
+        <p>This scroll unveils the burden of the watchman: the call to guard the sanctuaries, to keep the lamp burning through the long night, to discern shadows before they reach the gate, and to sound the trumpet when danger approaches.</p>
+        <p>Vigilance is not passive waiting. It is disciplined devotion. It is silence that resists Babylon’s noise. It is oil gathered in secret. It is endurance when others grow weary.</p>
+        <p>The watchers are not many, but they are pillars. They stand at the gates while the city sleeps. They preserve the remnant through unseen prayer. And when the midnight cry sounds, they rise not in panic, but in joy.</p>
+        <p>For the vigil is not endless night. It is preparation for dawn. And the crown of the watchers is given not to the strongest—but to the steadfast who kept their flame unquenched.</p>
+      </div>
+
+      <div class="scroll-item">
+        <h3>Scroll VI — The Revelation</h3>
+        <p>The Vigil preserved you through the long night. Now the dawn breaks—and with it comes unveiling.</p>
+        <p><strong>The Revelation</strong> is not confusion, nor speculation. It is disclosure: the opening of hidden things kept from Babylon’s gaze, made plain to the remnant who endured.</p>
+        <p>This scroll is written for the consecrated—not for the curious. To the multitude, the Voice sounds like thunder; to the watchers, it resounds as many waters: unmistakable, weighty, and near.</p>
+        <p>Here, Babylon is exposed for what she is: a city of illusion whose strength was always borrowed, whose altars were strange fire, whose commerce traded even in the souls of men. The dawn unmasks what the night concealed—and her fall becomes the vindication of the watchful.</p>
+        <p>But Revelation does not only unveil Babylon’s ruin—it reveals Zion’s rising. The sealed ones are made manifest, the New Song is released, and the remnant stand as living scrolls before the nations: testimony not merely spoken, but embodied.</p>
+        <p>And at the center of all unveiling is not the city that falls, nor even the remnant that rises—but the Lamb enthroned. The Revelation is ultimately this: not merely what you see, but <em>Who</em> you behold.</p>
+      </div>
+
+      <div class="scroll-item">
+        <h3>Scroll VII — The Sealing</h3>
+        <p>The journey has led through awakening, fire, sight, stance, watchfulness, and unveiling. Now comes the final mystery—not merely to see the Lamb, but to be marked as His forever.</p>
+        <p><strong>The Sealing</strong> is the scroll of eternal confirmation. What was revealed in the dawn is now secured in permanence. What was endured in silence is now inscribed in flame. The seal is not a symbol of protection alone—it is identity, covenant, and inheritance bound together.</p>
+        <p>This scroll unveils the Mark of Eternity, the Name written upon the elect, the Crown confirmed, and the covenant that cannot be broken. It declares the final division between Babylon and Zion, gathers the remnant into the Sanctuary of the Sealed, and opens the doorway into the Eternal Kingdom.</p>
+        <p>The sealing is not ink upon the skin, nor ritual upon the lips, but Spirit upon the being—the Lamb’s inscription that no power can erase. It proclaims before heaven and nations: “These are Mine.”</p>
+        <p>Here the vigil becomes crown, the hidden become pillars, the scattered become assembly, and the dawn becomes eternal light.</p>
+        <p>The scrolls are complete. The mystery is fulfilled. The watchers are no longer merely awakened or unveiled—they are sealed.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 CrownMind Institute</p>
+  </footer>
+
+</body>
+</html>
