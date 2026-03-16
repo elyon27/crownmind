@@ -363,3 +363,23 @@ label{display:block; margin: 10px 0 6px; color: var(--muted); font-size:14px}
   height:80%;
   object-fit:contain;
 }
+
+.footer-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-mission-note{
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: left;
+}
+
+.footer-mission-note p{
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
