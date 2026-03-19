@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" 
+        href="../../zg-img-view.html?img=ZG0008.jpg" 
+        title="Return to Image Slide">
+        🔎 View Image: ZG0008
+      </a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Christocentric Sovereignty: The Indwelling Lord and His Eternal Reign</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A TTU Seminary-Level Exegetical Commentary
+
+I. Introduction: The Confession of a Christ-Centered Ontology
+The declaration, “Christ is the center of my being. And He shall reign forever and ever!” is not merely devotional language—it is a profound theological confession that integrates union with Christ, anthropological reordering, and eschatological kingship. It speaks simultaneously of present indwelling and eternal sovereignty, forming a comprehensive vision of the Christian life as radically Christocentric.
+
+This statement assumes that Christ is not peripheral but ontologically central—the very axis around which human identity, purpose, and existence revolve.
+
+II. Biblical-Theological Foundations
+A. Christ as the Center: The Indwelling Reality
+
+The phrase “Christ is the center of my being” reflects the Pauline doctrine of union with Christ (ἐν Χριστῷ), which is foundational to New Testament theology.
+
+“It is no longer I who live, but Christ who lives in me” (Galatians 2:20).
+
+Here, Paul articulates a participatory ontology—the believer’s identity is no longer autonomous but redefined by Christ’s indwelling presence. Christ is not merely an external Lord but an internalized life principle.
+
+Similarly:
+
+“Christ in you, the hope of glory” (Colossians 1:27).
+
+This indwelling signifies:
+
+- Transformation of the inner life
+- Reorientation of desires and will
+- Participation in divine life through grace
+
+Thus, Christ as “center” implies total integration—intellect, will, affections, and purpose all converge in Him.
+
+B. The Reordering of the Self
+
+To declare Christ as center is to dethrone the self. This aligns with Jesus’ call:
+
+“If anyone would come after Me, let him deny himself and take up his cross daily and follow Me” (Luke 9:23). Theologically, this is the movement from:
+
+- Self-centered existence (fallen Adamic nature)
+to
+- Christ-centered existence (new creation in Christ)
+
+The “center” is therefore not psychological but spiritual and ontological—a shift in the governing principle of life.
+
+III. Christological Kingship: “He Shall Reign Forever and Ever”
+The second clause transitions from indwelling presence to cosmic sovereignty.
+
+“The kingdom of the world has become the kingdom of our Lord and of His Christ, and He shall reign forever and ever” (Revelation 11:15).
+
+This proclamation affirms:
+
+The Universality of Christ’s Rule
+Christ reigns not only in the believer’s heart but over all creation.
+
+The Eternity of His Kingship
+His reign is not temporary or contingent—it is everlasting (εἰς τοὺς αἰῶνας τῶν αἰώνων).
+
+The Fulfillment of Messianic Expectation
+Rooted in promises such as:
+
+“Of His kingdom there will be no end” (Luke 1:33).
+
+IV. The Integration of Indwelling and Reigning
+This statement uniquely unites two dimensions:
+
+Dimension	Description
+Immanence	Christ within the believer (center of being)
+Transcendence	Christ as eternal King over all
+
+The same Christ who reigns in glory is the One who dwells within. This creates a theological harmony: The believer becomes a microcosm of the Kingdom. The internal reign of Christ anticipates His external universal reign. Thus, sanctification is the progressive manifestation of Christ’s kingship within the believer.
+
+V. Soteriological Implications: Salvation as Participation
+
+Salvation is not merely juridical (forgiveness of sins) but participatory:
+
+- We are united to Christ in His death and resurrection (Romans 6:5)
+- We share in His life, authority, and future glory
+
+To say Christ is the center is to affirm:
+
+- Justification (declared righteous in Him)
+- Sanctification (transformed by His indwelling life)
+- Glorification (to reign with Him eternally)
+
+VI. Anthropological Transformation: A New Center of Gravity
+Human beings are structured around a “center”—that which governs identity and action. In fallen humanity, this center is the self (ego), leading to fragmentation and disorder. When Christ becomes the center:
+
+- The mind is renewed (Romans 12:2)
+- The will is aligned with God
+- The affections are purified
+- The purpose is redefined toward divine mission
+
+This results in what may be termed Christocentric integration—a unified life under one Lord.
+
+VII. Eschatological Fulfillment: The Eternal Reign of Christ
+The phrase “He shall reign forever and ever” points to the consummation of all things:
+
+“Then comes the end, when He delivers the kingdom to God the Father… that God may be all in all” (1 Corinthians 15:24–28).
+
+This eschatological vision includes:
+
+- The defeat of all opposing powers
+- The renewal of creation
+- The eternal reign of Christ with His people
+
+Believers who have made Christ their center will participate in this reign:
+
+“If we endure, we will also reign with Him” (2 Timothy 2:12).
+
+VIII. Ecclesiological and Formational Implications (TTU Context)
+Within the framework of Tenio Theological University (TTU), this confession serves as a formational axis:
+
+Christ as Curriculum Center
+All theology, doctrine, and formation must orbit around Christ.
+
+Christ as Spiritual Center
+Students are not merely informed but transformed.
+
+Christ as Missional King
+Graduates are sent as agents of His Kingdom reign.
+
+Thus, TTU formation is not information transfer but Christ-centered transformation.
+
+IX. Spiritual Theology: Living Under the Reign of Christ
+To live this confession daily involves:
+
+- Abiding in Christ (John 15:4–5)
+- Surrendering to His lordship
+- Aligning every decision with His will
+- Proclaiming His reign through word and life
+
+This is not passive spirituality but active participation in the Kingdom.
+
+X. Conclusion: The Throne Within and the Throne Above
+The statement culminates in a profound theological vision:
+
+- Christ enthroned within the believer
+- Christ enthroned over the universe
+
+These are not separate realities but one unified truth.
+
+Final Theological Synthesis
+
+To declare “Christ is the center of my being. And He shall reign forever and ever” is to affirm:
+
+- A Christ-centered identity grounded in union with Him
+- A transformed life governed by His indwelling presence
+- A hope-filled future anchored in His eternal reign
+
+It is the confession of one who has yielded the throne of the heart to the rightful King—and who now lives in anticipation of the day when that same King will reign visibly and eternally over all creation.
+
+Christ within is the beginning of the Kingdom.
+Christ reigning forever is its fulfillment.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

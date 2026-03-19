@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" 
+        href="../../zg-img-view.html?img=ZG0007.jpg" 
+        title="Return to Image Slide">
+        🔎 View Image: ZG0007
+      </a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>The Supreme Desire: Obedience to the Father Above the Glory of the World</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A TTU Seminary-Level Exegetical Commentary
+
+I. Introduction: The Hierarchy of Desire in the Economy of God
+
+The statement, “To do the Will of my Father in heaven is much more desirable than all the riches and glory of this world,” articulates a theological axiom that lies at the very heart of biblical spirituality: the reordering of human desire toward divine obedience. This is not merely an ethical preference but a reconstitution of the soul’s ultimate orientation—from κόσμος (worldly order) to βασιλεία τοῦ θεοῦ (the Kingdom of God).
+
+The phrase reflects a Christocentric pattern of life, echoing the disposition of the Son Himself, who declared:
+
+“My food is to do the will of Him who sent Me and to accomplish His work” (John 4:34).
+
+Thus, obedience is not external compliance but internal sustenance—it is nourishment to the regenerated soul.
+
+II. Biblical-Theological Foundations
+A. The Will of the Father as Supreme Good
+In Scripture, the “will of the Father” (θέλημα τοῦ πατρός) is not arbitrary command but the perfect expression of divine wisdom, goodness, and love. To align oneself with this will is to participate in the divine order.
+
+Jesus establishes this priority explicitly:
+
+“Not everyone who says to Me, ‘Lord, Lord,’ will enter the kingdom of heaven, but the one who does the will of My Father who is in heaven” (Matthew 7:21).
+
+Here, obedience is not optional—it is the decisive criterion of authentic discipleship.
+
+B. The Rejection of Worldly Glory
+The contrast with “riches and glory of this world” invokes the biblical category of κόσμος—not merely the physical world, but the fallen system opposed to God (cf. 1 John 2:15–17).
+
+The temptations of Christ (Matthew 4:8–10) serve as the paradigmatic narrative:
+
+- Satan offers “all the kingdoms of the world and their glory”
+- Christ rejects them in favor of exclusive devotion to the Father
+
+This reveals that worldly glory, though real, is transient and subordinate. It is a counterfeit kingdom—lacking eternal substance.
+
+III. Christological Fulfillment: The Obedience of the Son
+
+The statement finds its fullest embodiment in the obedience of Christ, particularly in His passion:
+
+“Not My will, but Yours, be done” (Luke 22:42).
+
+Here we encounter the mystery of kenotic obedience (cf. Philippians 2:6–8), where the Son willingly submits to the Father’s will even unto death. This obedience is not coerced but flows from perfect filial love.
+
+Thus, the believer’s desire to do the Father’s will is not self-generated—it is participation in the Son’s own obedience through union with Christ.
+
+IV. Anthropological Implications: The Transformation of Desire
+A. From Disordered Love to Ordered Love
+
+Following the Augustinian framework, sin is fundamentally disordered love (amor curvatus in se). Humanity prefers created goods (wealth, status, pleasure) over the Creator.
+
+This phrase signals a reversal:
+
+- The will of God becomes the summum bonum (highest good)
+- Worldly riches are relativized as secondary and fleeting
+
+B. Regeneration and New Affections
+
+This transformation is only possible through regeneration (John 3:3–8). The Holy Spirit reorients the affections so that obedience is no longer burdensome but desirable:
+
+“For this is the love of God, that we keep His commandments. And His commandments are not burdensome” (1 John 5:3).
+
+Thus, the statement reflects not moral striving alone, but spiritual renewal.
+
+V. Eschatological Perspective: Eternal Reward vs. Temporal Glory
+
+The phrase carries an implicit eschatological contrast:
+
+Category	Worldly Glory	Will of the Father
+Duration	Temporal	         Eternal
+Nature	        Visible	                 Often unseen
+Reward	        Fading	                 Imperishable
+Source	        Human systems	 Divine authority
+
+Jesus reinforces this in Matthew 6:19–21:
+
+“Do not lay up for yourselves treasures on earth… but lay up for yourselves treasures in heaven.”
+
+To choose the Father’s will is to invest in eternity rather than temporality.
+
+VI. Ecclesiological and Missional Dimensions
+For the community of believers, this principle defines the identity and mission of the Church:
+The Church is a people of obedience, not merely confession. Its mission is to embody the will of God on earth (“Your will be done, on earth as it is in heaven” – Matthew 6:10). Within the vision of institutions such as Tenio Theological University (TTU), this becomes formative: Formation is not merely intellectual but volitional. The aim is alignment of the entire being with divine purpose
+
+VII. Spiritual Theology: The Discipline of Choosing the Higher Good
+To prefer the will of the Father over worldly glory requires:
+
+- Discernment – recognizing the difference between eternal and temporal goods
+- Detachment – freedom from the tyranny of material desire
+- Devotion – wholehearted surrender to God’s purposes
+- Perseverance – sustained obedience despite worldly pressures
+
+This reflects the “narrow way” (Matthew 7:13–14), where few choose obedience because it requires sacrifice.
+
+VIII. Conclusion: The Crown of True Glory
+The paradox of the Kingdom is this:
+In relinquishing worldly glory, one receives true glory from God.
+
+“If anyone serves Me, the Father will honor him” (John 12:26).
+
+Thus, the statement is not a call to loss, but to higher gain. It is the declaration of a soul awakened to eternal reality—a soul that has seen that the will of the Father is not merely a duty to be performed, but the greatest treasure to be desired.
+
+Final Theological Synthesis
+
+To desire the will of the Father above all worldly riches is:
+
+- To align with the obedience of Christ
+- To participate in the life of the Kingdom
+- To undergo the transformation of the heart
+- To invest in eternal glory
+
+It is, ultimately, the mark of one who has passed from the illusion of the world into the truth of God.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>

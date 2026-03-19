@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownMind Institute | Commentary</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1622;
+      --text:#e9eef6;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --btn:#1e2a3a;
+      --btnHover:#27364b;
+      --headerH:78px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 980px;
+      --sideMargin: 1in; /* 1 inch margin on both sides */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(61,151,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(255,214,102,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Fixed header */
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background: rgba(15,22,34,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:1000;
+
+    }
+    .header-inner{
+     height:100%;
+     display:flex;
+     align-items:center;
+     justify-content:center; /* centers the logo and title */
+     padding: 0 var(--sideMargin);
+    }
+
+    .brand{
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     gap:12px;
+     text-align:center;
+    }
+
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .title strong{
+      font-size:1.05rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:.85rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Page content */
+    main{
+      padding-top: calc(var(--headerH) + 18px);
+      padding-left: var(--sideMargin);
+      padding-right: var(--sideMargin);
+      padding-bottom: 60px;
+    }
+
+    /* Return button aligned to the left edge of the content margin */
+    .top-actions{
+      max-width: var(--maxw);
+      margin: 0 auto 14px auto;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--btn);
+      color: var(--text);
+      text-decoration:none;
+      border:1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:.95rem;
+    }
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .card{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .card-header h1{
+      margin:0;
+      font-size:1.35rem;
+      line-height:1.25;
+    }
+    .card-header p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .doc{
+      padding: 20px;
+    }
+
+    /* Preserve the attached document formatting */
+    .doc pre{
+      margin:0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 16px auto 0 auto;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* Mobile friendliness */
+    @media (max-width: 900px){
+      :root{ --sideMargin: 18px; } /* keep it readable on small screens */
+      .brand .title span{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <body id="top">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" aria-label="CrownMind Institute">
+        <!-- Update the logo path if needed -->
+        <img src="../../../../assets/img/crownmindlogo.jpg" alt="CrownMind Logo" />
+        <div class="title">
+          <strong>CrownMind Institute</strong>
+          <span>Knowledge • Formation • Mission</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main>
+    <div class="top-actions">
+      <a class="btn" href="../../zg-master.html" title="Return to Main Index">↩ Return to Main Index</a>
+      <a class="btn" 
+        href="../../zg-img-view.html?img=ZG0010.jpg" 
+        title="Return to Image Slide">
+        🔎 View Image: ZG0010
+      </a>
+    </div>
+
+    <section class="card" aria-label="Document Viewer">
+      <div class="card-header">
+        <h1>Hidden in Christ, Ruled by Peace: The Reign of God’s Shalom in the Pilgrim Heart</h1>
+        <p>A Theological Commentary</p>
+      </div>
+
+      <div class="doc">
+        <pre>
+A TTU Seminary-Level Exegetical Commentary
+
+I. Introduction: A Prayer of Interior Kingship and Mystical Union
+
+The petition, “May Your peace reign over my heart, O Lord, as I live my life in this world hidden in You,” brings together two profound strands of biblical theology: the reign of divine peace within the believer and the hiddenness of the Christian life in union with Christ. It is at once a prayer for interior governance and a confession of spiritual identity.
+
+This statement presupposes that the believer exists in a paradox:
+
+Present in the world, yet Hidden in God, under the sovereign rule of His peace. Thus, it articulates a deeply Christocentric and eschatologically informed spirituality.
+
+II. The Reign of Peace: The Kingship of Shalom in the Heart
+A. The Biblical Concept of Peace (שָׁלוֹם / εἰρήνη)
+The term “peace” in Scripture extends far beyond the absence of conflict. Shalom denotes:
+
+- Wholeness and completeness
+- Harmony with God, self, and creation
+- The flourishing of life under God’s order
+
+In the New Testament, εἰρήνη (eirēnē) carries this fullness, grounded in reconciliation through Christ:
+
+“Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ” (Romans 5:1).
+
+B. Peace as a Reigning Power
+The phrase “may Your peace reign over my heart” echoes:
+
+“Let the peace of Christ rule in your hearts” (Colossians 3:15).
+
+The verb βραβευέτω (“rule”) implies arbitration, governance, and authority. Peace is not merely an emotional state but a sovereign principle that:
+
+- Governs decisions
+- Stabilizes the inner life
+- Subdues anxiety and disorder
+
+Thus, the heart becomes a throne room, and peace becomes its ruling authority under God.
+C. Christ as the Source of Peace. This peace is not self-generated but Christ-given:
+
+“Peace I leave with you; My peace I give to you… not as the world gives do I give to you” (John 14:27).
+
+Christ Himself is our peace (Ephesians 2:14). Therefore, to pray for peace to reign is to invite the active lordship of Christ within the inner life.
+
+III. The Heart as the Locus of Divine Rule
+In biblical anthropology, the “heart” (καρδία) is the center of:
+
+- Thought
+- Will
+- Desire
+
+Moral orientation. To ask that peace reign over the heart is to seek:
+
+- Alignment of the will with God
+- Purification of desires
+- Stability of mind amid external turbulence
+
+It is a prayer for interior sanctification through divine governance.
+
+IV. Hidden in Christ: The Mystery of Union
+A. The Doctrine of Hiddenness
+The second clause—“as I live my life in this world hidden in You”—is grounded in Colossians 3:3:
+
+“For you have died, and your life is hidden with Christ in God.”
+
+This “hiddenness” signifies:
+
+- Union with Christ – the believer’s true life is located in Him
+- Spiritual security – hiddenness implies protection and preservation
+- Invisibility to the world – the believer’s identity is not fully recognized by worldly systems
+
+B. The Paradox of Presence and Hiddenness
+The believer lives in a dual reality:
+
+Aspect	        Description
+Visible Life	Engaged in the world (work, relationships, struggle)
+Hidden Life	Rooted in Christ, unseen but real
+
+This reflects Jesus’ prayer:
+
+“They are not of the world, just as I am not of the world” (John 17:16).
+
+Thus, the Christian life is incarnational yet transcendent—fully present, yet not defined by worldly structures.
+
+V. Mystical Union and Participatory Life
+To be “hidden in Christ” is to participate in His life:
+
+- His death becomes our death (Romans 6:6)
+- His life becomes our life (Galatians 2:20)
+- His relationship with the Father becomes our relationship
+
+This is not metaphorical but ontological participation through grace.
+
+VI. The Integration of Peace and Hiddenness
+The two clauses are deeply interconnected:
+
+- Peace reigns because the believer is hidden in Christ
+- Hiddenness provides the ground of peace
+- Peace manifests the reality of union
+
+In other words:
+
+The more deeply one abides in Christ, the more fully peace governs the heart.
+
+VII. Eschatological Tension: Living Between the Already and the Not Yet
+The prayer reflects the tension of the Christian life:
+
+Already – peace is given, union is real
+Not Yet – full manifestation awaits future glory
+
+“When Christ who is your life appears, then you also will appear with Him in glory” (Colossians 3:4).
+
+Thus, the believer lives:
+
+- Hidden now
+- Revealed later
+
+Peace sustains the believer in this in-between state.
+
+VIII. Spiritual Theology: The Discipline of Abiding Peace
+To live this prayer requires intentional spiritual formation:
+
+- Abiding in Christ (John 15:4–5)
+- Surrendering anxiety (Philippians 4:6–7)
+- Cultivating trust in God’s sovereignty
+- Detaching from worldly instability
+
+The result:
+
+“The peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus” (Philippians 4:7).
+
+Here, peace acts as a guard, protecting the inner life from fragmentation.
+
+IX. Ecclesiological and Formational Implications (TTU Context)
+Within Tenio Theological University (TTU), this prayer becomes formative: Students are trained to cultivate interior peace rooted in Christ. Formation emphasizes identity in union with Christ rather than worldly validation. The goal is to produce individuals who live anchored inwardly, even amid external instability. Thus, theological education is not merely cognitive but deeply spiritual and transformative.
+
+X. Conclusion: The Hidden Throne of Peace
+This prayer reveals a profound theological vision:
+
+- The heart becomes a kingdom
+- Peace becomes its ruling authority
+- Christ becomes its hidden foundation
+
+The believer walks through the visible world carrying an invisible reality—a life concealed in God yet governed by divine peace.
+
+Final Theological Synthesis
+
+To pray, “May Your peace reign over my heart, O Lord, as I live my life in this world hidden in You,” is to affirm:
+
+That peace is not circumstantial but Christ-centered. That true life is hidden in union with God. That the inner life is governed by divine sovereignty, not worldly chaos. It is the confession of a pilgrim soul—
+
+living in the world,
+anchored in eternity,
+and ruled by the peace of God.
+
+Hidden in Christ,
+guarded by peace,
+sustained until glory is revealed.
+        </pre>
+      </div>
+    </section>
+
+    <footer>
+      © CrownMind Institute
+    </footer>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#top" 
+        style="
+        display:inline-block;
+        padding:10px 16px;
+        background:#1e2a3a;
+        color:white;
+        text-decoration:none;
+        border-radius:20px;
+        border:1px solid rgba(255,255,255,0.1);
+        font-weight:600;">
+        ↑ Back to Top
+     </a>
+   </div>
+  </main>
+</body>
+</html>
