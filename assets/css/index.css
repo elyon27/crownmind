@@ -52,3 +52,10 @@
  .hero-wrap{ grid-template-columns:1fr; }
  .hero-video{ max-width:560px; }
 }
+/* Homepage introduction */
+.home-introduction{padding-top:28px;}
+.home-introduction .card{padding:24px;}
+.home-introduction p{color:var(--muted);max-width:85ch;}
+.home-introduction a{text-decoration:underline;text-underline-offset:3px;}
+.home-introduction h3{margin-top:0;}
+.home-introduction .grid{margin:24px 0;}

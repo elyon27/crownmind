@@ -1,0 +1,13 @@
+CrownMind SEO update — 13 October 2026
+
+Added descriptions and canonical URLs to 49 main, mission, preview, and ministry landing pages.
+Added robots.txt and sitemap.xml for crownmind.net.
+Expanded homepage introduction and repaired its nested footer markup.
+Sitemap excludes archived ministry pages, image viewers, embedded commentaries, the module template, and the thank-you page. Exclusion is not an access restriction.
+
+Deployment: Copy the contents of crownmind-main into your existing repository root, review and commit, then deploy through your existing Netlify site. For manual deployment, upload the extracted folder containing index.html.
+After deployment, check /robots.txt and /sitemap.xml on crownmind.net. Submit sitemap.xml under the crownmind.net property in Google Search Console, inspect the homepage, and rerun WebsiteLaunches.
+This package has not been deployed. Ranking and indexing are not guaranteed.
+
+Google guidance: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide
