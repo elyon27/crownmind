@@ -59,3 +59,8 @@
 .home-introduction a{text-decoration:underline;text-underline-offset:3px;}
 .home-introduction h3{margin-top:0;}
 .home-introduction .grid{margin:24px 0;}
+
+/* Official public launch record badge */
+.launch-record-badge{margin:18px 0;}
+.launch-record-badge a{display:inline-block;max-width:100%;}
+.launch-record-badge img{display:block;width:255px;max-width:100%;height:auto;}

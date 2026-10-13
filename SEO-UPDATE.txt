@@ -11,3 +11,5 @@ This package has not been deployed. Ranking and indexing are not guaranteed.
 
 Google guidance: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+
+Launch record badge: Added the supplied official Website Launches badge above the homepage copyright. The image is hosted by Website Launches and links to the public crownmind.net record.
