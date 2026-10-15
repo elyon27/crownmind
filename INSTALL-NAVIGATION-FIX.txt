@@ -1,0 +1,8 @@
+CrownMind navigation highlighting fix
+
+1. Extract this ZIP.
+2. Copy the seven HTML files into your existing CrownMind website folder, beside its assets folder. Replace the matching files.
+3. Deploy the complete website folder to Netlify using your usual deployment method, or commit and push the changes if Netlify deploys from GitHub.
+4. After deployment, refresh the website with Ctrl+F5.
+
+This is an update only. Do not deploy this small ZIP by itself: it does not contain the images, assets, and other site files.
