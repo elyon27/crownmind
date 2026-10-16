@@ -73,7 +73,16 @@
 
         <div class="card" style="padding:16px; background:rgba(255,255,255,.03); box-shadow:none;">
           <strong>Email</strong>
-          <p class="muted" style="margin:6px 0 0;"><a href="mailto:contact@crownmind.net" class="contact-                                  link">contact@crownmind.net</a></p>
+          <details class="email-options" style="margin-top:8px;">
+            <summary class="contact-link" style="cursor:pointer; text-decoration:underline;">contact@crownmind.net</summary>
+            <p class="small">Choose how to write your message:</p>
+            <div class="cm-actions">
+              <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact%40crownmind.net" target="_blank" rel="noopener noreferrer">Open Gmail</a>
+              <a class="btn" href="mailto:contact@crownmind.net">Open email app</a>
+              <a class="btn" href="#contact-form">Use website form</a>
+            </div>
+            <p class="small">Gmail may ask you to sign in. The email app option requires an email app configured on your device. You can also copy the address above into your preferred email service.</p>
+          </details>
         </div>
         <div class="card" style="padding:16px; margin-top:12px; background:rgba(255,255,255,.03); box-shadow:none;">
           <strong>Messenger</strong>
@@ -84,7 +93,7 @@
       <div class="card" style="padding:22px;">
         <h2 style="margin:0 0 10px;">Send a message</h2>
 
-        <form name="crownmind-contact" netlify
+        <form id="contact-form" name="crownmind-contact" netlify
               method="POST"
               action="thank-you.html"
               data-netlify="true"
@@ -123,9 +132,17 @@
             <a class="btn" href="https://m.me/bctenio27" target="_blank" rel="noopener">Message via Messenger</a>
           </div>
 
-          <p class="small cm-note">
-            Prefer email? <a href="mailto:contact@crownmind.net" class="contact-link">contact@crownmind.net</a>
-          </p>
+          <div class="small cm-note">Prefer email?</div>
+          <details class="email-options" style="margin-top:8px;">
+            <summary class="contact-link" style="cursor:pointer; text-decoration:underline;">contact@crownmind.net</summary>
+            <p class="small">Choose how to write your message:</p>
+            <div class="cm-actions">
+              <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact%40crownmind.net" target="_blank" rel="noopener noreferrer">Open Gmail</a>
+              <a class="btn" href="mailto:contact@crownmind.net">Open email app</a>
+              <a class="btn" href="#contact-form">Use website form</a>
+            </div>
+            <p class="small">Gmail may ask you to sign in. The email app option requires an email app configured on your device. You can also copy the address above into your preferred email service.</p>
+          </details>
         </form>
 
       </div>
