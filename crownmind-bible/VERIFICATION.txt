@@ -1,0 +1,5 @@
+v011 verification
+PASS: Bible database byte-for-byte unchanged from v010 (all nine editions).
+PASS: JavaScript syntax.
+PASS: Info panel live API/DOM integration for all nine translations, dynamic selection updates, live counts, source links, toggle, Close, Escape and focus return.
+Responsive CSS keeps the selector and Info together on narrow screens. Visual browser rendering was not checked.

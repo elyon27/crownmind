@@ -1,0 +1,4 @@
+Passed: production Waitress HTTP startup; Flask API validation for all nine translations; all 50 topics; commentary collections; prophecy; search totals and pagination; static file restrictions; read-only database enforcement; /bible/ reverse proxy mount simulation.
+DOM interaction checks: nine translation commentary panels, collection catalog, topics open and return, sidebar visibility.
+Database SHA-256 unchanged from v022: 96fc656f21e88884b49b91cb8386b241c7b5b4d8d7192f86ea6e798da860c950
+Not tested: Docker build, live hosting/TLS, visual browser rendering, production load.

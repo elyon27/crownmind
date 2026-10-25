@@ -1,0 +1,410 @@
+{
+  "edition": "Ang Dating Biblia (1905)",
+  "language": "Tagalog",
+  "source_url": "https://api.getbible.net/v2/tagalog.json",
+  "retrieved": "2026-10-26",
+  "source_sha256": "50f653ec89312b0c104788d6abda9693ea4eb69cf85c019d63a67090716ceef0",
+  "books": 66,
+  "chapters": 1189,
+  "verse_records": 31102,
+  "empty_source_records": 0,
+  "range_records": 0,
+  "coverage": [
+    {
+      "book": "Genesis",
+      "slug": "genesis",
+      "chapters": 50,
+      "verse_records": 1533
+    },
+    {
+      "book": "Exodo",
+      "slug": "exodus",
+      "chapters": 40,
+      "verse_records": 1213
+    },
+    {
+      "book": "Levitico",
+      "slug": "leviticus",
+      "chapters": 27,
+      "verse_records": 859
+    },
+    {
+      "book": "Mga Bilang",
+      "slug": "numbers",
+      "chapters": 36,
+      "verse_records": 1288
+    },
+    {
+      "book": "Deuteronomio",
+      "slug": "deuteronomy",
+      "chapters": 34,
+      "verse_records": 959
+    },
+    {
+      "book": "Josue",
+      "slug": "joshua",
+      "chapters": 24,
+      "verse_records": 658
+    },
+    {
+      "book": "Mga Hukom",
+      "slug": "judges",
+      "chapters": 21,
+      "verse_records": 618
+    },
+    {
+      "book": "Ruth",
+      "slug": "ruth",
+      "chapters": 4,
+      "verse_records": 85
+    },
+    {
+      "book": "1 Samuel",
+      "slug": "1-samuel",
+      "chapters": 31,
+      "verse_records": 810
+    },
+    {
+      "book": "2 Samuel",
+      "slug": "2-samuel",
+      "chapters": 24,
+      "verse_records": 695
+    },
+    {
+      "book": "1 Mga Hari",
+      "slug": "1-kings",
+      "chapters": 22,
+      "verse_records": 816
+    },
+    {
+      "book": "2 Mga Hari",
+      "slug": "2-kings",
+      "chapters": 25,
+      "verse_records": 719
+    },
+    {
+      "book": "1 Mga Cronica",
+      "slug": "1-chronicles",
+      "chapters": 29,
+      "verse_records": 942
+    },
+    {
+      "book": "2 Mga Cronica",
+      "slug": "2-chronicles",
+      "chapters": 36,
+      "verse_records": 822
+    },
+    {
+      "book": "Ezra",
+      "slug": "ezra",
+      "chapters": 10,
+      "verse_records": 280
+    },
+    {
+      "book": "Nehemias",
+      "slug": "nehemiah",
+      "chapters": 13,
+      "verse_records": 406
+    },
+    {
+      "book": "Ester",
+      "slug": "esther",
+      "chapters": 10,
+      "verse_records": 167
+    },
+    {
+      "book": "Job",
+      "slug": "job",
+      "chapters": 42,
+      "verse_records": 1070
+    },
+    {
+      "book": "Mga Awit",
+      "slug": "psalms",
+      "chapters": 150,
+      "verse_records": 2461
+    },
+    {
+      "book": "Mga Kawikaan",
+      "slug": "proverbs",
+      "chapters": 31,
+      "verse_records": 915
+    },
+    {
+      "book": "Mangangaral",
+      "slug": "ecclesiastes",
+      "chapters": 12,
+      "verse_records": 222
+    },
+    {
+      "book": "Awit ni Solomon",
+      "slug": "song-of-solomon",
+      "chapters": 8,
+      "verse_records": 117
+    },
+    {
+      "book": "Isaias",
+      "slug": "isaiah",
+      "chapters": 66,
+      "verse_records": 1292
+    },
+    {
+      "book": "Jeremias",
+      "slug": "jeremiah",
+      "chapters": 52,
+      "verse_records": 1364
+    },
+    {
+      "book": "Mga Panaghoy",
+      "slug": "lamentations",
+      "chapters": 5,
+      "verse_records": 154
+    },
+    {
+      "book": "Ezekiel",
+      "slug": "ezekiel",
+      "chapters": 48,
+      "verse_records": 1273
+    },
+    {
+      "book": "Daniel",
+      "slug": "daniel",
+      "chapters": 12,
+      "verse_records": 357
+    },
+    {
+      "book": "Oseas",
+      "slug": "hosea",
+      "chapters": 14,
+      "verse_records": 197
+    },
+    {
+      "book": "Joel",
+      "slug": "joel",
+      "chapters": 3,
+      "verse_records": 73
+    },
+    {
+      "book": "Amos",
+      "slug": "amos",
+      "chapters": 9,
+      "verse_records": 146
+    },
+    {
+      "book": "Obadias",
+      "slug": "obadiah",
+      "chapters": 1,
+      "verse_records": 21
+    },
+    {
+      "book": "Jonas",
+      "slug": "jonah",
+      "chapters": 4,
+      "verse_records": 48
+    },
+    {
+      "book": "Mikas",
+      "slug": "micah",
+      "chapters": 7,
+      "verse_records": 105
+    },
+    {
+      "book": "Nahum",
+      "slug": "nahum",
+      "chapters": 3,
+      "verse_records": 47
+    },
+    {
+      "book": "Habacuc",
+      "slug": "habakkuk",
+      "chapters": 3,
+      "verse_records": 56
+    },
+    {
+      "book": "Zefanias",
+      "slug": "zephaniah",
+      "chapters": 3,
+      "verse_records": 53
+    },
+    {
+      "book": "Hagai",
+      "slug": "haggai",
+      "chapters": 2,
+      "verse_records": 38
+    },
+    {
+      "book": "Zacarias",
+      "slug": "zechariah",
+      "chapters": 14,
+      "verse_records": 211
+    },
+    {
+      "book": "Malachias",
+      "slug": "malachi",
+      "chapters": 4,
+      "verse_records": 55
+    },
+    {
+      "book": "Mateo",
+      "slug": "matthew",
+      "chapters": 28,
+      "verse_records": 1071
+    },
+    {
+      "book": "Marcos",
+      "slug": "mark",
+      "chapters": 16,
+      "verse_records": 678
+    },
+    {
+      "book": "Lucas",
+      "slug": "luke",
+      "chapters": 24,
+      "verse_records": 1151
+    },
+    {
+      "book": "Juan",
+      "slug": "john",
+      "chapters": 21,
+      "verse_records": 879
+    },
+    {
+      "book": "Mga Gawa",
+      "slug": "acts",
+      "chapters": 28,
+      "verse_records": 1007
+    },
+    {
+      "book": "Mga Romano",
+      "slug": "romans",
+      "chapters": 16,
+      "verse_records": 433
+    },
+    {
+      "book": "1 Mga Corinto",
+      "slug": "1-corinthians",
+      "chapters": 16,
+      "verse_records": 437
+    },
+    {
+      "book": "2 Mga Corinto",
+      "slug": "2-corinthians",
+      "chapters": 13,
+      "verse_records": 257
+    },
+    {
+      "book": "Mga Taga-Galacia",
+      "slug": "galatians",
+      "chapters": 6,
+      "verse_records": 149
+    },
+    {
+      "book": "Mga Efeso",
+      "slug": "ephesians",
+      "chapters": 6,
+      "verse_records": 155
+    },
+    {
+      "book": "Mga Taga-Filipos",
+      "slug": "philippians",
+      "chapters": 4,
+      "verse_records": 104
+    },
+    {
+      "book": "Mga Taga-Colosas",
+      "slug": "colossians",
+      "chapters": 4,
+      "verse_records": 95
+    },
+    {
+      "book": "1 Mga Taga-Tesalonica",
+      "slug": "1-thessalonians",
+      "chapters": 5,
+      "verse_records": 89
+    },
+    {
+      "book": "2 Mga Taga-Tesalonica",
+      "slug": "2-thessalonians",
+      "chapters": 3,
+      "verse_records": 47
+    },
+    {
+      "book": "1 Timoteo",
+      "slug": "1-timothy",
+      "chapters": 6,
+      "verse_records": 113
+    },
+    {
+      "book": "2 Timoteo",
+      "slug": "2-timothy",
+      "chapters": 4,
+      "verse_records": 83
+    },
+    {
+      "book": "Tito",
+      "slug": "titus",
+      "chapters": 3,
+      "verse_records": 46
+    },
+    {
+      "book": "Filemon",
+      "slug": "philemon",
+      "chapters": 1,
+      "verse_records": 25
+    },
+    {
+      "book": "Mga Hebreo",
+      "slug": "hebrews",
+      "chapters": 13,
+      "verse_records": 303
+    },
+    {
+      "book": "Santiago",
+      "slug": "james",
+      "chapters": 5,
+      "verse_records": 108
+    },
+    {
+      "book": "1 Pedro",
+      "slug": "1-peter",
+      "chapters": 5,
+      "verse_records": 105
+    },
+    {
+      "book": "2 Pedro",
+      "slug": "2-peter",
+      "chapters": 3,
+      "verse_records": 61
+    },
+    {
+      "book": "1 Juan",
+      "slug": "1-john",
+      "chapters": 5,
+      "verse_records": 105
+    },
+    {
+      "book": "2 Juan",
+      "slug": "2-john",
+      "chapters": 1,
+      "verse_records": 13
+    },
+    {
+      "book": "3 Juan",
+      "slug": "3-john",
+      "chapters": 1,
+      "verse_records": 14
+    },
+    {
+      "book": "Judas",
+      "slug": "jude",
+      "chapters": 1,
+      "verse_records": 25
+    },
+    {
+      "book": "Pahayag",
+      "slug": "revelation",
+      "chapters": 22,
+      "verse_records": 404
+    }
+  ]
+}

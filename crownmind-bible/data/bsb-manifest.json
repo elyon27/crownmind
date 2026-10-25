@@ -1,0 +1,410 @@
+{
+  "edition": "Berean Standard Bible",
+  "source_url": "https://ebible.org/Scriptures/engbsb_vpl.zip",
+  "retrieved": "2026-10-25",
+  "archive_sha256": "c8993e843cf49e11c99285d81012e45e402a257d8adff9fae7a004fc39275699",
+  "xml_sha256": "87a1627e9ac8dabcf6970c862e41b56f3c4064bdd855824d5dc088bb676a317c",
+  "books": 66,
+  "chapters": 1189,
+  "verse_records": 31086,
+  "empty_source_records": 0,
+  "range_records": 0,
+  "coverage": [
+    {
+      "book": "Genesis",
+      "slug": "genesis",
+      "chapters": 50,
+      "verse_records": 1533
+    },
+    {
+      "book": "Exodus",
+      "slug": "exodus",
+      "chapters": 40,
+      "verse_records": 1213
+    },
+    {
+      "book": "Leviticus",
+      "slug": "leviticus",
+      "chapters": 27,
+      "verse_records": 859
+    },
+    {
+      "book": "Numbers",
+      "slug": "numbers",
+      "chapters": 36,
+      "verse_records": 1288
+    },
+    {
+      "book": "Deuteronomy",
+      "slug": "deuteronomy",
+      "chapters": 34,
+      "verse_records": 959
+    },
+    {
+      "book": "Joshua",
+      "slug": "joshua",
+      "chapters": 24,
+      "verse_records": 658
+    },
+    {
+      "book": "Judges",
+      "slug": "judges",
+      "chapters": 21,
+      "verse_records": 618
+    },
+    {
+      "book": "Ruth",
+      "slug": "ruth",
+      "chapters": 4,
+      "verse_records": 85
+    },
+    {
+      "book": "1 Samuel",
+      "slug": "1-samuel",
+      "chapters": 31,
+      "verse_records": 810
+    },
+    {
+      "book": "2 Samuel",
+      "slug": "2-samuel",
+      "chapters": 24,
+      "verse_records": 695
+    },
+    {
+      "book": "1 Kings",
+      "slug": "1-kings",
+      "chapters": 22,
+      "verse_records": 816
+    },
+    {
+      "book": "2 Kings",
+      "slug": "2-kings",
+      "chapters": 25,
+      "verse_records": 719
+    },
+    {
+      "book": "1 Chronicles",
+      "slug": "1-chronicles",
+      "chapters": 29,
+      "verse_records": 942
+    },
+    {
+      "book": "2 Chronicles",
+      "slug": "2-chronicles",
+      "chapters": 36,
+      "verse_records": 822
+    },
+    {
+      "book": "Ezra",
+      "slug": "ezra",
+      "chapters": 10,
+      "verse_records": 280
+    },
+    {
+      "book": "Nehemiah",
+      "slug": "nehemiah",
+      "chapters": 13,
+      "verse_records": 406
+    },
+    {
+      "book": "Esther",
+      "slug": "esther",
+      "chapters": 10,
+      "verse_records": 167
+    },
+    {
+      "book": "Job",
+      "slug": "job",
+      "chapters": 42,
+      "verse_records": 1070
+    },
+    {
+      "book": "Psalms",
+      "slug": "psalms",
+      "chapters": 150,
+      "verse_records": 2461
+    },
+    {
+      "book": "Proverbs",
+      "slug": "proverbs",
+      "chapters": 31,
+      "verse_records": 915
+    },
+    {
+      "book": "Ecclesiastes",
+      "slug": "ecclesiastes",
+      "chapters": 12,
+      "verse_records": 222
+    },
+    {
+      "book": "Song of Solomon",
+      "slug": "song-of-solomon",
+      "chapters": 8,
+      "verse_records": 117
+    },
+    {
+      "book": "Isaiah",
+      "slug": "isaiah",
+      "chapters": 66,
+      "verse_records": 1292
+    },
+    {
+      "book": "Jeremiah",
+      "slug": "jeremiah",
+      "chapters": 52,
+      "verse_records": 1364
+    },
+    {
+      "book": "Lamentations",
+      "slug": "lamentations",
+      "chapters": 5,
+      "verse_records": 154
+    },
+    {
+      "book": "Ezekiel",
+      "slug": "ezekiel",
+      "chapters": 48,
+      "verse_records": 1273
+    },
+    {
+      "book": "Daniel",
+      "slug": "daniel",
+      "chapters": 12,
+      "verse_records": 357
+    },
+    {
+      "book": "Hosea",
+      "slug": "hosea",
+      "chapters": 14,
+      "verse_records": 197
+    },
+    {
+      "book": "Joel",
+      "slug": "joel",
+      "chapters": 3,
+      "verse_records": 73
+    },
+    {
+      "book": "Amos",
+      "slug": "amos",
+      "chapters": 9,
+      "verse_records": 146
+    },
+    {
+      "book": "Obadiah",
+      "slug": "obadiah",
+      "chapters": 1,
+      "verse_records": 21
+    },
+    {
+      "book": "Jonah",
+      "slug": "jonah",
+      "chapters": 4,
+      "verse_records": 48
+    },
+    {
+      "book": "Micah",
+      "slug": "micah",
+      "chapters": 7,
+      "verse_records": 105
+    },
+    {
+      "book": "Nahum",
+      "slug": "nahum",
+      "chapters": 3,
+      "verse_records": 47
+    },
+    {
+      "book": "Habakkuk",
+      "slug": "habakkuk",
+      "chapters": 3,
+      "verse_records": 56
+    },
+    {
+      "book": "Zephaniah",
+      "slug": "zephaniah",
+      "chapters": 3,
+      "verse_records": 53
+    },
+    {
+      "book": "Haggai",
+      "slug": "haggai",
+      "chapters": 2,
+      "verse_records": 38
+    },
+    {
+      "book": "Zechariah",
+      "slug": "zechariah",
+      "chapters": 14,
+      "verse_records": 211
+    },
+    {
+      "book": "Malachi",
+      "slug": "malachi",
+      "chapters": 4,
+      "verse_records": 55
+    },
+    {
+      "book": "Matthew",
+      "slug": "matthew",
+      "chapters": 28,
+      "verse_records": 1068
+    },
+    {
+      "book": "Mark",
+      "slug": "mark",
+      "chapters": 16,
+      "verse_records": 673
+    },
+    {
+      "book": "Luke",
+      "slug": "luke",
+      "chapters": 24,
+      "verse_records": 1149
+    },
+    {
+      "book": "John",
+      "slug": "john",
+      "chapters": 21,
+      "verse_records": 878
+    },
+    {
+      "book": "Acts",
+      "slug": "acts",
+      "chapters": 28,
+      "verse_records": 1003
+    },
+    {
+      "book": "Romans",
+      "slug": "romans",
+      "chapters": 16,
+      "verse_records": 432
+    },
+    {
+      "book": "1 Corinthians",
+      "slug": "1-corinthians",
+      "chapters": 16,
+      "verse_records": 437
+    },
+    {
+      "book": "2 Corinthians",
+      "slug": "2-corinthians",
+      "chapters": 13,
+      "verse_records": 257
+    },
+    {
+      "book": "Galatians",
+      "slug": "galatians",
+      "chapters": 6,
+      "verse_records": 149
+    },
+    {
+      "book": "Ephesians",
+      "slug": "ephesians",
+      "chapters": 6,
+      "verse_records": 155
+    },
+    {
+      "book": "Philippians",
+      "slug": "philippians",
+      "chapters": 4,
+      "verse_records": 104
+    },
+    {
+      "book": "Colossians",
+      "slug": "colossians",
+      "chapters": 4,
+      "verse_records": 95
+    },
+    {
+      "book": "1 Thessalonians",
+      "slug": "1-thessalonians",
+      "chapters": 5,
+      "verse_records": 89
+    },
+    {
+      "book": "2 Thessalonians",
+      "slug": "2-thessalonians",
+      "chapters": 3,
+      "verse_records": 47
+    },
+    {
+      "book": "1 Timothy",
+      "slug": "1-timothy",
+      "chapters": 6,
+      "verse_records": 113
+    },
+    {
+      "book": "2 Timothy",
+      "slug": "2-timothy",
+      "chapters": 4,
+      "verse_records": 83
+    },
+    {
+      "book": "Titus",
+      "slug": "titus",
+      "chapters": 3,
+      "verse_records": 46
+    },
+    {
+      "book": "Philemon",
+      "slug": "philemon",
+      "chapters": 1,
+      "verse_records": 25
+    },
+    {
+      "book": "Hebrews",
+      "slug": "hebrews",
+      "chapters": 13,
+      "verse_records": 303
+    },
+    {
+      "book": "James",
+      "slug": "james",
+      "chapters": 5,
+      "verse_records": 108
+    },
+    {
+      "book": "1 Peter",
+      "slug": "1-peter",
+      "chapters": 5,
+      "verse_records": 105
+    },
+    {
+      "book": "2 Peter",
+      "slug": "2-peter",
+      "chapters": 3,
+      "verse_records": 61
+    },
+    {
+      "book": "1 John",
+      "slug": "1-john",
+      "chapters": 5,
+      "verse_records": 105
+    },
+    {
+      "book": "2 John",
+      "slug": "2-john",
+      "chapters": 1,
+      "verse_records": 13
+    },
+    {
+      "book": "3 John",
+      "slug": "3-john",
+      "chapters": 1,
+      "verse_records": 14
+    },
+    {
+      "book": "Jude",
+      "slug": "jude",
+      "chapters": 1,
+      "verse_records": 25
+    },
+    {
+      "book": "Revelation",
+      "slug": "revelation",
+      "chapters": 22,
+      "verse_records": 404
+    }
+  ]
+}

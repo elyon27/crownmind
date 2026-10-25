@@ -1,0 +1,1 @@
+Verified database integrity and foreign keys; all imported reference ranges resolve; all 303,060 Bible entries unchanged; all nine translation readers open and close real commentary; Database collection totals rendered. MHCC covers 66 books / 1189 chapters; Haydock covers 73 books / 1334 chapters.
