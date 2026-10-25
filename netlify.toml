@@ -1,0 +1,21 @@
+[build]
+  base = "."
+  command = "pip install 'Flask>=3.1,<4' && python3 scripts/build_bible.py"
+  publish = "dist"
+
+[[redirects]]
+  from = "/bible"
+  to = "/bible/"
+  status = 301
+
+[[redirects]]
+  from = "/crownmind-bible/*"
+  to = "/bible/"
+  status = 301
+
+[[headers]]
+  for = "/bible/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self' https://crownmind.net https://www.crownmind.net"
