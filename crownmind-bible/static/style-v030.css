@@ -14,7 +14,7 @@ header nav{flex-wrap:wrap;gap:8px}header nav button{white-space:nowrap}@media(ma
 
 .topics-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.topics-grid button{min-height:64px;overflow-wrap:anywhere}#topicDialog{width:min(1000px,94vw);max-height:90vh;overflow:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:24px}#topicDialog::backdrop{background:#172c38b3}.topic-dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;position:sticky;top:-24px;background:var(--paper);padding:12px 0;border-bottom:1px solid var(--line)}.topic-dialog-heading h2{margin:0}.topic-passage h3{color:var(--gold)}.topic-passage h4{margin:0}.topic-passage p{white-space:pre-wrap}@media(max-width:650px){.topics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-dialog-heading{align-items:start;flex-direction:column}}
 
-.topics-grid{grid-auto-flow:column;grid-template-rows:repeat(10,auto)}@media(max-width:650px){.topics-grid{grid-template-rows:repeat(25,auto)}}
+.topics-grid{grid-auto-flow:column;grid-template-rows:repeat(15,auto)}@media(max-width:650px){.topics-grid{grid-auto-flow:row;grid-template-rows:none}}
 
 /* Individual topic colors; labels remain readable in either theme. */
 .topics-grid button{color:#172c38;font-weight:600;border-width:1px;border-left-width:5px;box-shadow:0 2px 5px #172c3809;transition:transform .15s ease,box-shadow .15s ease}.topics-grid button:hover{transform:translateY(-2px);box-shadow:0 5px 12px #172c3826}.topics-grid button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}@media(prefers-reduced-motion:reduce){.topics-grid button{transition:none}.topics-grid button:hover{transform:none}}
