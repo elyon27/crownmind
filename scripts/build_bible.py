@@ -9,7 +9,7 @@ def build():
  if OUT.exists():shutil.rmtree(OUT)
  OUT.mkdir()
  for p in ROOT.iterdir():
-  if p.name.startswith('.') or p.name in {'dist','scripts','crownmind-bible','node_modules','netlify.toml','BIBLE-INTEGRATION.md'}:continue
+  if p.name.startswith('.') or p.name in {'dist','scripts','crownmind-bible','node_modules','netlify.toml','BIBLE-INTEGRATION.md','android'}:continue
   if p.is_dir():shutil.copytree(p,OUT/p.name)
   elif p.suffix.lower() in {'.html','.xml','.txt','.json','.ico','.png','.svg','.webmanifest'}:shutil.copy2(p,OUT/p.name)
  target=OUT/'bible';shutil.copytree(SOURCE/'static',target);data=target/'data';data.mkdir()
@@ -43,3 +43,4 @@ def build():
   for p in (SOURCE/'data').glob(pattern):shutil.copy2(p,notices/p.name)
  c.close();emit(Path('build.json'),{'version':'v025','verse_entries':total,'translations':len(cat['translations'])});print('Built static Bible:',total,'verses')
 if __name__=='__main__':build()
+

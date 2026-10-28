@@ -1,0 +1,45 @@
+name: Build CrownMind Bible Android bundle
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'crownmind-bible/static/**'
+      - 'crownmind-bible/data/bible.db'
+      - 'scripts/build_bible.py'
+      - 'scripts/prepare_bible_android.py'
+      - '.github/workflows/bible-android.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Export offline Bible assets
+        run: |
+          pip install 'Flask>=3.1,<4'
+          python scripts/prepare_bible_android.py
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Build release bundle
+        run: gradle -p android bundleRelease --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CrownMind-Bible-v1.0.5-UNSIGNED
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 14
