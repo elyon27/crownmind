@@ -5,7 +5,9 @@ on:
     paths:
       - 'android/**'
       - 'crownmind-bible/static/**'
-      - 'crownmind-bible/data/bible.db'
+      - 'crownmind-bible/data/**'
+      - 'scripts/build_verse_links.py'
+      - 'scripts/validate_bible_study.py'
       - 'scripts/build_bible.py'
       - 'scripts/prepare_bible_android.py'
       - '.github/workflows/bible-android.yml'
@@ -29,6 +31,7 @@ jobs:
         run: |
           pip install 'Flask>=3.1,<4'
           python scripts/prepare_bible_android.py
+          python scripts/validate_bible_study.py
       - name: Install Android SDK
         run: |
           sdkmanager_path="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n1)"
@@ -40,7 +43,7 @@ jobs:
         run: gradle -p android bundleRelease --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: CrownMind-Bible-v1.0.5-UNSIGNED
+          name: CrownMind-Bible-v1.0.6-UNSIGNED
           path: android/app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
           retention-days: 14

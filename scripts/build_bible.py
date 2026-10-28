@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];SOURCE=ROOT/'crownmind-bible';OUT=ROOT/'dist'
 sys.path.insert(0,str(SOURCE))
 from app import app
+from build_verse_links import export_cross_references
 
 def build():
  if OUT.exists():shutil.rmtree(OUT)
@@ -41,6 +42,7 @@ def build():
  notices=target/'sources';notices.mkdir()
  for pattern in ['*source-notice*','*manifest.json']:
   for p in (SOURCE/'data').glob(pattern):shutil.copy2(p,notices/p.name)
- c.close();emit(Path('build.json'),{'version':'v025','verse_entries':total,'translations':len(cat['translations'])});print('Built static Bible:',total,'verses')
+ export_cross_references(SOURCE,target,cat)
+ c.close();emit(Path('build.json'),{'version':'v030','verse_entries':total,'translations':len(cat['translations'])});print('Built static Bible:',total,'verses')
 if __name__=='__main__':build()
 

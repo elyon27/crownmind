@@ -17,7 +17,7 @@
     "note": ""
   },
   {
-    "title": "Abraham\u2019s offspring",
+    "title": "Abraham’s offspring",
     "ot": {
       "book": "genesis",
       "chapter": 22,
@@ -85,7 +85,7 @@
     "note": ""
   },
   {
-    "title": "David\u2019s promised heir",
+    "title": "David’s promised heir",
     "ot": {
       "book": "2-samuel",
       "chapter": 7,
@@ -255,7 +255,7 @@
     "note": ""
   },
   {
-    "title": "Zeal for God\u2019s house",
+    "title": "Zeal for God’s house",
     "ot": {
       "book": "psalms",
       "chapter": 69,
@@ -340,7 +340,7 @@
     "note": ""
   },
   {
-    "title": "At God\u2019s right hand",
+    "title": "At God’s right hand",
     "ot": {
       "book": "psalms",
       "chapter": 110,
@@ -612,7 +612,7 @@
     "note": ""
   },
   {
-    "title": "Rachel\u2019s weeping",
+    "title": "Rachel’s weeping",
     "ot": {
       "book": "jeremiah",
       "chapter": 31,
@@ -663,7 +663,7 @@
     "note": "Matthew applies an earlier passage about Israel to events surrounding Jesus; this is fulfillment through a recurring scriptural pattern."
   },
   {
-    "title": "Those once not God\u2019s people",
+    "title": "Those once not God’s people",
     "ot": {
       "book": "hosea",
       "chapter": 2,
@@ -697,7 +697,7 @@
     "note": ""
   },
   {
-    "title": "David\u2019s restored tent",
+    "title": "David’s restored tent",
     "ot": {
       "book": "amos",
       "chapter": 9,
@@ -714,7 +714,7 @@
     "note": ""
   },
   {
-    "title": "Jonah\u2019s three days",
+    "title": "Jonah’s three days",
     "ot": {
       "book": "jonah",
       "chapter": 1,
@@ -779,7 +779,7 @@
       "end": 10
     },
     "kind": "Explicit fulfillment",
-    "note": "Matthew names Jeremiah; the wording also closely parallels Zechariah 11:12\u201313. This is a composite-scripture connection, not a simple attribution to Zechariah."
+    "note": "Matthew names Jeremiah; the wording also closely parallels Zechariah 11:12–13. This is a composite-scripture connection, not a simple attribution to Zechariah."
   },
   {
     "title": "Looking on the pierced one",
@@ -833,7 +833,7 @@
     "note": ""
   },
   {
-    "title": "Elijah\u2019s coming",
+    "title": "Elijah’s coming",
     "ot": {
       "book": "malachi",
       "chapter": 4,
@@ -848,5 +848,379 @@
     },
     "kind": "NT application",
     "note": ""
+  },
+  {
+    "title": "Victory over the serpent",
+    "ot": {
+      "book": "genesis",
+      "chapter": 3,
+      "start": 15,
+      "end": 15
+    },
+    "nt": {
+      "book": "romans",
+      "chapter": 16,
+      "start": 20,
+      "end": 20
+    },
+    "kind": "Typology",
+    "note": "Paul’s promise of victory over Satan echoes the serpent-conflict pattern; this is a Christian thematic connection, not a verbatim quotation."
+  },
+  {
+    "title": "Melchizedek and the priestly king",
+    "ot": {
+      "book": "genesis",
+      "chapter": 14,
+      "start": 18,
+      "end": 20
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 7,
+      "start": 1,
+      "end": 3
+    },
+    "kind": "Typology",
+    "note": "Hebrews develops Melchizedek as a type in its argument concerning Christ’s priesthood."
+  },
+  {
+    "title": "The opened heaven and the Son of Man",
+    "ot": {
+      "book": "genesis",
+      "chapter": 28,
+      "start": 12,
+      "end": 12
+    },
+    "nt": {
+      "book": "john",
+      "chapter": 1,
+      "start": 50,
+      "end": 51
+    },
+    "kind": "NT application",
+    "note": "Jesus’ saying about angels recalls Jacob’s vision and centers the image on the Son of Man."
+  },
+  {
+    "title": "Bread from heaven",
+    "ot": {
+      "book": "exodus",
+      "chapter": 16,
+      "start": 4,
+      "end": 4
+    },
+    "nt": {
+      "book": "john",
+      "chapter": 6,
+      "start": 31,
+      "end": 35
+    },
+    "kind": "Typology",
+    "note": "John’s bread discourse recalls manna while distinguishing the gift in the wilderness from Christ as the bread of life."
+  },
+  {
+    "title": "Water from the rock",
+    "ot": {
+      "book": "exodus",
+      "chapter": 17,
+      "start": 6,
+      "end": 6
+    },
+    "nt": {
+      "book": "1-corinthians",
+      "chapter": 10,
+      "start": 1,
+      "end": 4
+    },
+    "kind": "Typology",
+    "note": "Paul interprets the wilderness rock christologically; the original narrative describes Israel’s provision in the wilderness."
+  },
+  {
+    "title": "The blood of the covenant",
+    "ot": {
+      "book": "exodus",
+      "chapter": 24,
+      "start": 8,
+      "end": 8
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 9,
+      "start": 18,
+      "end": 22
+    },
+    "kind": "NT application",
+    "note": "Hebrews cites the covenant-ratification pattern to explain its account of blood, cleansing and covenant."
+  },
+  {
+    "title": "The Son of Man receives dominion",
+    "ot": {
+      "book": "daniel",
+      "chapter": 7,
+      "start": 13,
+      "end": 14
+    },
+    "nt": {
+      "book": "mark",
+      "chapter": 14,
+      "start": 61,
+      "end": 62
+    },
+    "kind": "NT application",
+    "note": "Jesus’ answer invokes Daniel’s Son of Man imagery together with the language of being seated at God’s right hand."
+  },
+  {
+    "title": "Atonement beyond the sanctuary",
+    "ot": {
+      "book": "leviticus",
+      "chapter": 16,
+      "start": 15,
+      "end": 16
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 9,
+      "start": 11,
+      "end": 12
+    },
+    "kind": "Typology",
+    "note": "The Day of Atonement supplies a priestly pattern that Hebrews develops in relation to Christ’s definitive entrance."
+  },
+  {
+    "title": "The curse of the tree",
+    "ot": {
+      "book": "deuteronomy",
+      "chapter": 21,
+      "start": 22,
+      "end": 23
+    },
+    "nt": {
+      "book": "galatians",
+      "chapter": 3,
+      "start": 13,
+      "end": 13
+    },
+    "kind": "NT application",
+    "note": "Paul explicitly applies the Torah’s language concerning one hung on a tree to Christ’s redemptive death."
+  },
+  {
+    "title": "The word brought near",
+    "ot": {
+      "book": "deuteronomy",
+      "chapter": 30,
+      "start": 11,
+      "end": 14
+    },
+    "nt": {
+      "book": "romans",
+      "chapter": 10,
+      "start": 6,
+      "end": 9
+    },
+    "kind": "NT application",
+    "note": "Paul rereads the near word of Deuteronomy in relation to faith’s confession of the risen Christ."
+  },
+  {
+    "title": "Human glory and the exalted Jesus",
+    "ot": {
+      "book": "psalms",
+      "chapter": 8,
+      "start": 4,
+      "end": 6
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 2,
+      "start": 6,
+      "end": 9
+    },
+    "kind": "NT application",
+    "note": "Hebrews quotes the psalm and interprets the path through suffering to glory in relation to Jesus."
+  },
+  {
+    "title": "Praise among brothers and sisters",
+    "ot": {
+      "book": "psalms",
+      "chapter": 22,
+      "start": 22,
+      "end": 22
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 2,
+      "start": 11,
+      "end": 12
+    },
+    "kind": "NT application",
+    "note": "Hebrews places the psalm’s proclamation of God’s name within its teaching on Christ’s solidarity with those sanctified."
+  },
+  {
+    "title": "The enduring royal throne",
+    "ot": {
+      "book": "psalms",
+      "chapter": 45,
+      "start": 6,
+      "end": 7
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 1,
+      "start": 8,
+      "end": 9
+    },
+    "kind": "NT application",
+    "note": "Hebrews addresses the royal psalm’s words to the Son; the psalm originally celebrates a king."
+  },
+  {
+    "title": "Ascending and giving gifts",
+    "ot": {
+      "book": "psalms",
+      "chapter": 68,
+      "start": 18,
+      "end": 18
+    },
+    "nt": {
+      "book": "ephesians",
+      "chapter": 4,
+      "start": 7,
+      "end": 10
+    },
+    "kind": "NT application",
+    "note": "Ephesians adapts the psalm’s ascent imagery in describing Christ and the giving of gifts."
+  },
+  {
+    "title": "The Lord whose years do not end",
+    "ot": {
+      "book": "psalms",
+      "chapter": 102,
+      "start": 25,
+      "end": 27
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 1,
+      "start": 10,
+      "end": 12
+    },
+    "kind": "NT application",
+    "note": "Hebrews applies the psalm’s description of the enduring creator to the Son."
+  },
+  {
+    "title": "The stone of stumbling",
+    "ot": {
+      "book": "isaiah",
+      "chapter": 8,
+      "start": 14,
+      "end": 14
+    },
+    "nt": {
+      "book": "romans",
+      "chapter": 9,
+      "start": 32,
+      "end": 33
+    },
+    "kind": "NT application",
+    "note": "Romans combines stone imagery from Isaiah in its explanation of faith and stumbling."
+  },
+  {
+    "title": "Death swallowed up",
+    "ot": {
+      "book": "isaiah",
+      "chapter": 25,
+      "start": 8,
+      "end": 8
+    },
+    "nt": {
+      "book": "1-corinthians",
+      "chapter": 15,
+      "start": 54,
+      "end": 55
+    },
+    "kind": "NT application",
+    "note": "Paul explicitly cites Isaiah’s victory language in his teaching on the resurrection."
+  },
+  {
+    "title": "The chosen foundation stone",
+    "ot": {
+      "book": "isaiah",
+      "chapter": 28,
+      "start": 16,
+      "end": 16
+    },
+    "nt": {
+      "book": "1-peter",
+      "chapter": 2,
+      "start": 4,
+      "end": 6
+    },
+    "kind": "NT application",
+    "note": "First Peter cites the Zion stone promise in relation to Christ and the people built upon him."
+  },
+  {
+    "title": "Taught by God",
+    "ot": {
+      "book": "isaiah",
+      "chapter": 54,
+      "start": 13,
+      "end": 13
+    },
+    "nt": {
+      "book": "john",
+      "chapter": 6,
+      "start": 44,
+      "end": 45
+    },
+    "kind": "NT application",
+    "note": "John quotes the promise of divine teaching in Jesus’ explanation of coming to him."
+  },
+  {
+    "title": "The Lord seeks his sheep",
+    "ot": {
+      "book": "ezekiel",
+      "chapter": 34,
+      "start": 11,
+      "end": 16
+    },
+    "nt": {
+      "book": "john",
+      "chapter": 10,
+      "start": 11,
+      "end": 16
+    },
+    "kind": "Thematic connection",
+    "note": "Ezekiel’s promise of God’s shepherding resonates with Jesus’ good-shepherd discourse; John does not mark this as a direct quotation."
+  },
+  {
+    "title": "The final shaking and the unshakable kingdom",
+    "ot": {
+      "book": "haggai",
+      "chapter": 2,
+      "start": 6,
+      "end": 6
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 12,
+      "start": 26,
+      "end": 28
+    },
+    "kind": "NT application",
+    "note": "Hebrews explicitly quotes Haggai and applies the shaking language to its exhortation about the lasting kingdom."
+  },
+  {
+    "title": "The Sabbath rest that remains",
+    "ot": {
+      "book": "psalms",
+      "chapter": 95,
+      "start": 7,
+      "end": 11
+    },
+    "nt": {
+      "book": "hebrews",
+      "chapter": 4,
+      "start": 3,
+      "end": 11
+    },
+    "kind": "NT application",
+    "note": "Hebrews rereads the psalm’s warning and promise of rest as an invitation requiring faith and perseverance."
   }
 ]
