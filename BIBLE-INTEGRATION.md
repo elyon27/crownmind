@@ -13,3 +13,7 @@ Local build: `pip install 'Flask>=3.1,<4'`, then `python3 scripts/build_bible.py
 Validation: all 303,060 exported verse records matched SQLite exactly; nine translation reader and commentary controls passed DOM tests, as did comparison, Topics/Return, prophecy and full search pagination. WEB search for 'love' returned 683 results. These are programmatic checks, not a visual mobile/browser or high-traffic load test.
 
 Deployment is triggered when this integration reaches the branch linked to Netlify. Confirm the Netlify build succeeds before announcing availability. To roll back, revert the integration commit and redeploy.
+
+## v031 — Paul’s journey maps
+
+Maps follows Topics. Four locally bundled SVG study maps cover the first, second and third missionary journeys and the voyage to Rome. Color-coded routes, arrows, numbered city keys, labeled itineraries and Scripture references work offline in the Android app. Routes, dates and simplified coastlines are marked approximate. Android version 1.0.7 uses version code 8.

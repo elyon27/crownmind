@@ -43,6 +43,6 @@ def build():
  for pattern in ['*source-notice*','*manifest.json']:
   for p in (SOURCE/'data').glob(pattern):shutil.copy2(p,notices/p.name)
  export_cross_references(SOURCE,target,cat)
- c.close();emit(Path('build.json'),{'version':'v030','verse_entries':total,'translations':len(cat['translations'])});print('Built static Bible:',total,'verses')
+ c.close();emit(Path('build.json'),{'version':'v031','verse_entries':total,'translations':len(cat['translations'])});print('Built static Bible:',total,'verses')
 if __name__=='__main__':build()
 
