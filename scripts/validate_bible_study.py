@@ -19,3 +19,13 @@ for p in prophecies:
 meta=read('cross-references/meta.json');assert meta['accepted_source_rows']>300000
 assert read('cross-references/genesis.json')['1:2']
 print('Verified: 72 topics, 504 passages, 72 OT/NT connections, cross-reference index and valid WEB references')
+
+# Glossary content must remain exactly 72 unique terms with valid reading links.
+glossary=json.loads((ROOT.parent/'glossary-v032.json').read_text())
+assert len(glossary)==72
+assert len({e['term'].casefold() for e in glossary})==72
+assert [e['term'].casefold() for e in glossary]==sorted(e['term'].casefold() for e in glossary)
+for e in glossary:
+ assert e['definition'].strip()
+ check({'book':e['book'],'chapter':e['chapter'],'start':e['verse'],'end':e['verse']})
+print('Verified: 72 unique alphabetized glossary terms and valid WEB references')
