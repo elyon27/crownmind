@@ -1,0 +1,18 @@
+{
+  "downloaded": "2026-10-26",
+  "sources": [
+    {
+      "file": ".haydock-1859.epub.phwZI7",
+      "sha256": "b6c96943ba939c8ba308a15708f2eeaf18b2621dcca2bf3332b74cfa46769d2f"
+    },
+    {
+      "file": "matthew-henry-concise.xml",
+      "sha256": "4a5509ba5064b54572397ae1a796561ff6ce4a1e18f366af0141a09c5d06fcd6"
+    },
+    {
+      "file": "haydock-1859.epub",
+      "sha256": "a15fd488f64d5ef6f381f1f94232917929e09c77e82da661396468f9b0ee39e4"
+    }
+  ],
+  "scope": "MHCC: all 66 books, 1189 chapters. Haydock: all 73 books, 1334 chapters. Original electronic source files retained. Historical commentary, not translation-specific publisher notes. Notes are English even with ADB1905. Extra apocryphal books outside these collections have no commentary."
+}

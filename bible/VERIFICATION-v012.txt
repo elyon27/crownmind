@@ -1,0 +1,1 @@
+Verified: all nine translation introductions, switching while open, toggle/Close/Escape and focus return. Versioned HTML/CSS/JS routes return HTTP 200 with no-store headers. Bible database unchanged from v011. Layout uses a nonwrapping flex row with joined selector and Info button.

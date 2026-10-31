@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "code": "WEB",
+    "name": "World English Bible",
+    "language": "English",
+    "license": "Record source and redistribution terms here"
+  },
+  "verses": [
+    {
+      "book_slug": "genesis",
+      "chapter": 1,
+      "verse": 1,
+      "text": "In the beginning, God created the heavens and the earth."
+    }
+  ]
+}

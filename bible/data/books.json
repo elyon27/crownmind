@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Genesis",
+    "slug": "genesis",
+    "testament": "OT",
+    "source_code": "GEN"
+  },
+  {
+    "name": "Exodus",
+    "slug": "exodus",
+    "testament": "OT",
+    "source_code": "EXO"
+  },
+  {
+    "name": "Leviticus",
+    "slug": "leviticus",
+    "testament": "OT",
+    "source_code": "LEV"
+  },
+  {
+    "name": "Numbers",
+    "slug": "numbers",
+    "testament": "OT",
+    "source_code": "NUM"
+  },
+  {
+    "name": "Deuteronomy",
+    "slug": "deuteronomy",
+    "testament": "OT",
+    "source_code": "DEU"
+  },
+  {
+    "name": "Joshua",
+    "slug": "joshua",
+    "testament": "OT",
+    "source_code": "JOS"
+  },
+  {
+    "name": "Judges",
+    "slug": "judges",
+    "testament": "OT",
+    "source_code": "JDG"
+  },
+  {
+    "name": "Ruth",
+    "slug": "ruth",
+    "testament": "OT",
+    "source_code": "RUT"
+  },
+  {
+    "name": "1 Samuel",
+    "slug": "1-samuel",
+    "testament": "OT",
+    "source_code": "1SA"
+  },
+  {
+    "name": "2 Samuel",
+    "slug": "2-samuel",
+    "testament": "OT",
+    "source_code": "2SA"
+  },
+  {
+    "name": "1 Kings",
+    "slug": "1-kings",
+    "testament": "OT",
+    "source_code": "1KI"
+  },
+  {
+    "name": "2 Kings",
+    "slug": "2-kings",
+    "testament": "OT",
+    "source_code": "2KI"
+  },
+  {
+    "name": "1 Chronicles",
+    "slug": "1-chronicles",
+    "testament": "OT",
+    "source_code": "1CH"
+  },
+  {
+    "name": "2 Chronicles",
+    "slug": "2-chronicles",
+    "testament": "OT",
+    "source_code": "2CH"
+  },
+  {
+    "name": "Ezra",
+    "slug": "ezra",
+    "testament": "OT",
+    "source_code": "EZR"
+  },
+  {
+    "name": "Nehemiah",
+    "slug": "nehemiah",
+    "testament": "OT",
+    "source_code": "NEH"
+  },
+  {
+    "name": "Esther",
+    "slug": "esther",
+    "testament": "OT",
+    "source_code": "EST"
+  },
+  {
+    "name": "Job",
+    "slug": "job",
+    "testament": "OT",
+    "source_code": "JOB"
+  },
+  {
+    "name": "Psalms",
+    "slug": "psalms",
+    "testament": "OT",
+    "source_code": "PSA"
+  },
+  {
+    "name": "Proverbs",
+    "slug": "proverbs",
+    "testament": "OT",
+    "source_code": "PRO"
+  },
+  {
+    "name": "Ecclesiastes",
+    "slug": "ecclesiastes",
+    "testament": "OT",
+    "source_code": "ECC"
+  },
+  {
+    "name": "Song of Solomon",
+    "slug": "song-of-solomon",
+    "testament": "OT",
+    "source_code": "SNG"
+  },
+  {
+    "name": "Isaiah",
+    "slug": "isaiah",
+    "testament": "OT",
+    "source_code": "ISA"
+  },
+  {
+    "name": "Jeremiah",
+    "slug": "jeremiah",
+    "testament": "OT",
+    "source_code": "JER"
+  },
+  {
+    "name": "Lamentations",
+    "slug": "lamentations",
+    "testament": "OT",
+    "source_code": "LAM"
+  },
+  {
+    "name": "Ezekiel",
+    "slug": "ezekiel",
+    "testament": "OT",
+    "source_code": "EZK"
+  },
+  {
+    "name": "Daniel",
+    "slug": "daniel",
+    "testament": "OT",
+    "source_code": "DAN"
+  },
+  {
+    "name": "Hosea",
+    "slug": "hosea",
+    "testament": "OT",
+    "source_code": "HOS"
+  },
+  {
+    "name": "Joel",
+    "slug": "joel",
+    "testament": "OT",
+    "source_code": "JOL"
+  },
+  {
+    "name": "Amos",
+    "slug": "amos",
+    "testament": "OT",
+    "source_code": "AMO"
+  },
+  {
+    "name": "Obadiah",
+    "slug": "obadiah",
+    "testament": "OT",
+    "source_code": "OBA"
+  },
+  {
+    "name": "Jonah",
+    "slug": "jonah",
+    "testament": "OT",
+    "source_code": "JON"
+  },
+  {
+    "name": "Micah",
+    "slug": "micah",
+    "testament": "OT",
+    "source_code": "MIC"
+  },
+  {
+    "name": "Nahum",
+    "slug": "nahum",
+    "testament": "OT",
+    "source_code": "NAM"
+  },
+  {
+    "name": "Habakkuk",
+    "slug": "habakkuk",
+    "testament": "OT",
+    "source_code": "HAB"
+  },
+  {
+    "name": "Zephaniah",
+    "slug": "zephaniah",
+    "testament": "OT",
+    "source_code": "ZEP"
+  },
+  {
+    "name": "Haggai",
+    "slug": "haggai",
+    "testament": "OT",
+    "source_code": "HAG"
+  },
+  {
+    "name": "Zechariah",
+    "slug": "zechariah",
+    "testament": "OT",
+    "source_code": "ZEC"
+  },
+  {
+    "name": "Malachi",
+    "slug": "malachi",
+    "testament": "OT",
+    "source_code": "MAL"
+  },
+  {
+    "name": "Matthew",
+    "slug": "matthew",
+    "testament": "NT",
+    "source_code": "MAT"
+  },
+  {
+    "name": "Mark",
+    "slug": "mark",
+    "testament": "NT",
+    "source_code": "MRK"
+  },
+  {
+    "name": "Luke",
+    "slug": "luke",
+    "testament": "NT",
+    "source_code": "LUK"
+  },
+  {
+    "name": "John",
+    "slug": "john",
+    "testament": "NT",
+    "source_code": "JHN"
+  },
+  {
+    "name": "Acts",
+    "slug": "acts",
+    "testament": "NT",
+    "source_code": "ACT"
+  },
+  {
+    "name": "Romans",
+    "slug": "romans",
+    "testament": "NT",
+    "source_code": "ROM"
+  },
+  {
+    "name": "1 Corinthians",
+    "slug": "1-corinthians",
+    "testament": "NT",
+    "source_code": "1CO"
+  },
+  {
+    "name": "2 Corinthians",
+    "slug": "2-corinthians",
+    "testament": "NT",
+    "source_code": "2CO"
+  },
+  {
+    "name": "Galatians",
+    "slug": "galatians",
+    "testament": "NT",
+    "source_code": "GAL"
+  },
+  {
+    "name": "Ephesians",
+    "slug": "ephesians",
+    "testament": "NT",
+    "source_code": "EPH"
+  },
+  {
+    "name": "Philippians",
+    "slug": "philippians",
+    "testament": "NT",
+    "source_code": "PHP"
+  },
+  {
+    "name": "Colossians",
+    "slug": "colossians",
+    "testament": "NT",
+    "source_code": "COL"
+  },
+  {
+    "name": "1 Thessalonians",
+    "slug": "1-thessalonians",
+    "testament": "NT",
+    "source_code": "1TH"
+  },
+  {
+    "name": "2 Thessalonians",
+    "slug": "2-thessalonians",
+    "testament": "NT",
+    "source_code": "2TH"
+  },
+  {
+    "name": "1 Timothy",
+    "slug": "1-timothy",
+    "testament": "NT",
+    "source_code": "1TI"
+  },
+  {
+    "name": "2 Timothy",
+    "slug": "2-timothy",
+    "testament": "NT",
+    "source_code": "2TI"
+  },
+  {
+    "name": "Titus",
+    "slug": "titus",
+    "testament": "NT",
+    "source_code": "TIT"
+  },
+  {
+    "name": "Philemon",
+    "slug": "philemon",
+    "testament": "NT",
+    "source_code": "PHM"
+  },
+  {
+    "name": "Hebrews",
+    "slug": "hebrews",
+    "testament": "NT",
+    "source_code": "HEB"
+  },
+  {
+    "name": "James",
+    "slug": "james",
+    "testament": "NT",
+    "source_code": "JAS"
+  },
+  {
+    "name": "1 Peter",
+    "slug": "1-peter",
+    "testament": "NT",
+    "source_code": "1PE"
+  },
+  {
+    "name": "2 Peter",
+    "slug": "2-peter",
+    "testament": "NT",
+    "source_code": "2PE"
+  },
+  {
+    "name": "1 John",
+    "slug": "1-john",
+    "testament": "NT",
+    "source_code": "1JN"
+  },
+  {
+    "name": "2 John",
+    "slug": "2-john",
+    "testament": "NT",
+    "source_code": "2JN"
+  },
+  {
+    "name": "3 John",
+    "slug": "3-john",
+    "testament": "NT",
+    "source_code": "3JN"
+  },
+  {
+    "name": "Jude",
+    "slug": "jude",
+    "testament": "NT",
+    "source_code": "JUD"
+  },
+  {
+    "name": "Revelation",
+    "slug": "revelation",
+    "testament": "NT",
+    "source_code": "REV"
+  },
+  {
+    "name": "Tobit",
+    "slug": "tobit",
+    "testament": "DC",
+    "source_code": "TOB"
+  },
+  {
+    "name": "Judith",
+    "slug": "judith",
+    "testament": "DC",
+    "source_code": "JDT"
+  },
+  {
+    "name": "Esther (Greek)",
+    "slug": "esther-greek",
+    "testament": "DC",
+    "source_code": "ESG"
+  },
+  {
+    "name": "Wisdom of Solomon",
+    "slug": "wisdom-of-solomon",
+    "testament": "DC",
+    "source_code": "WIS"
+  },
+  {
+    "name": "Sirach",
+    "slug": "sirach",
+    "testament": "DC",
+    "source_code": "SIR"
+  },
+  {
+    "name": "Baruch",
+    "slug": "baruch",
+    "testament": "DC",
+    "source_code": "BAR"
+  },
+  {
+    "name": "Daniel (Greek)",
+    "slug": "daniel-greek",
+    "testament": "DC",
+    "source_code": "DAG"
+  },
+  {
+    "name": "1 Maccabees",
+    "slug": "1-maccabees",
+    "testament": "DC",
+    "source_code": "1MA"
+  },
+  {
+    "name": "2 Maccabees",
+    "slug": "2-maccabees",
+    "testament": "DC",
+    "source_code": "2MA"
+  },
+  {
+    "name": "1 Esdras",
+    "slug": "1-esdras",
+    "testament": "DC",
+    "source_code": "1ES"
+  },
+  {
+    "name": "Prayer of Manasseh",
+    "slug": "prayer-of-manasseh",
+    "testament": "DC",
+    "source_code": "MAN"
+  },
+  {
+    "name": "Psalm 151",
+    "slug": "psalm-151",
+    "testament": "DC",
+    "source_code": "PS2"
+  },
+  {
+    "name": "3 Maccabees",
+    "slug": "3-maccabees",
+    "testament": "DC",
+    "source_code": "3MA"
+  },
+  {
+    "name": "2 Esdras",
+    "slug": "2-esdras",
+    "testament": "DC",
+    "source_code": "2ES"
+  },
+  {
+    "name": "4 Maccabees",
+    "slug": "4-maccabees",
+    "testament": "DC",
+    "source_code": "4MA"
+  },
+  {
+    "name": "Song of the Three Holy Children",
+    "slug": "song-of-the-three-holy-children",
+    "testament": "DC",
+    "source_code": "S3Y"
+  },
+  {
+    "name": "Susanna",
+    "slug": "susanna",
+    "testament": "DC",
+    "source_code": "SUS"
+  },
+  {
+    "name": "Bel and the Dragon",
+    "slug": "bel-and-the-dragon",
+    "testament": "DC",
+    "source_code": "BEL"
+  }
+]

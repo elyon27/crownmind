@@ -1,0 +1,3480 @@
+[
+  {
+    "id": "1",
+    "title": "Love",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 13,
+        "start": 34,
+        "end": 35
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 13,
+        "start": 4,
+        "end": 8
+      },
+      {
+        "book": "1-john",
+        "chapter": 4,
+        "start": 7,
+        "end": 12
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 4,
+        "end": 5
+      },
+      {
+        "book": "leviticus",
+        "chapter": 19,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "romans",
+        "chapter": 13,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "1-john",
+        "chapter": 4,
+        "start": 19,
+        "end": 21
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Faith",
+    "passages": [
+      {
+        "book": "hebrews",
+        "chapter": 11,
+        "start": 1,
+        "end": 6
+      },
+      {
+        "book": "romans",
+        "chapter": 10,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "james",
+        "chapter": 2,
+        "start": 14,
+        "end": 18
+      },
+      {
+        "book": "habakkuk",
+        "chapter": 2,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "genesis",
+        "chapter": 15,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "mark",
+        "chapter": 9,
+        "start": 23,
+        "end": 24
+      },
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 8,
+        "end": 9
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Hope",
+    "passages": [
+      {
+        "book": "romans",
+        "chapter": 5,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "romans",
+        "chapter": 15,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "hebrews",
+        "chapter": 6,
+        "start": 19,
+        "end": 20
+      },
+      {
+        "book": "psalms",
+        "chapter": 42,
+        "start": 5,
+        "end": 5
+      },
+      {
+        "book": "isaiah",
+        "chapter": 40,
+        "start": 28,
+        "end": 31
+      },
+      {
+        "book": "lamentations",
+        "chapter": 3,
+        "start": 21,
+        "end": 24
+      },
+      {
+        "book": "1-peter",
+        "chapter": 1,
+        "start": 3,
+        "end": 5
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Grace",
+    "passages": [
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "romans",
+        "chapter": 3,
+        "start": 23,
+        "end": 24
+      },
+      {
+        "book": "titus",
+        "chapter": 2,
+        "start": 11,
+        "end": 14
+      },
+      {
+        "book": "exodus",
+        "chapter": 34,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "john",
+        "chapter": 1,
+        "start": 16,
+        "end": 17
+      },
+      {
+        "book": "romans",
+        "chapter": 5,
+        "start": 20,
+        "end": 21
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 12,
+        "start": 9,
+        "end": 9
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Salvation",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 3,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "book": "acts",
+        "chapter": 4,
+        "start": 12,
+        "end": 12
+      },
+      {
+        "book": "romans",
+        "chapter": 10,
+        "start": 9,
+        "end": 13
+      },
+      {
+        "book": "isaiah",
+        "chapter": 45,
+        "start": 22,
+        "end": 22
+      },
+      {
+        "book": "psalms",
+        "chapter": 62,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "titus",
+        "chapter": 3,
+        "start": 4,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Prayer",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 5,
+        "end": 13
+      },
+      {
+        "book": "philippians",
+        "chapter": 4,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 5,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "book": "psalms",
+        "chapter": 145,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "jeremiah",
+        "chapter": 33,
+        "start": 3,
+        "end": 3
+      },
+      {
+        "book": "luke",
+        "chapter": 11,
+        "start": 9,
+        "end": 13
+      },
+      {
+        "book": "1-john",
+        "chapter": 5,
+        "start": 14,
+        "end": 15
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Forgiveness",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 14,
+        "end": 15
+      },
+      {
+        "book": "matthew",
+        "chapter": 18,
+        "start": 21,
+        "end": 35
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 12,
+        "end": 13
+      },
+      {
+        "book": "psalms",
+        "chapter": 103,
+        "start": 10,
+        "end": 12
+      },
+      {
+        "book": "isaiah",
+        "chapter": 1,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 32,
+        "end": 32
+      },
+      {
+        "book": "1-john",
+        "chapter": 1,
+        "start": 9,
+        "end": 9
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Repentance",
+    "passages": [
+      {
+        "book": "acts",
+        "chapter": 3,
+        "start": 19,
+        "end": 19
+      },
+      {
+        "book": "luke",
+        "chapter": 15,
+        "start": 7,
+        "end": 10
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 7,
+        "start": 9,
+        "end": 10
+      },
+      {
+        "book": "psalms",
+        "chapter": 51,
+        "start": 10,
+        "end": 12
+      },
+      {
+        "book": "ezekiel",
+        "chapter": 18,
+        "start": 30,
+        "end": 32
+      },
+      {
+        "book": "mark",
+        "chapter": 1,
+        "start": 14,
+        "end": 15
+      },
+      {
+        "book": "acts",
+        "chapter": 2,
+        "start": 38,
+        "end": 38
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Mercy",
+    "passages": [
+      {
+        "book": "luke",
+        "chapter": 6,
+        "start": 35,
+        "end": 36
+      },
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 7,
+        "end": 7
+      },
+      {
+        "book": "james",
+        "chapter": 2,
+        "start": 12,
+        "end": 13
+      },
+      {
+        "book": "exodus",
+        "chapter": 34,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "micah",
+        "chapter": 7,
+        "start": 18,
+        "end": 19
+      },
+      {
+        "book": "psalms",
+        "chapter": 103,
+        "start": 8,
+        "end": 13
+      },
+      {
+        "book": "hebrews",
+        "chapter": 4,
+        "start": 14,
+        "end": 16
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Peace",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 27,
+        "end": 27
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "numbers",
+        "chapter": 6,
+        "start": 24,
+        "end": 26
+      },
+      {
+        "book": "isaiah",
+        "chapter": 26,
+        "start": 3,
+        "end": 3
+      },
+      {
+        "book": "philippians",
+        "chapter": 4,
+        "start": 6,
+        "end": 9
+      },
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 13,
+        "end": 18
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Joy",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 15,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "philippians",
+        "chapter": 4,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 2,
+        "end": 4
+      },
+      {
+        "book": "psalms",
+        "chapter": 16,
+        "start": 11,
+        "end": 11
+      },
+      {
+        "book": "nehemiah",
+        "chapter": 8,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "romans",
+        "chapter": 15,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "1-peter",
+        "chapter": 1,
+        "start": 8,
+        "end": 9
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Patience",
+    "passages": [
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 12,
+        "end": 12
+      },
+      {
+        "book": "james",
+        "chapter": 5,
+        "start": 7,
+        "end": 11
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 12,
+        "end": 13
+      },
+      {
+        "book": "psalms",
+        "chapter": 37,
+        "start": 7,
+        "end": 9
+      },
+      {
+        "book": "proverbs",
+        "chapter": 14,
+        "start": 29,
+        "end": 29
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 22,
+        "end": 23
+      },
+      {
+        "book": "hebrews",
+        "chapter": 10,
+        "start": 35,
+        "end": 36
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Kindness",
+    "passages": [
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 31,
+        "end": 32
+      },
+      {
+        "book": "luke",
+        "chapter": 6,
+        "start": 35,
+        "end": 35
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 22,
+        "end": 23
+      },
+      {
+        "book": "micah",
+        "chapter": 6,
+        "start": 8,
+        "end": 8
+      },
+      {
+        "book": "proverbs",
+        "chapter": 19,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "romans",
+        "chapter": 2,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 12,
+        "end": 14
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Humility",
+    "passages": [
+      {
+        "book": "philippians",
+        "chapter": 2,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "james",
+        "chapter": 4,
+        "start": 6,
+        "end": 10
+      },
+      {
+        "book": "1-peter",
+        "chapter": 5,
+        "start": 5,
+        "end": 6
+      },
+      {
+        "book": "micah",
+        "chapter": 6,
+        "start": 8,
+        "end": 8
+      },
+      {
+        "book": "proverbs",
+        "chapter": 22,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "matthew",
+        "chapter": 11,
+        "start": 28,
+        "end": 30
+      },
+      {
+        "book": "luke",
+        "chapter": 14,
+        "start": 7,
+        "end": 11
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Wisdom",
+    "passages": [
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 5,
+        "end": 5
+      },
+      {
+        "book": "james",
+        "chapter": 3,
+        "start": 13,
+        "end": 18
+      },
+      {
+        "book": "proverbs",
+        "chapter": 3,
+        "start": 5,
+        "end": 7
+      },
+      {
+        "book": "proverbs",
+        "chapter": 2,
+        "start": 1,
+        "end": 6
+      },
+      {
+        "book": "proverbs",
+        "chapter": 9,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "ecclesiastes",
+        "chapter": 7,
+        "start": 11,
+        "end": 12
+      },
+      {
+        "book": "colossians",
+        "chapter": 2,
+        "start": 2,
+        "end": 3
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Truth",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 8,
+        "start": 31,
+        "end": 32
+      },
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 25,
+        "end": 25
+      },
+      {
+        "book": "psalms",
+        "chapter": 119,
+        "start": 160,
+        "end": 160
+      },
+      {
+        "book": "proverbs",
+        "chapter": 12,
+        "start": 22,
+        "end": 22
+      },
+      {
+        "book": "john",
+        "chapter": 17,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "3-john",
+        "chapter": 1,
+        "start": 3,
+        "end": 4
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Justice",
+    "passages": [
+      {
+        "book": "micah",
+        "chapter": 6,
+        "start": 8,
+        "end": 8
+      },
+      {
+        "book": "isaiah",
+        "chapter": 1,
+        "start": 16,
+        "end": 17
+      },
+      {
+        "book": "matthew",
+        "chapter": 23,
+        "start": 23,
+        "end": 23
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 16,
+        "start": 18,
+        "end": 20
+      },
+      {
+        "book": "amos",
+        "chapter": 5,
+        "start": 21,
+        "end": 24
+      },
+      {
+        "book": "psalms",
+        "chapter": 82,
+        "start": 3,
+        "end": 4
+      },
+      {
+        "book": "james",
+        "chapter": 2,
+        "start": 1,
+        "end": 9
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Judgment",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 7,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "romans",
+        "chapter": 14,
+        "start": 10,
+        "end": 13
+      },
+      {
+        "book": "revelation",
+        "chapter": 20,
+        "start": 11,
+        "end": 15
+      },
+      {
+        "book": "ecclesiastes",
+        "chapter": 12,
+        "start": 13,
+        "end": 14
+      },
+      {
+        "book": "acts",
+        "chapter": 17,
+        "start": 30,
+        "end": 31
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 5,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "hebrews",
+        "chapter": 9,
+        "start": 27,
+        "end": 28
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Sin",
+    "passages": [
+      {
+        "book": "romans",
+        "chapter": 3,
+        "start": 21,
+        "end": 26
+      },
+      {
+        "book": "romans",
+        "chapter": 6,
+        "start": 23,
+        "end": 23
+      },
+      {
+        "book": "1-john",
+        "chapter": 1,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "psalms",
+        "chapter": 51,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "isaiah",
+        "chapter": 59,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "romans",
+        "chapter": 6,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "james",
+        "chapter": 4,
+        "start": 17,
+        "end": 17
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Temptation",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 4,
+        "start": 1,
+        "end": 11
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 10,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 12,
+        "end": 15
+      },
+      {
+        "book": "genesis",
+        "chapter": 39,
+        "start": 7,
+        "end": 12
+      },
+      {
+        "book": "psalms",
+        "chapter": 119,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "hebrews",
+        "chapter": 4,
+        "start": 14,
+        "end": 16
+      },
+      {
+        "book": "2-timothy",
+        "chapter": 2,
+        "start": 22,
+        "end": 22
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Obedience",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 15,
+        "end": 21
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 22,
+        "end": 25
+      },
+      {
+        "book": "acts",
+        "chapter": 5,
+        "start": 29,
+        "end": 29
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 4,
+        "end": 9
+      },
+      {
+        "book": "1-samuel",
+        "chapter": 15,
+        "start": 22,
+        "end": 23
+      },
+      {
+        "book": "matthew",
+        "chapter": 7,
+        "start": 21,
+        "end": 27
+      },
+      {
+        "book": "1-john",
+        "chapter": 5,
+        "start": 2,
+        "end": 3
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Holiness",
+    "passages": [
+      {
+        "book": "1-peter",
+        "chapter": 1,
+        "start": 14,
+        "end": 16
+      },
+      {
+        "book": "hebrews",
+        "chapter": 12,
+        "start": 14,
+        "end": 14
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 4,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "leviticus",
+        "chapter": 19,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "psalms",
+        "chapter": 24,
+        "start": 3,
+        "end": 6
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 7,
+        "start": 1,
+        "end": 1
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Holy Spirit",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 16,
+        "end": 17
+      },
+      {
+        "book": "acts",
+        "chapter": 2,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 22,
+        "end": 25
+      },
+      {
+        "book": "genesis",
+        "chapter": 1,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "ezekiel",
+        "chapter": 36,
+        "start": 26,
+        "end": 27
+      },
+      {
+        "book": "romans",
+        "chapter": 8,
+        "start": 9,
+        "end": 16
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 12,
+        "start": 4,
+        "end": 11
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Jesus Christ",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 1,
+        "start": 1,
+        "end": 14
+      },
+      {
+        "book": "colossians",
+        "chapter": 1,
+        "start": 15,
+        "end": 20
+      },
+      {
+        "book": "hebrews",
+        "chapter": 1,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "isaiah",
+        "chapter": 9,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "philippians",
+        "chapter": 2,
+        "start": 5,
+        "end": 11
+      },
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "1-timothy",
+        "chapter": 2,
+        "start": 5,
+        "end": 6
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Resurrection",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 11,
+        "start": 25,
+        "end": 26
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 15,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 15,
+        "start": 20,
+        "end": 22
+      },
+      {
+        "book": "daniel",
+        "chapter": 12,
+        "start": 2,
+        "end": 3
+      },
+      {
+        "book": "job",
+        "chapter": 19,
+        "start": 25,
+        "end": 27
+      },
+      {
+        "book": "luke",
+        "chapter": 24,
+        "start": 1,
+        "end": 8
+      },
+      {
+        "book": "romans",
+        "chapter": 6,
+        "start": 4,
+        "end": 5
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Eternal Life",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 3,
+        "start": 16,
+        "end": 16
+      },
+      {
+        "book": "john",
+        "chapter": 17,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "1-john",
+        "chapter": 5,
+        "start": 11,
+        "end": 13
+      },
+      {
+        "book": "daniel",
+        "chapter": 12,
+        "start": 2,
+        "end": 3
+      },
+      {
+        "book": "romans",
+        "chapter": 6,
+        "start": 23,
+        "end": 23
+      },
+      {
+        "book": "john",
+        "chapter": 10,
+        "start": 27,
+        "end": 30
+      },
+      {
+        "book": "revelation",
+        "chapter": 22,
+        "start": 1,
+        "end": 5
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Heaven",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "philippians",
+        "chapter": 3,
+        "start": 20,
+        "end": 21
+      },
+      {
+        "book": "revelation",
+        "chapter": 21,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "isaiah",
+        "chapter": 65,
+        "start": 17,
+        "end": 19
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 5,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "hebrews",
+        "chapter": 11,
+        "start": 13,
+        "end": 16
+      },
+      {
+        "book": "revelation",
+        "chapter": 22,
+        "start": 1,
+        "end": 5
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Hell",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 10,
+        "start": 28,
+        "end": 28
+      },
+      {
+        "book": "matthew",
+        "chapter": 25,
+        "start": 41,
+        "end": 46
+      },
+      {
+        "book": "mark",
+        "chapter": 9,
+        "start": 43,
+        "end": 48
+      },
+      {
+        "book": "daniel",
+        "chapter": 12,
+        "start": 2,
+        "end": 2
+      },
+      {
+        "book": "matthew",
+        "chapter": 13,
+        "start": 47,
+        "end": 50
+      },
+      {
+        "book": "2-thessalonians",
+        "chapter": 1,
+        "start": 5,
+        "end": 10
+      },
+      {
+        "book": "revelation",
+        "chapter": 20,
+        "start": 11,
+        "end": 15
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Marriage",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 18,
+        "end": 24
+      },
+      {
+        "book": "matthew",
+        "chapter": 19,
+        "start": 3,
+        "end": 9
+      },
+      {
+        "book": "ephesians",
+        "chapter": 5,
+        "start": 21,
+        "end": 33
+      },
+      {
+        "book": "proverbs",
+        "chapter": 18,
+        "start": 22,
+        "end": 22
+      },
+      {
+        "book": "malachi",
+        "chapter": 2,
+        "start": 14,
+        "end": 16
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 7,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "hebrews",
+        "chapter": 13,
+        "start": 4,
+        "end": 4
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Family",
+    "passages": [
+      {
+        "book": "ephesians",
+        "chapter": 6,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "book": "1-timothy",
+        "chapter": 5,
+        "start": 4,
+        "end": 8
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 4,
+        "end": 9
+      },
+      {
+        "book": "joshua",
+        "chapter": 24,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "psalms",
+        "chapter": 127,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "mark",
+        "chapter": 3,
+        "start": 31,
+        "end": 35
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "Children",
+    "passages": [
+      {
+        "book": "mark",
+        "chapter": 10,
+        "start": 13,
+        "end": 16
+      },
+      {
+        "book": "matthew",
+        "chapter": 18,
+        "start": 1,
+        "end": 6
+      },
+      {
+        "book": "ephesians",
+        "chapter": 6,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "psalms",
+        "chapter": 127,
+        "start": 3,
+        "end": 5
+      },
+      {
+        "book": "proverbs",
+        "chapter": 22,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 20,
+        "end": 21
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "Friendship",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 15,
+        "start": 12,
+        "end": 15
+      },
+      {
+        "book": "proverbs",
+        "chapter": 17,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "proverbs",
+        "chapter": 27,
+        "start": 5,
+        "end": 6
+      },
+      {
+        "book": "proverbs",
+        "chapter": 18,
+        "start": 24,
+        "end": 24
+      },
+      {
+        "book": "ecclesiastes",
+        "chapter": 4,
+        "start": 9,
+        "end": 12
+      },
+      {
+        "book": "1-samuel",
+        "chapter": 18,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 9,
+        "end": 16
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "title": "Sexual Morality",
+    "passages": [
+      {
+        "book": "1-corinthians",
+        "chapter": 6,
+        "start": 12,
+        "end": 20
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 4,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "hebrews",
+        "chapter": 13,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 24,
+        "end": 24
+      },
+      {
+        "book": "exodus",
+        "chapter": 20,
+        "start": 14,
+        "end": 14
+      },
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 27,
+        "end": 30
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 22,
+        "end": 25
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "title": "Homosexuality",
+    "passages": [
+      {
+        "book": "leviticus",
+        "chapter": 18,
+        "start": 22,
+        "end": 22
+      },
+      {
+        "book": "romans",
+        "chapter": 1,
+        "start": 24,
+        "end": 27
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 6,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 24,
+        "end": 24
+      },
+      {
+        "book": "matthew",
+        "chapter": 19,
+        "start": 4,
+        "end": 6
+      },
+      {
+        "book": "1-timothy",
+        "chapter": 1,
+        "start": 8,
+        "end": 11
+      },
+      {
+        "book": "matthew",
+        "chapter": 22,
+        "start": 37,
+        "end": 40
+      }
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Adultery",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 27,
+        "end": 30
+      },
+      {
+        "book": "exodus",
+        "chapter": 20,
+        "start": 14,
+        "end": 14
+      },
+      {
+        "book": "hebrews",
+        "chapter": 13,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "proverbs",
+        "chapter": 6,
+        "start": 32,
+        "end": 35
+      },
+      {
+        "book": "matthew",
+        "chapter": 19,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "romans",
+        "chapter": 13,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "james",
+        "chapter": 2,
+        "start": 8,
+        "end": 11
+      }
+    ]
+  },
+  {
+    "id": "36",
+    "title": "Divorce",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 19,
+        "start": 3,
+        "end": 9
+      },
+      {
+        "book": "mark",
+        "chapter": 10,
+        "start": 2,
+        "end": 12
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 7,
+        "start": 10,
+        "end": 16
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 24,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "malachi",
+        "chapter": 2,
+        "start": 13,
+        "end": 16
+      },
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 31,
+        "end": 32
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 7,
+        "start": 39,
+        "end": 39
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Money and Wealth",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 19,
+        "end": 24
+      },
+      {
+        "book": "1-timothy",
+        "chapter": 6,
+        "start": 6,
+        "end": 10
+      },
+      {
+        "book": "1-timothy",
+        "chapter": 6,
+        "start": 17,
+        "end": 19
+      },
+      {
+        "book": "proverbs",
+        "chapter": 11,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "ecclesiastes",
+        "chapter": 5,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "luke",
+        "chapter": 12,
+        "start": 13,
+        "end": 21
+      },
+      {
+        "book": "hebrews",
+        "chapter": 13,
+        "start": 5,
+        "end": 5
+      }
+    ]
+  },
+  {
+    "id": "38",
+    "title": "Generosity",
+    "passages": [
+      {
+        "book": "2-corinthians",
+        "chapter": 9,
+        "start": 6,
+        "end": 8
+      },
+      {
+        "book": "luke",
+        "chapter": 6,
+        "start": 38,
+        "end": 38
+      },
+      {
+        "book": "acts",
+        "chapter": 20,
+        "start": 35,
+        "end": 35
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 15,
+        "start": 7,
+        "end": 11
+      },
+      {
+        "book": "proverbs",
+        "chapter": 11,
+        "start": 24,
+        "end": 25
+      },
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "1-john",
+        "chapter": 3,
+        "start": 16,
+        "end": 18
+      }
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Poverty",
+    "passages": [
+      {
+        "book": "luke",
+        "chapter": 4,
+        "start": 18,
+        "end": 19
+      },
+      {
+        "book": "james",
+        "chapter": 2,
+        "start": 1,
+        "end": 9
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 15,
+        "start": 7,
+        "end": 11
+      },
+      {
+        "book": "proverbs",
+        "chapter": 19,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "isaiah",
+        "chapter": 58,
+        "start": 6,
+        "end": 10
+      },
+      {
+        "book": "luke",
+        "chapter": 6,
+        "start": 20,
+        "end": 21
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 8,
+        "start": 13,
+        "end": 15
+      }
+    ]
+  },
+  {
+    "id": "40",
+    "title": "Work",
+    "passages": [
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 23,
+        "end": 24
+      },
+      {
+        "book": "2-thessalonians",
+        "chapter": 3,
+        "start": 10,
+        "end": 12
+      },
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 28,
+        "end": 28
+      },
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "proverbs",
+        "chapter": 14,
+        "start": 23,
+        "end": 23
+      },
+      {
+        "book": "ecclesiastes",
+        "chapter": 9,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 4,
+        "start": 11,
+        "end": 12
+      }
+    ]
+  },
+  {
+    "id": "41",
+    "title": "Suffering",
+    "passages": [
+      {
+        "book": "romans",
+        "chapter": 8,
+        "start": 18,
+        "end": 25
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 4,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "book": "1-peter",
+        "chapter": 4,
+        "start": 12,
+        "end": 16
+      },
+      {
+        "book": "job",
+        "chapter": 1,
+        "start": 20,
+        "end": 22
+      },
+      {
+        "book": "psalms",
+        "chapter": 34,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 2,
+        "end": 4
+      },
+      {
+        "book": "revelation",
+        "chapter": 21,
+        "start": 4,
+        "end": 4
+      }
+    ]
+  },
+  {
+    "id": "42",
+    "title": "Healing",
+    "passages": [
+      {
+        "book": "james",
+        "chapter": 5,
+        "start": 13,
+        "end": 16
+      },
+      {
+        "book": "mark",
+        "chapter": 5,
+        "start": 25,
+        "end": 34
+      },
+      {
+        "book": "matthew",
+        "chapter": 8,
+        "start": 14,
+        "end": 17
+      },
+      {
+        "book": "exodus",
+        "chapter": 15,
+        "start": 26,
+        "end": 26
+      },
+      {
+        "book": "psalms",
+        "chapter": 147,
+        "start": 3,
+        "end": 3
+      },
+      {
+        "book": "luke",
+        "chapter": 10,
+        "start": 33,
+        "end": 35
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 12,
+        "start": 7,
+        "end": 10
+      }
+    ]
+  },
+  {
+    "id": "43",
+    "title": "Fear and Anxiety",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 25,
+        "end": 34
+      },
+      {
+        "book": "philippians",
+        "chapter": 4,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "1-peter",
+        "chapter": 5,
+        "start": 6,
+        "end": 7
+      },
+      {
+        "book": "psalms",
+        "chapter": 23,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "isaiah",
+        "chapter": 41,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "joshua",
+        "chapter": 1,
+        "start": 9,
+        "end": 9
+      },
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 27,
+        "end": 27
+      }
+    ]
+  },
+  {
+    "id": "44",
+    "title": "Grief and Comfort",
+    "passages": [
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "john",
+        "chapter": 11,
+        "start": 32,
+        "end": 36
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 1,
+        "start": 3,
+        "end": 5
+      },
+      {
+        "book": "psalms",
+        "chapter": 34,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "isaiah",
+        "chapter": 61,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 4,
+        "start": 13,
+        "end": 18
+      },
+      {
+        "book": "revelation",
+        "chapter": 21,
+        "start": 4,
+        "end": 4
+      }
+    ]
+  },
+  {
+    "id": "45",
+    "title": "Anger",
+    "passages": [
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 26,
+        "end": 32
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 19,
+        "end": 20
+      },
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 21,
+        "end": 24
+      },
+      {
+        "book": "proverbs",
+        "chapter": 15,
+        "start": 1,
+        "end": 1
+      },
+      {
+        "book": "psalms",
+        "chapter": 4,
+        "start": 4,
+        "end": 5
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 17,
+        "end": 21
+      }
+    ]
+  },
+  {
+    "id": "46",
+    "title": "Pride",
+    "passages": [
+      {
+        "book": "proverbs",
+        "chapter": 16,
+        "start": 18,
+        "end": 18
+      },
+      {
+        "book": "luke",
+        "chapter": 18,
+        "start": 9,
+        "end": 14
+      },
+      {
+        "book": "james",
+        "chapter": 4,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "proverbs",
+        "chapter": 11,
+        "start": 2,
+        "end": 2
+      },
+      {
+        "book": "isaiah",
+        "chapter": 66,
+        "start": 2,
+        "end": 2
+      },
+      {
+        "book": "1-peter",
+        "chapter": 5,
+        "start": 5,
+        "end": 6
+      },
+      {
+        "book": "philippians",
+        "chapter": 2,
+        "start": 3,
+        "end": 4
+      }
+    ]
+  },
+  {
+    "id": "47",
+    "title": "Envy",
+    "passages": [
+      {
+        "book": "james",
+        "chapter": 3,
+        "start": 14,
+        "end": 16
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 19,
+        "end": 26
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 13,
+        "start": 4,
+        "end": 4
+      },
+      {
+        "book": "exodus",
+        "chapter": 20,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "proverbs",
+        "chapter": 14,
+        "start": 30,
+        "end": 30
+      },
+      {
+        "book": "1-peter",
+        "chapter": 2,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "philippians",
+        "chapter": 4,
+        "start": 11,
+        "end": 13
+      }
+    ]
+  },
+  {
+    "id": "48",
+    "title": "Gossip",
+    "passages": [
+      {
+        "book": "proverbs",
+        "chapter": 16,
+        "start": 28,
+        "end": 28
+      },
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 29,
+        "end": 29
+      },
+      {
+        "book": "james",
+        "chapter": 3,
+        "start": 5,
+        "end": 10
+      },
+      {
+        "book": "leviticus",
+        "chapter": 19,
+        "start": 16,
+        "end": 16
+      },
+      {
+        "book": "proverbs",
+        "chapter": 11,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "proverbs",
+        "chapter": 26,
+        "start": 20,
+        "end": 20
+      },
+      {
+        "book": "colossians",
+        "chapter": 4,
+        "start": 6,
+        "end": 6
+      }
+    ]
+  },
+  {
+    "id": "49",
+    "title": "Worship",
+    "passages": [
+      {
+        "book": "john",
+        "chapter": 4,
+        "start": 23,
+        "end": 24
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "hebrews",
+        "chapter": 13,
+        "start": 15,
+        "end": 16
+      },
+      {
+        "book": "psalms",
+        "chapter": 95,
+        "start": 1,
+        "end": 7
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "matthew",
+        "chapter": 4,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "revelation",
+        "chapter": 4,
+        "start": 8,
+        "end": 11
+      }
+    ]
+  },
+  {
+    "id": "50",
+    "title": "Service",
+    "passages": [
+      {
+        "book": "mark",
+        "chapter": 10,
+        "start": 42,
+        "end": 45
+      },
+      {
+        "book": "john",
+        "chapter": 13,
+        "start": 12,
+        "end": 17
+      },
+      {
+        "book": "1-peter",
+        "chapter": 4,
+        "start": 10,
+        "end": 11
+      },
+      {
+        "book": "isaiah",
+        "chapter": 58,
+        "start": 6,
+        "end": 10
+      },
+      {
+        "book": "micah",
+        "chapter": 6,
+        "start": 8,
+        "end": 8
+      },
+      {
+        "book": "galatians",
+        "chapter": 5,
+        "start": 13,
+        "end": 13
+      },
+      {
+        "book": "hebrews",
+        "chapter": 6,
+        "start": 10,
+        "end": 10
+      }
+    ]
+  },
+  {
+    "id": "51",
+    "title": "Creation",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 1,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "psalms",
+        "chapter": 19,
+        "start": 1,
+        "end": 4
+      },
+      {
+        "book": "psalms",
+        "chapter": 104,
+        "start": 24,
+        "end": 30
+      },
+      {
+        "book": "john",
+        "chapter": 1,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "colossians",
+        "chapter": 1,
+        "start": 15,
+        "end": 17
+      },
+      {
+        "book": "hebrews",
+        "chapter": 11,
+        "start": 3,
+        "end": 3
+      },
+      {
+        "book": "revelation",
+        "chapter": 4,
+        "start": 11,
+        "end": 11
+      }
+    ],
+    "study_note": "Created being depends on God; creation is received as gift, not identified with God."
+  },
+  {
+    "id": "52",
+    "title": "Covenant",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 9,
+        "start": 8,
+        "end": 17
+      },
+      {
+        "book": "genesis",
+        "chapter": 17,
+        "start": 1,
+        "end": 8
+      },
+      {
+        "book": "exodus",
+        "chapter": 24,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "jeremiah",
+        "chapter": 31,
+        "start": 31,
+        "end": 34
+      },
+      {
+        "book": "luke",
+        "chapter": 22,
+        "start": 19,
+        "end": 20
+      },
+      {
+        "book": "hebrews",
+        "chapter": 8,
+        "start": 6,
+        "end": 13
+      },
+      {
+        "book": "hebrews",
+        "chapter": 9,
+        "start": 11,
+        "end": 15
+      }
+    ],
+    "study_note": "God binds people to himself in faithful promise, fulfilled in the new covenant in Christ."
+  },
+  {
+    "id": "53",
+    "title": "Image of God",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 1,
+        "start": 26,
+        "end": 28
+      },
+      {
+        "book": "genesis",
+        "chapter": 9,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "psalms",
+        "chapter": 8,
+        "start": 3,
+        "end": 8
+      },
+      {
+        "book": "colossians",
+        "chapter": 1,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "james",
+        "chapter": 3,
+        "start": 9,
+        "end": 10
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 3,
+        "start": 17,
+        "end": 18
+      }
+    ],
+    "study_note": "Human dignity and renewal are understood in relation to God and Christ, the image of the invisible God."
+  },
+  {
+    "id": "54",
+    "title": "Light and Darkness",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 1,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "psalms",
+        "chapter": 27,
+        "start": 1,
+        "end": 1
+      },
+      {
+        "book": "isaiah",
+        "chapter": 9,
+        "start": 2,
+        "end": 2
+      },
+      {
+        "book": "john",
+        "chapter": 1,
+        "start": 4,
+        "end": 9
+      },
+      {
+        "book": "john",
+        "chapter": 8,
+        "start": 12,
+        "end": 12
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 4,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "1-john",
+        "chapter": 1,
+        "start": 5,
+        "end": 7
+      }
+    ],
+    "study_note": "The biblical image of light connects creation with revelation, holiness and life in Christ."
+  },
+  {
+    "id": "55",
+    "title": "New Creation",
+    "passages": [
+      {
+        "book": "isaiah",
+        "chapter": 43,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "book": "isaiah",
+        "chapter": 65,
+        "start": 17,
+        "end": 19
+      },
+      {
+        "book": "ezekiel",
+        "chapter": 36,
+        "start": 26,
+        "end": 27
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 5,
+        "start": 17,
+        "end": 17
+      },
+      {
+        "book": "galatians",
+        "chapter": 6,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "ephesians",
+        "chapter": 4,
+        "start": 22,
+        "end": 24
+      },
+      {
+        "book": "revelation",
+        "chapter": 21,
+        "start": 1,
+        "end": 5
+      }
+    ],
+    "study_note": "God renews persons and creation; spiritual transformation is directed toward communion with God."
+  },
+  {
+    "id": "56",
+    "title": "Kingdom of God",
+    "passages": [
+      {
+        "book": "psalms",
+        "chapter": 145,
+        "start": 10,
+        "end": 13
+      },
+      {
+        "book": "daniel",
+        "chapter": 2,
+        "start": 44,
+        "end": 44
+      },
+      {
+        "book": "daniel",
+        "chapter": 7,
+        "start": 13,
+        "end": 14
+      },
+      {
+        "book": "mark",
+        "chapter": 1,
+        "start": 14,
+        "end": 15
+      },
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 9,
+        "end": 13
+      },
+      {
+        "book": "luke",
+        "chapter": 17,
+        "start": 20,
+        "end": 21
+      },
+      {
+        "book": "romans",
+        "chapter": 14,
+        "start": 17,
+        "end": 17
+      }
+    ],
+    "study_note": "God’s reign concerns righteousness, peace and the fulfillment of his purposes."
+  },
+  {
+    "id": "57",
+    "title": "Baptism",
+    "passages": [
+      {
+        "book": "exodus",
+        "chapter": 14,
+        "start": 21,
+        "end": 31
+      },
+      {
+        "book": "ezekiel",
+        "chapter": 36,
+        "start": 25,
+        "end": 27
+      },
+      {
+        "book": "matthew",
+        "chapter": 28,
+        "start": 18,
+        "end": 20
+      },
+      {
+        "book": "acts",
+        "chapter": 2,
+        "start": 38,
+        "end": 41
+      },
+      {
+        "book": "romans",
+        "chapter": 6,
+        "start": 3,
+        "end": 5
+      },
+      {
+        "book": "galatians",
+        "chapter": 3,
+        "start": 26,
+        "end": 28
+      },
+      {
+        "book": "1-peter",
+        "chapter": 3,
+        "start": 20,
+        "end": 22
+      }
+    ],
+    "study_note": "Water, deliverance and new life connect baptism with Christ’s death and resurrection; traditions explain its operation differently."
+  },
+  {
+    "id": "58",
+    "title": "Eucharist and Communion",
+    "passages": [
+      {
+        "book": "exodus",
+        "chapter": 12,
+        "start": 1,
+        "end": 14
+      },
+      {
+        "book": "exodus",
+        "chapter": 16,
+        "start": 14,
+        "end": 18
+      },
+      {
+        "book": "john",
+        "chapter": 6,
+        "start": 35,
+        "end": 40
+      },
+      {
+        "book": "luke",
+        "chapter": 22,
+        "start": 14,
+        "end": 20
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 10,
+        "start": 16,
+        "end": 17
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 11,
+        "start": 23,
+        "end": 29
+      },
+      {
+        "book": "revelation",
+        "chapter": 19,
+        "start": 6,
+        "end": 9
+      }
+    ],
+    "study_note": "Passover, bread and covenant inform Christian communion; sacramental interpretations differ across traditions."
+  },
+  {
+    "id": "59",
+    "title": "Church and Fellowship",
+    "passages": [
+      {
+        "book": "exodus",
+        "chapter": 19,
+        "start": 5,
+        "end": 6
+      },
+      {
+        "book": "psalms",
+        "chapter": 133,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "matthew",
+        "chapter": 16,
+        "start": 15,
+        "end": 18
+      },
+      {
+        "book": "acts",
+        "chapter": 2,
+        "start": 42,
+        "end": 47
+      },
+      {
+        "book": "1-corinthians",
+        "chapter": 12,
+        "start": 12,
+        "end": 27
+      },
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 19,
+        "end": 22
+      },
+      {
+        "book": "hebrews",
+        "chapter": 10,
+        "start": 24,
+        "end": 25
+      }
+    ],
+    "study_note": "God gathers a people whose shared life expresses unity, mutual care and worship."
+  },
+  {
+    "id": "60",
+    "title": "Discipleship",
+    "passages": [
+      {
+        "book": "deuteronomy",
+        "chapter": 6,
+        "start": 4,
+        "end": 9
+      },
+      {
+        "book": "joshua",
+        "chapter": 24,
+        "start": 14,
+        "end": 15
+      },
+      {
+        "book": "matthew",
+        "chapter": 4,
+        "start": 18,
+        "end": 22
+      },
+      {
+        "book": "matthew",
+        "chapter": 16,
+        "start": 24,
+        "end": 26
+      },
+      {
+        "book": "luke",
+        "chapter": 14,
+        "start": 25,
+        "end": 33
+      },
+      {
+        "book": "john",
+        "chapter": 8,
+        "start": 31,
+        "end": 32
+      },
+      {
+        "book": "2-timothy",
+        "chapter": 2,
+        "start": 1,
+        "end": 2
+      }
+    ],
+    "study_note": "Following Christ means learning his teaching and embodying it in daily life."
+  },
+  {
+    "id": "61",
+    "title": "Self-Denial",
+    "passages": [
+      {
+        "book": "psalms",
+        "chapter": 51,
+        "start": 16,
+        "end": 17
+      },
+      {
+        "book": "isaiah",
+        "chapter": 58,
+        "start": 6,
+        "end": 10
+      },
+      {
+        "book": "matthew",
+        "chapter": 16,
+        "start": 24,
+        "end": 26
+      },
+      {
+        "book": "luke",
+        "chapter": 9,
+        "start": 23,
+        "end": 25
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "galatians",
+        "chapter": 2,
+        "start": 20,
+        "end": 20
+      },
+      {
+        "book": "philippians",
+        "chapter": 3,
+        "start": 7,
+        "end": 11
+      }
+    ],
+    "study_note": "Self-denial redirects desire toward God and loving service rather than contempt for embodied life."
+  },
+  {
+    "id": "62",
+    "title": "Discernment",
+    "passages": [
+      {
+        "book": "1-kings",
+        "chapter": 3,
+        "start": 9,
+        "end": 12
+      },
+      {
+        "book": "proverbs",
+        "chapter": 3,
+        "start": 5,
+        "end": 7
+      },
+      {
+        "book": "isaiah",
+        "chapter": 8,
+        "start": 20,
+        "end": 20
+      },
+      {
+        "book": "romans",
+        "chapter": 12,
+        "start": 2,
+        "end": 2
+      },
+      {
+        "book": "philippians",
+        "chapter": 1,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 5,
+        "start": 19,
+        "end": 22
+      },
+      {
+        "book": "1-john",
+        "chapter": 4,
+        "start": 1,
+        "end": 3
+      }
+    ],
+    "study_note": "Spiritual discernment tests teaching and conduct in the light of truth and the fruit of love."
+  },
+  {
+    "id": "63",
+    "title": "Spiritual Warfare",
+    "passages": [
+      {
+        "book": "psalms",
+        "chapter": 46,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "zechariah",
+        "chapter": 4,
+        "start": 6,
+        "end": 6
+      },
+      {
+        "book": "matthew",
+        "chapter": 4,
+        "start": 1,
+        "end": 11
+      },
+      {
+        "book": "ephesians",
+        "chapter": 6,
+        "start": 10,
+        "end": 18
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 10,
+        "start": 3,
+        "end": 5
+      },
+      {
+        "book": "james",
+        "chapter": 4,
+        "start": 7,
+        "end": 8
+      },
+      {
+        "book": "1-peter",
+        "chapter": 5,
+        "start": 8,
+        "end": 9
+      }
+    ],
+    "study_note": "Spiritual struggle calls for prayer, fidelity and resistance to evil, not violence against other people."
+  },
+  {
+    "id": "64",
+    "title": "Angels",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 28,
+        "start": 10,
+        "end": 17
+      },
+      {
+        "book": "psalms",
+        "chapter": 91,
+        "start": 11,
+        "end": 12
+      },
+      {
+        "book": "isaiah",
+        "chapter": 6,
+        "start": 1,
+        "end": 7
+      },
+      {
+        "book": "luke",
+        "chapter": 1,
+        "start": 26,
+        "end": 38
+      },
+      {
+        "book": "luke",
+        "chapter": 2,
+        "start": 8,
+        "end": 14
+      },
+      {
+        "book": "hebrews",
+        "chapter": 1,
+        "start": 13,
+        "end": 14
+      },
+      {
+        "book": "revelation",
+        "chapter": 22,
+        "start": 8,
+        "end": 9
+      }
+    ],
+    "study_note": "Angels serve God’s purposes; biblical worship is directed to God rather than to his messengers."
+  },
+  {
+    "id": "65",
+    "title": "Stewardship of Creation",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 1,
+        "start": 26,
+        "end": 28
+      },
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 15,
+        "end": 15
+      },
+      {
+        "book": "psalms",
+        "chapter": 24,
+        "start": 1,
+        "end": 2
+      },
+      {
+        "book": "proverbs",
+        "chapter": 12,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 26,
+        "end": 30
+      },
+      {
+        "book": "romans",
+        "chapter": 8,
+        "start": 19,
+        "end": 23
+      },
+      {
+        "book": "revelation",
+        "chapter": 11,
+        "start": 18,
+        "end": 18
+      }
+    ],
+    "study_note": "Human responsibility for creation follows from belonging to God and caring for what he has made."
+  },
+  {
+    "id": "66",
+    "title": "Fasting",
+    "passages": [
+      {
+        "book": "ezra",
+        "chapter": 8,
+        "start": 21,
+        "end": 23
+      },
+      {
+        "book": "isaiah",
+        "chapter": 58,
+        "start": 3,
+        "end": 10
+      },
+      {
+        "book": "joel",
+        "chapter": 2,
+        "start": 12,
+        "end": 13
+      },
+      {
+        "book": "matthew",
+        "chapter": 6,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "book": "mark",
+        "chapter": 2,
+        "start": 18,
+        "end": 20
+      },
+      {
+        "book": "acts",
+        "chapter": 13,
+        "start": 2,
+        "end": 3
+      },
+      {
+        "book": "acts",
+        "chapter": 14,
+        "start": 23,
+        "end": 23
+      }
+    ],
+    "study_note": "Fasting is joined to repentance, justice and prayer, not merely outward deprivation."
+  },
+  {
+    "id": "67",
+    "title": "Rest and Sabbath",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 2,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "exodus",
+        "chapter": 20,
+        "start": 8,
+        "end": 11
+      },
+      {
+        "book": "deuteronomy",
+        "chapter": 5,
+        "start": 12,
+        "end": 15
+      },
+      {
+        "book": "matthew",
+        "chapter": 11,
+        "start": 28,
+        "end": 30
+      },
+      {
+        "book": "mark",
+        "chapter": 2,
+        "start": 27,
+        "end": 28
+      },
+      {
+        "book": "hebrews",
+        "chapter": 4,
+        "start": 1,
+        "end": 11
+      },
+      {
+        "book": "colossians",
+        "chapter": 2,
+        "start": 16,
+        "end": 17
+      }
+    ],
+    "study_note": "Created rest and Sabbath point toward trust in God and the rest described in Hebrews."
+  },
+  {
+    "id": "68",
+    "title": "Thanksgiving",
+    "passages": [
+      {
+        "book": "psalms",
+        "chapter": 100,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "psalms",
+        "chapter": 103,
+        "start": 1,
+        "end": 5
+      },
+      {
+        "book": "daniel",
+        "chapter": 6,
+        "start": 10,
+        "end": 10
+      },
+      {
+        "book": "luke",
+        "chapter": 17,
+        "start": 11,
+        "end": 19
+      },
+      {
+        "book": "ephesians",
+        "chapter": 5,
+        "start": 18,
+        "end": 20
+      },
+      {
+        "book": "colossians",
+        "chapter": 3,
+        "start": 15,
+        "end": 17
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 5,
+        "start": 16,
+        "end": 18
+      }
+    ],
+    "study_note": "Gratitude receives life as gift and turns remembrance into praise and faithful action."
+  },
+  {
+    "id": "69",
+    "title": "Perseverance",
+    "passages": [
+      {
+        "book": "psalms",
+        "chapter": 27,
+        "start": 13,
+        "end": 14
+      },
+      {
+        "book": "isaiah",
+        "chapter": 40,
+        "start": 28,
+        "end": 31
+      },
+      {
+        "book": "daniel",
+        "chapter": 3,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "book": "romans",
+        "chapter": 5,
+        "start": 3,
+        "end": 5
+      },
+      {
+        "book": "galatians",
+        "chapter": 6,
+        "start": 9,
+        "end": 9
+      },
+      {
+        "book": "hebrews",
+        "chapter": 12,
+        "start": 1,
+        "end": 3
+      },
+      {
+        "book": "james",
+        "chapter": 1,
+        "start": 12,
+        "end": 12
+      }
+    ],
+    "study_note": "Steadfast hope endures trial through trust in God and sustained faithful action."
+  },
+  {
+    "id": "70",
+    "title": "Reconciliation",
+    "passages": [
+      {
+        "book": "genesis",
+        "chapter": 33,
+        "start": 1,
+        "end": 11
+      },
+      {
+        "book": "leviticus",
+        "chapter": 19,
+        "start": 17,
+        "end": 18
+      },
+      {
+        "book": "matthew",
+        "chapter": 5,
+        "start": 23,
+        "end": 24
+      },
+      {
+        "book": "matthew",
+        "chapter": 18,
+        "start": 15,
+        "end": 20
+      },
+      {
+        "book": "romans",
+        "chapter": 5,
+        "start": 8,
+        "end": 11
+      },
+      {
+        "book": "2-corinthians",
+        "chapter": 5,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "book": "ephesians",
+        "chapter": 2,
+        "start": 13,
+        "end": 18
+      }
+    ],
+    "study_note": "Reconciliation joins restored relationship with God to truth, forgiveness and peace with others."
+  },
+  {
+    "id": "71",
+    "title": "Second Coming",
+    "passages": [
+      {
+        "book": "daniel",
+        "chapter": 7,
+        "start": 13,
+        "end": 14
+      },
+      {
+        "book": "zechariah",
+        "chapter": 14,
+        "start": 9,
+        "end": 9
+      },
+      {
+        "book": "matthew",
+        "chapter": 24,
+        "start": 30,
+        "end": 36
+      },
+      {
+        "book": "acts",
+        "chapter": 1,
+        "start": 9,
+        "end": 11
+      },
+      {
+        "book": "1-thessalonians",
+        "chapter": 4,
+        "start": 13,
+        "end": 18
+      },
+      {
+        "book": "2-peter",
+        "chapter": 3,
+        "start": 8,
+        "end": 13
+      },
+      {
+        "book": "revelation",
+        "chapter": 22,
+        "start": 12,
+        "end": 20
+      }
+    ],
+    "study_note": "Christian hope awaits Christ without supplying dates that Scripture does not give."
+  },
+  {
+    "id": "72",
+    "title": "God’s Presence",
+    "passages": [
+      {
+        "book": "exodus",
+        "chapter": 3,
+        "start": 1,
+        "end": 6
+      },
+      {
+        "book": "exodus",
+        "chapter": 33,
+        "start": 14,
+        "end": 16
+      },
+      {
+        "book": "psalms",
+        "chapter": 139,
+        "start": 7,
+        "end": 12
+      },
+      {
+        "book": "john",
+        "chapter": 1,
+        "start": 14,
+        "end": 14
+      },
+      {
+        "book": "john",
+        "chapter": 14,
+        "start": 16,
+        "end": 23
+      },
+      {
+        "book": "matthew",
+        "chapter": 28,
+        "start": 18,
+        "end": 20
+      },
+      {
+        "book": "revelation",
+        "chapter": 21,
+        "start": 3,
+        "end": 4
+      }
+    ],
+    "study_note": "God transcends creation yet makes himself present in covenant, Christ and the Spirit."
+  }
+]

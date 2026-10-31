@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS books(id INTEGER PRIMARY KEY,name TEXT NOT NULL,slug TEXT NOT NULL UNIQUE,testament TEXT NOT NULL,sort_order INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS translations(code TEXT PRIMARY KEY,name TEXT NOT NULL,language TEXT NOT NULL,license TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS verses(translation TEXT NOT NULL REFERENCES translations(code),book_id INTEGER NOT NULL REFERENCES books(id),chapter_num INTEGER NOT NULL CHECK(chapter_num>0),verse_num INTEGER NOT NULL CHECK(verse_num>0),verse_text TEXT NOT NULL,verse_label TEXT,verse_end INTEGER,PRIMARY KEY(translation,book_id,chapter_num,verse_num));
+CREATE INDEX IF NOT EXISTS verses_reference ON verses(book_id,chapter_num,verse_num);
+CREATE TABLE IF NOT EXISTS commentaries(id INTEGER PRIMARY KEY,translation TEXT NOT NULL REFERENCES translations(code),book_id INTEGER NOT NULL REFERENCES books(id),chapter_num INTEGER NOT NULL CHECK(chapter_num>0),verse_start INTEGER NOT NULL CHECK(verse_start>0),verse_end INTEGER NOT NULL CHECK(verse_end>=verse_start),title TEXT NOT NULL,author TEXT NOT NULL,source TEXT NOT NULL,body TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS commentary_reference ON commentaries(translation,book_id,chapter_num,verse_start,verse_end);
+CREATE TABLE commentary_works(id TEXT PRIMARY KEY,title TEXT,author TEXT,tradition TEXT,language TEXT,source_url TEXT,license TEXT);
+CREATE TABLE commentary_entries(id INTEGER PRIMARY KEY,work_id TEXT REFERENCES commentary_works(id),book_id INTEGER REFERENCES books(id),chapter_num INTEGER,verse_start INTEGER,verse_end INTEGER,body TEXT,scope TEXT);
+CREATE INDEX commentary_entries_reference ON commentary_entries(work_id,book_id,chapter_num);
+CREATE TABLE commentary_introductions(work_id TEXT,book_id INTEGER,body TEXT);

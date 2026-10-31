@@ -1,0 +1,56 @@
+{
+  "WEB": {
+    "title": "World English Bible Classic",
+    "introduction": "A public-domain translation into modern English. The Classic edition uses American English and “Yahweh” for God’s name in the Old Testament.",
+    "edition_note": "This package includes its Deuterocanonical/Apocryphal books.",
+    "source_url": "https://ebible.org/find/show.php?id=eng-web"
+  },
+  "KJV": {
+    "title": "King James Version — 1769 text",
+    "introduction": "Also called the Authorized Version, this edition uses the standardized 1769 text of the King James Bible. Its traditional English vocabulary and phrasing distinguish it from modern-language translations.",
+    "edition_note": "This package includes Apocrypha. Public domain outside the UK; UK Crown rights apply.",
+    "source_url": "https://ebible.org/bible/details.php?id=eng-kjv"
+  },
+  "ASV": {
+    "title": "American Standard Version — 1901",
+    "introduction": "An English translation first published in 1901. Its traditional wording includes “Jehovah” in Old Testament passages; it is useful for comparing wording with the World English Bible.",
+    "edition_note": "Includes the Old and New Testaments, without Apocrypha.",
+    "source_url": "https://ebible.org/find/show.php?id=eng-asv"
+  },
+  "BSB": {
+    "title": "Berean Standard Bible",
+    "introduction": "A modern English Bible produced by the Berean translation project. The text has been dedicated to the public domain and is available for reading, study, and redistribution.",
+    "edition_note": "Includes the Old and New Testaments. This package uses the eBible.org BSB export.",
+    "source_url": "https://berean.bible/downloads.htm"
+  },
+  "DRA": {
+    "title": "Douay–Rheims — American Edition 1899",
+    "introduction": "An English Bible translated from the Latin Vulgate. This Catholic edition includes the Deuterocanonical books and uses traditional English.",
+    "edition_note": "Psalm numbering and some verse divisions differ from the other editions. Matching reference numbers may not identify equivalent passages.",
+    "source_url": "https://ebible.org/bible/details.php?id=engDRA"
+  },
+  "YLT": {
+    "title": "Young’s Literal Translation — 1898",
+    "introduction": "Robert Young’s literal English translation of the Holy Bible. Its distinctive wording includes expressions such as “age-during,” making it useful for close comparison with other translations.",
+    "edition_note": "Includes the Old and New Testaments, without Apocrypha.",
+    "source_url": "https://ebible.org/details.php?id=engylt"
+  },
+  "DBY": {
+    "title": "Darby Bible",
+    "introduction": "J. N. Darby’s English translation from the original languages, titled The Holy Scriptures, a New Translation. It uses traditional English and is available in the public domain.",
+    "edition_note": "Includes the Old and New Testaments, without Apocrypha.",
+    "source_url": "https://ebible.org/find/show.php?id=engDBY"
+  },
+  "RV": {
+    "title": "Revised Version — 1895 edition",
+    "introduction": "A historical English revision of the King James Bible. This downloadable 1895 edition includes the Old Testament, New Testament, and Apocrypha.",
+    "edition_note": "Original verse ranges and empty source entries are preserved in this package.",
+    "source_url": "https://ebible.org/bible/details.php?id=eng-rv"
+  },
+  "ADB1905": {
+    "title": "Ang Dating Biblia / Ang Biblia — 1905",
+    "introduction": "A complete Tagalog Bible associated with the Philippine Bible Society’s 1905 edition. It retains older Tagalog spelling and wording, including “Dios.”",
+    "edition_note": "This is the 1905 text, not Ang Biblia 2001. Scripture is Tagalog; the console retains its English book labels.",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=TagAngBiblia"
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrownMind Bible — Open Local App</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #101827; color: #edf2fa; }
+    main { max-width: 620px; margin: 24px; padding: clamp(24px, 5vw, 48px); background: #19263b; border: 1px solid #344762; border-radius: 20px; }
+    .eyebrow { color: #e6c785; letter-spacing: .16em; font-size: .8rem; font-weight: 700; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 12px 0; }
+    p, li { line-height: 1.7; color: #ced9e8; }
+    li { margin-bottom: 12px; }
+    code { overflow-wrap: anywhere; color: #fff; }
+    .button { display: inline-block; background: #e6c785; color: #152036; padding: 15px 24px; border-radius: 10px; font-weight: 750; text-decoration: none; margin: 12px 0; }
+    a:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+    .note { border-top: 1px solid #344762; padding-top: 20px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">LOCAL BIBLE STUDY</div>
+    <h1>CrownMind Bible</h1>
+    <p>Open your installed Bible package with its translations, commentary, and study tools.</p>
+    <ol>
+      <li>Place this file in your extracted <code>crownmind-bible</code> folder, beside <code>server.py</code> and <code>START-CROWNMIND.cmd</code>. Keep the existing <code>public/index.html</code> in place.</li>
+      <li>Double-click <code>START-CROWNMIND.cmd</code>. Keep its terminal window open. If needed, run <code>py server.py</code> from that folder.</li>
+      <li>When the terminal shows the local address, click the button below.</li>
+    </ol>
+    <a class="button" href="http://localhost:3000/index.html">Open CrownMind Bible →</a>
+    <p class="note">This entry page opens the app at <code>http://localhost:3000</code>. It does not start Python itself. If the browser cannot connect, start the server first. If an older version opens, stop that server and start the one in your latest package. A custom server port requires using the address shown in the terminal.</p>
+  </main>
+</body>
+</html>
